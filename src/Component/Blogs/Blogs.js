@@ -32,10 +32,10 @@ const Blogs = () => {
             <Container>
                 <div>
                     <div className='moreBlogs'>
-                        <h1>More Blogs</h1>
+                        <h1>From Blogs</h1>
                         <div>
                             <button className='allBlogsBtn'>
-                            <p>Go Blogs</p>
+                            <p>Go To Blogs</p>
                             <i><i class="fas fa-arrow-right"></i></i>
                             </button>
                         </div>
