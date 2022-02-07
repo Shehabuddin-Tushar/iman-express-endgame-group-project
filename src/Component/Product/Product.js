@@ -4,7 +4,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import ShuffleIcon from '@mui/icons-material/Shuffle';
 import { Box, Card, CardContent, CardMedia, Grid, IconButton, Skeleton, Typography } from '@mui/material';
 import React from 'react';
-import './Service.css';
+import './Product.css';
 
 const Service = ({ service, isLoad }) => {
     const { name, pic, price } = service;

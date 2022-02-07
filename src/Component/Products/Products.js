@@ -1,8 +1,9 @@
 import { Box, Button, Container, Grid, Typography } from '@mui/material';
 import React, { useEffect, useState } from 'react';
-import Service from '../Service/Service';
+import Product from '../Product/Product';
 
-const Services = () => {
+
+const Products = () => {
     const [servics, setServics] = useState([]);
     const [catagory, setCatagory] = useState("breakfast");
     const [isLoad, setIsLoad] = useState(true)
@@ -31,7 +32,7 @@ const Services = () => {
             </Box>
             <Grid container spacing={{ xs: 2, md: 1 }} columns={{ xs: 4, sm: 8, md: 12 }}>
                 {
-                    servics.map(service => <Service
+                    servics.map(service => <Product
                         key={service._id}
                         service={service}
                         isLoad={isLoad}
@@ -42,4 +43,4 @@ const Services = () => {
     );
 };
 
-export default Services;
+export default Products;
