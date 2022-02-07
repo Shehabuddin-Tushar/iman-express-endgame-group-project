@@ -16,6 +16,12 @@ const Services = () => {
   const remaining = data.filter((sort) => sort.category === tribe);
   return (
     <Box sx={{ flexGrow: 1, my: "100px" }}>
+      <Box className={style.headline}>
+        <Typography variant="h2">পাঠাও প্ল্যাটফর্ম</Typography>
+        <Typography variant="body2">
+          পাঠাও সকল সুবিধা প্রদান করে শুধুমাত্র আপনার জন্য।
+        </Typography>
+      </Box>
       <Box
         className={style.filter_icon_wrapper}
         sx={{

@@ -1,3 +1,16 @@
+/* [Heading Text] */
+.headline h2 {
+  font-family: "Hind Siliguri", sans-serif;
+  font-weight: 600;
+}
+.headline p {
+  font-family: "Hind Siliguri", sans-serif;
+  font-weight: 600;
+  margin-bottom: -50px;
+}
+/* [Heading Text] */
+
+/* Starting the [Filtering Button, Car, Bike, Food, Delivery, Text,] */
 .filter_icon_wrapper {
   margin: 100px auto;
 }
@@ -14,6 +27,9 @@
   font-weight: 600;
   font-family: "Hind Siliguri", sans-serif;
 }
+/* Ending the [Filtering Button, Car, Bike, Food, Delivery] */
+
+/* Starting [Left side service advantage Text, Heading, some Description] */
 .description_with_heading h4 {
   font-family: "Hind Siliguri", sans-serif;
   font-weight: 600;
@@ -75,6 +91,9 @@
   height: 3px;
   background: rgb(94, 65, 226);
 }
+/* Ending the [Left side service advantage Text, Heading, some Description, ::After, ::Before] */
+
+/* Starting the [Right side topic base mobile mockup] */
 .service_img {
   position: relative;
 }
@@ -96,6 +115,9 @@
   right: 41px;
   border-radius: 15px;
 }
+/* Ending the [Right side topic base mobile mockup] */
+
+/* Starting [Learn More button part with img] */
 .learn_more_btn {
   margin-top: 50px;
   position: relative;
@@ -118,27 +140,12 @@
   position: absolute;
   top: 8px;
 }
+/* Ending [Learn More button part with img] */
 
+/* Here we do some responsiveness, Note this breakpoint will work for mobile view */
+/* Starting [Mobile Responsive With BreakPoints 600px] */
 @media screen and (max-width: 600px) {
-  .service_img_background {
-    margin-top: 50px;
-    margin-left: -75px;
-  }
-  .description_with_heading h4 {
-    text-align: center;
-  }
-  .description_with_heading p {
-    text-align: center;
-  }
-  .learn_more_btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .delivery_box {
-    margin-top: 40px;
-  }
-
+  /* [filtering icons after before responsive] */
   .filter_icon_wrapper div::before {
     display: none;
   }
@@ -146,4 +153,34 @@
   .filter_icon_wrapper div::after {
     display: none;
   }
+
+  .delivery_box {
+    margin-top: 40px;
+  }
+  /* [filtering icons after before responsive] */
+
+  /* [topic base images responsive ness] */
+  .service_img_background {
+    margin-top: 50px;
+    margin-left: -75px;
+  }
+  /* [topic base images responsive ness] */
+
+  /* [Topic base description and headline] */
+  .description_with_heading h4 {
+    text-align: center;
+  }
+  .description_with_heading p {
+    text-align: center;
+  }
+  /* [Topic base description and headline] */
+
+  /* [learn more button ] */
+  .learn_more_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  /* [learn more button ] */
 }
+/* Ending [Mobile Responsive With BreakPoints 600px] */
