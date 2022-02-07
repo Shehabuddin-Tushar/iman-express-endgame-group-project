@@ -1,6 +1,5 @@
 import { Box, Grid, Typography } from "@mui/material";
 import React from "react";
-import arrowRight from "../../Images/Icons/arrow_right.png";
 import style from "./service.module.css";
 const Service = ({ serviceData }) => {
   return (
@@ -29,7 +28,8 @@ const Service = ({ serviceData }) => {
           </Typography>
           <Box className={style.learn_more_btn}>
             <button>
-              আরো জানুন <img src={arrowRight} alt="" />
+              আরো জানুন{" "}
+              <img src="https://i.ibb.co/rc5QXgn/arrow-right.png" alt="" />
             </button>
           </Box>
         </Grid>
