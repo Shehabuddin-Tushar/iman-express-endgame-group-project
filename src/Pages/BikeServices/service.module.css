@@ -1,0 +1,91 @@
+.filter_icon_wrapper {
+  margin: 100px auto;
+}
+.filter_icon_wrapper div {
+  position: relative;
+  display: flex;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+}
+.filter_icon_wrapper div h6 {
+  margin-left: 10px;
+  font-weight: 600;
+  font-family: "Hind Siliguri", sans-serif;
+}
+.description_with_heading h4 {
+  font-family: "Hind Siliguri", sans-serif;
+  font-weight: 600;
+}
+
+.description_with_heading p {
+  margin-top: 10px;
+  font-size: 20px;
+  font-family: "Hind Siliguri", sans-serif;
+}
+
+.filter_icon_wrapper div::before {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -30px;
+  right: -60px;
+  width: 200px;
+  height: 3px;
+  background: rgb(209, 209, 209);
+}
+.bike_box::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 73px;
+  right: -60px;
+  width: 150px;
+  height: 3px;
+  background: rgb(223, 14, 14);
+}
+.delivery_box::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 73px;
+  right: -60px;
+  width: 150px;
+  height: 3px;
+  background: rgb(14, 223, 25);
+}
+.food_box::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 73px;
+  right: -60px;
+  width: 150px;
+  height: 3px;
+  background: rgb(14, 157, 223);
+}
+.car_box::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 73px;
+  right: -60px;
+  width: 150px;
+  height: 3px;
+  background: rgb(94, 65, 226);
+}
+
+.service_img_background {
+  background-image: url(https://pathao.com/bn/wp-content/themes/webpathao/assets/images/mobile-screen-2.png);
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/* .service_img_background img {
+  width: 324px;
+  height: auto;
+  position: absolute;
+  top: 85px;
+  right: 41px;
+  border-radius: 15px;
+} */
