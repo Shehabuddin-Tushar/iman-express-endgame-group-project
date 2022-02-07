@@ -1,11 +1,12 @@
 import './App.css';
 import Blogs from './Share/Blogs/Blogs';
+import Footer from './Share/Footer/Footer';
 
 function App() {
   return (
     <div>
-      <h1>Iman Express</h1>
       <Blogs></Blogs>
+      <Footer></Footer>
     </div>
   );
 }
