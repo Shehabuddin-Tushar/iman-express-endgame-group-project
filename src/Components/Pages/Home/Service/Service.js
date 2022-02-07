@@ -1,39 +1,53 @@
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
-import { Box, Card, CardActions, CardContent, CardMedia, Grid, IconButton, Skeleton, Typography } from '@mui/material';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import ShuffleIcon from '@mui/icons-material/Shuffle';
+import { Box, Card, CardContent, CardMedia, Grid, IconButton, Skeleton, Typography } from '@mui/material';
 import React from 'react';
+import './Service.css';
 
 const Service = ({ service, isLoad }) => {
     const { name, pic, price } = service;
     return (
-        <Grid item xs={2} sm={4} md={3}>
+        <Grid item xs={12} sm={4} md={3}>
             {
                 isLoad ? <Box>
                     <Skeleton
                         variant="rectangular" height={150} />
                     <Typography variant="h3"><Skeleton /></Typography>
 
-                </Box> : <Card sx={{ maxWidth: 345 }}>
-                    <CardMedia
-                        component="img"
-                        width='100%'
-                        image={pic}
-                        alt="Paella dish"
-                    />
+                </Box> : <Card sx={{ p: 2, height: '300px' }} className='card'>
+                    <Box className='img-container'>
+                        <CardMedia
+                            component="img"
+                            height='245px'
+                            width='100%'
+                            image={pic}
+                            alt="Paella dish"
+                        />
+                        <Box className='icon-container'>
+                            <IconButton aria-label="share" >
+                                <ShoppingCartIcon />
+                            </IconButton>
+                            <IconButton aria-label="add to favorites" >
+                                <FavoriteIcon />
+                            </IconButton>
+                            <IconButton aria-label="share" >
+                                <ShuffleIcon />
+                            </IconButton>
+                            <IconButton aria-label="share">
+                                <ShareIcon />
+                            </IconButton>
+                        </Box>
+                    </Box>
                     <CardContent>
-                        <Typography variant="body2" color="text.secondary">
-                            This impressive paella is a perfect party dish and a fun meal to cook
-                            together with your guests.
+                        <Typography variant="body1" color="text.secondary">
+                            {name.slice(0, 25)}
+                        </Typography>
+                        <Typography variant="h6" sx={{ color: 'orangered', fontWeight: 500 }}>
+                            ${price}
                         </Typography>
                     </CardContent>
-                    <CardActions disableSpacing>
-                        <IconButton aria-label="add to favorites">
-                            <FavoriteIcon />
-                        </IconButton>
-                        <IconButton aria-label="share">
-                            <ShareIcon />
-                        </IconButton>
-                    </CardActions>
                 </Card>
             }
         </Grid>

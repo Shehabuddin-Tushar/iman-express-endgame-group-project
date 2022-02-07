@@ -1,5 +1,4 @@
-import { Box, Button, Container, Grid } from '@mui/material';
-import { green, red } from '@mui/material/colors';
+import { Box, Button, Container, Grid, Typography } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import Service from '../Service/Service';
 
@@ -21,14 +20,16 @@ const Services = () => {
         run()
     }, [catagory])
 
+    console.log(catagory)
     return (
         <Container>
-            <Box sx={{ my: 2 }}>
-                <Button onClick={() => setCatagory("breakfast")} sx={{ bgcolor: red[500], mr: 1 }} variant='contained'>Breakfast</Button>
-                <Button onClick={() => setCatagory("lunch")} sx={{ bgcolor: red[500], mr: 1 }} variant='contained'>Lunch</Button>
-                <Button onClick={() => setCatagory("dinner")} sx={{ bgcolor: green[500], mr: 1 }} variant='contained'>Dinner</Button>
+            <Box sx={{ my: 4, display: 'flex', alignItems: 'center', flexWrap: 'wrap', borderBottom: '2px solid orangered', p: 1 }}>
+                <Typography variant='h6' sx={{ fontWeight: 'bold', color: '#666060', mr: 3 }}>ALL FOR THE CATAGORYS</Typography>
+                <Button onClick={() => setCatagory("breakfast")} className={catagory === 'breakfast' ? 'selected' : ''} sx={{ color: 'text.secondary', fontWeight: 'bold', mr: 1 }} variant='text'>Breakfast</Button>
+                <Button onClick={() => setCatagory("lunch")} sx={{ color: 'text.secondary', fontWeight: 'bold', mr: 1 }} variant='text' className={catagory === 'lunch' ? 'selected' : ''}>Lunch</Button>
+                <Button onClick={() => setCatagory("dinner")} sx={{ color: 'text.secondary', fontWeight: 'bold', mr: 1 }} variant='text' className={catagory === 'dinner' ? 'selected' : ''}>Dinner</Button>
             </Box>
-            <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
+            <Grid container spacing={{ xs: 2, md: 1 }} columns={{ xs: 4, sm: 8, md: 12 }}>
                 {
                     servics.map(service => <Service
                         key={service._id}
