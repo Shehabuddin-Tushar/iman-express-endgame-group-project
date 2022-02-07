@@ -21,7 +21,6 @@ const Products = () => {
         run()
     }, [catagory])
 
-    console.log(catagory)
     return (
         <Container>
             <Box sx={{ my: 4, display: 'flex', alignItems: 'center', flexWrap: 'wrap', borderBottom: '2px solid orangered', p: 1 }}>
