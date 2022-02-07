@@ -15,7 +15,7 @@ const Services = () => {
   }, []);
   const remaining = data.filter((sort) => sort.category === tribe);
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ flexGrow: 1, my: "100px" }}>
       <Box
         className={style.filter_icon_wrapper}
         sx={{

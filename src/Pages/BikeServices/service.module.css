@@ -8,6 +8,7 @@
   justify-content: center;
   align-items: center;
 }
+
 .filter_icon_wrapper div h6 {
   margin-left: 10px;
   font-weight: 600;
@@ -74,18 +75,75 @@
   height: 3px;
   background: rgb(94, 65, 226);
 }
-
-.service_img_background {
-  background-image: url(https://pathao.com/bn/wp-content/themes/webpathao/assets/images/mobile-screen-2.png);
-  background-position: center top;
-  background-repeat: no-repeat;
-  background-size: cover;
+.service_img {
+  position: relative;
 }
-/* .service_img_background img {
+.service_img_background {
+  background-size: 100% auto;
+  width: 472px;
+  height: 638px;
+  position: relative;
+  top: -46px;
+  overflow: hidden;
+  float: right;
+  background-position: center top;
+}
+.img {
   width: 324px;
   height: auto;
   position: absolute;
   top: 85px;
   right: 41px;
   border-radius: 15px;
-} */
+}
+.learn_more_btn {
+  margin-top: 50px;
+  position: relative;
+}
+.learn_more_btn button {
+  text-align: left;
+  width: 170px;
+  padding: 10px 25px;
+  border-radius: 7px;
+  background-color: #e83330;
+  color: white;
+  font-family: "Hind Siliguri", sans-serif;
+  border: none;
+  box-shadow: 0 8px 18px 0 rgb(0 0 0 / 18%);
+  cursor: pointer;
+}
+.learn_more_btn button img {
+  width: 25px;
+  margin-left: 25px;
+  position: absolute;
+  top: 8px;
+}
+
+@media screen and (max-width: 600px) {
+  .service_img_background {
+    margin-top: 50px;
+    margin-left: -75px;
+  }
+  .description_with_heading h4 {
+    text-align: center;
+  }
+  .description_with_heading p {
+    text-align: center;
+  }
+  .learn_more_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .delivery_box {
+    margin-top: 40px;
+  }
+
+  .filter_icon_wrapper div::before {
+    display: none;
+  }
+
+  .filter_icon_wrapper div::after {
+    display: none;
+  }
+}

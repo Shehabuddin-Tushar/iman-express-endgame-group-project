@@ -1,10 +1,11 @@
 import { Box, Grid, Typography } from "@mui/material";
 import React from "react";
+import arrowRight from "../../Images/Icons/arrow_right.png";
 import style from "./service.module.css";
 const Service = ({ serviceData }) => {
   return (
     <Grid item xs={12}>
-      <Grid container columnSpacing={{ xs: 1, sm: 2, md: 2 }}>
+      <Grid item container columnSpacing={{ xs: 1, sm: 2, md: 2 }}>
         <Grid
           xs={6}
           sx={{ textAlign: "left" }}
@@ -26,9 +27,20 @@ const Service = ({ serviceData }) => {
           <Typography variant="body1">
             {serviceData.thirdDescription}
           </Typography>
+          <Box className={style.learn_more_btn}>
+            <button>
+              আরো জানুন <img src={arrowRight} alt="" />
+            </button>
+          </Box>
         </Grid>
-        <Grid item xs={6}>
-          <Box className={style.service_img_background}>
+        <Grid className={style.service_img} item xs={6}>
+          <Box
+            className={style.service_img_background}
+            sx={{
+              backgroundImage:
+                "url(https://pathao.com/bn/wp-content/themes/webpathao/assets/images/mobile-screen-2.png)",
+            }}
+          >
             <img
               className={style.img}
               src={serviceData.img}
