@@ -1,6 +1,6 @@
 import './App.css';
-import Blogs from './Share/Blogs/Blogs';
-import Footer from './Share/Footer/Footer';
+import Blogs from './Component/Blogs/Blogs';
+import Footer from './Shared/Footer/Footer';
 
 function App() {
   return (
