@@ -5,22 +5,31 @@ import MySlider from './Component/Slider/MySlider';
 import Footer from './Shared/Footer/Footer';
 import Navbar from './Shared/Navbar/Navbar';
 import OurPartnerSlider from './Component/OurPartner/OurPartner';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
+import Home from "./Pages/Home/Home";
+import Login from "./Pages/Login/Login";
+import Register from "./Pages/Login/Register";
 
-
+import "./App.css";
 function App() {
   return (
     <div className="App">
-      <Navbar />
-      <MySlider />
-      <Services />
-      <Products />
-      <Blogs></Blogs>
-      <OurPartnerSlider></OurPartnerSlider>
-      <Footer></Footer>
+      <BrowserRouter>
+         <Routes>
+             <Route path="/" element={<Home></Home>}></Route>
+             <Route path="/login" element={<Login></Login>}></Route>
+             <Route path="/register" element={<Register></Register>}></Route>
+         </Routes>
+      </BrowserRouter>
+      
     </div>)
    
   
  
+   
+      
+  
+  
 }
 export default App;
