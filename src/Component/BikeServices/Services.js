@@ -17,7 +17,7 @@ const Services = () => {
   return (
     <Box sx={{ flexGrow: 1, my: "100px" }}>
       <Box className={style.headline}>
-        <Typography variant="h2">আইমেন এক্সেপ্রেস</Typography>
+        <Typography variant="h4" style={{fontWeight:"bold"}}>আইমেন এক্সেপ্রেস</Typography>
         <Typography variant="body2">
           আইমেন এক্সেপ্রেস সকল সুবিধা প্রদান করে শুধুমাত্র আপনার জন্য।
         </Typography>
