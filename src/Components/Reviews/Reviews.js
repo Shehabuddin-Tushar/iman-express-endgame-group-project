@@ -5,25 +5,73 @@ import React, { useEffect, useState } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { grey } from "@mui/material/colors";
+function SampleNextArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{
+        ...style,
+        display: "flex",
+        // boxShadow: "gray 0px 5px 15px",
+        borderRadius: "50%",
+        marginRight: "-30px",
+        backgroundColor: grey[300],
+        height: "50px",
+        width: "50px",
+
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+      onClick={onClick}
+    />
+  );
+}
+
+function SamplePrevArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{
+        ...style,
+        display: "flex",
+        boxShadow: "gray 0px 5px 15px",
+        borderRadius: "50%",
+        marginLeft: "-30px",
+        zIndex: "1",
+        marginRight: "-30px",
+        backgroundColor: grey[300],
+        height: "50px",
+        width: "50px",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+      onClick={onClick}
+    />
+  );
+}
 
 function Reviews() {
   const settings = {
-    dots: true,
     infinite: true,
-    slidesToShow: 1,
+    slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 6000,
     pauseOnHover: true,
     adaptiveWidth: true,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
     responsive: [
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 2,
+          dots: true,
+          slidesToShow: 3,
           slidesToScroll: 1,
           infinite: true,
-          dots: true,
         },
       },
       {
