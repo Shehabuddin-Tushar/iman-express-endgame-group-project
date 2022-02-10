@@ -16,7 +16,7 @@ const Service = ({ service, isLoad }) => {
                         variant="rectangular" height={150} />
                     <Typography variant="h3"><Skeleton /></Typography>
 
-                </Box> : <Card sx={{ p: 2, height: '280px' }} className='card'>
+                </Box> : <Card sx={{ p: 2, height: '250px' }} className='card'>
                     <Box className='img-container'>
                         <CardMedia
                             component="img"
@@ -40,13 +40,15 @@ const Service = ({ service, isLoad }) => {
                                 <ShareIcon />
                             </IconButton>
                         </Box>
+                        <Box className='price'>
+                            <Typography variant="h6" sx={{ color: '#fff', fontWeight: 500 }}>
+                                ${price.slice(0, 2)}
+                            </Typography>
+                        </Box>
                     </Box>
                     <CardContent>
                         <Typography variant="body1" color="text.secondary">
                             {name.slice(0, 25)}
-                        </Typography>
-                        <Typography variant="h6" sx={{ color: 'orangered', fontWeight: 500 }}>
-                            ${price}
                         </Typography>
                     </CardContent>
                 </Card>

@@ -14,6 +14,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Tooltip from "@mui/material/Tooltip";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
+import styles from "./Navbar.module.css";
 
 const pages = ["Products", "Pricing", "Blog"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
@@ -38,19 +39,10 @@ const Navbar = () => {
   };
 
   return (
-    <AppBar position="fixed" sx={{ backgroundColor: "white" }}>
+    <AppBar position="sticky" sx={{ boxShadow: 0 }} className={styles.navbar}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <img src="https://i.ibb.co/9ZC1WwG/logo.gif" alt="" />
-          {/* <Typography
-                        variant="h6"
-                        noWrap
-                        component="div"
-                        sx={{ mr: 2, display: { xs: 'none', md: 'flex',color:"black" } }}
-                    >
-                        IMAN Xpress
-                    </Typography> */}
-
           <Box
             sx={{
               flexGrow: 1,
@@ -152,7 +144,6 @@ const Navbar = () => {
               </IconButton>
             </Button>
           </Box>
-
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
@@ -170,7 +161,6 @@ const Navbar = () => {
               </IconButton>
             </Tooltip>
           </Box>
-
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
