@@ -17,9 +17,13 @@ const Services = () => {
   return (
     <Box sx={{ flexGrow: 1, my: "100px" }}>
       <Box className={style.headline}>
-        <Typography variant="h4" style={{fontWeight:"bold"}}>আইমেন এক্সেপ্রেস</Typography>
+        <Typography variant="h4" style={{ fontWeight: "bold" }}>
+          IMan <span style={{ color: "#df0e0e" }}>X</span>press
+        </Typography>
         <Typography variant="body2">
-          আইমেন এক্সেপ্রেস সকল সুবিধা প্রদান করে শুধুমাত্র আপনার জন্য।
+          Emergency? Deliver via parcel The only solution for fastest parcel
+          delivery in less time. <br /> Your needs are the most important thing
+          to us.
         </Typography>
       </Box>
       <Box
@@ -36,28 +40,28 @@ const Services = () => {
             src=" https://pathao.com/bn/wp-content/themes/webpathao/assets/images/menu/rides.png?v=26.4.20"
             alt=""
           />
-          <Typography variant="h6">বাইক</Typography>
+          <Typography variant="h6">BIke</Typography>
         </Box>
         <Box onClick={() => setTribe("C")} className={style.car_box}>
           <img
             src="https://pathao.com/bn/wp-content/themes/webpathao/assets/images/menu/cars.png?v=26.4.20"
             alt=""
           />
-          <Typography variant="h6">কার</Typography>
+          <Typography variant="h6">Car</Typography>
         </Box>
         <Box onClick={() => setTribe("F")} className={style.food_box}>
           <img
             src="https://pathao.com/bn/wp-content/themes/webpathao/assets/images/menu/food.png?v=26.4.20"
             alt=""
           />
-          <Typography variant="h6">ফুড</Typography>
+          <Typography variant="h6">Food</Typography>
         </Box>
         <Box onClick={() => setTribe("D")} className={style.delivery_box}>
           <img
             src="https://pathao.com/bn/wp-content/themes/webpathao/assets/images/menu/parcel.png?v=26.4.20"
             alt=""
           />
-          <Typography variant="h6">ডেলিভারি</Typography>
+          <Typography variant="h6">Delivery</Typography>
         </Box>
       </Box>
       <Container fixed>
