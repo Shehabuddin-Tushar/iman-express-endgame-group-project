@@ -44,7 +44,7 @@ const Footer = () => {
                     <hr/>
                     <Grid container spacing={2} className='footerPartTwo-Content'>
                         <Grid item xs={12} md={6} sm={6}>
-                            <h3>Iman Express logo</h3>
+                            <h3>Iman Xpress logo</h3>
                         </Grid>
                         <Grid item xs={12} md={6} sm={6}>
                             <div className='partTwo-Two'>
@@ -66,7 +66,7 @@ const Footer = () => {
                                         <div>
                                             <p>User App</p>
                                             <button className='googlePlayBtn'>
-                                            <i class="fab fa-google-play"></i>
+                                            <i className="fab fa-google-play"></i>
                                             <div>
                                                 <p>GETITON</p>
                                                 <p>Google Play</p>
@@ -76,7 +76,7 @@ const Footer = () => {
                                     </Grid>
                                     <Grid item xs={12} md={4} sm={12}>
                                         <button className='googlePlayBtn'>
-                                            <i class="fab fa-apple"></i>
+                                            <i className="fab fa-apple"></i>
                                             <div>
                                                 <p>Download</p>
                                                 <p>App Store</p>
@@ -86,7 +86,7 @@ const Footer = () => {
                                     <Grid item xs={12} md={4} sm={12}>
                                         <p>Drive App</p>
                                         <button className='googlePlayBtn'>
-                                            <i class="fab fa-google-play"></i>
+                                            <i className="fab fa-google-play"></i>
                                             <div>
                                                 <p>GETITON</p>
                                                 <p>Google Play</p>
@@ -101,10 +101,10 @@ const Footer = () => {
                             <Grid container spacing={2}>
                                     <Grid item xs={12} md={6} sm={6}>
                                         <div className="footerIcons">
-                                        <i class="fab fa-facebook-f"></i>
-                                        <i class="fab fa-twitter"></i>
-                                        <i class="fab fa-instagram"></i>
-                                        <i class="fab fa-chrome"></i>
+                                        <i className="fab fa-facebook-f"></i>
+                                        <i className="fab fa-twitter"></i>
+                                        <i className="fab fa-instagram"></i>
+                                        <i className="fab fa-chrome"></i>
                                         </div>
                                     </Grid>
                                     <Grid item xs={12} md={6} sm={6}>
