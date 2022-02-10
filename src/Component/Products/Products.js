@@ -26,7 +26,7 @@ const Products = () => {
         <Container>
             <Box sx={{ my: 4, display: 'flex', alignItems: 'center', flexWrap: 'wrap', p: 1 }}>
                 <Box>
-                    <Typography variant='h3' sx={{ fontWeight: 'bold', color: '#666060', mr: 3 }}>ALL FOR THE CATAGORYS</Typography>
+                    <Typography variant='h3' sx={{ fontWeight: 'bold', color: '#323232', mr: 3 }}>ALL FOR THE CATAGORYS</Typography>
                     <Typography color='text.secondary' sx={{ textAlign: 'left' }}>We are providing Restauants booking, Medicines, Foods. </Typography>
                 </Box>
                 <Button onClick={() => setCategory("restauant")} className={category === 'restauant' ? 'selected' : ''} sx={{ color: 'text.secondary', fontWeight: 'bold', mr: 1 }} variant='text'>Restauants</Button>
