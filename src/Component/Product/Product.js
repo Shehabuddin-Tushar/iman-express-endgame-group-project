@@ -7,7 +7,7 @@ import React from 'react';
 import './Product.css';
 
 const Service = ({ service, isLoad }) => {
-    const { name, pic, price } = service;
+    const { name, img, price } = service;
     return (
         <Grid item xs={12} sm={4} md={3}>
             {
@@ -16,13 +16,14 @@ const Service = ({ service, isLoad }) => {
                         variant="rectangular" height={150} />
                     <Typography variant="h3"><Skeleton /></Typography>
 
-                </Box> : <Card sx={{ p: 2, height: '300px' }} className='card'>
+                </Box> : <Card sx={{ p: 2, height: '280px' }} className='card'>
                     <Box className='img-container'>
                         <CardMedia
                             component="img"
-                            height='245px'
+                            sx={{ borderRadius: '5px' }}
+                            height='220px'
                             width='100%'
-                            image={pic}
+                            image={img}
                             alt="Paella dish"
                         />
                         <Box className='icon-container'>
