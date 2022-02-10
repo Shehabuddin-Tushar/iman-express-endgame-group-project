@@ -1,21 +1,20 @@
-import * as React from 'react';
+import AccountCircle from '@mui/icons-material/AccountCircle';
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import MenuIcon from '@mui/icons-material/Menu';
+import NotificationsIcon from '@mui/icons-material/Notifications';
+import { Badge } from '@mui/material';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
-import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
+import Container from '@mui/material/Container';
+import IconButton from '@mui/material/IconButton';
+import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-import AccountCircle from '@mui/icons-material/AccountCircle';
-import NotificationsIcon from '@mui/icons-material/Notifications';
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-
-import { Badge } from '@mui/material';
+import Toolbar from '@mui/material/Toolbar';
+import Tooltip from '@mui/material/Tooltip';
+import Typography from '@mui/material/Typography';
+import * as React from 'react';
+import styles from './Navbar.module.css';
 
 const pages = ['Products', 'Pricing', 'Blog'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -40,19 +39,19 @@ const Navbar = () => {
     };
 
     return (
-        <AppBar position="fixed" sx={{backgroundColor:"white"}}>
+        <AppBar position="sticky" sx={{ boxShadow: 0 }} className={styles.navbar}>
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     <Typography
                         variant="h6"
                         noWrap
                         component="div"
-                        sx={{ mr: 2, display: { xs: 'none', md: 'flex',color:"black" } }}
+                        sx={{ mr: 2, display: { xs: 'none', md: 'flex', color: "black" } }}
                     >
                         IMAN Xpress
                     </Typography>
 
-                    <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none', color: "black"  } }}>
+                    <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none', color: "black" } }}>
                         <IconButton
                             size="large"
                             aria-label="account of current user"
@@ -81,9 +80,9 @@ const Navbar = () => {
                                 display: { xs: 'block', md: 'none' },
                             }}
                         >
-                           
+
                             <MenuItem key="1" onClick={handleCloseNavMenu} style={{ width: "200px" }}>
-                                    <Typography textAlign="center">Home</Typography>
+                                <Typography textAlign="center">Home</Typography>
                             </MenuItem>
 
                             <MenuItem key="1" onClick={handleCloseNavMenu} style={{ width: "200px" }}>
@@ -96,29 +95,29 @@ const Navbar = () => {
                                     <ArrowDropDownIcon />
                                 </IconButton>
                             </MenuItem>
-                           
 
-                            
+
+
                         </Menu>
                     </Box>
                     <Typography
                         variant="h6"
                         noWrap
                         component="div"
-                        sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none',color:"black" } }}
+                        sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none', color: "black" } }}
                     >
                         IMAN Xpress
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-                        
-                            <Button
-                                key="3"
-                                onClick={handleCloseNavMenu}
-                                sx={{ my: 2, color: 'black', display: 'block' }}
-                            >
-                               Home
+
+                        <Button
+                            key="3"
+                            onClick={handleCloseNavMenu}
+                            sx={{ my: 2, color: 'black', display: 'block' }}
+                        >
+                            Home
                         </Button>
-                        
+
                         <Button
                             key="4"
                             onClick={handleCloseNavMenu}
@@ -130,16 +129,16 @@ const Navbar = () => {
                         <Button
                             onClick={handleOpenUserMenu}
                             key="5"
-                            
+
                             sx={{ my: 2, color: 'black', display: 'block' }}
                         >
                             Category
 
-                            <IconButton  sx={{ p: 0 }}>
-                                <ArrowDropDownIcon/>
+                            <IconButton sx={{ p: 0 }}>
+                                <ArrowDropDownIcon />
                             </IconButton>
                         </Button>
-                      
+
                     </Box>
 
                     <Box sx={{ flexGrow: 0 }}>
@@ -161,15 +160,15 @@ const Navbar = () => {
                         </Tooltip>
                     </Box>
 
-                    <Box sx={{ flexGrow: 0}}>
+                    <Box sx={{ flexGrow: 0 }}>
                         <Tooltip title="Open settings">
                             <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                                 <AccountCircle />
                             </IconButton>
                         </Tooltip>
                         <Menu
-                            style={{ marginTop: "45px"}}
-                           
+                            style={{ marginTop: "45px" }}
+
                             id="menu-appbar"
                             anchorEl={anchorElUser}
                             anchorOrigin={{
@@ -185,18 +184,18 @@ const Navbar = () => {
                             onClose={handleCloseUserMenu}
                         >
                             {settings.map((setting) => (
-                                <MenuItem key={setting} onClick={handleCloseUserMenu} style={{width:"200px"}}>
+                                <MenuItem key={setting} onClick={handleCloseUserMenu} style={{ width: "200px" }}>
                                     <Typography textAlign="center">{setting}</Typography>
                                 </MenuItem>
                             ))}
 
-                            
+
                         </Menu>
-                        
-                        
+
+
                     </Box>
 
-                   
+
                 </Toolbar>
             </Container>
         </AppBar>
