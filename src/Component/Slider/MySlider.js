@@ -42,7 +42,7 @@ function MySlider() {
     };
     return (
         <>
-        <Slider {...settings} style={{ marginTop: "60px"}}>
+        <Slider {...settings} style={{ marginTop: "19px"}}>
             <div>
                 <div>
                     <Grid container className={myslider.mydiv}>
