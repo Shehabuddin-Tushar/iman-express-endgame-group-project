@@ -1,3 +1,4 @@
+import { Box } from "@mui/material";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Home from "./Pages/Home/Home";
@@ -6,7 +7,7 @@ import Register from "./Pages/Login/Register";
 
 function App() {
   return (
-    <div className="App">
+    <Box>
       <Router>
         <Routes>
           <Route path="/" element={<Home></Home>}></Route>
@@ -15,7 +16,7 @@ function App() {
         </Routes>
       </Router>
 
-    </div>)
+    </Box>)
 
 
 
