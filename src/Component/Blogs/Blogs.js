@@ -47,7 +47,7 @@ const Blogs = () => {
                         </div>
                     </div>
                 <Grid container spacing={2}>
-                    {blogApi.map(blog => <Grid item xs={12} md={4} sm={6} key={blog._id}>
+                    {blogApi.map(blog => <Grid item xs={12} md={4} sm={6} key={blog.id}>
                         <Paper elevation={4}>
                             <div className='blogBox'>
                                 <div>

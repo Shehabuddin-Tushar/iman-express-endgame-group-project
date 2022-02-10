@@ -1,0 +1,186 @@
+/* [Heading Text] */
+.headline h2 {
+  font-family: "Hind Siliguri", sans-serif;
+  font-weight: 600;
+}
+.headline p {
+  font-family: "Hind Siliguri", sans-serif;
+  font-weight: 600;
+  margin-bottom: -50px;
+}
+/* [Heading Text] */
+
+/* Starting the [Filtering Button, Car, Bike, Food, Delivery, Text,] */
+.filter_icon_wrapper {
+  margin: 100px auto;
+}
+.filter_icon_wrapper div {
+  position: relative;
+  display: flex;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+}
+
+.filter_icon_wrapper div h6 {
+  margin-left: 10px;
+  font-weight: 600;
+  font-family: "Hind Siliguri", sans-serif;
+}
+/* Ending the [Filtering Button, Car, Bike, Food, Delivery] */
+
+/* Starting [Left side service advantage Text, Heading, some Description] */
+.description_with_heading h4 {
+  font-family: "Hind Siliguri", sans-serif;
+  font-weight: 600;
+}
+
+.description_with_heading p {
+  margin-top: 10px;
+  font-size: 20px;
+  font-family: "Hind Siliguri", sans-serif;
+}
+
+.filter_icon_wrapper div::before {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -30px;
+  right: -60px;
+  width: 200px;
+  height: 3px;
+  background: rgb(209, 209, 209);
+}
+.bike_box::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 73px;
+  right: -60px;
+  width: 150px;
+  height: 3px;
+  background: rgb(223, 14, 14);
+}
+.delivery_box::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 73px;
+  right: -60px;
+  width: 150px;
+  height: 3px;
+  background: rgb(14, 223, 25);
+}
+.food_box::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 73px;
+  right: -60px;
+  width: 150px;
+  height: 3px;
+  background: rgb(14, 157, 223);
+}
+.car_box::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 73px;
+  right: -60px;
+  width: 150px;
+  height: 3px;
+  background: rgb(94, 65, 226);
+}
+/* Ending the [Left side service advantage Text, Heading, some Description, ::After, ::Before] */
+
+/* Starting the [Right side topic base mobile mockup] */
+.service_img {
+  position: relative;
+}
+.service_img_background {
+  background-size: 100% auto;
+  width: 472px;
+  height: 638px;
+  position: relative;
+  top: -46px;
+  overflow: hidden;
+  float: right;
+  background-position: center top;
+}
+.img {
+  width: 324px;
+  height: auto;
+  position: absolute;
+  top: 85px;
+  right: 41px;
+  border-radius: 15px;
+}
+/* Ending the [Right side topic base mobile mockup] */
+
+/* Starting [Learn More button part with img] */
+.learn_more_btn {
+  margin-top: 50px;
+  position: relative;
+}
+.learn_more_btn button {
+  text-align: left;
+  width: 170px;
+  padding: 10px 25px;
+  border-radius: 7px;
+  background-color: #e83330;
+  color: white;
+  font-family: "Hind Siliguri", sans-serif;
+  border: none;
+  box-shadow: 0 8px 18px 0 rgb(0 0 0 / 18%);
+  cursor: pointer;
+}
+.learn_more_btn button img {
+  width: 25px;
+  margin-left: 25px;
+  position: absolute;
+  top: 8px;
+}
+/* Ending [Learn More button part with img] */
+
+/* Here we do some responsiveness, Note this breakpoint will work for mobile view */
+/* Starting [Mobile Responsive With BreakPoints 600px] */
+@media screen and (max-width: 600px) {
+  /* [filtering icons after before responsive] */
+  .filter_icon_wrapper div::before {
+    display: none;
+  }
+
+  .filter_icon_wrapper div::after {
+    display: none;
+  }
+
+  .delivery_box {
+    margin-top: 40px;
+  }
+  /* [filtering icons after before responsive] */
+
+  /* [topic base images responsive ness] */
+  .service_img_background {
+    margin-top: 50px;
+    margin-left: -75px;
+  }
+  /* [topic base images responsive ness] */
+
+  /* [Topic base description and headline] */
+  .description_with_heading h4 {
+    text-align: center;
+  }
+  .description_with_heading p {
+    text-align: center;
+  }
+  /* [Topic base description and headline] */
+
+  /* [learn more button ] */
+  .learn_more_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  /* [learn more button ] */
+}
+/* Ending [Mobile Responsive With BreakPoints 600px] */

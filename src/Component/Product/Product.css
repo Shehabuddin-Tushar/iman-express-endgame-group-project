@@ -1,0 +1,22 @@
+.img-container{
+    position: relative;
+    overflow: hidden;
+}
+.icon-container{
+    position: absolute;
+    bottom:5px;
+    left: 20%;
+    text-align: center;
+    padding:2px;
+    background-color:white;
+    border-radius: 4px;
+    margin-bottom: -80px;
+    box-shadow: 0 0 3px rgb(0,0,0,0.2);
+    transition:all 0.4s;
+}
+.card:hover .icon-container{
+       margin-bottom: 0px;
+}
+.selected{
+    color: orangered !important;
+}
