@@ -45,7 +45,7 @@ const Footer = () => {
                     <Grid container spacing={2} className='footerPartTwo-Content'>
                         <Grid item xs={12} md={6} sm={6}>
                             
-                            <img src="https://i.ibb.co/jz5WkPr/logo.png" alt="iman-xpress" />
+                            <img src="https://i.ibb.co/pZsbPZj/IMan-Xpress.png" alt="iman-xpress" />
                             
                         </Grid>
                         <Grid item xs={12} md={6} sm={6}>
