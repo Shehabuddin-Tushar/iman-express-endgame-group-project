@@ -16,7 +16,7 @@ const Services = () => {
   const remaining = data.filter((sort) => sort.category === tribe);
   return (
     <Box sx={{ flexGrow: 1, my: "100px" }}>
-      <Box className={style.headline}>
+      <Box className={style.headline} sx={{ textAlign: 'center' }}>
         <Typography variant="h4" style={{ fontWeight: "bold" }}>
           IMan <span style={{ color: "#df0e0e" }}>X</span>press
         </Typography>

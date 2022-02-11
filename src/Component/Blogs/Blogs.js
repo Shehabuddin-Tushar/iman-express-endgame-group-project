@@ -16,7 +16,7 @@ const Blogs = () => {
             id: 2,
             img: "https://i.ibb.co/dt5Hmd5/Baked-chicken-wings-in-the-Asian-style-and-tomatoes-sauce-on-plate.jpg",
             category: "Iman Food",
-            description: "Looking for all the burgers in Dhaka",
+            description: "Looking for all the burgers in Dhaka.",
             date: "January 4, 2022"
         },
         {
@@ -58,7 +58,7 @@ const Blogs = () => {
                                         <span>{blog.category}</span>
                                         <li>{blog.date}</li>
                                     </div>
-                                    <p>{blog.description}</p>
+                                    <p>{blog.description.slice(0,36)}.</p>
                                 </div>
                             </div>
                         </Paper>

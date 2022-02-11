@@ -1,3 +1,4 @@
+import BookmarkIcon from '@mui/icons-material/Bookmark';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
@@ -41,8 +42,8 @@ const Service = ({ service, isLoad }) => {
                             </IconButton>
                         </Box>
                         <Box className='price'>
-                            <Typography variant="h6" sx={{ color: '#fff', fontWeight: 500 }}>
-                                ${price.slice(0, 2)}
+                            <Typography sx={{ color: '#fff' }}>
+                                <BookmarkIcon />
                             </Typography>
                         </Box>
                     </Box>
