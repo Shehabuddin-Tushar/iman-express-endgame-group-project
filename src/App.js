@@ -6,15 +6,15 @@ import Register from "./Pages/Login/Register";
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Router>
-        <Routes>
-          <Route path="/" element={<Home></Home>}></Route>
-          <Route path="/login" element={<Login></Login>}></Route>
-          <Route path="/register" element={<Register></Register>}></Route>
-        </Routes>
+         <Routes>
+             <Route path="/" element={<Home></Home>}></Route>
+             <Route path="/login" element={<Login></Login>}></Route>
+             <Route path="/register" element={<Register></Register>}></Route>
+         </Routes>
       </Router>
-
+      
     </div>)
 
 
