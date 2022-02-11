@@ -1,138 +1,110 @@
-import { Container, Grid } from '@mui/material';
+import { Box, Container, Grid, Typography } from '@mui/material';
 import React from 'react';
-import "./Footer.css"
 
 const Footer = () => {
     return (
-        <footer className='footerContainer'>
+        <Box sx={{ bgcolor: 'rgb(0 0 0)', color: '#706f6d', pt: 10 }}>
             <Container>
                 <Grid container spacing={2}>
-                    <Grid item xs={12} md={3} sm={6}>
-                        <h1>Platform</h1>
-                        <p>Iman Bike</p>
-                        <p>Iman Food</p>
-                        <p>Iman Car</p>
-                        <p>Iman Health</p>
-                        <p>Iman Shop</p>
-                        <p>Iman Parchel</p>
-                        <p>Iman Courier</p>
+                    <Grid item xs={6}>
+                        <Box>
+                            <img className='img' src="https://i.ibb.co/pZsbPZj/IMan-Xpress.png" alt="" /><br />
+                            <Typography variant='body.1'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos velit voluptatum eligendi laboriosam beatae accusantium molestiae illo est distinctio possimus?</Typography>
+                            <ul style={{ display: 'flex', padding: '0px', marginTop: '30px' }}>
+                                <li className='footer-icon'><i className="fas fa-vr-cardboard"></i></li>
+                                <li className='footer-icon'><i className="fab fa-twitter"></i></li>
+                                <li className='footer-icon'><i className="fab fa-facebook-f"></i></li>
+                                <li className='footer-icon'><i className="fab fa-youtube"></i></li>
+                            </ul>
+                            <Typography sx={{ mt: 4 }}>We are in</Typography>
+                            <img style={{ width: '120px' }} src="https://pathao.com/wp-content/uploads/2019/03/Google-Play-footer-.png" alt="" />
+                            <img style={{ width: '120px' }} src="https://pathao.com/wp-content/uploads/2019/03/App-Store-footer-.png" alt="" />
+                        </Box>
                     </Grid>
-                    <Grid item xs={6} md={3} sm={6}>
-                        <h1>Earn</h1>
-                        <p>Earn With Bike</p>
-                        <p>Earn With Care</p>
-                        <p>Earn With Cycle</p>
+                    <Grid item xs={2}>
+                        <Box sx={{ lineHeight: 2 }}>
+                            <Typography variant='h5' sx={{ fontWeight: 'bold', color: 'white' }}>Platform</Typography>
+                            <li>
+                                <Typography variant='body.1'>Home</Typography>
+                            </li>
+                            <li>
+                                <Typography variant='body.1'>Tournaments</Typography>
+                            </li>
+
+                            <li>
+                                <Typography variant='body.1'>About Us</Typography>
+                            </li>
+                            <li>
+                                <Typography variant='body.1'>Reviews</Typography>
+                            </li>
+                            <li>
+                                <Typography variant='body.1'>Contact Us</Typography>
+                            </li>
+                            <li>
+                                <Typography variant='body.1'>Blogs</Typography>
+                            </li>
+                            <li>
+                                <Typography variant='body.1'>VR 3D</Typography>
+                            </li>
+
+                        </Box>
                     </Grid>
-                    <Grid item xs={6} md={3} sm={6}>
-                        <h1>Merchant</h1>
-                        <p>Courier Merchant SignUp</p>
-                        <p>Courier Merchant LogIn</p>
-                        <p>Care Admiral </p>
-                        <p>Resto Merchant SignUp</p>
-                        <p>Resto Merchant LogIn</p>
+                    <Grid item xs={2}>
+                        <Box sx={{ lineHeight: 2 }}>
+                            <Typography variant='h5' sx={{ fontWeight: 'bold', color: 'white' }}>Merchant</Typography>
+                            <li>
+                                <Typography variant='body.1'>Create Account</Typography>
+                            </li>
+                            <li>
+                                <Typography variant='body.1'>Subscription</Typography>
+                            </li>
+
+                            <li>
+                                <Typography variant='body.1'>Affiliat</Typography>
+                            </li>
+                            <li>
+                                <Typography variant='body.1'>Site Condition</Typography>
+                            </li>
+                            <li>
+                                <Typography variant='body.1'>IMAN Shop</Typography>
+                            </li>
+                            <li>
+                                <Typography variant='body.1'>IMAN Madicine</Typography>
+                            </li>
+                            <li>
+                                <Typography variant='body.1'>IMAN Food</Typography>
+                            </li>
+
+                        </Box>
                     </Grid>
-                    <Grid item xs={6} md={3} sm={6}>
-                        <h1>Help</h1>
-                        <p>Walk in Support Centers</p>
-                        <p>User Help Centers</p>
-                        <p>Rider Help Center</p>
-                        <p>Merchant Help Center</p>
-                        <p>Helpline 09678100800</p>
+                    <Grid item xs={2}>
+                        <Box sx={{ lineHeight: 2 }}>
+                            <Typography variant='h5' sx={{ fontWeight: 'bold', color: 'white' }}>Information</Typography>
+                            <li>
+                                <Typography variant='body.1'>FAQ</Typography>
+                            </li>
+                            <li>
+                                <Typography variant='body.1'>Site Maps</Typography>
+                            </li>
+
+                            <li>
+                                <Typography variant='body.1'>Privacy Policy</Typography>
+                            </li>
+                            <li>
+                                <Typography variant='body.1'>Contact Us</Typography>
+                            </li>
+
+                        </Box>
                     </Grid>
                 </Grid>
-                <div className='footerPartTwo'>
-                    <hr/>
-                    <Grid container spacing={2} className='footerPartTwo-Content'>
-                        <Grid item xs={12} md={6} sm={6}>
-                            <h3>Iman Express logo</h3>
-                        </Grid>
-                        <Grid item xs={12} md={6} sm={6}>
-                            <div className='partTwo-Two'>
-                                <p>About Us</p>
-                                <p>Blogs</p>
-                                <p>Contact</p>
-                                <p>Bussiness</p>
-                            </div>
-                        </Grid>
-                    </Grid>
-                    <hr/>
-                </div>
-                <div className='footerPartThree'>
-                    <Grid container spacing={2} className='footerPartThree-Content'>
-                        <Grid item xs={12} md={6} sm={6}>
-                            <div>
-                                <Grid container spacing={2}>
-                                    <Grid item xs={12} md={4} sm={12}>
-                                        <div>
-                                            <p>User App</p>
-                                            <button className='googlePlayBtn'>
-                                            <i class="fab fa-google-play"></i>
-                                            <div>
-                                                <p>GETITON</p>
-                                                <p>Google Play</p>
-                                            </div>
-                                        </button>
-                                        </div>
-                                    </Grid>
-                                    <Grid item xs={12} md={4} sm={12}>
-                                        <button className='googlePlayBtn'>
-                                            <i class="fab fa-apple"></i>
-                                            <div>
-                                                <p>Download</p>
-                                                <p>App Store</p>
-                                            </div>
-                                        </button>
-                                    </Grid>
-                                    <Grid item xs={12} md={4} sm={12}>
-                                        <p>Drive App</p>
-                                        <button className='googlePlayBtn'>
-                                            <i class="fab fa-google-play"></i>
-                                            <div>
-                                                <p>GETITON</p>
-                                                <p>Google Play</p>
-                                            </div>
-                                        </button>
-                                    </Grid>
-                                </Grid>
-                            </div>
-                        </Grid>
-                        <Grid item xs={12} md={6} sm={6}>
-                            <div>
-                            <Grid container spacing={2}>
-                                    <Grid item xs={12} md={6} sm={6}>
-                                        <div className="footerIcons">
-                                        <i class="fab fa-facebook-f"></i>
-                                        <i class="fab fa-twitter"></i>
-                                        <i class="fab fa-instagram"></i>
-                                        <i class="fab fa-chrome"></i>
-                                        </div>
-                                    </Grid>
-                                    <Grid item xs={12} md={6} sm={6}>
-                                        <div className="footerIcons-Two">
-                                            <p>Region</p>
-                                            <i class="fas fa-basketball-ball"></i>EN(BD)
-                                        </div>
-                                    </Grid>
-                                </Grid>     
-                            </div>
-                        </Grid>
-                    </Grid>
-                    <div className='footerPartFour'>
-                        <Grid container spacing={2}>
-                            <Grid item xs={6} md={6} sm={6}>
-                                <p>ImanExpress &copy; 2021 copy right reserved</p>
-                            </Grid>
-                            <Grid item xs={6} md={3} sm={6}>
-                                <p>Team & conditions</p>
-                            </Grid>
-                            <Grid item xs={6} md={3} sm={6}>
-                                <p style={{textAlign: "right"}}>Privacy Policy</p>
-                            </Grid>
-                        </Grid>
-                    </div>
-                </div>
+                <Box sx={{ py: 6 }}>
+                    <Box sx={{ display: 'flex', justifyContent: 'space-between', mt: 2, borderTop: '1px solid white' }}>
+                        <Typography variant='body.1' sx={{ pt: 2 }}>2021-2030 - IMAN Xpress</Typography>
+                        <Typography variant='body.1' sx={{ pt: 2 }}>All Rights Reserved.</Typography>
+                    </Box>
+                </Box>
             </Container>
-        </footer>
+        </Box>
     );
 };
 
