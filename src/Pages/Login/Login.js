@@ -92,6 +92,17 @@ const Login = () => {
                     </Link>
                   </Typography>
                 </Box>{" "}
+                <Divider sx={{ mt: 5 }} />
+                <Typography variant="h6" sx={{ my: 2 }}>
+                  Alternative Login
+                </Typography>
+                <Button
+                  sx={{ width: "100%" }}
+                  variant="outlined"
+                  color="warning"
+                >
+                  Google Login
+                </Button>
               </form>
             </Paper>
           </Grid>
