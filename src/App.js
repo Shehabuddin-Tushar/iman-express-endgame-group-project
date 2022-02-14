@@ -12,6 +12,7 @@ import Login from "./Pages/Login/Login";
 import Register from "./Pages/Login/Register";
 
 import "./App.css";
+import BlogsHome from "./Component/Blogs/BlogsHome/BlogsHome";
 function App() {
   return (
     <div>
@@ -20,6 +21,7 @@ function App() {
              <Route path="/" element={<Home></Home>}></Route>
              <Route path="/login" element={<Login></Login>}></Route>
              <Route path="/register" element={<Register></Register>}></Route>
+             <Route path="/moreBlogs" element={<BlogsHome></BlogsHome>}></Route>
          </Routes>
       </BrowserRouter>
       

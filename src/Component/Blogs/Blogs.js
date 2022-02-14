@@ -2,6 +2,7 @@ import React from 'react';
 import Container from '@mui/material/Container';
 import { Grid, Paper } from '@mui/material';
 import "./Blogs.css"
+import { Link } from 'react-router-dom';
 
 const Blogs = () => {
     const blogApi = [
@@ -39,12 +40,12 @@ const Blogs = () => {
                 <div>
                     <div className='moreBlogs'>
                         <h1>From Blogs</h1>
-                        <div>
+                        <Link to="/moreBlogs">
                             <button className='allBlogsBtn'>
                             <p>Go To Blogs</p>
                             <i><i class="fas fa-arrow-right"></i></i>
                             </button>
-                        </div>
+                        </Link>
                     </div>
                 <Grid container spacing={2}>
                     {blogApi.map(blog => <Grid item xs={12} md={4} sm={6} key={blog.id}>
