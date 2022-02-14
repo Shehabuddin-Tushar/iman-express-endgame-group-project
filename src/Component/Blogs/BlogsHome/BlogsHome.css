@@ -34,6 +34,7 @@
     text-align: left;
     padding: 40px;
 }
+
 .blogBoxTwo .blogBoxContent p{
     color: rgba(0, 0, 0, 0.644);
 }
@@ -43,6 +44,27 @@
 }
 
 .blogBoxTwo:hover .blogBoxContent span{
+    color: orangered;
+}
+
+.blogBoxThree{
+    border: 0;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+.blogBoxThree .blogBoxContent{
+    text-align: left;
+    padding: 40px;
+}
+.blogBoxThree .blogBoxContent p{
+    color: rgba(0, 0, 0, 0.644);
+}
+.blogBoxThree .blogBoxContent .blogTitle{
+    display: flex;
+    justify-content: space-between;
+}
+
+.blogBoxThree:hover .blogBoxContent span{
     color: orangered;
 }
 

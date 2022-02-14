@@ -33,6 +33,7 @@
 .blogBox{
     border: 0;
     border-radius: 5px;
+    height: 400px;
     transition: all 0.3s ease-in-out;
 }
 .blogBox .blogBoxContent{
