@@ -1,0 +1,119 @@
+.dashboard_heading_wrapper {
+  margin: 100px 0px;
+}
+.dashboard_welcome_wrapper {
+  background-color: rgba(255, 48, 48, 0.08);
+  padding: 15px;
+  border-radius: 15px;
+}
+.dashboard_text {
+  text-align: left;
+}
+.dashboard_text h2 {
+  font-weight: 700;
+}
+.dashboard_text span {
+  color: #ff3030;
+}
+.dashboard_card_wrapper {
+  position: relative;
+}
+.dashboard_card_wrapper img {
+  height: 248px;
+  border-radius: 15px;
+  box-shadow: rgba(53, 53, 53, 0.24) 0px 8px 16px 0px;
+}
+.dashboard_card_overly {
+  position: absolute;
+  transform: translate(3%, -100%);
+  height: 248px;
+  width: 330px;
+  border-radius: 15px;
+  background-color: rgba(0, 0, 0, 0.548);
+}
+.cards {
+  margin-bottom: 60px;
+}
+.card_text {
+  position: absolute;
+  top: 120px;
+  padding: 5px 25px;
+  text-align: left;
+}
+.card_text h3 {
+  font-weight: 700;
+  color: rgb(255, 255, 255);
+}
+.card_text p {
+  font-weight: 500;
+  color: rgb(255, 255, 255);
+}
+.chart_card_wrapper {
+  padding: 20px;
+  border-radius: 15px;
+  width: 100%;
+  height: 85%;
+  box-shadow: rgba(122, 122, 122, 0.24) 0px 8px 12px 0px;
+}
+
+.chart_card_wrapper h2 {
+  margin-bottom: -70px;
+}
+.card_heading_text_wrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 15px 5px;
+  border-radius: 10px;
+  box-shadow: rgba(122, 122, 122, 0.24) 0px 8px 10px 0px;
+  border: 2px solid rgba(122, 122, 122, 0.24);
+}
+.card_heading_text {
+  text-align: left;
+}
+.card_heading_text h6 {
+  font-weight: 700;
+}
+.card_heading_text div img {
+  width: 25px;
+  background-color: #5cd15c5c;
+  padding: 3px;
+  border-radius: 50%;
+  margin-right: 3px;
+}
+.card_heading_text div span {
+  color: rgb(158, 158, 158);
+}
+.card_heading_text h3 {
+  margin-top: 7px;
+  font-weight: 700;
+}
+@media screen and (max-width: 600px) {
+  .cards {
+    margin-top: -35px;
+    margin-bottom: 25px;
+  }
+  .card_heading_text_wrapper {
+    margin-bottom: 10px;
+  }
+  .charts {
+    display: none;
+  }
+  .dashboard_card_wrapper {
+    margin-top: 20px;
+    padding: 5px;
+  }
+  .dashboard_card_wrapper img {
+    height: 248px;
+    border-radius: 15px;
+  }
+  .dashboard_card_overly {
+    transform: translate(4%, -100%);
+  }
+  .card_heading_text_wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
