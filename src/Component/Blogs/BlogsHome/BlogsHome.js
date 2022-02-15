@@ -1,5 +1,6 @@
 import { Container, Grid, Paper } from '@mui/material';
 import React from 'react';
+import NewsRoom from '../NewsRoom/NewsRoom';
 import ProductUpdate from '../ProductUpdate/ProductUpdate';
 import './BlogsHome.css';
 
@@ -83,9 +84,11 @@ const BlogsHome = () => {
                             </Paper>)}
                         </Grid>
                     </Grid>
-                    <ProductUpdate></ProductUpdate>
+
                 </Container>
             </div>
+            <ProductUpdate></ProductUpdate>
+            <NewsRoom></NewsRoom>
         </div>
     );
 };
