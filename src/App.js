@@ -13,6 +13,7 @@ import Register from "./Pages/Login/Register";
 
 import "./App.css";
 import BlogsHome from "./Component/Blogs/BlogsHome/BlogsHome";
+
 function App() {
   return (
     <div>
@@ -23,6 +24,7 @@ function App() {
              <Route path="/register" element={<Register></Register>}></Route>
              <Route path="/moreBlogs" element={<BlogsHome></BlogsHome>}></Route>
          </Routes>
+         <Footer></Footer>
       </BrowserRouter>
       
     </div>)

@@ -2,6 +2,7 @@ import { Container, Grid, Paper } from '@mui/material';
 import React from 'react';
 import NewsRoom from '../NewsRoom/NewsRoom';
 import ProductUpdate from '../ProductUpdate/ProductUpdate';
+import Promotions from '../Promotions/Promotions';
 import './BlogsHome.css';
 
 const BlogsHome = () => {
@@ -51,7 +52,7 @@ const BlogsHome = () => {
             <div className='blogsHomeContainer-PartTwo'>
                 <Container>
                     <Grid container spacing={2}>
-                        <Grid item xs={12} md={6} sm={6} >
+                        <Grid item xs={12} md={6} sm={12} >
                             <Paper elevation={4}>
                                 <div className='blogBoxThree'>
                                     <div>
@@ -67,7 +68,7 @@ const BlogsHome = () => {
                                 </div>
                             </Paper>
                         </Grid>
-                        <Grid item xs={12} md={6} sm={6}>
+                        <Grid item xs={12} md={6} sm={12}>
                             {blogApi.map(blog => <Paper elevation={4}>
                                 <div className='blogBoxTwo'>
                                     <div className='blogBoxContent'>
@@ -88,6 +89,7 @@ const BlogsHome = () => {
                 </Container>
             </div>
             <ProductUpdate></ProductUpdate>
+            <Promotions></Promotions>
             <NewsRoom></NewsRoom>
         </div>
     );

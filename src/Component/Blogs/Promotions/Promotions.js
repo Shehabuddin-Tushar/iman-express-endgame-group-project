@@ -3,7 +3,7 @@ import Container from '@mui/material/Container';
 import { Grid, Paper } from '@mui/material';
 import { Link } from 'react-router-dom';
 
-const NewsRoom = () => {
+const Promotions = () => {
     const blogApiThree = [
         {
             id: 1,
@@ -18,13 +18,6 @@ const NewsRoom = () => {
             category: "Newsroom",
             description: "Manage transportation for your employees with Iman Xpress For Business  ",
             date: "Mar 4, 2022"
-        },
-        {
-            id: 3,
-            img: "https://pathao.com/wp-content/uploads/2021/07/FreeTreat_Blog-4-348x224.png",
-            category: "Newsroom",
-            description: "Moving Safely is the New Normal By Hussain M Elius ",
-            date: "January 9, 2022"
         }
     ]
     return (
@@ -32,7 +25,7 @@ const NewsRoom = () => {
             <Container>
                 <div>
                     <div className='moreBlogs'>
-                        <h1>News room</h1>
+                        <h1>Promo-tions</h1>
                         <Link to="/moreBlogs">
                             <button className='allBlogsBtn'>
                             <p>View all</p>
@@ -41,7 +34,7 @@ const NewsRoom = () => {
                         </Link>
                     </div>
                 <Grid container spacing={2}>
-                    {blogApiThree.map(blog => <Grid item xs={12} md={4} sm={6} key={blog.id}>
+                    {blogApiThree.map(blog => <Grid item xs={12} md={6} sm={12} key={blog.id}>
                         <Paper elevation={4}>
                             <div className='blogBox'>
                                 <div>
@@ -59,9 +52,10 @@ const NewsRoom = () => {
                     </Grid>)}
                     </Grid>
                 </div>
+                <hr style={{marginTop: "80px"}}/>
             </Container>
         </div>
     );
 };
 
-export default NewsRoom;
+export default Promotions;

@@ -59,6 +59,7 @@ const ProductUpdate = () => {
                     </Grid>)}
                     </Grid>
                 </div>
+                <hr style={{marginTop: "80px"}}/>
             </Container>
         </div>
     );
