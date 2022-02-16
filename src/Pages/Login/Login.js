@@ -12,8 +12,10 @@ import { Box, color } from "@mui/system";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import useFirebase from "../../Hooks/useFirebase";
 
 const Login = () => {
+  const { googleLogin } = useFirebase();
   const { register, handleSubmit, reset } = useForm();
   const onSubmit = (data) => {
     console.log(data);
@@ -100,6 +102,7 @@ const Login = () => {
                   sx={{ width: "100%" }}
                   variant="outlined"
                   color="warning"
+                  onClick={googleLogin}
                 >
                   Google Login
                 </Button>
