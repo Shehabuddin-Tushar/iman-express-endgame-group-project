@@ -1,6 +1,7 @@
 import {
   Alert,
   Button,
+  Checkbox,
   Container,
   Divider,
   FormControl,
@@ -106,10 +107,8 @@ const Rider = () => {
                       {...register("City *")}
                     />
                     <Box sx={{ textAlign: "left", mt: 2 }}>
-                      <Typography sx={{ textAlign: "left" }}>
-                        Service(s) you want to provide
-                      </Typography>{" "}
                       <FormControl>
+                        <FormLabel>Service(s) you want to provide</FormLabel>
                         <RadioGroup
                           name="rider"
                           value={value}
@@ -118,79 +117,66 @@ const Rider = () => {
                           <Box
                             sx={{
                               display: "flex",
-                              justifyContent: "space-around",
+                              justifyContent: "space-between",
                             }}
                           >
-                            <Box
-                              sx={{
-                                display: "flex",
-                                flexDirection: "column",
-                              }}
-                            >
-                              <FormControlLabel
-                                value="bikeRider"
-                                {...register("bikeRider")}
-                                control={
-                                  <Radio
-                                    sx={{
-                                      "&.Mui-checked": {
-                                        color: pink[600],
-                                      },
-                                    }}
-                                  />
-                                }
-                                label="Bike Rider"
-                              />
-                              <FormControlLabel
-                                value="foodDelivery"
-                                {...register("foodDelivery")}
-                                control={
-                                  <Radio
-                                    sx={{
-                                      "&.Mui-checked": {
-                                        color: pink[600],
-                                      },
-                                    }}
-                                  />
-                                }
-                                label="Food Delivery"
-                              />
-                            </Box>
-                            <Box
-                              sx={{
-                                display: "flex",
-                                flexDirection: "column",
-                              }}
-                            >
-                              <FormControlLabel
-                                value="parcelDelivery"
-                                {...register("parcelDelivery")}
-                                control={
-                                  <Radio
-                                    sx={{
-                                      "&.Mui-checked": {
-                                        color: pink[600],
-                                      },
-                                    }}
-                                  />
-                                }
-                                label="Parcel Delivery"
-                              />
-                              <FormControlLabel
-                                value="medicineDelivery"
-                                {...register("medicineDelivery")}
-                                control={
-                                  <Radio
-                                    sx={{
-                                      "&.Mui-checked": {
-                                        color: pink[600],
-                                      },
-                                    }}
-                                  />
-                                }
-                                label="Medicine Delivery"
-                              />
-                            </Box>
+                            <FormControlLabel
+                              value="bikeRider"
+                              {...register("bikeRider")}
+                              control={
+                                <Checkbox
+                                  sx={{
+                                    "&.Mui-checked": {
+                                      color: pink[600],
+                                    },
+                                  }}
+                                />
+                              }
+                              label="Bike Rider"
+                            />
+                            <FormControlLabel
+                              value="foodDelivery"
+                              {...register("foodDelivery")}
+                              control={
+                                <Checkbox
+                                  sx={{
+                                    "&.Mui-checked": {
+                                      color: pink[600],
+                                    },
+                                  }}
+                                />
+                              }
+                              label="Food Delivery"
+                            />
+
+                            <FormControlLabel
+                              value="parcelDelivery"
+                              {...register("parcelDelivery")}
+                              control={
+                                <Checkbox
+                                  sx={{
+                                    "&.Mui-checked": {
+                                      color: pink[600],
+                                    },
+                                  }}
+                                />
+                              }
+                              label="Parcel Delivery"
+                            />
+                            <FormControlLabel
+                              value="medicineDelivery"
+                              {...register("medicineDelivery")}
+                              control={
+                                <Checkbox
+                                  sx={{
+                                    "&.Mui-checked": {
+                                      color: pink[600],
+                                    },
+                                  }}
+                                />
+                              }
+                              label="Medicine Delivery"
+                            />
                           </Box>
                         </RadioGroup>
                       </FormControl>
@@ -201,7 +187,7 @@ const Rider = () => {
                       Register
                     </Button>
                   </Box>
-                  <Typography color="gray" variant="subtitle" sx={{ mt: 2 }}>
+                  <Typography color="gray" variant="subtitle">
                     By clicking this button, you are agreeing to{" "}
                     <Link to="/" style={{ color: red[700] }}>
                       IMAN Xpress terms and privacy policy
