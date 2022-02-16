@@ -7,21 +7,21 @@ const ProductUpdate = () => {
     const blogApiTwo = [
         {
             id: 1,
-            img: "https://pathao.com/wp-content/uploads/2021/10/Insurance-Safety-Pathao_-1536x715-1-348x224.png",
+            img: "https://i.ibb.co/41S2W4Z/product-Update-Pic-One-Edit.jpg",
             category: "Bangladesh",
             description: "Safe Trips, Insured! ",
             date: "Feb 01, 2021"
         },
         {
             id: 2,
-            img: "https://pathao.com/wp-content/uploads/2021/08/Blog-1-348x224.jpg",
+            img: "https://i.ibb.co/Qpjhtwg/product-Update-Pic-Two.jpg",
             category: "Iman Bike",
             description: "Now You Can Send Voice Messages! ",
             date: "Mar 4, 2022"
         },
         {
             id: 3,
-            img: "https://pathao.com/wp-content/uploads/2021/07/FreeTreat_Blog-4-348x224.png",
+            img: "https://i.ibb.co/8KPpCbG/product-Update-Pic-Three.jpg",
             category: "Iman Food",
             description: "Iman Food Presents Food’s On Me",
             date: "January 9, 2022"

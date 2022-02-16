@@ -7,16 +7,16 @@ const Promotions = () => {
     const blogApiThree = [
         {
             id: 1,
-            img: "https://pathao.com/wp-content/uploads/2021/10/Insurance-Safety-Pathao_-1536x715-1-348x224.png",
+            img: "https://i.ibb.co/ZXpjq5m/promotion-Pic-One.jpg",
             category: "Bangladesh",
-            description: "Pay Later feature is now on Iman Xpress Rides!  ",
+            description: "You can enjoy Iman Xpress Points benefits from Nitol Electronics now!  ",
             date: "Feb 01, 2021"
         },
         {
             id: 2,
-            img: "https://pathao.com/wp-content/uploads/2021/08/Blog-1-348x224.jpg",
+            img: "https://i.ibb.co/2MqVfdM/promotion-Pic-Two.jpg",
             category: "Newsroom",
-            description: "Manage transportation for your employees with Iman Xpress For Business  ",
+            description: "Time for a home renovation! ",
             date: "Mar 4, 2022"
         }
     ]

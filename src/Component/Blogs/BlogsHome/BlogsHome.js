@@ -10,26 +10,37 @@ const BlogsHome = () => {
     const blogApi = [
         {
             id: 1,
-            img: "https://pathao.com/wp-content/uploads/2021/10/Insurance-Safety-Pathao_-1536x715-1-348x224.png",
+            img: "https://i.ibb.co/1ngkZw4/blog-Home-Pic-Three.jpg",
             category: "Iman Rider",
             description: "Iman Xpress Send your cart to food update",
             date: "Jan 1, 2022"
         },
         {
             id: 2,
-            img: "https://pathao.com/wp-content/uploads/2021/08/Blog-1-348x224.jpg",
+            img: "https://i.ibb.co/rpCC80c/blog-Home-Pic-Four.jpg",
             category: "Iman Food",
             description: "Looking for all the burgers in Dhaka",
             date: "Jan 4, 2022"
         },
         {
             id: 3,
-            img: "https://pathao.com/wp-content/uploads/2021/07/FreeTreat_Blog-4-348x224.png",
+            img: "https://i.ibb.co/2McHBr6/blog-Home-Pic-Five.jpg",
             category: "Iman Courier",
             description: "Iman Xpress Send courier now more affordable!",
             date: "Jan 9, 2022"
         }
     ]
+
+    // https://ibb.co/WVz0nBW
+    // https://ibb.co/2ncQ9SR
+    // https://ibb.co/xgh9R6g
+    // https://ibb.co/NCdvc5S
+    // https://ibb.co/dpddCML
+
+    // https://ibb.co/c82Vd9v
+    // https://ibb.co/jbZqsXN
+    // https://ibb.co/Qcg491x
+    // https://ibb.co/P6CpCGP
     return (
         <div>
             <Container className='blogsHomeContainer'>
@@ -44,7 +55,7 @@ const BlogsHome = () => {
                     </Grid>
                     <Grid item xs={12} md={6} sm={6}>
                         <div className='blogsHomeTitle-PartTwo'>
-                            <img src='https://i.ibb.co/wznDZgT/home-Blog-Pic-Three.jpg' alt='Empty!' style={{width:"300px"}}/>
+                            <img src='https://i.ibb.co/tcNrn3c/blog-Home-Pic-One-1.png' alt='Empty!' style={{width:"300px", height: "200px"}}/>
                         </div>
                     </Grid>
                 </Grid>
@@ -56,7 +67,7 @@ const BlogsHome = () => {
                             <Paper elevation={4}>
                                 <div className='blogBoxThree'>
                                     <div>
-                                        <img src='https://pathao.com/wp-content/uploads/2021/06/Blog-3-538x343.jpg' alt="Empty!" style={{width:"100%", height: "400px", borderRadius: "5px"}}/>
+                                        <img src='https://i.ibb.co/G5PwPQ8/blog-Home-Pic-Two.jpg' alt="Empty!" style={{width:"100%", height: "400px", borderRadius: "5px"}}/>
                                     </div>
                                     <div className='blogBoxContent'>
                                         <div className='blogTitle'>
