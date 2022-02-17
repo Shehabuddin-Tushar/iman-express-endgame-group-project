@@ -3,3 +3,7 @@
     backdrop-filter: blur(2px);
     box-shadow: 0 0 3px rgb(0,0,0,0.1) !important;
 }
+.responsive {
+    width: 100%;
+    height: auto;
+  }
