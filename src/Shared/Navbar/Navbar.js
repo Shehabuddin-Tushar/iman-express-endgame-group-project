@@ -14,9 +14,10 @@ import Toolbar from "@mui/material/Toolbar";
 import Tooltip from "@mui/material/Tooltip";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
+import { Link } from "react-router-dom";
 import styles from "./Navbar.module.css";
 
-const pages = ["Products", "Pricing", "Blog"];
+// const pages = ["Products", "Pricing", "Blog"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 const Navbar = () => {
@@ -131,6 +132,13 @@ const Navbar = () => {
               sx={{ my: 2, color: "black", display: "block" }}
             >
               Blog
+            </Button>
+            <Button
+              key="4"
+              onClick={handleCloseNavMenu}
+              sx={{ my: 2, color: "black", display: "block" }}
+            >
+              <Link to="/dashboard">Dashboard</Link>
             </Button>
 
             <Button
