@@ -42,7 +42,7 @@ const Navbar = () => {
     <AppBar position="sticky" sx={{ boxShadow: 0 }} className={styles.navbar}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <img src="https://i.ibb.co/jz5WkPr/logo.png" alt="" />
+          <img src="https://i.ibb.co/jz5WkPr/logo.png" alt="" className={styles.logooursite} />
           <Box
             sx={{
               flexGrow: 1,
