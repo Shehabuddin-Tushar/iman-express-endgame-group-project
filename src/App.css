@@ -6,6 +6,7 @@
   /* background-size: cover; */
   height: "100%";
 }
+<<<<<<< HEAD
 
 /* width */
 ::-webkit-scrollbar {
@@ -26,3 +27,19 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #555; 
 }
+=======
+.footer-icon{
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: rgb(48, 47, 47);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+.img{
+  margin-left: -28px;
+}
+>>>>>>> 688cb5192792b180f9dd8d936edd3c62481fe8ea
