@@ -12,14 +12,23 @@ import { Box } from "@mui/system";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import useFirebase from "../../Hooks/useFirebase";
 
 const Register = () => {
   const [error, setError] = useState(false);
   const [success, setSuccess] = useState(false);
+  const { registerUser } = useFirebase();
   const { register, handleSubmit, reset } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data);
+    if (data.password === data.confirmPassword) {
+      registerUser(data.email, data.password, data.name);
+      setError(false);
+      setSuccess(true);
+      reset();
+    } else {
+      setError(true);
+    }
   };
 
   return (
@@ -98,7 +107,12 @@ const Register = () => {
                 >
                   {" "}
                   <Box sx={{ textAlign: "left" }}>
-                    <Button variant="outlined" color="warning" type="submit">
+                    <Button
+                      onClick={registerUser}
+                      variant="outlined"
+                      color="warning"
+                      type="submit"
+                    >
                       Register
                     </Button>
                   </Box>
