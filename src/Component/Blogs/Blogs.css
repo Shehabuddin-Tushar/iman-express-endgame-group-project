@@ -13,6 +13,9 @@
     align-items: center;
     padding: 40px 0px;
 }
+.moreBlogs a{
+    text-decoration: none;
+}
 .moreBlogs .allBlogsBtn{
     display: flex;
     justify-content: space-between;
@@ -30,6 +33,7 @@
 .blogBox{
     border: 0;
     border-radius: 5px;
+    height: 400px;
     transition: all 0.3s ease-in-out;
 }
 .blogBox .blogBoxContent{
