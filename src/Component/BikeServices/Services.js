@@ -16,7 +16,7 @@ const Services = () => {
   const remaining = data.filter((sort) => sort.category === tribe);
   return (
     <Box sx={{ flexGrow: 1, my: "100px" }}>
-      <Box className={style.headline}>
+      <Box className={style.headline} sx={{ textAlign: 'center' }}>
         <Typography variant="h4" style={{ fontWeight: "bold" }}>
           IMan <span style={{ color: "#df0e0e" }}>X</span>press
         </Typography>
@@ -40,14 +40,7 @@ const Services = () => {
             src=" https://pathao.com/bn/wp-content/themes/webpathao/assets/images/menu/rides.png?v=26.4.20"
             alt=""
           />
-          <Typography variant="h6">BIke</Typography>
-        </Box>
-        <Box onClick={() => setTribe("C")} className={style.car_box}>
-          <img
-            src="https://pathao.com/bn/wp-content/themes/webpathao/assets/images/menu/cars.png?v=26.4.20"
-            alt=""
-          />
-          <Typography variant="h6">Car</Typography>
+          <Typography variant="h6">Ride sharing</Typography>
         </Box>
         <Box onClick={() => setTribe("F")} className={style.food_box}>
           <img
@@ -56,12 +49,20 @@ const Services = () => {
           />
           <Typography variant="h6">Food</Typography>
         </Box>
+        <Box onClick={() => setTribe("C")} className={style.car_box}>
+          <img
+            src="https://pathao.com/bn/wp-content/themes/webpathao/assets/images/menu/cars.png?v=26.4.20"
+            alt=""
+          />
+          <Typography variant="h6">Super shop</Typography>
+        </Box>
+        
         <Box onClick={() => setTribe("D")} className={style.delivery_box}>
           <img
             src="https://pathao.com/bn/wp-content/themes/webpathao/assets/images/menu/parcel.png?v=26.4.20"
             alt=""
           />
-          <Typography variant="h6">Delivery</Typography>
+          <Typography variant="h6">Medicine</Typography>
         </Box>
       </Box>
       <Container fixed>
