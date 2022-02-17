@@ -1,54 +1,40 @@
 import React from 'react';
 import Container from '@mui/material/Container';
 import { Grid, Paper } from '@mui/material';
-import "./Blogs.css"
 import { Link } from 'react-router-dom';
 
-const Blogs = () => {
-    const blogApi = [
+const Promotions = () => {
+    const blogApiThree = [
         {
             id: 1,
-            img: "https://i.ibb.co/TYGPCH2/Food-delivery-boy-driving-scooter-with-box-with-food-and-wearing-mask.jpg",
-            category: "Iman Rider",
-            description: "Iman Xpress Send your cart to food update",
-            date: "January 1, 2022"
+            img: "https://i.ibb.co/ZXpjq5m/promotion-Pic-One.jpg",
+            category: "Bangladesh",
+            description: "You can enjoy Iman Xpress Points benefits from Nitol Electronics now!  ",
+            date: "Feb 01, 2021"
         },
         {
             id: 2,
-            img: "https://i.ibb.co/dt5Hmd5/Baked-chicken-wings-in-the-Asian-style-and-tomatoes-sauce-on-plate.jpg",
-            category: "Iman Food",
-            description: "Looking for all the burgers in Dhaka.",
-            date: "January 4, 2022"
-        },
-        {
-            id: 3,
-            img: "https://i.ibb.co/wznDZgT/home-Blog-Pic-Three.jpg",
-            category: "Iman Courier",
-            description: "Iman Xpress Send courier now more affordable!",
-            date: "January 9, 2022"
+            img: "https://i.ibb.co/2MqVfdM/promotion-Pic-Two.jpg",
+            category: "Newsroom",
+            description: "Time for a home renovation! ",
+            date: "Mar 4, 2022"
         }
     ]
-    // hosted img link 
-    // https://ibb.co/4VbBwtc
-    // https://ibb.co/7Q10kw1
-    // https://ibb.co/9c0yMqg
-
-
     return (
         <div className='blogContainer'>
             <Container>
                 <div>
                     <div className='moreBlogs'>
-                        <h1>From Blogs</h1>
+                        <h1>Promo-tions</h1>
                         <Link to="/moreBlogs">
                             <button className='allBlogsBtn'>
-                            <p>Go To Blogs</p>
+                            <p>View all</p>
                             <i><i class="fas fa-arrow-right"></i></i>
                             </button>
                         </Link>
                     </div>
                 <Grid container spacing={2}>
-                    {blogApi.map(blog => <Grid item xs={12} md={4} sm={6} key={blog.id}>
+                    {blogApiThree.map(blog => <Grid item xs={12} md={6} sm={12} key={blog.id}>
                         <Paper elevation={4}>
                             <div className='blogBox'>
                                 <div>
@@ -59,16 +45,17 @@ const Blogs = () => {
                                         <span>{blog.category}</span>
                                         <li>{blog.date}</li>
                                     </div>
-                                    <p>{blog.description.slice(0,36)}.</p>
+                                    <p>{blog.description}</p>
                                 </div>
                             </div>
                         </Paper>
                     </Grid>)}
                     </Grid>
                 </div>
+                <hr style={{marginTop: "80px"}}/>
             </Container>
         </div>
     );
 };
 
-export default Blogs;
+export default Promotions;

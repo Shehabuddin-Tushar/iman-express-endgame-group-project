@@ -41,12 +41,12 @@ function Merchant() {
         }}
       >
         <Box>
-          <Box sx={{ py: 5 }}>
+          <Box sx={{ py: 5,textAlign:"center" }}>
             {" "}
             <Typography variant="h4" fontWeight="bold">
               Sign Up
             </Typography>
-            <Typography variant="subtitle">
+            <Typography variant="subtitle" >
               Start selling product using IMAN Xpress
             </Typography>
           </Box>
