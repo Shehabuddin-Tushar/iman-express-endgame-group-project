@@ -5,7 +5,6 @@ const Footer = () => {
   return (
     <Box sx={{ bgcolor: "rgb(0 0 0)", color: "#706f6d", pt: 10 }}>
       <Container>
-        <h2>Fahim</h2>
         <Grid container spacing={2}>
           <Grid item xs={6}>
             <Box>
