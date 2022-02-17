@@ -40,6 +40,10 @@
     text-align: left;
     padding: 40px;
 }
+.blogBoxContent a{
+    text-decoration: none;
+    color: #000000;
+}
 .blogBox .blogBoxContent p{
     color: rgba(0, 0, 0, 0.644);
 }

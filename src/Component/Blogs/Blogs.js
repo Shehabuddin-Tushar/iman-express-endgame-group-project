@@ -55,11 +55,13 @@ const Blogs = () => {
                                     <img src={blog.img} alt="Empty!" style={{width:"100%", height: "200px", borderRadius: "5px"}}/>
                                 </div>
                                 <div className='blogBoxContent'>
-                                    <div className='blogTitle'>
-                                        <span>{blog.category}</span>
-                                        <li>{blog.date}</li>
-                                    </div>
-                                    <p>{blog.description}</p>
+                                    <Link to={`/blogDetails/${blog.id}`}>
+                                        <div className='blogTitle'>
+                                            <span>{blog.category}</span>
+                                            <li>{blog.date}</li>
+                                        </div>
+                                        <p>{blog.description}</p>
+                                    </Link>
                                 </div>
                             </div>
                         </Paper>

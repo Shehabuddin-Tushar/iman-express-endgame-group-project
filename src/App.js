@@ -6,13 +6,14 @@ import Footer from './Shared/Footer/Footer';
 import Navbar from './Shared/Navbar/Navbar';
 import OurPartnerSlider from './Component/OurPartner/OurPartner';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import "./App.css";
 import Home from "./Pages/Home/Home";
 import Login from "./Pages/Login/Login";
 import Register from "./Pages/Login/Register";
+import BlogsHome from "./Component/Blogs/BlogsHome/BlogsHome";
+import BlogDetails from "./Component/Blogs/BlogDetails/BlogDetails";
 
 import "./App.css";
-import BlogsHome from "./Component/Blogs/BlogsHome/BlogsHome";
+
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
              <Route path="/login" element={<Login></Login>}></Route>
              <Route path="/register" element={<Register></Register>}></Route>
              <Route path="/moreBlogs" element={<BlogsHome></BlogsHome>}></Route>
+             <Route path="/blogDetails/:id" element={<BlogDetails></BlogDetails>}></Route>
          </Routes>
          <Footer></Footer>
       </BrowserRouter>

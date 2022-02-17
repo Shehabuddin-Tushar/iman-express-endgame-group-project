@@ -29,7 +29,7 @@ const Promotions = () => {
                         <Link to="/moreBlogs">
                             <button className='allBlogsBtn'>
                             <p>View all</p>
-                            <i><i class="fas fa-arrow-right"></i></i>
+                            <i><i className="fas fa-arrow-right"></i></i>
                             </button>
                         </Link>
                     </div>

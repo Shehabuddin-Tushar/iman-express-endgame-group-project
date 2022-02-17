@@ -1,0 +1,13 @@
+.blogDetailsContainer{
+    padding: 80px 0px;
+}
+.blogDetailsContainer .blogsHomeTitle-PartOne h1{
+    font-size: 40px;
+}
+.blogDetailsContainer .blogsHomeTitle-PartOne p{
+    font-size: 22px;
+    color: gray;
+}
+.blogDetailsContainer .blogsHomeTitle-PartTwo{
+    text-align: right;
+}
