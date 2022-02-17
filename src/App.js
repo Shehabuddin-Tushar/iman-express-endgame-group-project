@@ -1,6 +1,7 @@
-
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-
+import "./App.css";
+import BlogsHome from "./Component/Blogs/BlogsHome/BlogsHome";
+import ProductPage from "./Component/MerchanterProduct/ProductPage";
 import AddProducts from "./DashBoard/AddCourse/AddProducts";
 import Admin from "./DashBoard/Admin/Admin";
 import AllProducts from "./DashBoard/AllCourses/AllProducts";
@@ -14,20 +15,18 @@ import Login from "./Pages/Login/Login";
 import Register from "./Pages/Login/Register";
 import Merchant from "./Pages/Merchant/Merchant";
 import Rider from "./Pages/Rider/Rider";
-import BlogsHome from "./Component/Blogs/BlogsHome/BlogsHome";
-import ProductPage from "./Component/MerchanterProduct/ProductPage";
-import "./App.css";
+
 function App() {
   return (
     <div>
       <Router>
-         <Routes>
-             <Route path="/" element={<Home></Home>}></Route>
-             <Route path="/merchantproduct" element={<ProductPage/>}></Route>
-             <Route path="/login" element={<Login></Login>}></Route>
-             <Route path="/register" element={<Register></Register>}></Route>
-             <Route path="/merchant" element={<Merchant></Merchant>}></Route>
-            <Route path="/rider" element={<Rider></Rider>}></Route>
+        <Routes>
+          <Route path="/" element={<Home></Home>}></Route>
+          <Route path="/merchantproduct" element={<ProductPage />}></Route>
+          <Route path="/login" element={<Login></Login>}></Route>
+          <Route path="/register" element={<Register></Register>}></Route>
+          <Route path="/merchant" element={<Merchant></Merchant>}></Route>
+          <Route path="/rider" element={<Rider></Rider>}></Route>
           <Route path="/moreBlogs" element={<BlogsHome></BlogsHome>}></Route>
           <Route path="/dashboard" element={<Nav />}>
             <Route
@@ -47,18 +46,9 @@ function App() {
             <Route path="/dashboard/rate-us" element={<Review />}></Route>
             <Route path="/dashboard/payment" element={<PaymentDash />}></Route>
           </Route>
-         </Routes>
+        </Routes>
       </Router>
-      
-    </div>)
-
-
-
-
-
-
-
-   
-
+    </div>
+  );
 }
 export default App;
