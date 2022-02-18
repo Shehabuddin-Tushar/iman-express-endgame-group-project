@@ -143,13 +143,13 @@ const Navbar = () => {
             >
               <Link to="/moreBlogs">Blog</Link>
             </Button>
-            <Button
+            {/* <Button
               key="4"
               onClick={handleCloseNavMenu}
               sx={{ my: 2, color: "black", display: "block" }}
             >
               <Link to="/dashboard">Dashboard</Link>
-            </Button>
+            </Button> */}
 
             <Button
               onClick={handleOpenUserMenu}

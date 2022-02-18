@@ -3,6 +3,7 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import InfoIcon from "@mui/icons-material/Info";
 import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+
 import {
   Button,
   ButtonGroup,
@@ -11,6 +12,7 @@ import {
   Typography,
 } from "@mui/material";
 import IconButton from "@mui/material/IconButton";
+import Badge from '@mui/material/Badge';
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemAvatar from "@mui/material/ListItemAvatar";
@@ -21,6 +23,7 @@ import React from "react";
 import Footer from "../../Shared/Footer/Footer";
 import Navbar from "../../Shared/Navbar/Navbar";
 import ProductModal from "../Modal/Modal";
+import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import "./merchantproduct.css";
 
 function generate(element) {
@@ -32,6 +35,15 @@ function generate(element) {
 }
 const Demo = styled("div")(({ theme }) => ({
   backgroundColor: theme.palette.background.paper,
+}));
+
+const StyledBadge = styled(Badge)(({ theme }) => ({
+  '& .MuiBadge-badge': {
+    right: -3,
+    top: 13,
+    border: `2px solid ${theme.palette.background.paper}`,
+    padding: '0 4px',
+  },
 }));
 function ProductPage() {
   const theme = useTheme();
@@ -104,10 +116,10 @@ function ProductPage() {
                               variant="outlined"
                               aria-label="outlined button group"
                             >
-                              <Button onClick={handleOpen}>
+                              <Button >
                                 <ShoppingCartIcon />
                               </Button>
-                              <Button>
+                              <Button onClick={handleOpen}>
                                 <RemoveRedEyeIcon />
                               </Button>
                               <Button>
@@ -150,9 +162,13 @@ function ProductPage() {
               padding: "5px",
               color: "#fff",
             }}
-            variant="h4"
+            variant="h5"
           >
-            Your cart(3)
+            cart <IconButton aria-label="cart">
+              <StyledBadge badgeContent={3} color="secondary">
+                <ShoppingCartIcon />
+              </StyledBadge>
+            </IconButton>
           </Typography>
           <Demo>
             <List>
@@ -177,7 +193,7 @@ function ProductPage() {
                 </ListItemAvatar>
                 <div style={{ marginTop: "-5px" }}>
                   <ListItemText>product name</ListItemText>
-                  <ListItemText>product price</ListItemText>
+                  <ListItemText>1000 tk</ListItemText>
                   <ListItemText>
                     <div class="quantity buttons_added">
                       <input type="button" value="-" class="minus" />
@@ -221,7 +237,7 @@ function ProductPage() {
                 </ListItemAvatar>
                 <div style={{ marginTop: "-5px" }}>
                   <ListItemText>product name</ListItemText>
-                  <ListItemText>product price</ListItemText>
+                  <ListItemText>1000 tk</ListItemText>
                   <ListItemText>
                     <div class="quantity buttons_added">
                       <input type="button" value="-" class="minus" />
@@ -265,7 +281,7 @@ function ProductPage() {
                 </ListItemAvatar>
                 <div style={{ marginTop: "-5px" }}>
                   <ListItemText>product name</ListItemText>
-                  <ListItemText>product price</ListItemText>
+                  <ListItemText>1000 tk</ListItemText>
                   <ListItemText>
                     <div class="quantity buttons_added">
                       <input type="button" value="-" class="minus" />
@@ -287,6 +303,9 @@ function ProductPage() {
                   </ListItemText>
                 </div>
               </ListItem>
+              <hr />
+              <Typography style={{ marginLeft: "50px" }}>Total price: <span style={{fontWeight:"bold"}}>3000</span>tk</Typography>
+              
               ,
             </List>
           </Demo>

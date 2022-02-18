@@ -20,6 +20,7 @@ import {FaRegFilePowerpoint} from 'react-icons/fa';
 import {FaGithub} from 'react-icons/fa';
 import Box from '@mui/material/Box';
 import Navbar from '../../Shared/Navbar/Navbar';
+import Footer from '../../Shared/Footer/Footer';
 
 
 
@@ -84,6 +85,7 @@ const AboutUs = () => {
                 <Typography sx={{ textAlign: 'center',m:2,mt:3,fontWeight:'bold',borderBottom:'2px solid black'}} variant='h5'>
                 Iman_Xpress Developers
                 </Typography>
+              
 
                  {/* Developers  */}
             <Grid sx={{mt:2,mb:3,m:3}} container spacing={2}>
@@ -353,7 +355,8 @@ const AboutUs = () => {
             </Grid>
 
             
-            </Container>   
+            </Container> 
+            <Footer/>
         </>
     );
 };

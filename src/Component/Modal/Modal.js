@@ -44,6 +44,7 @@ export default function ProductModal({ openModal, handleClose }) {
               src="https://www.foodbusinessnews.net/ext/resources/2020/4/CoupleAtRestaurant_Lead.jpg?t=1587991293&width=1080"
               alt=""
             />
+            <Typography>All what shore what and this door this, maiden only at sorrow meant and lenore, my maiden off here entrance door the, velvet before lie above the just my sinking.</Typography>
             <Box sx={{ textAlign: "right" }}>
               <Button variant="contained" sx={{ bgcolor: red[500], mt: 1 }}>
                 see other restauant
