@@ -22,7 +22,10 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Home></Home>}></Route>
-          <Route path="/merchantproduct" element={<ProductPage />}></Route>
+          <Route
+            path="/product/:productDetail"
+            element={<ProductPage />}
+          ></Route>
           <Route path="/login" element={<Login></Login>}></Route>
           <Route path="/register" element={<Register></Register>}></Route>
           <Route path="/merchant" element={<Merchant></Merchant>}></Route>
