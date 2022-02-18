@@ -44,8 +44,13 @@
     text-decoration: none;
     color: #000000;
 }
+.blogBox img{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
 .blogBox .blogBoxContent p{
     color: rgba(0, 0, 0, 0.644);
+    
 }
 .blogBox .blogBoxContent .blogTitle{
     display: flex;

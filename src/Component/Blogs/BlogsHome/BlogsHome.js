@@ -67,7 +67,7 @@ const BlogsHome = () => {
                             <Paper elevation={4}>
                                 <div className='blogBoxThree'>
                                     <div>
-                                        <img src='https://i.ibb.co/G5PwPQ8/blog-Home-Pic-Two.jpg' alt="Empty!" style={{width:"100%", height: "400px", borderRadius: "5px"}}/>
+                                        <img src='https://i.ibb.co/G5PwPQ8/blog-Home-Pic-Two.jpg' alt="Empty!" style={{width:"100%", height: "400px", borderTopLeftRadius: "5px", borderTopRightRadius: "5px"}}/>
                                     </div>
                                     <div className='blogBoxContent'>
                                         <div className='blogTitle'>

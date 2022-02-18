@@ -28,7 +28,8 @@
 .blogBoxTwo img{
     width: 200px;
     height: 200px;
-    border-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 .blogBoxTwo .blogBoxContent{
     text-align: left;

@@ -52,7 +52,7 @@ const Blogs = () => {
                         <Paper elevation={4}>
                             <div className='blogBox'>
                                 <div>
-                                    <img src={blog.img} alt="Empty!" style={{width:"100%", height: "200px", borderRadius: "5px"}}/>
+                                    <img src={blog.img} alt="Empty!" style={{width:"100%", height: "200px"}}/>
                                 </div>
                                 <div className='blogBoxContent'>
                                     <Link to={`/blogDetails/${blog.id}`}>
