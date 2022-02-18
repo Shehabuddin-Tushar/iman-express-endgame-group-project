@@ -6,7 +6,7 @@
   /* background-size: cover; */
   height: "100%";
 }
-.footer-icon{
+.footer-icon {
   width: 42px;
   height: 42px;
   border-radius: 50%;
@@ -17,6 +17,26 @@
   align-items: center;
   margin-right: 10px;
 }
-.img{
+.img {
   margin-left: -28px;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 1px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(223, 221, 221);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

@@ -17,7 +17,7 @@ import * as React from "react";
 import { Link } from "react-router-dom";
 import styles from "./Navbar.module.css";
 
-const pages = ["Products", "Pricing", "Blog"];
+// const pages = ["Products", "Pricing", "Blog"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 const Navbar = () => {
@@ -43,7 +43,8 @@ const Navbar = () => {
     <AppBar position="sticky" sx={{ boxShadow: 0 }} className={styles.navbar}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <img src="https://i.ibb.co/jz5WkPr/logo.png" alt="" className="responsive" width="200" height="50" />
+          
+          <img src="https://i.ibb.co/jz5WkPr/logo.png" alt="" className={styles.logooursite} />
           <Box
             sx={{
               flexGrow: 1,
@@ -123,7 +124,7 @@ const Navbar = () => {
             }}
           >
             
-            
+            <img src="https://i.ibb.co/jz5WkPr/logo.png" alt=""/>
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             <Button
@@ -141,6 +142,13 @@ const Navbar = () => {
               sx={{ my: 2, color: "black", display: "block" }}
             >
               <Link to="/moreBlogs">Blog</Link>
+            </Button>
+            <Button
+              key="4"
+              onClick={handleCloseNavMenu}
+              sx={{ my: 2, color: "black", display: "block" }}
+            >
+              <Link to="/dashboard">Dashboard</Link>
             </Button>
 
             <Button
