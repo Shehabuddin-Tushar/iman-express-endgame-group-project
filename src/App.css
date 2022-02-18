@@ -6,3 +6,17 @@
   /* background-size: cover; */
   height: "100%";
 }
+.footer-icon{
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: rgb(48, 47, 47);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+.img{
+  margin-left: -28px;
+}

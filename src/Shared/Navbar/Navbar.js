@@ -14,6 +14,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Tooltip from "@mui/material/Tooltip";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
+import { Link } from "react-router-dom";
 import styles from "./Navbar.module.css";
 
 const pages = ["Products", "Pricing", "Blog"];
@@ -42,7 +43,7 @@ const Navbar = () => {
     <AppBar position="sticky" sx={{ boxShadow: 0 }} className={styles.navbar}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <img src="https://i.ibb.co/jz5WkPr/logo.png" alt="" />
+          <img src="https://i.ibb.co/jz5WkPr/logo.png" alt="" className="responsive" width="200" height="50" />
           <Box
             sx={{
               flexGrow: 1,
@@ -92,6 +93,13 @@ const Navbar = () => {
               >
                 <Typography textAlign="center">About us</Typography>
               </MenuItem>
+              <MenuItem
+                key="1"
+                onClick={handleCloseNavMenu}
+                style={{ width: "200px" }}
+              >
+                <Typography textAlign="center">Contact us</Typography>
+              </MenuItem>
 
               <MenuItem
                 key="1"
@@ -114,7 +122,8 @@ const Navbar = () => {
               display: { xs: "flex", md: "none", color: "black" },
             }}
           >
-            IMAN Xpress
+            
+            
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             <Button
@@ -122,7 +131,8 @@ const Navbar = () => {
               onClick={handleCloseNavMenu}
               sx={{ my: 2, color: "black", display: "block" }}
             >
-              Home
+              <Link to="/">Home</Link>
+              
             </Button>
 
             <Button
@@ -130,7 +140,7 @@ const Navbar = () => {
               onClick={handleCloseNavMenu}
               sx={{ my: 2, color: "black", display: "block" }}
             >
-              Blog
+              <Link to="/moreBlogs">Blog</Link>
             </Button>
 
             <Button
@@ -143,6 +153,27 @@ const Navbar = () => {
                 <ArrowDropDownIcon />
               </IconButton>
             </Button>
+            {/* contact us added  */}
+           
+              <Link to='/contactUs'>
+              <Button style={{textDecoration:'none'}}
+              key="6"
+              sx={{ my: 2, color: "black" }}
+            >
+                 Contact Us
+              </Button>
+              </Link>
+
+              <Link to='/aboutUs'>
+              <Button style={{textDecoration:'none'}}
+              key="6"
+              sx={{ my: 2, color: "black" }}
+            >
+                 About Us
+              </Button>
+              </Link>
+             
+            
           </Box>
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">

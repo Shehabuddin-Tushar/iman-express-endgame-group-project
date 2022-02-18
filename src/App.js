@@ -7,6 +7,9 @@ import Merchant from "./Pages/Merchant/Merchant";
 import Rider from "./Pages/Rider/Rider";
 import BlogsHome from "./Component/Blogs/BlogsHome/BlogsHome";
 import "./App.css";
+import ContactUs from "./Pages/ContactUs/ContactUs";
+import AboutUs from './Pages/AboutUs/AboutUs';
+
 function App() {
   return (
     <div>
@@ -18,6 +21,8 @@ function App() {
              <Route path="/merchant" element={<Merchant></Merchant>}></Route>
             <Route path="/rider" element={<Rider></Rider>}></Route>
             <Route path="/moreBlogs" element={<BlogsHome></BlogsHome>}></Route>
+             <Route path="/contactUs" element={<ContactUs></ContactUs>}></Route>
+             <Route path="/aboutUs" element={<AboutUs></AboutUs>}></Route>
          </Routes>
       </Router>
       
