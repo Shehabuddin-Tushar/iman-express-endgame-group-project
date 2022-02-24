@@ -26,7 +26,6 @@ import "./Dashboard.css";
 const drawerWidth = 220;
 
 function Nav(props) {
-  // const { user, admin } = useAuth();
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -37,15 +36,19 @@ function Nav(props) {
   const drawer = (
     <div>
       <Toolbar />
-      <List sx={{ p: 2, marginTop: "-65px" }}>
+      <List sx={{ marginTop: "-65px" }}>
         <div className="side_img_wrapper">
-          <div className="side_img_span">
+          <div className="overly"></div>
+          <div className="side_img_span ">
+            <img width="100px" src={logo} alt="" />{" "}
+          </div>
+          <div className="hr"></div>
+
+          <div className="user_img">
             <img
-              className="img-fluid side_img"
-              width="100px"
-              src={logo}
+              src="https://bidinnovacion.org/economiacreativa/wp-content/uploads/2014/10/speaker-3.jpg"
               alt=""
-            />{" "}
+            />
           </div>
         </div>
       </List>
@@ -53,24 +56,24 @@ function Nav(props) {
       <div className=" list_of_route">
         <List>
           <Link className="" to="/">
-            <span className="me-3">
+            <span>
               <HomeIcon />
-            </span>{" "}
+            </span>
             Home
           </Link>
         </List>{" "}
         <Box>
           <List>
-            <Link className="" to="/dashboard/dashboardHome">
-              <span className="me-3">
+            <Link className="" to="/dashboard">
+              <span>
                 <BarChartIcon />
               </span>{" "}
               Dashboard
             </Link>
           </List>
           <List>
-            <Link className="" to="/dashboard/make-admin">
-              <span className="me-3">
+            <Link className="" to="/dashboard">
+              <span>
                 <AddModeratorIcon />
               </span>
               Admin
@@ -78,8 +81,8 @@ function Nav(props) {
           </List>{" "}
         </Box>
         <List>
-          <Link className="" to="/dashboard/userOrders">
-            <span className="me-3">
+          <Link className="" to="/dashboard">
+            <span>
               <ClassIcon></ClassIcon>
             </span>{" "}
             Your Orders
@@ -87,16 +90,16 @@ function Nav(props) {
         </List>{" "}
         <Box>
           <List>
-            <Link className="" to="/dashboard/all-products">
-              <span className="me-3">
+            <Link className="" to="/dashboard">
+              <span>
                 <GroupsIcon />
               </span>{" "}
               All Products
             </Link>
           </List>{" "}
           <List>
-            <Link className="" to="/dashboard/add-products">
-              <span className="me-3">
+            <Link className="" to="/dashboard">
+              <span>
                 <AddTaskIcon></AddTaskIcon>
               </span>{" "}
               Add products
@@ -104,16 +107,16 @@ function Nav(props) {
           </List>{" "}
         </Box>
         <List>
-          <Link className="" to="/dashboard/rate-us">
-            <span className="me-3">
+          <Link className="" to="/dashboard">
+            <span>
               <ThumbsUpDownIcon />
             </span>{" "}
             Rate us
           </Link>
         </List>{" "}
         <List>
-          <Link className="" to="/dashboard/payment">
-            <span className="me-3">
+          <Link className="" to="/dashboard">
+            <span>
               <AccountBalanceIcon />
             </span>{" "}
             Payment
@@ -169,7 +172,11 @@ function Nav(props) {
             <IconButton sx={{ mr: 2 }}>
               <NotificationsNoneOutlinedIcon />
             </IconButton>
-            <img src={logo} className="img-fluid user_img" alt="" />
+            <img
+              src="https://bidinnovacion.org/economiacreativa/wp-content/uploads/2014/10/speaker-3.jpg"
+              className="toolbar_img"
+              alt=""
+            />
           </Box>
         </Toolbar>
       </AppBar>

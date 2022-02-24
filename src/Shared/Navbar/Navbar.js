@@ -43,7 +43,11 @@ const Navbar = () => {
     <AppBar position="sticky" sx={{ boxShadow: 0 }} className={styles.navbar}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <img src="https://i.ibb.co/jz5WkPr/logo.png" alt="" />
+          <img
+            src="https://i.ibb.co/jz5WkPr/logo.png"
+            alt=""
+            className={styles.logooursite}
+          />
           <Box
             sx={{
               flexGrow: 1,
@@ -93,6 +97,13 @@ const Navbar = () => {
               >
                 <Typography textAlign="center">About us</Typography>
               </MenuItem>
+              <MenuItem
+                key="1"
+                onClick={handleCloseNavMenu}
+                style={{ width: "200px" }}
+              >
+                <Typography textAlign="center">Contact us</Typography>
+              </MenuItem>
 
               <MenuItem
                 key="1"
@@ -115,7 +126,7 @@ const Navbar = () => {
               display: { xs: "flex", md: "none", color: "black" },
             }}
           >
-            IMAN Xpress
+            <img src="https://i.ibb.co/jz5WkPr/logo.png" alt="" />
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             <Button
@@ -123,7 +134,7 @@ const Navbar = () => {
               onClick={handleCloseNavMenu}
               sx={{ my: 2, color: "black", display: "block" }}
             >
-              Home
+              <Link to="/">Home</Link>
             </Button>
 
             <Button
@@ -131,7 +142,7 @@ const Navbar = () => {
               onClick={handleCloseNavMenu}
               sx={{ my: 2, color: "black", display: "block" }}
             >
-              Blog
+              <Link to="/moreBlogs">Blog</Link>
             </Button>
             <Button
               key="4"
@@ -151,6 +162,27 @@ const Navbar = () => {
                 <ArrowDropDownIcon />
               </IconButton>
             </Button>
+            {/* contact us added  */}
+
+            <Link to="/contactUs">
+              <Button
+                style={{ textDecoration: "none" }}
+                key="6"
+                sx={{ my: 2, color: "black" }}
+              >
+                Contact Us
+              </Button>
+            </Link>
+
+            <Link to="/aboutUs">
+              <Button
+                style={{ textDecoration: "none" }}
+                key="6"
+                sx={{ my: 2, color: "black" }}
+              >
+                About Us
+              </Button>
+            </Link>
           </Box>
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">

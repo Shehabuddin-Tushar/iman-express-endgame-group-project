@@ -16,7 +16,7 @@ function SampleNextArrow(props) {
         display: "flex",
         // boxShadow: "gray 0px 5px 15px",
         borderRadius: "50%",
-        marginRight: "-30px",
+
         backgroundColor: grey[300],
         height: "50px",
         width: "50px",
@@ -37,11 +37,10 @@ function SamplePrevArrow(props) {
       style={{
         ...style,
         display: "flex",
-        boxShadow: "gray 0px 5px 15px",
+        // boxShadow: "gray 0px 5px 15px",
         borderRadius: "50%",
-        marginLeft: "-30px",
+
         zIndex: "1",
-        marginRight: "-30px",
         backgroundColor: grey[300],
         height: "50px",
         width: "50px",
@@ -62,6 +61,7 @@ function Reviews() {
     autoplaySpeed: 6000,
     pauseOnHover: true,
     adaptiveWidth: true,
+
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
     responsive: [
@@ -115,28 +115,37 @@ function Reviews() {
           <Slider {...settings}>
             {reviews?.map((review) => (
               <Box>
-                <Box sx={{ textAlign: "left", p: 3, mt: 3 }}>
-                  <Typography variant="subtitle1">
+                <Box sx={{ textAlign: "left", p: 2, mt: 3 }}>
+                  <Typography height="280px" variant="subtitle1">
                     "{review?.review}"
                   </Typography>
                   <Box
                     sx={{
                       display: "flex",
-                      justifyContent: "space-between",
+                      alignItems: "center",
                       my: 3,
                     }}
                   >
                     {" "}
-                    <Typography color="text.secondary">
-                      {review?.name}
-                    </Typography>
-                    <Rating
-                      sx={{ color: "tomato" }}
-                      name="half-rating-read"
-                      defaultValue={review?.rating}
-                      precision={0.5}
-                      readOnly
+                    <img
+                      height="60"
+                      width="60"
+                      style={{ borderRadius: "50%" }}
+                      src={review?.img}
+                      alt=""
                     />
+                    <Box sx={{ mx: 3 }}>
+                      <Typography sx={{ mx: 1 }} color="text.secondary">
+                        {review?.name}
+                      </Typography>
+                      <Rating
+                        sx={{ color: "tomato" }}
+                        name="half-rating-read"
+                        defaultValue={review?.rating}
+                        precision={0.5}
+                        readOnly
+                      />
+                    </Box>
                   </Box>
                 </Box>
               </Box>

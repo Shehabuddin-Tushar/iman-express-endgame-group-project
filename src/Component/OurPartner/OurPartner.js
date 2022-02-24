@@ -2,6 +2,10 @@ import { Button, Card, Container, Typography } from "@mui/material";
 import React from 'react';
 import Slider from 'react-slick';
 import './OurPartner.css';
+// import img1 from '../../img/bkasj.jpg';
+// import img2 from '../../img/nagad.jpg';
+// import img3 from '../../img/upaypng.png';
+// import img4 from '../../img/visa.jpg';
 
 
 const OurPartnerSlider=()=>{
@@ -34,6 +38,7 @@ const OurPartnerSlider=()=>{
         speed: 3000,
         autoplaySpeed: 3000,
         cssEase: "linear",
+        margin:10,
         prevArrow:<SamplePrevArrow />,
         nextArrow:<SampleNextArrow />,
         responsive: [
@@ -65,41 +70,73 @@ const OurPartnerSlider=()=>{
           
       };
     return(
-        <div>
-            <Container>
-                <h2 style={{padding:'5px'}}>Our Partners</h2>
+      
+            <Container  >
+            <Typography sx={{ color: "tomato" }} variant="body1">
+          OUR
+        </Typography>
+        <Typography variant="h4" fontWeight="bold">
+         PARTNERS
+        </Typography>
 <Slider {...settings}>
 
-          <div style={{border:'1px solid black'}}>
-        <img className='img' style={{width:'300px'}} src='https://i.ibb.co/17fJQYR/nagad.png' alt="" />
+
+
+          <div className="container">
+        <img className='bolimg' style={{width:'300px',marginLeft:'30px'}} src='https://i.ibb.co/nbzKd4W/visa.jpg' alt="visa" />
         
         </div>
            
-          <div>
-        <img  className='img' style={{width:'250px'}} src='https://i.ibb.co/rM36ynn/rocket.jpg' alt="" />
+         
+        <div className="container">
+        <img className='bolimg' style={{width:'300px'}} src='https://i.ibb.co/0YmnqFS/xpress-money.jpg' alt="xpress-money" />
        
         </div>
-          <div>
-        <img  className='img' style={{width:'280px'}} src='https://i.ibb.co/nbDzycs/bkash.jpg' alt="" />
+       
+        <div className="container">
+        <img className='bolimg' style={{width:'300px'}} src='https://i.ibb.co/0mTcwz2/upaypng.png' alt="upay" />
  
         </div>
-          <div>
-        <img className='img' style={{width:'300px'}} src='https://i.ibb.co/17fJQYR/nagad.png' alt="" />
+         
+        <div className="container">
+        <img className='bolimg' style={{width:'300px'}} src='https://i.ibb.co/SB6XRbg/stripe.png' alt="stripe" />
 
         </div>
            
-          <div>
-        <img className='img' style={{width:'250px'}} src='https://i.ibb.co/rM36ynn/rocket.jpg' alt="" />
+         
+        <div className="container">
+        <img className='bolimg' style={{width:'300px'}} src='https://i.ibb.co/gg54LG4/rocket.jpg' alt="rocket" />
 
         </div>
-          <div>
-        <img className='img' style={{width:'280px'}} src='https://i.ibb.co/nbDzycs/bkash.jpg' alt="" />
+        
+        <div className="container">
+        <img className='bolimg'style={{width:'280px'}} src='https://i.ibb.co/SQKkTrr/Payoneer-Logo-wine.png' alt="payoneer" />
+
+        </div>
+        <div className="container">
+        <img className='bolimg'style={{width:'300px'}} src='https://i.ibb.co/YbwpFQ7/EBL.jpg' alt="EBL sky" />
+
+        </div>
+        <div className="container">
+        <img className='bolimg'style={{width:'300px'}} src='https://i.ibb.co/74r8kLv/nagad.jpg' alt="nagad" />
+
+        </div>
+        <div className="container">
+        <img className='bolimg'style={{width:'300px'}} src='https://i.ibb.co/8Bfbw2x/datch-bangla.jpg' alt="Datch Bangla" />
+
+        </div>
+        <div className="container">
+        <img className='bolimg'style={{width:'300px'}} src='https://i.ibb.co/B6btH1H/bangladesh-bank.jpg' alt="bd bank" />
+
+        </div>
+        <div className="container">
+        <img className='bolimg'style={{width:'300px'}} src='https://i.ibb.co/MhqM5n4/bkasj.jpg' alt="bkash" />
 
         </div>
            
-
+        
         </Slider></Container>
-        </div>
+       
     );
 }
 
