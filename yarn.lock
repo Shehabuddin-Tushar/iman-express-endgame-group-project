@@ -1103,11 +1103,27 @@
   dependencies:
     "postcss-value-parser" "^4.2.0"
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+"@csstools/postcss-progressive-custom-properties@^1.1.0":
+  "integrity" "sha512-DO76V3295AqhjJZvgeaDP5GAGAat4g6wYfF8X+1n+76MpJat8ffY5bCJ9eSUqFY71nImxXgaDTRYJcRnA9oo7g=="
+  "resolved" "https://registry.npmjs.org/@csstools/postcss-progressive-custom-properties/-/postcss-progressive-custom-properties-1.1.0.tgz"
+  "version" "1.1.0"
+  dependencies:
+    "postcss-value-parser" "^4.2.0"
+
+>>>>>>> 22161a3258c1483144f27b2e41db76e30faedbdf
 "@emailjs/browser@^3.4.0":
   "integrity" "sha512-pTR9wEj0KLrJBVWFfB6IFEwmGIod/6cfN541Y0TVN2+9Bbn+R9a8gq6GeJZ6ggbYs36J3gCTXDyVKhtxjRsjtw=="
   "resolved" "https://registry.npmjs.org/@emailjs/browser/-/browser-3.4.0.tgz"
   "version" "3.4.0"
 
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 2243897ccb5d2acca87d380a8b8e8a2c1ddd1643
+>>>>>>> 22161a3258c1483144f27b2e41db76e30faedbdf
 "@emotion/babel-plugin@^11.3.0":
   "integrity" "sha512-6mGSCWi9UzXut/ZAN6lGFu33wGR3SJisNl3c0tvlmb8XChH1b2SUvxvnOh7hvLpqyRdHHU9AiazV3Cwbk5SXKQ=="
   "resolved" "https://registry.npmjs.org/@emotion/babel-plugin/-/babel-plugin-11.7.2.tgz"
@@ -8130,12 +8146,22 @@
   "resolved" "https://registry.npmjs.org/react-hook-form/-/react-hook-form-7.26.1.tgz"
   "version" "7.26.1"
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 22161a3258c1483144f27b2e41db76e30faedbdf
 "react-icons@^4.3.1":
   "integrity" "sha512-cB10MXLTs3gVuXimblAdI71jrJx8njrJZmNMEMC+sQu5B/BIOmlsAjskdqpn81y8UBVEGuHODd7/ci5DvoSzTQ=="
   "resolved" "https://registry.npmjs.org/react-icons/-/react-icons-4.3.1.tgz"
   "version" "4.3.1"
 
+<<<<<<< HEAD
+=======
+"react-is@^16.13.1":
+=======
+>>>>>>> 22161a3258c1483144f27b2e41db76e30faedbdf
 "react-is@^16.10.2":
+>>>>>>> 2243897ccb5d2acca87d380a8b8e8a2c1ddd1643
   "integrity" "sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ=="
   "resolved" "https://registry.npmjs.org/react-is/-/react-is-16.13.1.tgz"
   "version" "16.13.1"
