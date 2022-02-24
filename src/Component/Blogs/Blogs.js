@@ -35,6 +35,7 @@ const Blogs = () => {
 
 
     return (
+       
         <div className='blogContainer'>
             <Container>
                 <div>
@@ -67,7 +68,8 @@ const Blogs = () => {
                     </Grid>
                 </div>
             </Container>
-        </div>
+            </div>
+            
     );
 };
 

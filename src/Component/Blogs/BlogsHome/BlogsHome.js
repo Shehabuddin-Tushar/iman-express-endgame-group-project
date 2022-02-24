@@ -1,5 +1,7 @@
 import { Container, Grid, Paper } from '@mui/material';
 import React from 'react';
+import Footer from '../../../Shared/Footer/Footer';
+import Navbar from '../../../Shared/Navbar/Navbar';
 import NewsRoom from '../NewsRoom/NewsRoom';
 import ProductUpdate from '../ProductUpdate/ProductUpdate';
 import Promotions from '../Promotions/Promotions';
@@ -42,6 +44,8 @@ const BlogsHome = () => {
     // https://ibb.co/Qcg491x
     // https://ibb.co/P6CpCGP
     return (
+        <>
+            <Navbar/>
         <div>
             <Container className='blogsHomeContainer'>
                 <Grid container spacing={2}>
@@ -102,7 +106,9 @@ const BlogsHome = () => {
             <ProductUpdate></ProductUpdate>
             <Promotions></Promotions>
             <NewsRoom></NewsRoom>
-        </div>
+            </div>
+        <Footer/>
+        </>
     );
 };
 
