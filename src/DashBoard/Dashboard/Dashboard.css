@@ -1,11 +1,21 @@
 .list_of_route {
   margin-top: 25px;
+  margin-left: 25px;
 }
 .list_of_route a {
+  color: white;
   padding: 5px;
-  border-radius: 5px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
   margin-top: -6px;
   transition: 0.4s;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-decoration: none;
+}
+.list_of_route a span {
+  margin-right: 20px;
 }
 .list_of_route a:focus {
   transform: translateY(-2px);
@@ -17,9 +27,6 @@
   justify-content: flex-end;
   align-items: center;
 }
-.list_of_route a {
-  color: white;
-}
 .toolbar_box .user_img {
   width: 50px;
   border-radius: 50px;
@@ -27,6 +34,29 @@
 .toolbar_box .flag_img {
   width: 28px;
   margin-right: 20px;
+}
+.side_img_span {
+  text-align: center;
+  margin-top: 26px;
+}
+.hr {
+  margin-top: 80px;
+  border-bottom: 2px solid rgb(90, 90, 90);
+}
+.user_img {
+  text-align: center;
+  margin-top: -40px;
+}
+.user_img img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 5px solid rgb(52, 52, 52);
+}
+.toolbar_img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
 }
 @media screen and (max-width: 600px) {
   .toolbar_box {
