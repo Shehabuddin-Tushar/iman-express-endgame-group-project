@@ -1,3 +1,4 @@
+import MessengerCustomerChat from "react-messenger-customer-chat";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
 import BlogsHome from "./Component/Blogs/BlogsHome/BlogsHome";
@@ -51,6 +52,11 @@ function App() {
           </Route>
         </Routes>
       </Router>
+
+      <MessengerCustomerChat
+        pageId="104547992167816"
+        appId="3055318624707846"
+      />
     </div>
   );
 }
