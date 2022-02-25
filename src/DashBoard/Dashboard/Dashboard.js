@@ -3,12 +3,16 @@ import AddModeratorIcon from "@mui/icons-material/AddModerator";
 import AddTaskIcon from "@mui/icons-material/AddTask";
 import BarChartIcon from "@mui/icons-material/BarChart";
 import ClassIcon from "@mui/icons-material/Class";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import GroupsIcon from "@mui/icons-material/Groups";
 import GroupTwoToneIcon from "@mui/icons-material/GroupTwoTone";
 import HomeIcon from "@mui/icons-material/Home";
 import MenuIcon from "@mui/icons-material/Menu";
 import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
 import ThumbsUpDownIcon from "@mui/icons-material/ThumbsUpDown";
+import Accordion from "@mui/material/Accordion";
+import AccordionDetails from "@mui/material/AccordionDetails";
+import AccordionSummary from "@mui/material/AccordionSummary";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -64,12 +68,40 @@ function Nav(props) {
         </List>{" "}
         <Box>
           <List>
-            <Link className="" to="/dashboard">
-              <span>
-                <BarChartIcon />
-              </span>{" "}
-              Dashboard
-            </Link>
+            <Accordion id="accordion">
+              <AccordionSummary
+                expandIcon={<ExpandMoreIcon sx={{ color: "#fff" }} />}
+                aria-controls="panel1a-content"
+                id="panel1a-header"
+              >
+                <Link id="list_route" to="/dashboard/merchant">
+                  <span>
+                    <BarChartIcon />
+                  </span>{" "}
+                  Merchant
+                </Link>
+              </AccordionSummary>
+              <AccordionDetails id="accordionBody">
+                <Link className="" to="/dashboard/merchant">
+                  <span>
+                    <BarChartIcon />
+                  </span>{" "}
+                  Profile
+                </Link>
+                <Link className="" to="/dashboard/merchant">
+                  <span>
+                    <BarChartIcon />
+                  </span>{" "}
+                  Add Product
+                </Link>
+                <Link className="" to="/dashboard/merchant">
+                  <span>
+                    <BarChartIcon />
+                  </span>{" "}
+                  Product Page
+                </Link>
+              </AccordionDetails>
+            </Accordion>
           </List>
           <List>
             <Link className="" to="/dashboard">

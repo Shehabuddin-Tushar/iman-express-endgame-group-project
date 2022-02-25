@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
 import BlogsHome from "./Component/Blogs/BlogsHome/BlogsHome";
 import ProductPage from "./Component/MerchanterProduct/ProductPage";
+import Acc from "./DashBoard/Dashboard/Acc";
 import Nav from "./DashBoard/Dashboard/Dashboard";
 import AboutUs from "./Pages/AboutUs/AboutUs";
 import ContactUs from "./Pages/ContactUs/ContactUs";
@@ -47,7 +48,7 @@ function App() {
             element={<ProductPage />}
           ></Route>
           <Route path="/dashboard" element={<Nav />}>
-            {" "}
+            <Route path="/dashboard/merchant" element={<Acc />} />
           </Route>
         </Routes>
       </Router>
