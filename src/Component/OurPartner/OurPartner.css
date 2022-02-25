@@ -1,0 +1,19 @@
+
+.container {
+    width: 150px;
+    height: 150px;
+    border-radius: 5%;
+    overflow: hidden;
+  }
+  .bolimg {
+
+    /* background-size: cover; */
+    width: 100%;
+    height: 100%;
+    transition: 1s ease-out;
+    box-shadow: 5px 5px 5px 5px  rgb(128, 128, 128);
+  }
+  .bolimg:hover {
+
+  transform: scale(1.3);
+  }

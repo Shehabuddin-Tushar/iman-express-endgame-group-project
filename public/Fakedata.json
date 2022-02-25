@@ -1,0 +1,42 @@
+[
+  {
+    "category": "H",
+    "firstTitle": "Avoid jams, save time",
+    "secondTitle": "We are with you",
+    "thirdTitle": "Available at all times",
+    "firstDescription": "The only solution to avoid the unbearable traffic jam is to send a bike! At affordable prices, save time and get to your destination on time.",
+    "secondDescription": "Each of our rides is safe and covered by insurance services, which makes each of your rides with us much more secure.",
+    "thirdDescription": "At dawn or late at night, our trained riders are ready to ensure your safe ride.",
+    "img": "https://pathao.com/bn/wp-content/uploads/sites/6/2018/12/Bike-Ride.png"
+  },
+  {
+    "category": "C",
+    "firstTitle": "Choose the option of your choice",
+    "secondTitle": "Comfortable and affordable",
+    "thirdTitle": "Hassle-free and fast",
+    "firstDescription": "Budget tight? Use Send Car Light! Want to travel by AC car? Use send car plus.",
+    "secondDescription": "Send Car Plus gives you the convenience of traveling in a comfortable and affordable AC car.",
+    "thirdDescription": "With just a few clicks you can get your car ride very fast without any hassle.",
+    "img": "https://pathao.com/bn/wp-content/uploads/sites/6/2018/12/Pathao-Car.png"
+  },
+  {
+    "category": "F",
+    "firstTitle": "Fastest food delivery",
+    "secondTitle": "Choose from thousands of options",
+    "thirdTitle": "Incredible discounts",
+    "firstDescription": "Ordered food will be delivered in less than 1 hour! We guarantee food delivery in the shortest possible time.",
+    "secondDescription": "Food is also available in more than 4000 restaurants in Dhaka and Chittagong. Choose your favorite restaurant and food item.",
+    "thirdDescription": "Join us through a partnership with the restaurant to offer you incredible food combos at affordable prices!",
+    "img": "https://pathao.com/bn/wp-content/uploads/sites/6/2018/12/Patha-food.png"
+  },
+  {
+    "category": "D",
+    "firstTitle": "On Delivery Delivery",
+    "secondTitle": "Trust us",
+    "thirdTitle": "Emergency? Deliver via parcel",
+    "firstDescription": "Have you left your charger or key at home? Deliver items you need using Send Parcel.",
+    "secondDescription": "Send parcels for your delivery of any kind of urgent documents as your trusted partner.",
+    "thirdDescription": "The only solution for fastest parcel delivery in less time. Your needs are the most important thing to us.",
+    "img": "https://i.ibb.co/R2zrs8H/Add-a-heading.gif"
+  }
+]

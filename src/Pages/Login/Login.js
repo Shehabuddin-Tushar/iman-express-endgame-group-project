@@ -1,19 +1,28 @@
 import {
   Alert,
   Button,
+  Checkbox,
   Container,
   Divider,
+  FormControl,
+  FormControlLabel,
+  FormLabel,
   Grid,
   Paper,
+  Radio,
+  RadioGroup,
   TextField,
   Typography,
 } from "@mui/material";
-import { grey, red } from "@mui/material/colors";
+import { grey, pink, red } from "@mui/material/colors";
 import { Box, color } from "@mui/system";
+import axios from "axios";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 import useFirebase from "../../Hooks/useFirebase";
+
 
 const Login = () => {
   const [error, setError] = useState(false);
@@ -27,17 +36,39 @@ const Login = () => {
   console.log(redirect);
   const navigate = useNavigate();
 
+  // for user
+  const [value, setValue] = React.useState("female");
+  const handleChange = (event) => {
+    setValue(event.target.value);
+  };
+
   const onSubmit = (data) => {
     const email = data.email;
     const password = data.password;
     try {
-      userLogin(email, password, redirect, navigate);
+      if (data.merchant === 'merchant') {
+        console.log(data);
+        axios.post('http://localhost:8080/api/auth/login', data).then(res => {
+          if (res.authtoken) {
+            Swal.fire({
+              icon: 'success',
+              title: 'Merchant Login Successfully',
+            });
+          }
+        }
+        
+        ).catch(err => console.log(err))
+      }
+      if (data.user === 'user') {
+        userLogin(email, password, redirect, navigate);
       setSuccess(true);
       reset();
+     }
     } catch {
       setError(true);
+      
     }
-    console.log(data);
+    // console.log(data);
   };
 
   ///handle google login
@@ -92,6 +123,52 @@ const Login = () => {
                     variant="outlined"
                     {...register("password")}
                   />
+                  <FormControl sx={{textAlign:'left'}}>
+                        {/* <FormLabel>Service(s) you want to provide</FormLabel> */}
+                        <RadioGroup
+                          name="user"
+                          value={value}
+                      onChange={handleChange}
+                    
+                        >
+                          <Box  required
+                            sx={{
+                              display: "flex",
+                              justifyContent: "space-between",
+                            }}
+                          >
+                            <FormControlLabel
+                              value="merchant"
+                              {...register("merchant")}
+                              control={
+                                <Radio  
+                                  sx={{
+                                    "&.Mui-checked": {
+                                      color: pink[600],
+                                    },
+                                  }}
+                                />
+                              }
+                              label="Merchant"
+                            />
+                            <FormControlLabel
+                              value="user"
+                              {...register("user")}
+                              control={
+                                <Radio 
+                                  sx={{
+                                    "&.Mui-checked": {
+                                      color: pink[600],
+                                    },
+                                  }}
+                                />
+                              }
+                              label="User"
+                            />
+
+                            </Box>
+                        </RadioGroup>
+                      </FormControl>
                 </Box>
                 <Typography sx={{ textAlign: "left" }} color={red[700]}>
                   Forget Password?

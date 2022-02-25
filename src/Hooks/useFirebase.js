@@ -10,7 +10,7 @@ import {
   signOut,
 } from "firebase/auth";
 
-import initAuth from "../Pages/Login/firebase.init";
+import initAuth from '../Pages/Login/firebase.init'
 import axios from "axios";
 initAuth();
 const useFirebase = () => {

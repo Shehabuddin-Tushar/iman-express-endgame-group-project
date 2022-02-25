@@ -30,6 +30,7 @@ const Rider = () => {
     console.log(data);
   };
   //radio field
+  
   const handleChange = (event) => {
     setValue(event.target.value);
   };
