@@ -1,7 +1,9 @@
 import AccountBalanceIcon from "@mui/icons-material/AccountBalance";
+import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import AddModeratorIcon from "@mui/icons-material/AddModerator";
 import AddTaskIcon from "@mui/icons-material/AddTask";
 import BarChartIcon from "@mui/icons-material/BarChart";
+import CategoryIcon from "@mui/icons-material/Category";
 import ClassIcon from "@mui/icons-material/Class";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import GroupsIcon from "@mui/icons-material/Groups";
@@ -9,6 +11,7 @@ import GroupTwoToneIcon from "@mui/icons-material/GroupTwoTone";
 import HomeIcon from "@mui/icons-material/Home";
 import MenuIcon from "@mui/icons-material/Menu";
 import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
+import ProductionQuantityLimitsIcon from "@mui/icons-material/ProductionQuantityLimits";
 import ThumbsUpDownIcon from "@mui/icons-material/ThumbsUpDown";
 import Accordion from "@mui/material/Accordion";
 import AccordionDetails from "@mui/material/AccordionDetails";
@@ -74,7 +77,7 @@ function Nav(props) {
                 aria-controls="panel1a-content"
                 id="panel1a-header"
               >
-                <Link id="list_route" to="/dashboard/merchant">
+                <Link id="list_route" to="/dashboard">
                   <span>
                     <BarChartIcon />
                   </span>{" "}
@@ -82,21 +85,21 @@ function Nav(props) {
                 </Link>
               </AccordionSummary>
               <AccordionDetails id="accordionBody">
-                <Link className="" to="/dashboard/merchant">
+                <Link className="" to="/dashboard">
                   <span>
-                    <BarChartIcon />
+                    <AccountCircleIcon />
                   </span>{" "}
                   Profile
                 </Link>
-                <Link className="" to="/dashboard/merchant">
+                <Link className="" to="/dashboard">
                   <span>
-                    <BarChartIcon />
+                    <CategoryIcon />
                   </span>{" "}
                   Add Product
                 </Link>
-                <Link className="" to="/dashboard/merchant">
+                <Link className="" to="/dashboard">
                   <span>
-                    <BarChartIcon />
+                    <ProductionQuantityLimitsIcon />
                   </span>{" "}
                   Product Page
                 </Link>
