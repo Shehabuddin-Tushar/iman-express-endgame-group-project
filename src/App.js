@@ -9,6 +9,7 @@ import ContactUs from "./Pages/ContactUs/ContactUs";
 import Home from "./Pages/Home/Home";
 import Login from "./Pages/Login/Login";
 import Register from "./Pages/Login/Register";
+import Account from "./Pages/Merchant/Account";
 import Merchant from "./Pages/Merchant/Merchant";
 import Rider from "./Pages/Rider/Rider";
 function App() {
@@ -19,7 +20,7 @@ function App() {
           <Route path="/" element={<Home></Home>}></Route>
           <Route path="/login" element={<Login></Login>}></Route>
           <Route path="/register" element={<Register></Register>}></Route>
-          <Route path="/merchant" element={<Merchant></Merchant>}></Route>
+          <Route path="/merchant" element={<Account/>}></Route>
           <Route path="/rider" element={<Rider></Rider>}></Route>
           <Route path="/moreBlogs" element={<BlogsHome></BlogsHome>}></Route>
           <Route path="/dashboard" element={<Nav />}></Route>
@@ -31,14 +32,7 @@ function App() {
           <Route path="/moreBlogs" element={<BlogsHome></BlogsHome>}></Route>
           <Route path="/contactUs" element={<ContactUs></ContactUs>}></Route>
 
-          <Route path="/" element={<Home></Home>}></Route>
-          <Route path="/login" element={<Login></Login>}></Route>
-          <Route path="/register" element={<Register></Register>}></Route>
-          <Route path="/merchant" element={<Merchant></Merchant>}></Route>
-          <Route
-            path="/merchantproduct"
-            element={<ProductPage></ProductPage>}
-          ></Route>
+          
           <Route path="/rider" element={<Rider></Rider>}></Route>
           <Route path="/moreBlogs" element={<BlogsHome></BlogsHome>}></Route>
           <Route path="/contactUs" element={<ContactUs></ContactUs>}></Route>
