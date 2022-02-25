@@ -10,14 +10,24 @@ import { Container } from "@mui/material";
 import CreateStore from "./CreateStore";
 import { grey } from "@mui/material/colors";
 import VerifyId from "./VerifyId";
+import { useForm } from "react-hook-form";
+import axios from "axios";
+
 
 const steps = ["Create Account", "Create Store", "Verify ID"];
 
 function Merchant() {
   const [activeStep, setActiveStep] = React.useState(0);
+  
+  const { register, handleSubmit, watch, formState: { errors } } = useForm();
+  const onSubmit = data =>
+  // post merchant registration data
+  {axios.post('http://localhost:8080/api/auth/register',data).then(res=>console.log(res))
+    console.log(data)};
 
   const handleNext = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
+    setActiveStep((prevActiveStep) => prevActiveStep + 1);  
+
   };
 
   const handleBack = () => {
@@ -40,7 +50,7 @@ function Merchant() {
           pb: 5,
         }}
       >
-        <Box>
+        <Box> 
           <Box sx={{ py: 5 }}>
             {" "}
             <Typography variant="h4" fontWeight="bold">
@@ -76,10 +86,10 @@ function Merchant() {
               </Stepper>
             </Box>
           </Container>
+          <form onSubmit={handleSubmit(onSubmit)}>
           {activeStep === steps.length - 1 && (
             <React.Fragment>
-              <VerifyId></VerifyId>
-              <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
+              <VerifyId register={register} ></VerifyId> <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
                 <Box sx={{ flex: "1 1 auto" }} />
                 <Button
                   variant="outlined"
@@ -89,19 +99,20 @@ function Merchant() {
                 >
                   Reset
                 </Button>
-                <Button variant="outlined" color="warning" type="submit">
+                <Button variant="outlined" color="warning" type="submit"
+                       >
                   Submit for Verification
                 </Button>
               </Box>
+              
             </React.Fragment>
           )}
           {activeStep === steps.length - 3 && (
             <React.Fragment>
               <Box>
                 {" "}
-                <CreatAccount></CreatAccount>
-              </Box>
-              <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
+                <CreatAccount register={register}></CreatAccount>
+              </Box><Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
                 <Button
                   color="inherit"
                   disabled={activeStep === 0}
@@ -112,17 +123,19 @@ function Merchant() {
                 </Button>
                 <Box sx={{ flex: "1 1 auto" }} />
 
-                <Button variant="outlined" color="warning" onClick={handleNext}>
+                <Button variant="outlined" color="warning" onClick={handleNext}  >
                   {activeStep === steps.length - 1 ? "Finish" : "Next"}
                 </Button>
               </Box>
+             
             </React.Fragment>
           )}
+         
           {activeStep === steps.length - 2 && (
             <React.Fragment>
               <Box>
                 {" "}
-                <CreateStore></CreateStore>
+                <CreateStore register={register}></CreateStore>
               </Box>
               <Box sx={{ display: "flex", flexDirection: "row", pt: 2 }}>
                 <Button
@@ -140,9 +153,10 @@ function Merchant() {
                 </Button>
               </Box>
             </React.Fragment>
-          )}
+          )}</form>
         </Box>
       </Container>
+      
     </Box>
   );
 }
