@@ -1,3 +1,4 @@
+import BookmarkIcon from '@mui/icons-material/Bookmark';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
@@ -7,7 +8,7 @@ import React from 'react';
 import './Product.css';
 
 const Service = ({ service, isLoad }) => {
-    const { name, pic, price } = service;
+    const { name, img, price } = service;
     return (
         <Grid item xs={12} sm={4} md={3}>
             {
@@ -16,13 +17,14 @@ const Service = ({ service, isLoad }) => {
                         variant="rectangular" height={150} />
                     <Typography variant="h3"><Skeleton /></Typography>
 
-                </Box> : <Card sx={{ p: 2, height: '300px' }} className='card'>
+                </Box> : <Card sx={{ p: 2, height: '250px' }} className='card'>
                     <Box className='img-container'>
                         <CardMedia
                             component="img"
-                            height='245px'
+                            sx={{ borderRadius: '5px' }}
+                            height='220px'
                             width='100%'
-                            image={pic}
+                            image={img}
                             alt="Paella dish"
                         />
                         <Box className='icon-container'>
@@ -39,13 +41,15 @@ const Service = ({ service, isLoad }) => {
                                 <ShareIcon />
                             </IconButton>
                         </Box>
+                        <Box className='price'>
+                            <Typography sx={{ color: '#fff' }}>
+                                <BookmarkIcon />
+                            </Typography>
+                        </Box>
                     </Box>
                     <CardContent>
                         <Typography variant="body1" color="text.secondary">
                             {name.slice(0, 25)}
-                        </Typography>
-                        <Typography variant="h6" sx={{ color: 'orangered', fontWeight: 500 }}>
-                            ${price}
                         </Typography>
                     </CardContent>
                 </Card>

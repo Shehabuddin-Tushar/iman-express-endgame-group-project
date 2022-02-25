@@ -59,7 +59,7 @@
   right: -60px;
   width: 150px;
   height: 3px;
-  background: rgb(223, 14, 14);
+  background: #df0e0e;
 }
 .delivery_box::after {
   content: "";

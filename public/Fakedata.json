@@ -1,42 +1,42 @@
 [
   {
     "category": "H",
-    "firstTitle": "জ্যাম থেকে বাঁচুন, সময় বাঁচান",
-    "secondTitle": "আমরা আছি আপনার সাথে",
-    "thirdTitle": "সব সময় এভেইলেবল",
-    "firstDescription": "অসহনীয় ট্রাফিক জ্যাম থেকে বাঁচার জন্য একমাত্র সমাধান পাঠাও বাইক!। সাশ্রয়ী মূল্যে, সময় বাঁচিয়ে গন্তব্যস্থলে পৌঁছে যান সময়মতো।",
-    "secondDescription": "আমাদের প্রত্যেকটি রাইড নিরাপদ এবং ইনস্যুরেন্স সার্ভিসের আওতাভুক্ত, যার কারনে আমাদের সাথে আপনার প্রতিটি রাইড হবে অনেক বেশি নিরাপদ।",
-    "thirdDescription": "ভোর সকাল কিংবা গভীর রাত, যেকোন সময়েই আমাদের প্রশিক্ষিত রাইডাররা প্রস্তুত আপনার নিরাপদ রাইড নিশ্চিত করতে।",
+    "firstTitle": "Avoid jams, save time",
+    "secondTitle": "We are with you",
+    "thirdTitle": "Available at all times",
+    "firstDescription": "The only solution to avoid the unbearable traffic jam is to send a bike! At affordable prices, save time and get to your destination on time.",
+    "secondDescription": "Each of our rides is safe and covered by insurance services, which makes each of your rides with us much more secure.",
+    "thirdDescription": "At dawn or late at night, our trained riders are ready to ensure your safe ride.",
     "img": "https://pathao.com/bn/wp-content/uploads/sites/6/2018/12/Bike-Ride.png"
   },
   {
     "category": "C",
-    "firstTitle": "বেঁছে নিন আপনার পছন্দের অপশন",
-    "secondTitle": "আরামদায়ক ও সাশ্রয়ী",
-    "thirdTitle": "ঝামেলামুক্ত এবং দ্রুত",
-    "firstDescription": "বাজেট টাইট? ব্যবহার করুন পাঠাও কার লাইট ! এসি কারে ট্র্যাভেল করতে চান? ব্যবহার করুন পাঠাও কার প্লাস।",
-    "secondDescription": "পাঠাও কার প্লাস আপনাকে দিচ্ছে আরামদায়ক এবং সাশ্রয়ী এসি গাড়িতে ট্র্যাভেল করার সুবিধা।",
-    "thirdDescription": "মাত্র কয়েকটি ক্লিক এর মাধ্যমে খুব দ্রুত কোন ঝামেলা ছাড়াই আপনি পেয়ে যাবেন আপনার কার রাইড।",
+    "firstTitle": "Choose the option of your choice",
+    "secondTitle": "Comfortable and affordable",
+    "thirdTitle": "Hassle-free and fast",
+    "firstDescription": "Budget tight? Use Send Car Light! Want to travel by AC car? Use send car plus.",
+    "secondDescription": "Send Car Plus gives you the convenience of traveling in a comfortable and affordable AC car.",
+    "thirdDescription": "With just a few clicks you can get your car ride very fast without any hassle.",
     "img": "https://pathao.com/bn/wp-content/uploads/sites/6/2018/12/Pathao-Car.png"
   },
   {
     "category": "F",
-    "firstTitle": "ফাস্টেস্ট ফুড ডেলিভারি",
-    "secondTitle": "হাজারো অপশন থেকে বেছে নিন",
-    "thirdTitle": "অবিশ্বাস্য ডিসকাউন্ট",
-    "firstDescription": "অর্ডারকৃত ফুড ডেলিভারি পাবেন মাত্র ১ ঘণ্টারও কম সময়ে! আমরাই দিচ্ছি সবচেয়ে কম সময়ে ফুড ডেলিভারি এর নিশ্চয়তা।",
-    "secondDescription": "ঢাকা এবং চট্টগ্রামের ৪০০০ এর বেশি রেস্টুরেন্ট পাঠাও ফুডে এভেইলেবল আছে। বেছে নিন আপনার পছন্দের রেস্টুরেন্ট এবং ফুড আইটেম।",
-    "thirdDescription": "রেস্টুরেন্ট এর সাথে পার্টনারশিপের মাধ্যমে যুক্ত হয়ে পাঠাও আপনাকে অফার করে সাশ্রয়ী মূল্যে অবিশ্বাস্য ফুড কম্বো!",
+    "firstTitle": "Fastest food delivery",
+    "secondTitle": "Choose from thousands of options",
+    "thirdTitle": "Incredible discounts",
+    "firstDescription": "Ordered food will be delivered in less than 1 hour! We guarantee food delivery in the shortest possible time.",
+    "secondDescription": "Food is also available in more than 4000 restaurants in Dhaka and Chittagong. Choose your favorite restaurant and food item.",
+    "thirdDescription": "Join us through a partnership with the restaurant to offer you incredible food combos at affordable prices!",
     "img": "https://pathao.com/bn/wp-content/uploads/sites/6/2018/12/Patha-food.png"
   },
   {
     "category": "D",
-    "firstTitle": "অন ডিমান্ড ডেলিভারি",
-    "secondTitle": "ভরসা রাখুন",
-    "thirdTitle": "ইমারজেন্সি? ডেলিভার করুন পার্সেল এর মাধ্যমে",
-    "firstDescription": "আপনার চার্জার কিংবা চাবি বাসায় রেখে এসেছেন? পাঠাও পার্সেল ব্যবহার করে ডেলিভারি করুন আপনার প্রয়োজনীয় জিনিষ।",
-    "secondDescription": "আপনার যেকোনো ধরনের জরুরী ডকুমেন্ট ডেলিভারির জন্য পাঠাও পার্সেল আছে আপনার বিশ্বস্ত সহযোগী হিসেবে।",
-    "thirdDescription": "কম সময়ে দ্রুততম পার্সেল ডেলিভারির জন্য একমাত্র সমাধান। আপনার প্রয়োজনীয়তাই আমাদের কাছে সবচেয়ে বেশি গুরুত্বপূর্ণ।",
-    "img": "https://pathao.com/bn/wp-content/uploads/sites/6/2018/12/Pathao-Parcel.png"
+    "firstTitle": "On Delivery Delivery",
+    "secondTitle": "Trust us",
+    "thirdTitle": "Emergency? Deliver via parcel",
+    "firstDescription": "Have you left your charger or key at home? Deliver items you need using Send Parcel.",
+    "secondDescription": "Send parcels for your delivery of any kind of urgent documents as your trusted partner.",
+    "thirdDescription": "The only solution for fastest parcel delivery in less time. Your needs are the most important thing to us.",
+    "img": "https://i.ibb.co/R2zrs8H/Add-a-heading.gif"
   }
 ]

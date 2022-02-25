@@ -14,9 +14,18 @@
     box-shadow: 0 0 3px rgb(0,0,0,0.2);
     transition:all 0.4s;
 }
+.price{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #e83330c7;
+    color:white;
+    padding: 0 5px;
+    border-radius: 3px 3px 3px 0;
+}
 .card:hover .icon-container{
        margin-bottom: 0px;
 }
 .selected{
-    color: orangered !important;
+    color: #e83330 !important;
 }
