@@ -47,17 +47,55 @@ const Login = () => {
     const password = data.password;
     try {
       if (data.merchant === 'merchant') {
-        console.log(data);
+       
         axios.post('http://localhost:8080/api/auth/login', data).then(res => {
-          if (res.authtoken) {
+          console.log("res",res)
+          if (res.data.authToken) {
+            const merchantToken = res.data.authToken
+            localStorage.setItem("merchant", merchantToken);
+            
+             // rider info fetch from database
+             axios.post('http://localhost:8080/api/auth/getmerchantuser', { headers: {"Authorization" : `Bearer ${merchantToken}`} }).then(res => {
+          console.log("res",res.data);
+              
+         }        
+            ).catch(err => console.log(err)) 
             Swal.fire({
               icon: 'success',
               title: 'Merchant Login Successfully',
             });
-          }
-        }
+          }        
+         }
         
         ).catch(err => console.log(err))
+      }
+      if (data.rider === 'rider') {
+
+        // rider login 
+        console.log(data);
+        axios.post('http://localhost:8080/api/authRider/login', data).then(res => {
+          console.log("res",res.data);
+          if (res.data.authToken) {
+            const riderToken = res.data.authToken
+            localStorage.setItem("riderToken", riderToken);
+
+             // rider info fetch from database
+             axios.post('http://localhost:8080/api/authRider/getRider', { headers: {"Authorization" : `Bearer ${riderToken}`} }).then(res => {
+          console.log("res",res.data);
+              
+         }        
+            ).catch(err => console.log(err)) 
+           
+            
+            Swal.fire({
+              icon: 'success',
+              title: 'Rider Login Successfully',
+            });
+          }        
+         }
+        
+        ).catch(err => console.log(err))
+       
       }
       if (data.user === 'user') {
         userLogin(email, password, redirect, navigate);
@@ -118,7 +156,7 @@ const Login = () => {
                   <TextField
                     required
                     label="Password"
-                    type="Password"
+                    type="password"
                     sx={{ my: 2, width: "100%" }}
                     variant="outlined"
                     {...register("password")}
@@ -150,6 +188,20 @@ const Login = () => {
                                 />
                               }
                               label="Merchant"
+                            />
+                            <FormControlLabel
+                              value="rider"
+                              {...register("rider")}
+                              control={
+                                <Radio  
+                                  sx={{
+                                    "&.Mui-checked": {
+                                      color: pink[600],
+                                    },
+                                  }}
+                                />
+                              }
+                              label="Rider"
                             />
                             <FormControlLabel
                               value="user"
