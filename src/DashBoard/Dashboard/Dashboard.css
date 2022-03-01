@@ -1,0 +1,36 @@
+.list_of_route {
+  margin-top: 25px;
+}
+.list_of_route a {
+  padding: 5px;
+  border-radius: 5px;
+  margin-top: -6px;
+  transition: 0.4s;
+}
+.list_of_route a:focus {
+  transform: translateY(-2px);
+  background-color: rgb(32, 32, 32);
+}
+.toolbar_box {
+  margin-left: 820px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.list_of_route a {
+  color: white;
+}
+.toolbar_box .user_img {
+  width: 50px;
+  border-radius: 50px;
+}
+.toolbar_box .flag_img {
+  width: 28px;
+  margin-right: 20px;
+}
+@media screen and (max-width: 600px) {
+  .toolbar_box {
+    margin-top: 10px;
+    margin-left: 100px;
+  }
+}

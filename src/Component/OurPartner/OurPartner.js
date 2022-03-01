@@ -89,12 +89,12 @@ const OurPartnerSlider=()=>{
            
          
         <div className="container">
-        <img className='bolimg' style={{width:'250px'}} src='https://i.ibb.co/0YmnqFS/xpress-money.jpg' alt="xpress-money" />
+        <img className='bolimg' style={{width:'300px'}} src='https://i.ibb.co/0YmnqFS/xpress-money.jpg' alt="xpress-money" />
        
         </div>
        
         <div className="container">
-        <img className='bolimg' style={{width:'200px'}} src='https://i.ibb.co/0mTcwz2/upaypng.png' alt="upay" />
+        <img className='bolimg' style={{width:'300px'}} src='https://i.ibb.co/0mTcwz2/upaypng.png' alt="upay" />
  
         </div>
          
@@ -105,7 +105,7 @@ const OurPartnerSlider=()=>{
            
          
         <div className="container">
-        <img className='bolimg' style={{width:'250px'}} src='https://i.ibb.co/gg54LG4/rocket.jpg' alt="rocket" />
+        <img className='bolimg' style={{width:'300px'}} src='https://i.ibb.co/gg54LG4/rocket.jpg' alt="rocket" />
 
         </div>
         
@@ -114,23 +114,23 @@ const OurPartnerSlider=()=>{
 
         </div>
         <div className="container">
-        <img className='bolimg'style={{width:'280px'}} src='https://i.ibb.co/YbwpFQ7/EBL.jpg' alt="EBL sky" />
+        <img className='bolimg'style={{width:'300px'}} src='https://i.ibb.co/YbwpFQ7/EBL.jpg' alt="EBL sky" />
 
         </div>
         <div className="container">
-        <img className='bolimg'style={{width:'280px'}} src='https://i.ibb.co/74r8kLv/nagad.jpg' alt="nagad" />
+        <img className='bolimg'style={{width:'300px'}} src='https://i.ibb.co/74r8kLv/nagad.jpg' alt="nagad" />
 
         </div>
         <div className="container">
-        <img className='bolimg'style={{width:'280px'}} src='https://i.ibb.co/8Bfbw2x/datch-bangla.jpg' alt="Datch Bangla" />
+        <img className='bolimg'style={{width:'300px'}} src='https://i.ibb.co/8Bfbw2x/datch-bangla.jpg' alt="Datch Bangla" />
 
         </div>
         <div className="container">
-        <img className='bolimg'style={{width:'280px'}} src='https://i.ibb.co/B6btH1H/bangladesh-bank.jpg' alt="bd bank" />
+        <img className='bolimg'style={{width:'300px'}} src='https://i.ibb.co/B6btH1H/bangladesh-bank.jpg' alt="bd bank" />
 
         </div>
         <div className="container">
-        <img className='bolimg'style={{width:'280px'}} src='https://i.ibb.co/MhqM5n4/bkasj.jpg' alt="bkash" />
+        <img className='bolimg'style={{width:'300px'}} src='https://i.ibb.co/MhqM5n4/bkasj.jpg' alt="bkash" />
 
         </div>
            

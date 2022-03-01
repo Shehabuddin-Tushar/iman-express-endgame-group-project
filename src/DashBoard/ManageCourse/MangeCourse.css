@@ -1,0 +1,140 @@
+.trendy_courses h1 {
+  position: relative;
+  font-size: 35px;
+  font-weight: 700;
+  font-family: Hind Siliguri, sans-serif;
+  z-index: 1000 !important;
+}
+.trendy_courses h1::before {
+  position: absolute;
+  top: -45px;
+  left: 37%;
+  z-index: -1000 !important;
+  content: "";
+  width: 60px;
+  height: 60px;
+  border-top-right-radius: 80%;
+  border-bottom-left-radius: 80%;
+  background-image: linear-gradient(110deg, #f5767a, #ff0912);
+}
+.trendy_courses small {
+  color: #868686;
+  font-family: Hind Siliguri, sans-serif;
+  font-weight: 600;
+}
+.trendy_course_nested_route {
+  margin: 30px 0px;
+}
+.trendy_course_nested_route button {
+  text-decoration: none;
+  padding: 11px 25px;
+  color: #3d3c3c;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: 0.6s;
+  border: none;
+  background-color: white;
+}
+.trendy_course_nested_route button:focus {
+  background-color: #ff7277d3;
+  color: #df0007;
+}
+
+.trendy_course_nested_route button {
+  margin: 10px;
+}
+/* some input textfield */
+.input_title {
+  color: #a3a3a3;
+  font-style: italic;
+}
+/* trendy_course_wrapper card */
+.course_columns {
+  margin-top: 50px;
+}
+.trendy_course_wrapper {
+  max-width: 100%;
+  height: auto;
+  background-color: white;
+  box-shadow: 2px 4px 12px rgb(196, 196, 196);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: 0.6s;
+}
+.trendy_course_wrapper:hover {
+  box-shadow: 2px 4px 15px rgb(196, 196, 196);
+  transform: translateY(-3px);
+}
+.trendy_course_wrapper img {
+  width: 100%;
+  border-radius: 13px;
+  margin-top: -2px;
+  transition: 0.9s;
+}
+.trendy_course_body h6 {
+  font-size: 16px;
+  color: #df0007;
+  margin-left: 15px;
+  margin-top: 25px;
+  font-weight: 600;
+  text-align: left;
+}
+.trendy_course_body h2 {
+  margin-left: 15px;
+  margin-right: 7px;
+  font-family: "Hind Siliguri";
+  text-align: left;
+  font-size: 1.4125rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: #232222;
+  height: 3.625rem;
+}
+
+.edit_delete_icons img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50px;
+  padding: 5px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.review_and_fee {
+  margin-top: 20px;
+  margin-left: 15px;
+  margin-right: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.button_style button {
+  padding: 15px 40px;
+  border: none;
+  margin-top: 15px;
+  font-size: 1em;
+  font-weight: bolder;
+  border-radius: 10px;
+  background-image: linear-gradient(270deg, #14d86c, #035332);
+  transition: 0.6s;
+  box-shadow: 2px 4px 10px rgba(23, 255, 81, 0.521);
+}
+.button_style button:hover {
+  transform: translateY(-2px);
+}
+
+/* trendy_course_wrapper card */
+
+@media only screen and (max-width: 600px) {
+  .trendy_courses h1::before {
+    position: absolute;
+    top: -45px;
+    left: 6%;
+  }
+  .course_columns {
+    margin-top: 15px;
+  }
+  .trendy_course_nested_route button {
+    margin: 8px;
+  }
+}
