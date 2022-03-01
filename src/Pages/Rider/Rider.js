@@ -16,9 +16,11 @@ import {
 } from "@mui/material";
 import { pink, red } from "@mui/material/colors";
 import { Box } from "@mui/system";
+import axios from "axios";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const Rider = () => {
   const [error, setError] = useState(false);
@@ -28,8 +30,18 @@ const Rider = () => {
 
   const onSubmit = (data) => {
     console.log(data);
+    axios.post('http://localhost:8080/api/authRider/register', data).then(res => {
+        console.log(res)
+        if (res.data.authToken) {
+          Swal.fire({
+            icon: 'success',
+            title: 'Rider Registered Successfully',
+          });
+        }
+        }).catch(err=>console.log(err))
   };
   //radio field
+  
   const handleChange = (event) => {
     setValue(event.target.value);
   };
@@ -104,8 +116,24 @@ const Rider = () => {
                       type="text"
                       sx={{ mt: 2, width: "100%" }}
                       variant="outlined"
-                      {...register("City *")}
+                      {...register("city")}
                     />
+                     <TextField
+                  required
+                  label="Email"
+                  type="email"
+                  sx={{ mt: 2, width: "100%" }}
+                  variant="outlined"
+                  {...register("email")}
+              />
+              <TextField
+                  required
+                  label="Password"
+                  type="password"
+                  sx={{ my: 2, width: "100%" }}
+                  variant="outlined"
+                  {...register("password")}
+              />
                     <Box sx={{ textAlign: "left", mt: 2 }}>
                       <FormControl>
                         <FormLabel>Service(s) you want to provide</FormLabel>

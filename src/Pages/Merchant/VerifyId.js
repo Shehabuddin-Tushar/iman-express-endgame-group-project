@@ -1,17 +1,12 @@
-import { TextField } from "@mui/material";
+import {TextField } from "@mui/material";
 import React from "react";
-import { useForm } from "react-hook-form";
 
-const VerifyId = () => {
-  const { register, handleSubmit, reset } = useForm();
-
-  const onSubmit = (data) => {
-    console.log(data);
-  };
+const VerifyId = ({register}) => {
+ 
   return (
     <div>
       {" "}
-      <form onSubmit={handleSubmit(onSubmit)}>
+      
         <TextField
           label="NID Number"
           required
@@ -20,7 +15,8 @@ const VerifyId = () => {
           variant="outlined"
           {...register("NID")}
         />
-      </form>
+       
+     
     </div>
   );
 };
