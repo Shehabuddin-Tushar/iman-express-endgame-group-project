@@ -134,7 +134,9 @@ const Navbar = () => {
               onClick={handleCloseNavMenu}
               sx={{ my: 2, color: "black", display: "block" }}
             >
-              <Link to="/">Home</Link>
+              <Link to="/" style={{ textDecoration: "none", color: "black" }}>
+                Home
+              </Link>
             </Button>
 
             <Button
@@ -142,7 +144,12 @@ const Navbar = () => {
               onClick={handleCloseNavMenu}
               sx={{ my: 2, color: "black", display: "block" }}
             >
-              <Link to="/moreBlogs">Blog</Link>
+              <Link
+                to="/moreBlogs"
+                style={{ textDecoration: "none", color: "black" }}
+              >
+                Blog
+              </Link>
             </Button>
             <Button
               key="4"

@@ -91,7 +91,7 @@ function Nav(props) {
                   </span>{" "}
                   Profile
                 </Link>
-                <Link className="" to="/dashboard">
+                <Link className="" to="/dashboard/marchant/add-products">
                   <span>
                     <CategoryIcon />
                   </span>{" "}

@@ -242,7 +242,7 @@ const Login = () => {
                   </Box>
                   <Typography sx={{ textAlign: "left", mt: 2 }}>
                     Don’t have an account??{" "}
-                    <Link style={{ color: "tomato" }} to="/register">
+                    <Link to="/register" style={{ color: "tomato" }}>
                       Sign Up
                     </Link>
                   </Typography>
