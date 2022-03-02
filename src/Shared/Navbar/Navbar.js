@@ -17,8 +17,7 @@ import * as React from "react";
 import { Link } from "react-router-dom";
 import styles from "./Navbar.module.css";
 
-// const pages = ["Products", "Pricing", "Blog"];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
+
 
 const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -102,16 +101,7 @@ const Navbar = () => {
                 <Typography textAlign="center">Contact us</Typography>
               </MenuItem>
 
-              <MenuItem
-                key="1"
-                onClick={handleOpenUserMenu}
-                style={{ width: "200px" }}
-              >
-                <Typography textAlign="center">Categroy</Typography>
-                <IconButton sx={{ p: 0 }}>
-                  <ArrowDropDownIcon />
-                </IconButton>
-              </MenuItem>
+              
             </Menu>
           </Box>
           <Typography
@@ -124,7 +114,7 @@ const Navbar = () => {
             }}
           >
             
-            <img src="https://i.ibb.co/jz5WkPr/logo.png" alt=""/>
+            <img src="https://i.ibb.co/jz5WkPr/logo.png" alt="" width="150px"/>
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             <Button
@@ -151,16 +141,7 @@ const Navbar = () => {
               <Link to="/dashboard">Dashboard</Link>
             </Button>
 
-            <Button
-              onClick={handleOpenUserMenu}
-              key="5"
-              sx={{ my: 2, color: "black", display: "block" }}
-            >
-              Category
-              <IconButton sx={{ p: 0 }}>
-                <ArrowDropDownIcon />
-              </IconButton>
-            </Button>
+           
             {/* contact us added  */}
            
               <Link to='/contactUs'>
@@ -183,29 +164,19 @@ const Navbar = () => {
              
             
           </Box>
+          <Button
+            onClick={handleOpenUserMenu}
+            key="5"
+            sx={{ my: 2, color: "black", display: "block" }}
+          >
+           Sign up
+            <IconButton sx={{ p: 0 }}>
+              <ArrowDropDownIcon />
+            </IconButton>
+           
+          </Button>
           <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <MenuItem>
-                  <IconButton
-                    size="large"
-                    aria-label="show 17 new notifications"
-                    color="inherit"
-                  >
-                    <Badge badgeContent={17} color="error">
-                      <NotificationsIcon />
-                    </Badge>
-                  </IconButton>
-                </MenuItem>
-              </IconButton>
-            </Tooltip>
-          </Box>
-          <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <AccountCircle />
-              </IconButton>
-            </Tooltip>
+            
             <Menu
               style={{ marginTop: "45px" }}
               id="menu-appbar"
@@ -222,15 +193,31 @@ const Navbar = () => {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-              {settings.map((setting) => (
+             
                 <MenuItem
-                  key={setting}
+                  
                   onClick={handleCloseUserMenu}
                   style={{ width: "200px" }}
                 >
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
+                <Link to="/register"><Typography textAlign="center">general account</Typography></Link>
+              </MenuItem>
+              
+              <MenuItem
+                  
+                  onClick={handleCloseUserMenu}
+                  style={{ width: "200px" }}
+                >
+                <Link to="/merchant"><Typography textAlign="center">Merchant account</Typography></Link>
+              </MenuItem>
+              
+              <MenuItem
+
+                onClick={handleCloseUserMenu}
+                style={{ width: "200px" }}
+              >
+                <Link to="/rider"><Typography textAlign="center">Rider account</Typography></Link>
+              </MenuItem>
+             
             </Menu>
           </Box>
         </Toolbar>

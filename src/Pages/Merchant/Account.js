@@ -22,13 +22,15 @@ function Account() {
       axios.post('http://localhost:8080/api/auth/register', data).then(res => {
         console.log(res.data.authToken)
         if (res.data.authToken) {
+          
           console.log(data);
           Swal.fire({
             icon: 'success',
             title: 'Merchant Registered Successfully',
           });
         }
-        }).catch(err=>console.log(err))
+      }).catch(err => console.log(err))
+      reset()
     };
     return (
       <div>
