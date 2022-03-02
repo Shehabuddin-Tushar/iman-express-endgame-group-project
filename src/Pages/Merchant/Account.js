@@ -20,7 +20,7 @@ function Account() {
 
     const onSubmit = (data) => {
       axios.post('http://localhost:8080/api/auth/register', data).then(res => {
-        // console.log(res)
+        console.log(res.data.authToken)
         if (res.data.authToken) {
           console.log(data);
           Swal.fire({
@@ -86,7 +86,7 @@ function Account() {
                 type="text"
                 sx={{ mt: 2, width: "100%" }}
                 variant="outlined"
-                {...register("link ")}
+                {...register("faceBookLink")}
               />
               <TextField
                   required

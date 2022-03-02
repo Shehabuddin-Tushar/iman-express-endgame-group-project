@@ -54,10 +54,12 @@ const Login = () => {
             const merchantToken = res.data.authToken
             localStorage.setItem("merchant", merchantToken);
             
+            
              // rider info fetch from database
              axios.post('http://localhost:8080/api/auth/getmerchantuser', { headers: {"Authorization" : `Bearer ${merchantToken}`} }).then(res => {
-          console.log("res",res.data);
-              
+               console.log("res", res.data);
+               const merchantInfo = JSON.stringify(res.data)
+          localStorage.setItem("merchantInfo", merchantInfo);
          }        
             ).catch(err => console.log(err)) 
             Swal.fire({
@@ -82,7 +84,8 @@ const Login = () => {
              // rider info fetch from database
              axios.post('http://localhost:8080/api/authRider/getRider', { headers: {"Authorization" : `Bearer ${riderToken}`} }).then(res => {
           console.log("res",res.data);
-              
+          const riderInfo = JSON.stringify(res.data)
+          localStorage.setItem("riderInfo", riderInfo);
          }        
             ).catch(err => console.log(err)) 
            
