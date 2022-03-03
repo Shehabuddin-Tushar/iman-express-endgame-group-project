@@ -11,7 +11,6 @@ import {
 import { Box } from "@mui/system";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
 
 const CreatAccount = ({register}) => {
   const [error, setError] = useState(false);

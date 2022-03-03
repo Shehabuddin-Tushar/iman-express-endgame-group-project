@@ -4,7 +4,10 @@ import {
     Container,
     Divider,
     Grid,
+    InputLabel,
+    MenuItem,
     Paper,
+    Select,
     TextField,
     Typography,
 } from "@mui/material";
@@ -16,9 +19,30 @@ import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 function Account() {
-    const { register, handleSubmit, reset } = useForm();
+  const { register, handleSubmit, reset ,formState: { errors }  } = useForm();
+  const [mycategory, setCategory] = React.useState('');
 
-    const onSubmit = (data) => {
+  const handleChange = (event) => {
+    setCategory(event.target.value);
+  };
+  const onSubmit =  async(data) => {
+  
+    
+    let imageURL
+    const imageData = new FormData();
+    imageData.set("key", "06a916692ea087d185221539196ef3a5");
+    imageData.append("image", data.image[0]);
+    try {
+      const res = await axios.post(
+        "https://api.imgbb.com/1/upload",
+        imageData
+      );
+      imageURL = res.data.data.display_url;
+    } catch (error) {
+
+      return alert("Failed to upload the image!");
+    }
+      data.image=imageURL
       axios.post('http://localhost:8080/api/auth/register', data).then(res => {
         console.log(res.data.authToken)
         if (res.data.authToken) {
@@ -30,7 +54,7 @@ function Account() {
           });
         }
       }).catch(err => console.log(err))
-      reset()
+       reset()
     };
     return (
       <div>
@@ -89,7 +113,9 @@ function Account() {
                 sx={{ mt: 2, width: "100%" }}
                 variant="outlined"
                 {...register("faceBookLink")}
-              />
+                  />
+                  
+                  
               <TextField
                   required
                   label="email"
@@ -105,14 +131,39 @@ function Account() {
                   sx={{ my: 2, width: "100%" }}
                   variant="outlined"
                   {...register("password")}
-              />
+                  />
+                  <InputLabel id="demo-simple-select-label">Category</InputLabel>
+                  <Select
+                    required
+                    style={{ width: "300px" }}
+                    labelId="demo-simple-select-label"
+                    id="demo-simple-select"
+                    {...register("category")}
+                    value={mycategory}
+                   onChange={handleChange}
+                  >
+                    <MenuItem value="resturant">Resturant</MenuItem>
+                    <MenuItem value="medicine">Medicine</MenuItem>
+                    <MenuItem value="supershop">Super shop</MenuItem>
+                  </Select><br /><br />
+                  <input type="file" {...register("image", { required: true })} />
+                  <Typography>{errors.image && <span>This field is required</span>}</Typography>
           </Box>{" "}
           <Box sx={{ textAlign: "left", my: 3 }}>
               <Button variant="outlined" color="warning" type="submit">
                   Create Account
               </Button>
-          </Box>
-                </form> </Paper>
+                </Box>
+                
+              </form>
+              <Box sx={{ textAlign: "left", my: 3 }}>
+                <Link to="/login">
+                <Button variant="outlined" color="warning" type="submit">
+                  Login
+                  </Button>
+                </Link>
+              </Box></Paper>
+            
             </Grid>
         </Grid>
     </div >

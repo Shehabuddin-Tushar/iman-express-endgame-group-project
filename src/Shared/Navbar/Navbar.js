@@ -42,8 +42,11 @@ const Navbar = () => {
     <AppBar position="sticky" sx={{ boxShadow: 0 }} className={styles.navbar}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          
-          <img src="https://i.ibb.co/jz5WkPr/logo.png" alt="" className={styles.logooursite} />
+          <img
+            src="https://i.ibb.co/jz5WkPr/logo.png"
+            alt=""
+            className={styles.logooursite}
+          />
           <Box
             sx={{
               flexGrow: 1,
@@ -122,8 +125,9 @@ const Navbar = () => {
               onClick={handleCloseNavMenu}
               sx={{ my: 2, color: "black", display: "block" }}
             >
-              <Link to="/">Home</Link>
-              
+              <Link to="/" style={{ textDecoration: "none", color: "black" }}>
+                Home
+              </Link>
             </Button>
 
             <Button
@@ -131,7 +135,12 @@ const Navbar = () => {
               onClick={handleCloseNavMenu}
               sx={{ my: 2, color: "black", display: "block" }}
             >
-              <Link to="/moreBlogs">Blog</Link>
+              <Link
+                to="/moreBlogs"
+                style={{ textDecoration: "none", color: "black" }}
+              >
+                Blog
+              </Link>
             </Button>
             <Button
               key="4"
@@ -143,26 +152,26 @@ const Navbar = () => {
 
            
             {/* contact us added  */}
-           
-              <Link to='/contactUs'>
-              <Button style={{textDecoration:'none'}}
-              key="6"
-              sx={{ my: 2, color: "black" }}
-            >
-                 Contact Us
-              </Button>
-              </Link>
 
-              <Link to='/aboutUs'>
-              <Button style={{textDecoration:'none'}}
-              key="6"
-              sx={{ my: 2, color: "black" }}
-            >
-                 About Us
+            <Link to="/contactUs">
+              <Button
+                style={{ textDecoration: "none" }}
+                key="6"
+                sx={{ my: 2, color: "black" }}
+              >
+                Contact Us
               </Button>
-              </Link>
-             
-            
+            </Link>
+
+            <Link to="/aboutUs">
+              <Button
+                style={{ textDecoration: "none" }}
+                key="6"
+                sx={{ my: 2, color: "black" }}
+              >
+                About Us
+              </Button>
+            </Link>
           </Box>
           <Button
             onClick={handleOpenUserMenu}

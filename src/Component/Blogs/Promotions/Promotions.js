@@ -29,7 +29,7 @@ const Promotions = () => {
                         <Link to="/moreBlogs">
                             <button className='allBlogsBtn'>
                             <p>View all</p>
-                            <i><i class="fas fa-arrow-right"></i></i>
+                            <i><i className="fas fa-arrow-right"></i></i>
                             </button>
                         </Link>
                     </div>
@@ -38,7 +38,7 @@ const Promotions = () => {
                         <Paper elevation={4}>
                             <div className='blogBox'>
                                 <div>
-                                    <img src={blog.img} alt="Empty!" style={{width:"100%", height: "200px", borderRadius: "5px"}}/>
+                                    <img src={blog.img} alt="Empty!" style={{width:"100%", height: "200px", borderTopLeftRadius: "5px", borderTopRightRadius: "5px"}}/>
                                 </div>
                                 <div className='blogBoxContent'>
                                     <div className='blogTitle'>

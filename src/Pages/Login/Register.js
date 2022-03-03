@@ -118,7 +118,7 @@ const Register = () => {
                   </Box>
                   <Typography sx={{ mt: 2 }}>
                     Already have an Account?{" "}
-                    <Link style={{ color: "tomato" }} to="/login">
+                    <Link  to="/login" style={{ color: "tomato" }}>
                       Login
                     </Link>
                   </Typography>
