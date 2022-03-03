@@ -6,11 +6,14 @@ import ProductPage from "./Component/MerchanterProduct/ProductPage";
 import Nav from "./DashBoard/Dashboard/Dashboard";
 import AboutUs from "./Pages/AboutUs/AboutUs";
 import ContactUs from "./Pages/ContactUs/ContactUs";
+import RiderAccount from "./Pages/Dashboard/Rider/RiderAccount";
+import RiderSetting from "./Pages/Dashboard/Setting/RiderSetting";
+
 import Home from "./Pages/Home/Home";
 import Login from "./Pages/Login/Login";
 import Register from "./Pages/Login/Register";
 import Account from "./Pages/Merchant/Account";
-import Merchant from "./Pages/Merchant/Merchant";
+
 import Rider from "./Pages/Rider/Rider";
 function App() {
   return (
@@ -41,6 +44,8 @@ function App() {
             path="/product/:productDetail"
             element={<ProductPage />}
           ></Route>
+          <Route path="/riderProfile" element={<RiderAccount></RiderAccount>}></Route>
+          <Route path="/riderSetting" element={<RiderSetting></RiderSetting>}></Route>
           <Route path="/dashboard" element={<Nav />}>
             {" "}
           </Route>
