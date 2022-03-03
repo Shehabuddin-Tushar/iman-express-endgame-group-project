@@ -180,6 +180,14 @@ const Navbar = () => {
                  About Us
               </Button>
               </Link>
+              <Link to='/addBlog'>
+              <Button style={{textDecoration:'none'}}
+              key="6"
+              sx={{ my: 2, color: "black" }}
+            >
+                 addBlog 
+              </Button>
+              </Link>
              
             
           </Box>

@@ -18,6 +18,8 @@ import Rider from "./Pages/Rider/Rider";
 import ContactUs from "./Pages/ContactUs/ContactUs";
 import AboutUs from './Pages/AboutUs/AboutUs';
 import "./App.css";
+import AddBlog from "./DashBoard/DashboardHome/AddBlog/AddBlog";
+import UpdateBlog from "./DashBoard/DashboardHome/AddBlog/UpdateBlog/UpdateBlog";
 function App() {
   return (
     <div>
@@ -54,7 +56,10 @@ function App() {
             ></Route>
             <Route path="/dashboard/rate-us" element={<Review />}></Route>
             <Route path="/dashboard/payment" element={<PaymentDash />}></Route>
+
           </Route>
+          <Route path="/addBlog" element={<AddBlog></AddBlog>}></Route>
+          <Route path="/updateBlog" element={<UpdateBlog></UpdateBlog>}></Route>
          </Routes>
         
       </Router>
