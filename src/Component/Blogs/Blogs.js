@@ -53,14 +53,16 @@ const Blogs = () => {
                         <Paper elevation={4}>
                             <div className='blogBox'>
                                 <div>
-                                    <img src={blog.img} alt="Empty!" style={{width:"100%", height: "200px", borderRadius: "5px"}}/>
+                                    <img src={blog.img} alt="Empty!" style={{width:"100%", height: "200px"}}/>
                                 </div>
                                 <div className='blogBoxContent'>
-                                    <div className='blogTitle'>
-                                        <span>{blog.category}</span>
-                                        <li>{blog.date}</li>
-                                    </div>
-                                    <p>{blog.description.slice(0,36)}.</p>
+                                    <Link to={`/blogDetails/${blog.id}`}>
+                                        <div className='blogTitle'>
+                                            <span>{blog.category}</span>
+                                            <li>{blog.date}</li>
+                                        </div>
+                                        <p>{blog.description}</p>
+                                    </Link>
                                 </div>
                             </div>
                         </Paper>

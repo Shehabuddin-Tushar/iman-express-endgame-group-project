@@ -21,6 +21,12 @@
   transform: translateY(-2px);
   background-color: rgb(32, 32, 32);
 }
+#list_route {
+  background-color: rgb(52, 52, 52) !important;
+}
+#list_route:focus {
+  background-color: rgb(52, 52, 52) !important;
+}
 .toolbar_box {
   margin-left: 820px;
   display: flex;
@@ -57,6 +63,24 @@
   width: 50px;
   height: 50px;
   border-radius: 50%;
+}
+#accordion {
+  box-shadow: 0px 0px !important;
+}
+#panel1a-header {
+  background-color: rgb(52, 52, 52) !important;
+  padding: 0px !important;
+  box-shadow: none !important;
+  margin-top: -20px;
+}
+#accordionBody {
+  background-color: rgb(52, 52, 52) !important;
+  padding: 0px !important;
+  box-shadow: none !important;
+  margin: 0px !important;
+}
+#accordionBody a {
+  margin-left: 15px;
 }
 @media screen and (max-width: 600px) {
   .toolbar_box {

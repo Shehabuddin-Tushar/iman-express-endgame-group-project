@@ -1,9 +1,11 @@
 import MessengerCustomerChat from "react-messenger-customer-chat";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
+import BlogDetails from "./Component/Blogs/BlogDetails/BlogDetails";
 import BlogsHome from "./Component/Blogs/BlogsHome/BlogsHome";
 import ProductPage from "./Component/MerchanterProduct/ProductPage";
 import Nav from "./DashBoard/Dashboard/Dashboard";
+import MarchantProducts from "./DashBoard/MarchantProducts/MarchantProducts";
 import AboutUs from "./Pages/AboutUs/AboutUs";
 import ContactUs from "./Pages/ContactUs/ContactUs";
 import RiderAccount from "./Pages/Dashboard/Rider/RiderAccount";
@@ -15,15 +17,16 @@ import Register from "./Pages/Login/Register";
 import Account from "./Pages/Merchant/Account";
 
 import Rider from "./Pages/Rider/Rider";
+
 function App() {
   return (
-    <div>
+    <>
       <Router>
         <Routes>
           <Route path="/" element={<Home></Home>}></Route>
           <Route path="/login" element={<Login></Login>}></Route>
           <Route path="/register" element={<Register></Register>}></Route>
-          <Route path="/merchant" element={<Account/>}></Route>
+          <Route path="/merchant" element={<Account />}></Route>
           <Route path="/rider" element={<Rider></Rider>}></Route>
           <Route path="/moreBlogs" element={<BlogsHome></BlogsHome>}></Route>
           <Route path="/dashboard" element={<Nav />}></Route>
@@ -35,7 +38,16 @@ function App() {
           <Route path="/moreBlogs" element={<BlogsHome></BlogsHome>}></Route>
           <Route path="/contactUs" element={<ContactUs></ContactUs>}></Route>
 
-          
+          <Route path="/rider" element={<Rider></Rider>}></Route>
+          <Route path="/moreBlogs" element={<BlogsHome></BlogsHome>}></Route>
+          <Route path="/contactUs" element={<ContactUs></ContactUs>}></Route>
+
+          <Route path="/" element={<Home></Home>}></Route>
+          <Route path="/login" element={<Login></Login>}></Route>
+          <Route path="/register" element={<Register></Register>}></Route>
+          <Route path="/moreBlogs" element={<BlogsHome></BlogsHome>}></Route>
+          <Route path="/blogDetails/:id" element={<BlogDetails />}></Route>
+          <Route path="/merchant" element={<Merchant></Merchant>}></Route>
           <Route path="/rider" element={<Rider></Rider>}></Route>
           <Route path="/moreBlogs" element={<BlogsHome></BlogsHome>}></Route>
           <Route path="/contactUs" element={<ContactUs></ContactUs>}></Route>
@@ -47,7 +59,10 @@ function App() {
           <Route path="/riderProfile" element={<RiderAccount></RiderAccount>}></Route>
           <Route path="/riderSetting" element={<RiderSetting></RiderSetting>}></Route>
           <Route path="/dashboard" element={<Nav />}>
-            {" "}
+            <Route
+              path="/dashboard/marchant/add-products"
+              element={<MarchantProducts />}
+            ></Route>
           </Route>
         </Routes>
       </Router>
@@ -56,7 +71,7 @@ function App() {
         pageId="104547992167816"
         appId="3055318624707846"
       />
-    </div>
+    </>
   );
 }
 export default App;

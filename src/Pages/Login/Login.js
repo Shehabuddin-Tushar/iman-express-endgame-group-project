@@ -24,12 +24,13 @@ import Swal from "sweetalert2";
 import useFirebase from "../../Hooks/useFirebase";
 
 
+
 const Login = () => {
   const [error, setError] = useState(false);
   const [success, setSuccess] = useState(false);
   const { googleLogin, userLogin } = useFirebase();
   const { register, handleSubmit, reset } = useForm();
-
+ 
   ///redirect user  destination
   const location = useLocation();
   const redirect = location?.state?.from || "/";
@@ -56,9 +57,16 @@ const Login = () => {
             
             
              // rider info fetch from database
-             axios.post('http://localhost:8080/api/auth/getmerchantuser', { headers: {"Authorization" : `Bearer ${merchantToken}`} }).then(res => {
+            axios.post('http://localhost:8080/api/auth/getmerchantuser', { hello: 'world' },
+              {
+                headers: {
+                  "auth-token": merchantToken,
+                  "Content-Type": "application/json"
+                }
+              }).then(res => {
                console.log("res", res.data);
                const merchantInfo = JSON.stringify(res.data)
+               console.log(merchantInfo)
           localStorage.setItem("merchantInfo", merchantInfo);
          }        
             ).catch(err => console.log(err)) 
@@ -66,6 +74,8 @@ const Login = () => {
               icon: 'success',
               title: 'Merchant Login Successfully',
             });
+            navigate("/merchantproduct")
+           
           }        
          }
         
@@ -245,7 +255,7 @@ const Login = () => {
                   </Box>
                   <Typography sx={{ textAlign: "left", mt: 2 }}>
                     Don’t have an account??{" "}
-                    <Link style={{ color: "tomato" }} to="/register">
+                    <Link to="/register" style={{ color: "tomato" }}>
                       Sign Up
                     </Link>
                   </Typography>
