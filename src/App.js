@@ -20,6 +20,7 @@ import AboutUs from './Pages/AboutUs/AboutUs';
 import "./App.css";
 import AddBlog from "./DashBoard/DashboardHome/AddBlog/AddBlog";
 import UpdateBlog from "./DashBoard/DashboardHome/AddBlog/UpdateBlog/UpdateBlog";
+import ManageBlog from "./DashBoard/DashboardHome/ManageBlog/ManageBlog";
 function App() {
   return (
     <div>
@@ -56,9 +57,10 @@ function App() {
             ></Route>
             <Route path="/dashboard/rate-us" element={<Review />}></Route>
             <Route path="/dashboard/payment" element={<PaymentDash />}></Route>
+            <Route path="/dashboard/addBlog" element={<AddBlog />}></Route>
+            <Route path="/dashboard/manageBlog" element={<ManageBlog/>}></Route>
 
           </Route>
-          <Route path="/addBlog" element={<AddBlog></AddBlog>}></Route>
           <Route path="/updateBlog" element={<UpdateBlog></UpdateBlog>}></Route>
          </Routes>
         
