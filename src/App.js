@@ -42,13 +42,20 @@ function App() {
             path="/product/:productDetail"
             element={<ProductPage />}
           ></Route>
-          <Route path="/riderProfile" element={<RiderAccount></RiderAccount>}></Route>
-          <Route path="/riderSetting" element={<RiderSetting></RiderSetting>}></Route>
+          
+         
           <Route path="/dashboard" element={<Nav />}>
             <Route
               path="/dashboard/marchant/add-products"
               element={<MarchantProducts />}
             ></Route>
+            <Route path="/dashboard" element={<Nav />}></Route>
+            <Route
+              path="/dashboard/rider/profile"
+              element={<RiderAccount />}
+            ></Route>
+             <Route path="/dashboard/rider/setting" element={<RiderSetting/>}></Route>
+           
           </Route>
         </Routes>
       </Router>

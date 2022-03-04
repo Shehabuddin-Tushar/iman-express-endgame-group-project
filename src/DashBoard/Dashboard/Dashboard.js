@@ -107,6 +107,37 @@ function Nav(props) {
             </Accordion>
           </List>
           <List>
+            <Accordion id="accordion">
+              <AccordionSummary
+                expandIcon={<ExpandMoreIcon sx={{ color: "#fff" }} />}
+                aria-controls="panel1a-content"
+                id="panel1a-header"
+              >
+                <Link id="list_route" to="/dashboard">
+                  <span>
+                    <BarChartIcon />
+                  </span>{" "}
+                  Rider
+                </Link>
+              </AccordionSummary>
+              <AccordionDetails id="accordionBody">
+                <Link className="" to="/dashboard/rider/profile">
+                  <span>
+                    <AccountCircleIcon />
+                  </span>{" "}
+                  Profile
+                </Link>
+                <Link className="" to="/dashboard/rider/setting">
+                  <span>
+                    <CategoryIcon />
+                  </span>{" "}
+                  Setting
+                </Link>
+               
+              </AccordionDetails>
+            </Accordion>
+          </List>
+          <List>
             <Link className="" to="/dashboard">
               <span>
                 <AddModeratorIcon />

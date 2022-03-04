@@ -56,7 +56,7 @@ const Login = () => {
             localStorage.setItem("merchant", merchantToken);
             
             
-             // rider info fetch from database
+             // merchant info fetch from database
             axios.post('http://localhost:8080/api/auth/getmerchantuser', { hello: 'world' },
               {
                 headers: {
@@ -92,7 +92,12 @@ const Login = () => {
             localStorage.setItem("riderToken", riderToken);
 
              // rider info fetch from database
-             axios.post('http://localhost:8080/api/authRider/getRider', { headers: {"Authorization" : `Bearer ${riderToken}`} }).then(res => {
+             axios.post('http://localhost:8080/api/authRider/getRider', { rider: 'Ok' }, {
+              headers: {
+                "Authorization": riderToken,
+                "Content-Type": "application/json"
+              }
+            }).then(res => {
           console.log("res",res.data);
           const riderInfo = JSON.stringify(res.data)
           localStorage.setItem("riderInfo", riderInfo);

@@ -96,7 +96,7 @@ export const AccountDetails = () => {
                 name="firstName"              
                 required
                 {...register("fname")}
-                defaultValue={riderInfo.fname}
+                defaultValue={riderInfo?.fname}
                 variant="outlined"
               />
             </Grid>
@@ -112,7 +112,7 @@ export const AccountDetails = () => {
                 helperText="Please specify the last name"
                 required
                 {...register("lname")}
-                defaultValue={riderInfo.lname}
+                defaultValue={riderInfo?.lname}
                 variant="outlined"
               />
             </Grid>
@@ -127,7 +127,7 @@ export const AccountDetails = () => {
                 name="email"
                 {...register("email")}
                 required
-                defaultValue={riderInfo.email}
+                defaultValue={riderInfo?.email}
                 variant="outlined"
               />
             </Grid>
@@ -144,7 +144,7 @@ export const AccountDetails = () => {
                 type="number"
                 {...register("mobile")}
                 required
-                defaultValue={riderInfo.mobile}
+                defaultValue={riderInfo?.mobile}
                 variant="outlined"
               />
             </Grid>
@@ -160,7 +160,7 @@ export const AccountDetails = () => {
                 required
                 {...register("address")}
             
-                defaultValue={riderInfo.address}
+                defaultValue={riderInfo?.address}
                 variant="outlined"
               />
             </Grid>

@@ -104,7 +104,7 @@ const RiderSetting = () => {
                               type="password"
                           onChange={handlePassword}
        
-            defaultValue={riderInfo.password}
+            defaultValue={riderInfo?.password}
                               variant="outlined"
                               required
           />

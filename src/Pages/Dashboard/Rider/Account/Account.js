@@ -26,26 +26,26 @@ const Account = () => {
     const imageData = new FormData();
     imageData.set("key", "06a916692ea087d185221539196ef3a5");
     imageData.append("image", data.riderImage[0]);
-    try {
-      const res = await axios.post(
-        "https://api.imgbb.com/1/upload",
-        imageData
-      );
-      setImageURL( res.data.data.display_url)
+    // try {
+    //   const res = await axios.post(
+    //     "https://api.imgbb.com/1/upload",
+    //     imageData
+    //   );
+    //   setImageURL( res.data.data.display_url)
 
-    } catch (error) {
+    // } catch (error) {
 
-      return alert("Failed to upload the image!");
-    }
+    //   return alert("Failed to upload the image!");
+    // }
 console.log(`${imageURL}`);
     console.log(data.riderImage, imageData)
 
-        
+        console.log(riderInfo.email)
     const image =imageURL.toString()
     console.log(image);
     // const mytoken = localStorage.getItem("riderToken")
     
-  await axios.post(`http://localhost:8080/api/riderProfile/updateImage/${riderInfo.email}`, 'image').then(res => {
+  await axios.post(`http://localhost:8080/api/riderProfile/updateImage/${riderInfo?.email}`, 'image').then(res => {
         console.log(res)
         if (res.status===200) {
           // toast.success("product inserted successfully");
@@ -82,7 +82,7 @@ console.log(`${imageURL}`);
                     variant="h5"
                     fontWeight="bold"
           >
-            {riderInfo.fname}
+            {riderInfo?.fname}
           </Typography>
           <Typography
             color="textSecondary"
@@ -94,7 +94,7 @@ console.log(`${imageURL}`);
             color="textSecondary"
             variant="body2"
           >
-            {riderInfo.date}
+            {riderInfo?.date}
           </Typography>
         </Box>
       </CardContent>
