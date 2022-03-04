@@ -53,7 +53,7 @@ function Nav(props) {
 
 
   useEffect(() => {
-    axios.get(`http://localhost:8080/api/authgeneral/getuserdata/${user.email}`).then((res) => setUservalue(res.data)).catch((err) => console.log(err))
+    axios.get(`https://iman-xpress.herokuapp.com/api/authgeneral/getuserdata/${user.email}`).then((res) => setUservalue(res.data)).catch((err) => console.log(err))
 
   },[user.email])
   const handleDrawerToggle = () => {

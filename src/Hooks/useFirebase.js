@@ -119,7 +119,7 @@ const useFirebase = () => {
       password: password,
       role: "viewer"
     }
-    fetch("http://localhost:8080/api/authgeneral/saveuser", {
+    fetch("https://iman-xpress.herokuapp.com/api/authgeneral/saveuser", {
       method: "POST",
       headers: {
         "content-type": "application/json"

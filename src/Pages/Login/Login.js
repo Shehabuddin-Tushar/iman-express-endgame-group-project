@@ -49,7 +49,7 @@ const Login = () => {
     try {
       if (data.merchant === 'merchant') {
        
-        axios.post('http://localhost:8080/api/auth/login', data).then(res => {
+        axios.post('https://iman-xpress.herokuapp.com/api/auth/login', data).then(res => {
           console.log("res",res)
           if (res.data.authToken) {
             const merchantToken = res.data.authToken
@@ -57,7 +57,7 @@ const Login = () => {
             
             
              // rider info fetch from database
-            axios.post('http://localhost:8080/api/auth/getmerchantuser', { hello: 'world' },
+            axios.post('https://iman-xpress.herokuapp.com/api/auth/getmerchantuser', { hello: 'world' },
               {
                 headers: {
                   "auth-token": merchantToken,
@@ -85,14 +85,14 @@ const Login = () => {
 
         // rider login 
         console.log(data);
-        axios.post('http://localhost:8080/api/authRider/login', data).then(res => {
+        axios.post('https://iman-xpress.herokuapp.com/api/authRider/login', data).then(res => {
           console.log("res",res.data);
           if (res.data.authToken) {
             const riderToken = res.data.authToken
             localStorage.setItem("riderToken", riderToken);
 
              // rider info fetch from database
-             axios.post('http://localhost:8080/api/authRider/getRider', { headers: {"Authorization" : `Bearer ${riderToken}`} }).then(res => {
+            axios.post('https://iman-xpress.herokuapp.com/api/authRider/getRider', { headers: {"Authorization" : `Bearer ${riderToken}`} }).then(res => {
           console.log("res",res.data);
           const riderInfo = JSON.stringify(res.data)
           localStorage.setItem("riderInfo", riderInfo);

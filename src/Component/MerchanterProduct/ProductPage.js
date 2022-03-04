@@ -78,7 +78,7 @@ function ProductPage() {
      
 
     } else {
-      axios.get("http://localhost:8080/api/merchant/fetchallproducts", {
+      axios.get("https://iman-xpress.herokuapp.com/api/merchant/fetchallproducts", {
         headers: {
           "auth-token": mytoken,
           "Content-Type": "application/json"

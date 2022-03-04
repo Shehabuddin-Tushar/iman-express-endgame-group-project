@@ -40,7 +40,7 @@ const MarchantProducts = () => {
     };
     const mytoken = localStorage.getItem("merchant")
     
-    axios.post(`http://localhost:8080/api/merchant/addproduct`, productData,
+    axios.post(`https://iman-xpress.herokuapp.com/api/merchant/addproduct`, productData,
       {
         headers: {
           "auth-token": mytoken,
