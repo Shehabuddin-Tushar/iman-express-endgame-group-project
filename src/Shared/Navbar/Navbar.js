@@ -225,7 +225,7 @@ const Navbar = () => {
               </a>
             </Button>
           </Box>
-          {
+          {/* {
             user.email && merchant == null ? <h4 style={{ color: "black",marginTop:"13px" }}>{user.displayName}</h4> : !user.email && merchant ? 
               <h4 style={{ color: "black", marginTop: "13px"  }}>{merchantinfo.name}</h4>
               : !user.email && merchant == null && rider ? <h4 style={{ color: "black", marginTop: "13px" }}>{riderinfo.lname}</h4> : <Button> <Link style={{ textDecoration: "none" }} to="/login">
@@ -233,7 +233,12 @@ const Navbar = () => {
               </Link>
               </Button>
               
-          }
+          } */}
+
+          <Button> <Link style={{ textDecoration: "none" }} to="/login">
+            Log in
+          </Link>
+          </Button>
 
           {/* {
             rider ? <h2 style={{ color: "red" }}>{riderinfo.name}</h2> :
