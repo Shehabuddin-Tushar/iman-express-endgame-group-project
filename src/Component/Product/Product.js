@@ -56,7 +56,7 @@ const Service = ({ service, isLoad }) => {
                   <FavoriteIcon />
                 </IconButton>
                 <IconButton aria-label="share">
-                    <Link to="https://iman-xpress.netlify.app/merchantproduct"><ShuffleIcon /></Link>
+                    <Link to="/merchantproduct"><ShuffleIcon /></Link>
                 </IconButton>
                 <IconButton aria-label="share">
                   <ShareIcon />
