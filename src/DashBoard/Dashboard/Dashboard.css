@@ -4,9 +4,9 @@
 }
 .list_of_route a {
   color: white;
-  padding: 5px;
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
+  padding: 10px;
+  border-top-left-radius: 18px;
+  border-bottom-left-radius: 18px;
   margin-top: -6px;
   transition: 0.4s;
   display: flex;
@@ -22,7 +22,7 @@
   background-color: rgb(32, 32, 32);
 }
 #list_route {
-  background-color: rgb(52, 52, 52) !important;
+  background-color: rgb(15, 14, 14) !important;
 
 }
 #list_route:focus {
@@ -73,7 +73,7 @@
   padding: 0px !important;
   box-shadow: none !important;
   margin-top: -20px;
-  border-radius: 5px 0px 0px 5px;
+  border-radius: 15px 0px 0px 15px;
 }
 #accordionBody {
   background-color: rgb(52, 52, 52) !important;

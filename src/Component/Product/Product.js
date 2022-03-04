@@ -13,7 +13,7 @@ import {
   Typography,
 } from "@mui/material";
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Product.css";
 
 const Service = ({ service, isLoad }) => {
@@ -56,7 +56,7 @@ const Service = ({ service, isLoad }) => {
                   <FavoriteIcon />
                 </IconButton>
                 <IconButton aria-label="share">
-                  <ShuffleIcon />
+                    <Link to="https://iman-xpress.netlify.app/merchantproduct"><ShuffleIcon /></Link>
                 </IconButton>
                 <IconButton aria-label="share">
                   <ShareIcon />
