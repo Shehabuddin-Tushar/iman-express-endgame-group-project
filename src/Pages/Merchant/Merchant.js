@@ -22,7 +22,7 @@
 //   const { register, handleSubmit, watch, formState: { errors } } = useForm();
 //   const onSubmit = data =>
 //   // post merchant registration data
-//   {axios.post('http://localhost:8080/api/auth/register',data).then(res=>console.log(res))
+//   {axios.post('https://iman-xpress.herokuapp.com/api/auth/register',data).then(res=>console.log(res))
 //     console.log(data)};
 
 //   const handleNext = () => {

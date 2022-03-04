@@ -43,7 +43,7 @@ function Account() {
       return alert("Failed to upload the image!");
     }
       data.image=imageURL
-      axios.post('http://localhost:8080/api/auth/register', data).then(res => {
+    axios.post('https://iman-xpress.herokuapp.com/api/auth/register', data).then(res => {
         console.log(res.data.authToken)
         if (res.data.authToken) {
           

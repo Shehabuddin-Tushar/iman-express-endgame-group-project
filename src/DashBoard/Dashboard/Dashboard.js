@@ -1,3 +1,4 @@
+import React,{useState,useEffect} from 'react'
 import AccountBalanceIcon from "@mui/icons-material/AccountBalance";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import AddModeratorIcon from "@mui/icons-material/AddModerator";
@@ -24,18 +25,37 @@ import IconButton from "@mui/material/IconButton";
 import List from "@mui/material/List";
 import Toolbar from "@mui/material/Toolbar";
 import PropTypes from "prop-types";
-import * as React from "react";
+
 import { Link, Outlet } from "react-router-dom";
 import BD from "../images/bd.png";
 import logo from "../images/logo.png";
+import usefirebase from '../../Hooks/useFirebase'
 import "./Dashboard.css";
+import axios from 'axios';
+import Dashboardhome from './Dashboardhome/Dashboardhome';
 
 const drawerWidth = 220;
 
 function Nav(props) {
+
+  const [uservalue, setUservalue] = useState({});
+
+  
+
+  const merchanttoken = localStorage.getItem("merchant");
+  const ridertoken = localStorage.getItem("riderToken");
+
+  const { user, logOut } = usefirebase();
+  console.log(user.email)
+
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
+
+  useEffect(() => {
+    axios.get(`https://iman-xpress.herokuapp.com/api/authgeneral/getuserdata/${user.email}`).then((res) => setUservalue(res.data)).catch((err) => console.log(err))
+
+  },[user.email])
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
@@ -70,140 +90,151 @@ function Nav(props) {
           </Link>
         </List>{" "}
         <Box>
-          <List>
-            <Accordion id="accordion">
-              <AccordionSummary
-                expandIcon={<ExpandMoreIcon sx={{ color: "#fff" }} />}
-                aria-controls="panel1a-content"
-                id="panel1a-header"
-              >
-                <Link id="list_route" to="/dashboard">
-                  <span>
-                    <BarChartIcon />
-                  </span>{" "}
-                  Merchant
-                </Link>
-              </AccordionSummary>
-              <AccordionDetails id="accordionBody">
-                <Link className="" to="/dashboard">
-                  <span>
-                    <AccountCircleIcon />
-                  </span>{" "}
-                  Profile
-                </Link>
+        
+
+          {
+            merchanttoken ? <>
+              
+              <List>
                 <Link className="" to="/dashboard/marchant/add-products">
                   <span>
-                    <CategoryIcon />
-                  </span>{" "}
-                  Add Product
-                </Link>
-                <Link className="" to="/merchantproduct">
-                  <span>
-                    <ProductionQuantityLimitsIcon />
-                  </span>{" "}
-                  Product Page
-                </Link>
-              </AccordionDetails>
-            </Accordion>
-          </List>
-          <List>
-            <Accordion id="accordion">
-              <AccordionSummary
-                expandIcon={<ExpandMoreIcon sx={{ color: "#fff" }} />}
-                aria-controls="panel1a-content"
-                id="panel1a-header"
-              >
-                <Link id="list_route" to="/dashboard">
-                  <span>
-                    <BarChartIcon />
-                  </span>{" "}
-                  Rider
-                </Link>
-              </AccordionSummary>
-              <AccordionDetails id="accordionBody">
-                <Link className="" to="/dashboard/rider/profile">
-                  <span>
-                    <AccountCircleIcon />
+                    <ClassIcon></ClassIcon>
                   </span>{" "}
                   Profile
                 </Link>
+              </List>
+
+              <List>
+                <Link className="" to="/dashboard/marchant/add-products">
+                  <span>
+                    <ClassIcon></ClassIcon>
+                  </span>{" "}
+                 Add product
+                </Link>
+              </List>
+              
+              <List>
+                <Link className="" to="/dashboard/marchant/manageproduct">
+                  <span>
+                    <ClassIcon></ClassIcon>
+                  </span>{" "}
+                 Manage product
+                </Link>
+              </List>
+              <List>
+                <Link className="" to="/dashboard">
+                  <span>
+                    <ClassIcon></ClassIcon>
+                  </span>{" "}
+                   Orders
+                </Link>
+              </List>
+            </>:""
+          }
+
+          {
+            ridertoken ? <>
+           
+              <List>
+                <Link className="" to="/dashboard">
+                  <span>
+                    <ClassIcon></ClassIcon>
+                  </span>{" "}
+                   Rider profile
+                </Link>
+              </List>
+              <List>
+                <Link className="" to="/dashboard/rider/profile">
+                  <span>
+                    <ClassIcon></ClassIcon>
+                  </span>{" "}
+                  profile manage
+                </Link>
+              </List>
+
+              <List>
                 <Link className="" to="/dashboard/rider/setting">
                   <span>
-                    <CategoryIcon />
+                    <ClassIcon></ClassIcon>
                   </span>{" "}
-                  Setting
+                  Settings
                 </Link>
-               
-              </AccordionDetails>
-            </Accordion>
-          </List>
-          <List>
-            <Link className="" to="/dashboard">
-              <span>
-                <AddModeratorIcon />
-              </span>
-              Admin
-            </Link>
-          </List>{" "}
+              </List>
+
+              <List>
+                <Link className="" to="/dashboard">
+                  <span>
+                    <ClassIcon></ClassIcon>
+                  </span>{" "}
+                  client message
+                </Link>
+              </List>
+            
+            </>:""
+              
+          }
+
+          {
+           user.email && uservalue?.role=="viewer" ?
+              <>
+                <List>
+                  <Link className="" to="/dashboard">
+                    <span>
+                      <ClassIcon></ClassIcon>
+                    </span>{" "}
+                    My order
+                  </Link>
+                </List>
+                <List>
+                  <Link className="" to="/dashboard">
+                    <span>
+                      <ClassIcon></ClassIcon>
+                    </span>{" "}
+                    payment option
+                  </Link>
+                </List>
+            </> : ""
+          }
+
+          {
+            user?.email && uservalue?.role == "admin" ?
+              <>
+                <List>
+                  <Link className="" to="/dashboard/addBlog">
+                    <span>
+                      <ClassIcon></ClassIcon>
+                    </span>{" "}
+                    Add blog
+                  </Link>
+                </List>
+                <List>
+                  <Link className="" to="/dashboard/manageBlog">
+                    <span>
+                      <ClassIcon></ClassIcon>
+                    </span>{" "}
+                    Manage blog
+                  </Link>
+                </List>
+                <List>
+                  <Link className="" to="/dashboard/updateBlog">
+                    <span>
+                      <ClassIcon></ClassIcon>
+                    </span>{" "}
+                    Update Blog
+                  </Link>
+                </List>
+              </> : ""
+          }
+          
+                   
         </Box>
-        <List>
-          <Link className="" to="/dashboard">
-            <span>
-              <ClassIcon></ClassIcon>
-            </span>{" "}
-            Your Orders
-          </Link>
-        </List>{" "}
-        <List>
-          <Link className="" to="/dashboard/addBlog">
-            <span className="me-3">
-              <ClassIcon></ClassIcon>
-            </span>{" "}
-            AddBlog
-          </Link>
-        </List>{" "}
-        <List>
-          <Link className="" to="/dashboard/manageBlog">
-            <span className="me-3">
-              <ClassIcon></ClassIcon>
-            </span>{" "}
-            ManageBlog
-          </Link>
-        </List>{" "}
+        
         <Box>
-          <List>
-            <Link className="" to="/dashboard">
-              <span>
-                <GroupsIcon />
-              </span>{" "}
-              All Products
-            </Link>
-          </List>{" "}
-          <List>
-            <Link className="" to="/dashboard">
-              <span>
-                <AddTaskIcon></AddTaskIcon>
-              </span>{" "}
-              Add products
-            </Link>
-          </List>{" "}
+          
         </Box>
         <List>
-          <Link className="" to="/dashboard">
-            <span>
-              <ThumbsUpDownIcon />
-            </span>{" "}
-            Rate us
-          </Link>
-        </List>{" "}
-        <List>
-          <Link className="" to="/dashboard">
-            <span>
-              <AccountBalanceIcon />
-            </span>{" "}
-            Payment
-          </Link>
-        </List>{" "}
+          
+        </List>
       </div>
     </div>
   );
@@ -212,8 +243,10 @@ function Nav(props) {
     window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: "flex" }}>
+    <Box sx={{display:"flex"}}>
+      
       <CssBaseline />
+     
       <AppBar
         position="fixed"
         sx={{
@@ -228,7 +261,7 @@ function Nav(props) {
           right: "0px",
           color: "rgb(255, 255, 255)",
           backdropFilter: "blur(2px)",
-          backgroundColor: "rgba(255, 255, 255, 0.8)",
+          backgroundColor: "#3781CB",
           boxShadow: " rgb(199 199 199 / 24%) 0px 8px 16px 0px",
           height: "64px",
           zIndex: "1101",
@@ -293,7 +326,7 @@ function Nav(props) {
             "& .MuiDrawer-paper": {
               boxSizing: "border-box",
               width: drawerWidth,
-              backgroundColor: "#343434 ",
+              backgroundColor: "#3781CB",
             },
           }}
           open

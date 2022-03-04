@@ -14,8 +14,10 @@ import Toolbar from "@mui/material/Toolbar";
 import Tooltip from "@mui/material/Tooltip";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
-import { Link } from "react-router-dom";
+import usefirebase from '../../Hooks/useFirebase'
+import { Link,useNavigate } from "react-router-dom";
 import styles from "./Navbar.module.css";
+
 
 
 
@@ -23,6 +25,9 @@ const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
+  const { user, logOut } = usefirebase();
+  const navigate = useNavigate();
+  console.log(user.email)
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
@@ -38,6 +43,43 @@ const Navbar = () => {
     setAnchorElUser(null);
   };
 
+  const merchant = localStorage.getItem("merchant");
+
+  const rider = localStorage.getItem("riderToken");
+  console.log(merchant)
+
+  const merchantlogout = () => {
+    let confirmmessage = window.confirm("are you sure you want to logout")
+    if (confirmmessage===true) {
+      localStorage.removeItem("merchant");
+      localStorage.removeItem("merchantInfo");
+      navigate("/")
+    }
+   
+  }
+
+  const riderlogout = () => {
+    let confirmmessage = window.confirm("are you sure you want to logout")
+    if (confirmmessage === true) {
+      localStorage.removeItem("riderToken");
+      localStorage.removeItem("riderInfo");
+      navigate("/")
+    }
+
+  }
+
+  const generallogout = () => {
+    let confirmmessage = window.confirm("are you sure you want to logout")
+    if (confirmmessage === true) {
+     
+      logOut();
+      
+      navigate("/")
+    
+
+
+    }
+  }
   return (
     <AppBar position="sticky" sx={{ boxShadow: 0 }} className={styles.navbar}>
       <Container maxWidth="xl">
@@ -147,7 +189,7 @@ const Navbar = () => {
               onClick={handleCloseNavMenu}
               sx={{ my: 2, color: "black", display: "block" }}
             >
-              <Link to="/dashboard">Dashboard</Link>
+              <Link to="/dashboard/home">Dashboard</Link>
             </Button>
 
            
@@ -172,13 +214,26 @@ const Navbar = () => {
                 About Us
               </Button>
             </Link>
+
+            <Button>
+              <a href="https://imanxpress.netlify.app/">
+                Chat with Rider
+              </a>
+            </Button>
           </Box>
+
+          <Button>
+            <Link to="/login">
+              Log in
+            </Link>
+          </Button>
+
           <Button
             onClick={handleOpenUserMenu}
             key="5"
             sx={{ my: 2, color: "black", display: "block" }}
           >
-           Sign up
+           Sign up / Logout
             <IconButton sx={{ p: 0 }}>
               <ArrowDropDownIcon />
             </IconButton>
@@ -202,30 +257,72 @@ const Navbar = () => {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-             
-                <MenuItem
-                  
-                  onClick={handleCloseUserMenu}
-                  style={{ width: "200px" }}
-                >
-                <Link to="/register"><Typography textAlign="center">general account</Typography></Link>
-              </MenuItem>
-              
-              <MenuItem
-                  
-                  onClick={handleCloseUserMenu}
-                  style={{ width: "200px" }}
-                >
-                <Link to="/merchant"><Typography textAlign="center">Merchant account</Typography></Link>
-              </MenuItem>
-              
-              <MenuItem
+              {
+                user.email && merchant==null ?<MenuItem
 
-                onClick={handleCloseUserMenu}
-                style={{ width: "200px" }}
-              >
-                <Link to="/rider"><Typography textAlign="center">Rider account</Typography></Link>
-              </MenuItem>
+                      onClick={handleCloseUserMenu}
+                      style={{ width: "200px" }}
+                    >
+
+                  <Button onClick={generallogout}>Logout</Button> 
+
+
+                </MenuItem> : !user.email && merchant ?<MenuItem
+
+                      onClick={handleCloseUserMenu}
+                      style={{ width: "200px" }}
+                    >
+
+                    <Button onClick={merchantlogout}>Merchant logout</Button>
+
+
+                  </MenuItem> : !user.email && merchant == null && rider ? <MenuItem
+
+                      onClick={handleCloseUserMenu}
+                      style={{ width: "200px" }}
+                    >
+
+                      <Button onClick={riderlogout}>Rider logout</Button>
+
+
+                    </MenuItem>:
+                  <>
+                    <MenuItem
+
+                      onClick={handleCloseUserMenu}
+                      style={{ width: "200px" }}
+                    >
+
+                      <Link to="/register"><Typography textAlign="center">general account</Typography></Link>
+
+
+                    </MenuItem>
+
+                    <MenuItem
+
+                      onClick={handleCloseUserMenu}
+                      style={{ width: "200px" }}
+                    >
+
+                      <Link to="/merchant"><Typography textAlign="center">Merchant account</Typography></Link>
+                      {/* <Button onClick={merchantlogout}>Merchant logout</Button> */}
+
+
+                    </MenuItem>
+
+                    <MenuItem
+
+                      onClick={handleCloseUserMenu}
+                      style={{ width: "200px" }}
+                    >
+                      <Link to="/rider"><Typography textAlign="center">Rider account</Typography></Link>
+                    </MenuItem>
+                  </>
+              }
+
+              
+              
+                
              
             </Menu>
           </Box>

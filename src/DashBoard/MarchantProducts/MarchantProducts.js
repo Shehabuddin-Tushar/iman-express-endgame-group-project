@@ -40,7 +40,7 @@ const MarchantProducts = () => {
     };
     const mytoken = localStorage.getItem("merchant")
     
-    axios.post(`http://localhost:8080/api/merchant/addproduct`, productData,
+    axios.post(`https://iman-xpress.herokuapp.com/api/merchant/addproduct`, productData,
       {
         headers: {
           "auth-token": mytoken,
@@ -63,7 +63,7 @@ const MarchantProducts = () => {
       <Grid className={style.merchantText} container spacing={2}>
         <Grid xs={8}>
           <Box>
-            <Typography variant="h4" sx={{ textAlign: "left" }}>
+            <Typography variant="h5" sx={{ textAlign: "left",marginLeft:"30%" }}>
               You are welcome to <span>merchant product add page</span>
             </Typography>
           </Box>

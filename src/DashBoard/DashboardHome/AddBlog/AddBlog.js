@@ -36,7 +36,7 @@ const AddBlog = () => {
 
 
 
-        const url = `http://localhost:8080/api/blog/addblog`;
+        const url = `https://iman-xpress.herokuapp.com/api/blog/addblog`;
 
         axios.post(url, data,
             {
@@ -105,7 +105,7 @@ const AddBlog = () => {
     //         time: blogData.time
     //     };
 
-    //     const url = `http://localhost:8080/api/blog/addblog`;
+    //     const url = `https://iman-xpress.herokuapp.com/api/blog/addblog`;
     //     fetch(url, {
     //         method: "POST",
     //         header: {

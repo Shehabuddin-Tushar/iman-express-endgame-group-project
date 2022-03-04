@@ -7,7 +7,7 @@ import "./ManageBlog.css";
 const ManageBlog = () => {
     const [blogApi, setBlogApi] = useState([])
     useEffect(() => {
-        axios.get("http://localhost:8080/api/blog/fetchblog",  {
+        axios.get("https://iman-xpress.herokuapp.com/api/blog/fetchblog",  {
         headers: {
             "Content-Type": "application/json"
         }
@@ -21,7 +21,7 @@ const ManageBlog = () => {
         const confirmMsg = window.confirm("Would you like to delete this blog")
         if(confirmMsg){
             console.log(id)
-            axios.delete(`http://localhost:8080/api/blog/deleteblog/${id}`,  {
+            axios.delete(`https://iman-xpress.herokuapp.com/api/blog/deleteblog/${id}`,  {
             headers: {
                 "Content-Type": "application/json"
             }
@@ -66,7 +66,7 @@ const ManageBlog = () => {
                                         </div>
                                         <p>{blog.description.slice(0, 40)}</p>
                                         <div className="blogTitle">
-                                            <Link to="/updateBlog"><button className='editBtn'><i className="fa-solid fa-pen-clip"></i> Edit</button></Link>
+                                            <Link to="/dashboard/updateBlog"><button className='editBtn'><i className="fa-solid fa-pen-clip"></i> Edit</button></Link>
                                             <button className='deleteBtn' onClick={() => handleDltBtn(blog._id)}><i className="fa-solid fa-trash-can-xmark"></i> Delete</button>
                                         </div>
                                     </div>
