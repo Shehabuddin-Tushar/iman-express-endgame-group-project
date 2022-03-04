@@ -189,7 +189,7 @@ const Navbar = () => {
               onClick={handleCloseNavMenu}
               sx={{ my: 2, color: "black", display: "block" }}
             >
-              <Link to="/dashboard">Dashboard</Link>
+              <Link to="/dashboard/home">Dashboard</Link>
             </Button>
 
            

@@ -227,8 +227,8 @@ function Nav(props) {
     window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box>
-      <Dashboardhome />
+    <Box sx={{display:"flex"}}>
+      
       <CssBaseline />
      
       <AppBar

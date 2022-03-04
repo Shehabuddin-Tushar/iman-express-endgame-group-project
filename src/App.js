@@ -5,6 +5,7 @@ import BlogDetails from "./Component/Blogs/BlogDetails/BlogDetails";
 import BlogsHome from "./Component/Blogs/BlogsHome/BlogsHome";
 import ProductPage from "./Component/MerchanterProduct/ProductPage";
 import Nav from "./DashBoard/Dashboard/Dashboard";
+import Dashboardhome from "./DashBoard/Dashboard/Dashboardhome/Dashboardhome";
 import Manageporduct from "./DashBoard/Dashboard/Manageproduct/Manageporduct";
 import MarchantProducts from "./DashBoard/MarchantProducts/MarchantProducts";
 import AboutUs from "./Pages/AboutUs/AboutUs";
@@ -55,6 +56,10 @@ function App() {
             element={<ProductPage />}
           ></Route>
           <Route path="/dashboard" element={<Nav />}>
+            <Route
+              path="/dashboard/home"
+              element={<Dashboardhome/>}
+            ></Route>
             <Route
               path="/dashboard/marchant/add-products"
               element={<MarchantProducts />}

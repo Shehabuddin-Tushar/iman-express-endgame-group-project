@@ -4,22 +4,22 @@
 }
 .merchantText {
   margin-top: 40px;
-  padding: 40px;
+  padding: 20px;
   border-radius: 15px;
   background-color: #fdd3d3;
   /* box-shadow: 0 8px 18px 0 rgba(233, 207, 207, 0.884); */
 }
-.merchantText h4 {
+.merchantText h5 {
   font-family: "Hind Siliguri", sans-serif;
   font-weight: bold;
 }
-.merchantText h4 span {
+.merchantText h5 span {
   color: #f73c3c;
   text-transform: uppercase;
 }
 .marchant_products_box {
   margin-top: 100px;
-  margin-left: 20px;
+ 
 }
 .marchant_products_box img {
   height: 200px;
