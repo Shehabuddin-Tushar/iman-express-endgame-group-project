@@ -44,13 +44,15 @@ function App() {
             path="/product/:productDetail"
             element={<ProductPage />}
           ></Route>
-          <Route path="/riderProfile" element={<RiderAccount></RiderAccount>}></Route>
-          <Route path="/riderSetting" element={<RiderSetting></RiderSetting>}></Route>
+          
           <Route path="/dashboard" element={<Nav />}>
             <Route
               path="/dashboard/home"
               element={<Dashboardhome/>}
             ></Route>
+
+          
+
             <Route
               path="/dashboard/marchant/add-products"
               element={<MarchantProducts />}
