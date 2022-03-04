@@ -1,0 +1,47 @@
+.addBlogContainer{
+    padding: 80px 0px;
+    background: hsla(0, 0%, 96%, 0.856);
+}
+.addBlogFrom{
+    padding: 40px 0px;
+}
+.addBlogContainer .addBlogTitle{
+    text-align: center;
+}
+.addBlogFrom .formPartOne{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 100px 0px;
+}
+.addBlogFrom .formPartTwo{
+    padding: 40px 0px;
+    text-align: center;
+}
+.addBlogFrom .formPartTwo input{
+    width: 80%;
+    padding: 10px 5px;
+    border: 3px solid gray;
+    border-radius: 20px;
+    margin: 10px 0px;
+    background: #000000;
+    color: white;
+}
+.addBlogFrom .formPartTwo textarea{
+    width: 80%;
+    height: 100px;
+    padding: 10px 5px;
+    border: 3px solid gray;
+    border-radius: 10px;
+    background: #000000;
+    color: white;
+}
+.addBlogBtn{
+    padding: 10px 30px;
+    margin-top: 10px;
+    border: 0;
+    background: gray;
+    color: #000000;
+    border-radius: 5px;
+    cursor: pointer;
+}

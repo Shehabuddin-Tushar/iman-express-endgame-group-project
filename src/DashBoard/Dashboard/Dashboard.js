@@ -197,10 +197,10 @@ function Nav(props) {
           }
 
           {
-            user.email && uservalue?.role == "admin" ?
+            user?.email && uservalue?.role == "admin" ?
               <>
                 <List>
-                  <Link className="" to="/dashboard">
+                  <Link className="" to="/dashboard/addBlog">
                     <span>
                       <ClassIcon></ClassIcon>
                     </span>{" "}
@@ -208,18 +208,25 @@ function Nav(props) {
                   </Link>
                 </List>
                 <List>
-                  <Link className="" to="/dashboard">
+                  <Link className="" to="/dashboard/manageBlog">
                     <span>
                       <ClassIcon></ClassIcon>
                     </span>{" "}
                     Manage blog
                   </Link>
                 </List>
+                <List>
+                  <Link className="" to="/dashboard/updateBlog">
+                    <span>
+                      <ClassIcon></ClassIcon>
+                    </span>{" "}
+                    Update Blog
+                  </Link>
+                </List>
               </> : ""
           }
           
-         
-          
+                   
         </Box>
         
         <Box>

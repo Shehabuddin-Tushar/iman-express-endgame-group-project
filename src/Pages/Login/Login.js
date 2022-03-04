@@ -289,7 +289,7 @@ const Login = () => {
               )}
               {success && (
                 <Alert sx={{ my: 2 }} severity="success">
-                  Account successfully created.
+                 Logged in successfully
                 </Alert>
               )}
             </Paper>
