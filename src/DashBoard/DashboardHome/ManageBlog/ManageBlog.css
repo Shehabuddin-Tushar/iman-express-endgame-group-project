@@ -1,0 +1,5 @@
+.editBtn, .deleteBtn{
+    padding: 10px 20px;
+    border: 0px;
+    border-radius: 10px;
+}

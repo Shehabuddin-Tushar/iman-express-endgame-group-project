@@ -154,6 +154,22 @@ function Nav(props) {
             Your Orders
           </Link>
         </List>{" "}
+        <List>
+          <Link className="" to="/dashboard/addBlog">
+            <span className="me-3">
+              <ClassIcon></ClassIcon>
+            </span>{" "}
+            AddBlog
+          </Link>
+        </List>{" "}
+        <List>
+          <Link className="" to="/dashboard/manageBlog">
+            <span className="me-3">
+              <ClassIcon></ClassIcon>
+            </span>{" "}
+            ManageBlog
+          </Link>
+        </List>{" "}
         <Box>
           <List>
             <Link className="" to="/dashboard">

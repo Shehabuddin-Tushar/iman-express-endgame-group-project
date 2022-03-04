@@ -18,6 +18,11 @@ import Account from "./Pages/Merchant/Account";
 
 import Rider from "./Pages/Rider/Rider";
 
+import "./App.css";
+import AddBlog from "./DashBoard/DashboardHome/AddBlog/AddBlog";
+import UpdateBlog from "./DashBoard/DashboardHome/AddBlog/UpdateBlog/UpdateBlog";
+import ManageBlog from "./DashBoard/DashboardHome/ManageBlog/ManageBlog";
+import Reviews from "./Component/Reviews/Reviews";
 function App() {
   return (
     <>
@@ -54,10 +59,18 @@ function App() {
               path="/dashboard/rider/profile"
               element={<RiderAccount />}
             ></Route>
-             <Route path="/dashboard/rider/setting" element={<RiderSetting/>}></Route>
-           
+            {/* <Route path="/dashboard/rider/setting" element={<RiderSetting />}></Route> */}
+            {/* <Route path="/updateBlog" element={<UpdateBlog></UpdateBlog>}></Route> */}
+            {/* <Route path="/dashboard/rate-us" element={<Reviews />}></Route> */}
+            {/* <Route path="/dashboard/payment" element={<PaymentDash/>}></Route> */}
+            {/* <Route path="/dashboard/addBlog" element={<AddBlog />}></Route> */}
+            {/* <Route path="/dashboard/manageBlog" element={<ManageBlog/>}></Route> */}
           </Route>
         </Routes>
+           
+
+      
+        
       </Router>
 
       <MessengerCustomerChat
