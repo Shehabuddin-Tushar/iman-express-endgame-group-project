@@ -22,11 +22,31 @@ import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
+const states = [
+  {
+    value: 'bikeRider',
+    label: 'Bike Rider'
+  },
+  {
+    value: 'foodDelivery',
+    label: 'Food Delivery'
+  },
+  {
+    value: 'medicineDelivery',
+    label: 'Medicine Delivery'
+  },
+  {
+    value: 'parcelDelivery',
+    label: 'Parcel Delivery'
+  },
+];
+
+
 const Rider = () => {
   const [error, setError] = useState(false);
   const [success, setSuccess] = useState(false);
   const { register, handleSubmit, reset } = useForm();
-  const [value, setValue] = React.useState("female");
+  const [values, setValues] = React.useState("foodDelivery");
 
   const onSubmit = (data) => {
     console.log(data);
@@ -40,12 +60,16 @@ const Rider = () => {
         }
         }).catch(err=>console.log(err))
   };
-  //radio field
   
-  const handleChange = (event) => {
-    setValue(event.target.value);
-  };
 
+
+  // handle rider state
+  const handleState = (event) => {
+    setValues({
+      ...values,
+      [event.target.name]: event.target.value
+    });
+  };
   return (
     <div className="login">
       <Container
@@ -112,11 +136,11 @@ const Rider = () => {
                     />
                     <TextField
                       required
-                      label="City "
+                      label="Address "
                       type="text"
                       sx={{ mt: 2, width: "100%" }}
                       variant="outlined"
-                      {...register("city")}
+                      {...register("address")}
                     />
                      <TextField
                   required
@@ -134,80 +158,28 @@ const Rider = () => {
                   variant="outlined"
                   {...register("password")}
               />
-                    <Box sx={{ textAlign: "left", mt: 2 }}>
-                      <FormControl>
-                        <FormLabel>Service(s) you want to provide</FormLabel>
-                        <RadioGroup
-                          name="rider"
-                          value={value}
-                          onChange={handleChange}
-                        >
-                          <Box
-                            sx={{
-                              display: "flex",
-                              justifyContent: "space-between",
-                            }}
-                          >
-                            <FormControlLabel
-                              value="bikeRider"
-                              {...register("bikeRider")}
-                              control={
-                                <Checkbox
-                                  sx={{
-                                    "&.Mui-checked": {
-                                      color: pink[600],
-                                    },
-                                  }}
-                                />
-                              }
-                              label="Bike Rider"
-                            />
-                            <FormControlLabel
-                              value="foodDelivery"
-                              {...register("foodDelivery")}
-                              control={
-                                <Checkbox
-                                  sx={{
-                                    "&.Mui-checked": {
-                                      color: pink[600],
-                                    },
-                                  }}
-                                />
-                              }
-                              label="Food Delivery"
-                            />
-
-                            <FormControlLabel
-                              value="parcelDelivery"
-                              {...register("parcelDelivery")}
-                              control={
-                                <Checkbox
-                                  sx={{
-                                    "&.Mui-checked": {
-                                      color: pink[600],
-                                    },
-                                  }}
-                                />
-                              }
-                              label="Parcel Delivery"
-                            />
-                            <FormControlLabel
-                              value="medicineDelivery"
-                              {...register("medicineDelivery")}
-                              control={
-                                <Checkbox
-                                  sx={{
-                                    "&.Mui-checked": {
-                                      color: pink[600],
-                                    },
-                                  }}
-                                />
-                              }
-                              label="Medicine Delivery"
-                            />
-                          </Box>
-                        </RadioGroup>
-                      </FormControl>
+                    <Box sx={{ display:'flex', mt: 2 }}>
+                    <TextField
+                fullWidth
+                label="Select State"
+                name="state"
+                onChange={handleState}
+                              required
+                              {...register("riderState")}
+                select
+                SelectProps={{ native: true }}
+                value={values.state}
+                variant="outlined"
+              >
+                {states.map((option) => (
+                  <option
+                    key={option.value}
+                    value={option.value}
+                  >
+                    {option.label}
+                  </option>
+                ))}
+              </TextField>
                     </Box>
                   </Box>{" "}
                   <Box sx={{ mt: 4 }}>

@@ -10,11 +10,14 @@ import Manageporduct from "./DashBoard/Dashboard/Manageproduct/Manageporduct";
 import MarchantProducts from "./DashBoard/MarchantProducts/MarchantProducts";
 import AboutUs from "./Pages/AboutUs/AboutUs";
 import ContactUs from "./Pages/ContactUs/ContactUs";
+import RiderAccount from "./Pages/Dashboard/Rider/RiderAccount";
+import RiderSetting from "./Pages/Dashboard/Setting/RiderSetting";
+
 import Home from "./Pages/Home/Home";
 import Login from "./Pages/Login/Login";
 import Register from "./Pages/Login/Register";
 import Account from "./Pages/Merchant/Account";
-import Merchant from "./Pages/Merchant/Merchant";
+
 import Rider from "./Pages/Rider/Rider";
 
 function App() {
@@ -33,28 +36,16 @@ function App() {
             path="/merchantproduct"
             element={<ProductPage></ProductPage>}
           ></Route>
-          <Route path="/rider" element={<Rider></Rider>}></Route>
-          <Route path="/moreBlogs" element={<BlogsHome></BlogsHome>}></Route>
+                  
           <Route path="/contactUs" element={<ContactUs></ContactUs>}></Route>
-
-          <Route path="/rider" element={<Rider></Rider>}></Route>
-          <Route path="/moreBlogs" element={<BlogsHome></BlogsHome>}></Route>
-          <Route path="/contactUs" element={<ContactUs></ContactUs>}></Route>
-
-          <Route path="/" element={<Home></Home>}></Route>
-          <Route path="/login" element={<Login></Login>}></Route>
-          <Route path="/register" element={<Register></Register>}></Route>
-          <Route path="/moreBlogs" element={<BlogsHome></BlogsHome>}></Route>
-          <Route path="/blogDetails/:id" element={<BlogDetails />}></Route>
-          <Route path="/merchant" element={<Merchant></Merchant>}></Route>
-          <Route path="/rider" element={<Rider></Rider>}></Route>
-          <Route path="/moreBlogs" element={<BlogsHome></BlogsHome>}></Route>
-          <Route path="/contactUs" element={<ContactUs></ContactUs>}></Route>
-          <Route path="/aboutUs" element={<AboutUs></AboutUs>}></Route>
+         
+          <Route path="/aboutUs" element={<AboutUs></AboutUs>}></Route> 
           <Route
             path="/product/:productDetail"
             element={<ProductPage />}
           ></Route>
+          <Route path="/riderProfile" element={<RiderAccount></RiderAccount>}></Route>
+          <Route path="/riderSetting" element={<RiderSetting></RiderSetting>}></Route>
           <Route path="/dashboard" element={<Nav />}>
             <Route
               path="/dashboard/home"
