@@ -33,32 +33,32 @@ const states = [
 ];
 
 export const AccountDetails = () => {
-    const { register, handleSubmit, reset } = useForm();
-    const [values, setValues] = useState("");
-  
-    // rider data fetch from local storage
-        const rider = localStorage.getItem('riderInfo')
-    const riderInfo = JSON.parse(rider)
-    console.log(riderInfo);
-    
-    // submit
-    const onSubmit = (data) => {
+  const { register, handleSubmit, reset } = useForm();
+  const [values, setValues] = useState("");
+
+  // rider data fetch from local storage
+  const rider = localStorage.getItem('riderInfo')
+  const riderInfo = JSON.parse(rider)
+  console.log(riderInfo);
+
+  // submit
+  const onSubmit = (data) => {
+    console.log(data);
+
+
+    axios.post(`https://iman-xpress.herokuapp.com/api/riderProfile/updateRider/${riderInfo.email}`, data).then(res => {
+      console.log(res.data)
+      if (res.data.modifiedCount) {
         console.log(data);
-       
-       
-            axios.post(`http://localhost:8080/api/riderProfile/updateRider/${riderInfo.email}`, data).then(res => {
-                console.log(res.data)
-                if (res.data.modifiedCount) {
-                  console.log(data);
-                  Swal.fire({
-                    icon: 'success',
-                    title: 'Rider Profile Updated Successfully',
-                  });
-                }
-                }).catch(err=>console.log(err))
-        
-    };
-// handle rider state
+        Swal.fire({
+          icon: 'success',
+          title: 'Rider Profile Updated Successfully',
+        });
+      }
+    }).catch(err => console.log(err))
+
+  };
+  // handle rider state
   const handleChange = (event) => {
     setValues({
       ...values,
@@ -66,12 +66,12 @@ export const AccountDetails = () => {
     });
   };
 
-   
+
   return (
     <form
       autoComplete="off"
       noValidate
-       onSubmit={handleSubmit(onSubmit)}
+      onSubmit={handleSubmit(onSubmit)}
     >
       <Card>
         <CardHeader
@@ -93,10 +93,10 @@ export const AccountDetails = () => {
                 fullWidth
                 helperText="Please specify the first name"
                 label="First name"
-                name="firstName"              
+                name="firstName"
                 required
                 {...register("fname")}
-                defaultValue={riderInfo.fname}
+                defaultValue={riderInfo?.fname}
                 variant="outlined"
               />
             </Grid>
@@ -112,7 +112,7 @@ export const AccountDetails = () => {
                 helperText="Please specify the last name"
                 required
                 {...register("lname")}
-                defaultValue={riderInfo.lname}
+                defaultValue={riderInfo?.lname}
                 variant="outlined"
               />
             </Grid>
@@ -127,7 +127,7 @@ export const AccountDetails = () => {
                 name="email"
                 {...register("email")}
                 required
-                defaultValue={riderInfo.email}
+                defaultValue={riderInfo?.email}
                 variant="outlined"
               />
             </Grid>
@@ -140,11 +140,11 @@ export const AccountDetails = () => {
                 fullWidth
                 label="Phone Number"
                 name="phone"
-              
+
                 type="number"
                 {...register("mobile")}
                 required
-                defaultValue={riderInfo.mobile}
+                defaultValue={riderInfo?.mobile}
                 variant="outlined"
               />
             </Grid>
@@ -156,11 +156,11 @@ export const AccountDetails = () => {
               <TextField
                 fullWidth
                 label="Address"
-                name="address"               
+                name="address"
                 required
                 {...register("address")}
-            
-                defaultValue={riderInfo.address}
+
+                defaultValue={riderInfo?.address}
                 variant="outlined"
               />
             </Grid>
@@ -174,8 +174,8 @@ export const AccountDetails = () => {
                 label="Select State"
                 name="state"
                 onChange={handleChange}
-                              required
-                            //   {...register("riderState")}
+                required
+                //   {...register("riderState")}
                 select
                 SelectProps={{ native: true }}
                 value={values.state}
@@ -190,9 +190,9 @@ export const AccountDetails = () => {
                   </option>
                 ))}
               </TextField>
-                      </Grid>
-                    
-                      
+            </Grid>
+
+
           </Grid>
         </CardContent>
         <Divider />

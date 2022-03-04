@@ -144,11 +144,20 @@ function Nav(props) {
                 </Link>
               </List>
               <List>
-                <Link className="" to="/dashboard">
+                <Link className="" to="/dashboard/rider/profile">
                   <span>
                     <ClassIcon></ClassIcon>
                   </span>{" "}
                   profile manage
+                </Link>
+              </List>
+
+              <List>
+                <Link className="" to="/dashboard/rider/setting">
+                  <span>
+                    <ClassIcon></ClassIcon>
+                  </span>{" "}
+                  Settings
                 </Link>
               </List>
 

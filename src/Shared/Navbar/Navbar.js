@@ -222,7 +222,11 @@ const Navbar = () => {
             </Button>
           </Box>
 
-          
+          <Button>
+            <Link to="/login">
+              Log in
+            </Link>
+          </Button>
 
           <Button
             onClick={handleOpenUserMenu}

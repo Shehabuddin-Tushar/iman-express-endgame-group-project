@@ -50,7 +50,7 @@ const Rider = () => {
 
   const onSubmit = (data) => {
     console.log(data);
-    axios.post('http://localhost:8080/api/authRider/register', data).then(res => {
+    axios.post('https://iman-xpress.herokuapp.com/api/authRider/register', data).then(res => {
         console.log(res)
         if (res.data.authToken) {
           Swal.fire({

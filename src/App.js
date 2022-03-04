@@ -50,7 +50,12 @@ function App() {
               path="/dashboard/home"
               element={<Dashboardhome/>}
             ></Route>
-
+            
+            <Route
+              path="/dashboard/rider/profile"
+              element={<RiderAccount />}
+            ></Route>
+            <Route path="/dashboard/rider/setting" element={<RiderSetting />}></Route>
           
 
             <Route

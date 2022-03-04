@@ -30,7 +30,7 @@ const Login = () => {
   const [success, setSuccess] = useState(false);
   const { googleLogin, userLogin } = useFirebase();
   const { register, handleSubmit, reset } = useForm();
- 
+
   ///redirect user  destination
   const location = useLocation();
   const redirect = location?.state?.from || "/";
@@ -48,15 +48,15 @@ const Login = () => {
     const password = data.password;
     try {
       if (data.merchant === 'merchant') {
-       
+
         axios.post('https://iman-xpress.herokuapp.com/api/auth/login', data).then(res => {
-          console.log("res",res)
+          console.log("res", res)
           if (res.data.authToken) {
             const merchantToken = res.data.authToken
             localStorage.setItem("merchant", merchantToken);
-            
-            
-             // rider info fetch from database
+
+
+            // rider info fetch from database
             axios.post('https://iman-xpress.herokuapp.com/api/auth/getmerchantuser', { hello: 'world' },
               {
                 headers: {
@@ -64,21 +64,21 @@ const Login = () => {
                   "Content-Type": "application/json"
                 }
               }).then(res => {
-               console.log("res", res.data);
-               const merchantInfo = JSON.stringify(res.data)
-               console.log(merchantInfo)
-          localStorage.setItem("merchantInfo", merchantInfo);
-         }        
-            ).catch(err => console.log(err)) 
+                console.log("res", res.data);
+                const merchantInfo = JSON.stringify(res.data)
+                console.log(merchantInfo)
+                localStorage.setItem("merchantInfo", merchantInfo);
+              }
+              ).catch(err => console.log(err))
             Swal.fire({
               icon: 'success',
               title: 'Merchant Login Successfully',
             });
             navigate("/")
-           
-          }        
-         }
-        
+
+          }
+        }
+
         ).catch(err => console.log(err))
       }
       if (data.rider === 'rider') {
@@ -86,39 +86,44 @@ const Login = () => {
         // rider login 
         console.log(data);
         axios.post('https://iman-xpress.herokuapp.com/api/authRider/login', data).then(res => {
-          console.log("res",res.data);
+          console.log("res", res.data);
           if (res.data.authToken) {
             const riderToken = res.data.authToken
             localStorage.setItem("riderToken", riderToken);
 
-             // rider info fetch from database
-            axios.post('https://iman-xpress.herokuapp.com/api/authRider/getRider', { headers: {"Authorization" : `Bearer ${riderToken}`} }).then(res => {
-          console.log("res",res.data);
-          const riderInfo = JSON.stringify(res.data)
-          localStorage.setItem("riderInfo", riderInfo);
-         }        
-            ).catch(err => console.log(err)) 
-           
-            
+            // rider info fetch from database
+            axios.post('https://iman-xpress.herokuapp.com/api/authRider/getRider', { rider: 'Ok' }, {
+              headers: {
+                "Authorization": riderToken,
+                "Content-Type": "application/json"
+              }
+            }).then(res => {
+              console.log("res", res.data);
+              const riderInfo = JSON.stringify(res.data)
+              localStorage.setItem("riderInfo", riderInfo);
+            }
+            ).catch(err => console.log(err))
+
+
             Swal.fire({
               icon: 'success',
               title: 'Rider Login Successfully',
             });
             navigate("/")
-          }        
-         }
-        
+          }
+        }
+
         ).catch(err => console.log(err))
-       
+
       }
       if (data.user === 'user') {
         userLogin(email, password, redirect, navigate);
-      setSuccess(true);
-      
-     }
+        setSuccess(true);
+
+      }
     } catch {
       setError(true);
-      
+
     }
 
     reset();
@@ -177,66 +182,66 @@ const Login = () => {
                     variant="outlined"
                     {...register("password")}
                   />
-                  <FormControl sx={{textAlign:'left'}}>
-                        {/* <FormLabel>Service(s) you want to provide</FormLabel> */}
-                        <RadioGroup
-                          name="user"
-                          value={value}
+                  <FormControl sx={{ textAlign: 'left' }}>
+                    {/* <FormLabel>Service(s) you want to provide</FormLabel> */}
+                    <RadioGroup
+                      name="user"
+                      value={value}
                       onChange={handleChange}
-                    
-                        >
-                          <Box  required
-                            sx={{
-                              display: "flex",
-                              justifyContent: "space-between",
-                            }}
-                          >
-                            <FormControlLabel
-                              value="merchant"
-                              {...register("merchant")}
-                              control={
-                                <Radio  
-                                  sx={{
-                                    "&.Mui-checked": {
-                                      color: pink[600],
-                                    },
-                                  }}
-                                />
-                              }
-                              label="Merchant"
-                            />
-                            <FormControlLabel
-                              value="rider"
-                              {...register("rider")}
-                              control={
-                                <Radio  
-                                  sx={{
-                                    "&.Mui-checked": {
-                                      color: pink[600],
-                                    },
-                                  }}
-                                />
-                              }
-                              label="Rider"
-                            />
-                            <FormControlLabel
-                              value="user"
-                              {...register("user")}
-                              control={
-                                <Radio 
-                                  sx={{
-                                    "&.Mui-checked": {
-                                      color: pink[600],
-                                    },
-                                  }}
-                                />
-                              }
-                              label="User"
-                            />
 
-                            </Box>
-                        </RadioGroup>
-                      </FormControl>
+                    >
+                      <Box required
+                        sx={{
+                          display: "flex",
+                          justifyContent: "space-between",
+                        }}
+                      >
+                        <FormControlLabel
+                          value="merchant"
+                          {...register("merchant")}
+                          control={
+                            <Radio
+                              sx={{
+                                "&.Mui-checked": {
+                                  color: pink[600],
+                                },
+                              }}
+                            />
+                          }
+                          label="Merchant"
+                        />
+                        <FormControlLabel
+                          value="rider"
+                          {...register("rider")}
+                          control={
+                            <Radio
+                              sx={{
+                                "&.Mui-checked": {
+                                  color: pink[600],
+                                },
+                              }}
+                            />
+                          }
+                          label="Rider"
+                        />
+                        <FormControlLabel
+                          value="user"
+                          {...register("user")}
+                          control={
+                            <Radio
+                              sx={{
+                                "&.Mui-checked": {
+                                  color: pink[600],
+                                },
+                              }}
+                            />
+                          }
+                          label="User"
+                        />
+
+                      </Box>
+                    </RadioGroup>
+                  </FormControl>
                 </Box>
                 <Typography sx={{ textAlign: "left" }} color={red[700]}>
                   Forget Password?
