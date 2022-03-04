@@ -14,40 +14,52 @@ import { useForm } from 'react-hook-form';
   
 const Account = () => {
     const { register, handleSubmit, reset } = useForm();
-     const [image,setImage]= useState('{}')
+     
     // rider data fetch from local storage
     const rider = localStorage.getItem('riderInfo')
-    const riderInfo = JSON.parse(rider)
-  
-    // imageSelectHandle
-    const imageSelectHandle = (e) => {
-        const i = 'alfskla'
-        setImage({selectedImage: e.target.image[0]})
-        console.log(i,image)
-    }
-    const handleImageUpload = async (e) => {
-        e.preventDefault()
-       
-        let imageURL
-        const imageData = new FormData();
-        console.log(imageData)
-        // imageData.set("key", "06a916692ea087d185221539196ef3a5");
-        imageData.append("image", image.selectedImage,image.selectedImage.name);
-        // try {
-        //     const res = await axios.post(
-        //         "https://api.imgbb.com/1/upload",
-        //         imageData
-        //     );
-        //     imageURL = res.data.data.display_url;
-        // } catch (error) {
-            
-        //     return alert("Failed to upload the image!");
-        // }
+  const riderInfo = JSON.parse(rider)
+   const [imageURL, setImageURL]= useState('')
+
+  const onSubmit = async (data) => {
+    console.log(data)
     
+    const imageData = new FormData();
+    imageData.set("key", "06a916692ea087d185221539196ef3a5");
+    imageData.append("image", data.riderImage[0]);
+    try {
+      const res = await axios.post(
+        "https://api.imgbb.com/1/upload",
+        imageData
+      );
+      setImageURL( res.data.data.display_url)
+
+    } catch (error) {
+
+      return alert("Failed to upload the image!");
     }
+console.log(`${imageURL}`);
+    console.log(data.riderImage, imageData)
+
+        
+    const image =imageURL.toString()
+    console.log(image);
+    // const mytoken = localStorage.getItem("riderToken")
+    
+  await axios.post(`http://localhost:8080/api/riderProfile/updateImage/${riderInfo.email}`, 'image').then(res => {
+        console.log(res)
+        if (res.status===200) {
+          // toast.success("product inserted successfully");
+          return
+        }
+
+      })
+      .catch(err => console.log(err))
+    reset();
+  }
+  
     return (
         <div>
-            <form  >  <Card >
+            <form onSubmit={handleSubmit(onSubmit)} >  <Card >
       <CardContent>
         <Box
           sx={{
@@ -57,7 +69,7 @@ const Account = () => {
           }}
         >
           <Avatar
-            src={''}
+            src={`${imageURL}`}
             sx={{
               height: 64,
               mb: 2,
@@ -88,14 +100,14 @@ const Account = () => {
       </CardContent>
       <Divider />
                 <CardActions>
-       <input type="file" multiple accept="image/*" onChange={imageSelectHandle}/>            
+                 
         <Button
           color="primary"
-          fullWidth onClick={handleImageUpload}
+          fullWidth 
                         variant="text"
                         type='submit'
         >
-          Upload picture
+       <input {...register("riderImage", { required: true })} type="file" multiple accept="image/*" />   Upload picture
                     </Button>
                    
       </CardActions>
