@@ -74,7 +74,7 @@ const Login = () => {
               icon: 'success',
               title: 'Merchant Login Successfully',
             });
-            navigate("/merchantproduct")
+            navigate("/")
            
           }        
          }
@@ -104,6 +104,7 @@ const Login = () => {
               icon: 'success',
               title: 'Rider Login Successfully',
             });
+            navigate("/")
           }        
          }
         
@@ -113,12 +114,14 @@ const Login = () => {
       if (data.user === 'user') {
         userLogin(email, password, redirect, navigate);
       setSuccess(true);
-      reset();
+      
      }
     } catch {
       setError(true);
       
     }
+
+    reset();
     // console.log(data);
   };
 

@@ -215,13 +215,23 @@ const Rider = () => {
                       Register
                     </Button>
                   </Box>
-                  <Typography color="gray" variant="subtitle">
-                    By clicking this button, you are agreeing to{" "}
-                    <Link to="/" style={{ color: red[700] }}>
-                      IMAN Xpress terms and privacy policy
-                    </Link>
-                  </Typography>
+                  
+                 
                 </form>
+                <Box sx={{ mt: 1 }}>
+                  <Button variant="outlined" color="warning">
+                    <Link to="/login">
+                      Login
+                    </Link>
+                   
+                  </Button>
+                </Box>
+                <Typography color="gray" variant="subtitle">
+                  By clicking this button, you are agreeing to{" "}
+                  <Link to="/" style={{ color: red[700] }}>
+                    IMAN Xpress terms and privacy policy
+                  </Link>
+                </Typography>
                 {error && (
                   <Alert sx={{ my: 2 }} severity="error">
                     Password not matched.

@@ -25,6 +25,7 @@ import Navbar from "../../Shared/Navbar/Navbar";
 import ProductModal from "../Modal/Modal";
 import MerchantinfoModal from "../Modal/MerchantinfoModal";
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./merchantproduct.css";
 import axios from "axios";
 
@@ -56,23 +57,39 @@ function ProductPage() {
   const [openModal, setOpenModal] = React.useState(false);
   const handleOpen = () => setOpenModal(true);
   const handleClose = () => setOpenModal(false);
-
+  const navigate = useNavigate();
   const [openinfoModal, setOpeninfoModal] = React.useState(false);
   const handleinfoOpen = () => setOpeninfoModal(true);
   const handleinfoClose = () => setOpeninfoModal(false);
   
   const myinfo = JSON.parse(localStorage.getItem("merchantInfo"))
   const mytoken = (localStorage.getItem("merchant"))
+ 
+  // console.log(mytoken)
+  // let location = useLocation();
+  // const redirect_url = location.state?.from || "/products";
+  // console.log(redirect_url)
   const [allproduct, setAllproduct] = useState([]);
-  console.log(mytoken)
   useEffect(() => {
-    axios.get("http://localhost:8080/api/merchant/fetchallproducts",  {
-      headers: {
-        "auth-token": mytoken,
-        "Content-Type": "application/json"
-      }
-    }).then((res)=>setAllproduct(res.data)).catch((err)=>console.log(err))
-    
+
+    if (mytoken === null) {
+      navigate("/")
+      
+     
+
+    } else {
+      axios.get("http://localhost:8080/api/merchant/fetchallproducts", {
+        headers: {
+          "auth-token": mytoken,
+          "Content-Type": "application/json"
+        }
+      }).then((res) => setAllproduct(res.data)).catch((err) => console.log(err))
+
+    }
+    return () => {
+      navigate("/")
+    }
+  
 
 
   },[])

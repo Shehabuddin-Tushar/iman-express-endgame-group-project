@@ -23,6 +23,7 @@
 }
 #list_route {
   background-color: rgb(52, 52, 52) !important;
+
 }
 #list_route:focus {
   background-color: rgb(52, 52, 52) !important;
@@ -72,6 +73,7 @@
   padding: 0px !important;
   box-shadow: none !important;
   margin-top: -20px;
+  border-radius: 5px 0px 0px 5px;
 }
 #accordionBody {
   background-color: rgb(52, 52, 52) !important;
@@ -82,6 +84,8 @@
 #accordionBody a {
   margin-left: 15px;
 }
+
+
 @media screen and (max-width: 600px) {
   .toolbar_box {
     margin-top: 10px;

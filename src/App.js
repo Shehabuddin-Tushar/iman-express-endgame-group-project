@@ -5,6 +5,7 @@ import BlogDetails from "./Component/Blogs/BlogDetails/BlogDetails";
 import BlogsHome from "./Component/Blogs/BlogsHome/BlogsHome";
 import ProductPage from "./Component/MerchanterProduct/ProductPage";
 import Nav from "./DashBoard/Dashboard/Dashboard";
+import Manageporduct from "./DashBoard/Dashboard/Manageproduct/Manageporduct";
 import MarchantProducts from "./DashBoard/MarchantProducts/MarchantProducts";
 import AboutUs from "./Pages/AboutUs/AboutUs";
 import ContactUs from "./Pages/ContactUs/ContactUs";
@@ -58,6 +59,12 @@ function App() {
               path="/dashboard/marchant/add-products"
               element={<MarchantProducts />}
             ></Route>
+
+            <Route
+              path="/dashboard/marchant/manageproduct"
+              element={<Manageporduct/>}
+            ></Route>
+
           </Route>
         </Routes>
       </Router>
