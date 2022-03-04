@@ -214,6 +214,12 @@ const Navbar = () => {
                 About Us
               </Button>
             </Link>
+
+            <Button>
+              <a href="https://imanxpress.netlify.app/">
+                Chat with Rider
+              </a>
+            </Button>
           </Box>
 
           
