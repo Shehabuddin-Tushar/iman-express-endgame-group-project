@@ -16,6 +16,7 @@ import Typography from "@mui/material/Typography";
 import * as React from "react";
 import usefirebase from '../../Hooks/useFirebase'
 import { Link,useNavigate } from "react-router-dom";
+
 import styles from "./Navbar.module.css";
 
 
@@ -44,9 +45,12 @@ const Navbar = () => {
   };
 
   const merchant = localStorage.getItem("merchant");
+  const merchantinfo = JSON.parse(localStorage.getItem("merchantInfo"));
 
   const rider = localStorage.getItem("riderToken");
-  console.log(merchant)
+  const riderinfo = JSON.parse(localStorage.getItem("riderInfo"));
+
+ 
 
   const merchantlogout = () => {
     let confirmmessage = window.confirm("are you sure you want to logout")
@@ -187,15 +191,15 @@ const Navbar = () => {
             <Button
               key="4"
               onClick={handleCloseNavMenu}
-              sx={{ my: 2, color: "black", display: "block" }}
+              sx={{ my: 2, color: "black", display: "block"}}
             >
-              <Link to="/dashboard/home">Dashboard</Link>
+              <Link to="/dashboard/home" style={{textDecoration:"none"}}>Dashboard</Link>
             </Button>
 
            
             {/* contact us added  */}
 
-            <Link to="/contactUs">
+            <Link to="/contactUs" style={{ textDecoration: "none" }}>
               <Button
                 style={{ textDecoration: "none" }}
                 key="6"
@@ -205,7 +209,7 @@ const Navbar = () => {
               </Button>
             </Link>
 
-            <Link to="/aboutUs">
+            <Link to="/aboutUs" style={{textDecoration:"none"}}>
               <Button
                 style={{ textDecoration: "none" }}
                 key="6"
@@ -216,17 +220,35 @@ const Navbar = () => {
             </Link>
 
             <Button>
-              <a href="https://imanxpress.netlify.app/">
+              <a style={{ textDecoration: "none" }} href="https://imanxpress.netlify.app/">
                 Chat with Rider
               </a>
             </Button>
           </Box>
+          {/* {
+            user.email && merchant == null ? <h4 style={{ color: "black",marginTop:"13px" }}>{user.displayName}</h4> : !user.email && merchant ? 
+              <h4 style={{ color: "black", marginTop: "13px"  }}>{merchantinfo.name}</h4>
+              : !user.email && merchant == null && rider ? <h4 style={{ color: "black", marginTop: "13px" }}>{riderinfo.lname}</h4> : <Button> <Link style={{ textDecoration: "none" }} to="/login">
+                Log in
+              </Link>
+              </Button>
+              
+          } */}
 
-          <Button>
-            <Link to="/login">
-              Log in
-            </Link>
+          <Button> <Link style={{ textDecoration: "none" }} to="/login">
+            Log in
+          </Link>
           </Button>
+
+          {/* {
+            rider ? <h2 style={{ color: "red" }}>{riderinfo.name}</h2> :
+              <Button>
+                <Link to="/login">
+                  Log in
+                </Link>
+              </Button>
+          } */}
+          
 
           <Button
             onClick={handleOpenUserMenu}

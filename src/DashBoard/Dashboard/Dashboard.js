@@ -261,7 +261,7 @@ function Nav(props) {
           right: "0px",
           color: "rgb(255, 255, 255)",
           backdropFilter: "blur(2px)",
-          backgroundColor: "#3781CB",
+          backgroundColor: "#fff",
           boxShadow: " rgb(199 199 199 / 24%) 0px 8px 16px 0px",
           height: "64px",
           zIndex: "1101",
@@ -326,7 +326,7 @@ function Nav(props) {
             "& .MuiDrawer-paper": {
               boxSizing: "border-box",
               width: drawerWidth,
-              backgroundColor: "#3781CB",
+              backgroundColor: "#203239",
             },
           }}
           open
