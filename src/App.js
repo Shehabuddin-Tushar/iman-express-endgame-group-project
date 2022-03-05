@@ -10,21 +10,21 @@ import Manageporduct from "./DashBoard/Dashboard/Manageproduct/Manageporduct";
 import MarchantProducts from "./DashBoard/MarchantProducts/MarchantProducts";
 import AboutUs from "./Pages/AboutUs/AboutUs";
 import ContactUs from "./Pages/ContactUs/ContactUs";
-import RiderAccount from "./Pages/Dashboard/Rider/RiderAccount";
-import RiderSetting from "./Pages/Dashboard/Setting/RiderSetting";
+
 
 import Home from "./Pages/Home/Home";
 import Login from "./Pages/Login/Login";
 import Register from "./Pages/Login/Register";
 import Account from "./Pages/Merchant/Account";
 
-import Rider from "./Pages/Rider/Rider";
+
 
 import "./App.css";
 import AddBlog from "./DashBoard/DashboardHome/AddBlog/AddBlog";
 import UpdateBlog from "./DashBoard/DashboardHome/AddBlog/UpdateBlog/UpdateBlog";
 import ManageBlog from "./DashBoard/DashboardHome/ManageBlog/ManageBlog";
 import Reviews from "./Component/Reviews/Reviews";
+import RiderRegistration from "./Pages/Rider/Rider";
 function App() {
   return (
     <>
@@ -33,8 +33,8 @@ function App() {
           <Route path="/" element={<Home></Home>}></Route>
           <Route path="/login" element={<Login></Login>}></Route>
           <Route path="/register" element={<Register></Register>}></Route>
-          <Route path="/merchant" element={<Account />}></Route>
-          <Route path="/rider" element={<Rider></Rider>}></Route>
+          <Route path="/merchantRegister" element={<Account />}></Route>
+          <Route path="/riderRegister" element={<RiderRegistration></RiderRegistration>}></Route>
           <Route path="/moreBlogs" element={<BlogsHome></BlogsHome>}></Route>
           <Route path="/dashboard" element={<Nav />}></Route>
           <Route
@@ -56,11 +56,11 @@ function App() {
               element={<Dashboardhome/>}
             ></Route>
             
-            <Route
+            {/* <Route
               path="/dashboard/rider/profile"
               element={<RiderAccount />}
             ></Route>
-            <Route path="/dashboard/rider/setting" element={<RiderSetting />}></Route>
+            <Route path="/dashboard/rider/setting" element={<RiderSetting />}></Route> */}
             <Route path="/dashboard/updateBlog" element={<UpdateBlog></UpdateBlog>}></Route>
             <Route path="/dashboard/rate-us" element={<Reviews />}></Route>
             {/* <Route path="/dashboard/payment" element={<PaymentDash/>}></Route> */}

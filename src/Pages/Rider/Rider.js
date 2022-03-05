@@ -42,7 +42,7 @@ const states = [
 ];
 
 
-const Rider = () => {
+const RiderRegistration = () => {
   const [error, setError] = useState(false);
   const [success, setSuccess] = useState(false);
   const { register, handleSubmit, reset } = useForm();
@@ -223,4 +223,4 @@ const Rider = () => {
   );
 };
 
-export default Rider;
+export default RiderRegistration;

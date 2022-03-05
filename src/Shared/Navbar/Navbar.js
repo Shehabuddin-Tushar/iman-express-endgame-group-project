@@ -304,7 +304,7 @@ const Navbar = () => {
                       style={{ width: "200px" }}
                     >
 
-                      <Link to="/merchant"><Typography textAlign="center">Merchant account</Typography></Link>
+                      <Link to="/merchantRegister"><Typography textAlign="center">Merchant account</Typography></Link>
                       {/* <Button onClick={merchantlogout}>Merchant logout</Button> */}
 
 
@@ -315,7 +315,7 @@ const Navbar = () => {
                       onClick={handleCloseUserMenu}
                       style={{ width: "200px" }}
                     >
-                      <Link to="/rider"><Typography textAlign="center">Rider account</Typography></Link>
+                      <Link to="/riderRegister"><Typography textAlign="center">Rider account</Typography></Link>
                     </MenuItem>
                   </>
               }
