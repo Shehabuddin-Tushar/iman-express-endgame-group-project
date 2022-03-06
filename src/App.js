@@ -25,6 +25,7 @@ import AddBlog from "./DashBoard/DashboardHome/AddBlog/AddBlog";
 import UpdateBlog from "./DashBoard/DashboardHome/AddBlog/UpdateBlog/UpdateBlog";
 import ManageBlog from "./DashBoard/DashboardHome/ManageBlog/ManageBlog";
 import Reviews from "./Component/Reviews/Reviews";
+import Updatemerchantproduct from "./DashBoard/Dashboard/Updatemerchantproduct/Updatemerchantproduct";
 function App() {
   return (
     <>
@@ -38,7 +39,7 @@ function App() {
           <Route path="/moreBlogs" element={<BlogsHome></BlogsHome>}></Route>
           <Route path="/dashboard" element={<Nav />}></Route>
           <Route
-            path="/merchantproduct"
+            path="/merchantproduct/:id"
             element={<ProductPage></ProductPage>}
           ></Route>
                   
@@ -76,6 +77,11 @@ function App() {
             <Route
               path="/dashboard/marchant/manageproduct"
               element={<Manageporduct/>}
+            ></Route>
+
+            <Route
+              path="/dashboard/marchant/updateproduct/:id"
+              element={<Updatemerchantproduct/>}
             ></Route>
 
           </Route>

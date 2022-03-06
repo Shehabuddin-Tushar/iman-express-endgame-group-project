@@ -14,7 +14,7 @@ const AddBlog = () => {
     // const onSubmit = data => console.log(data);
 
     const onSubmit = async (data) => {
-        // console.log(data)
+         console.log(data)
         let imageURL
         const imageData = new FormData();
         imageData.set("key", "06a916692ea087d185221539196ef3a5");

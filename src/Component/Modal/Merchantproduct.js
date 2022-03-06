@@ -19,9 +19,9 @@ const style = {
     borderRadius: "3px",
 };
 
-export default function MerchantinfoModal({ openModal, handleClose,merchantinfo}) {
+export default function Merchantproduct({ openModal, handleClose, merchantproduct}) {
 
-   
+  
     return (
         <>
             <Modal
@@ -37,29 +37,25 @@ export default function MerchantinfoModal({ openModal, handleClose,merchantinfo}
             >
                 <Fade in={openModal}>
                     <Box sx={style}>
-                        <Typography id="transition-modal-title" variant="h6" component="h2">
-                            Store name: {merchantinfo.name}
-                        </Typography>
+                        
                         <img
                             width="100%"
                             style={{ borderRadius: "3px" }}
-                            src={merchantinfo.image}
+                            src={merchantproduct.productimage}
                             alt=""
                         />
                         <Typography id="transition-modal-title" variant="h6" component="h2">
-                            Store email: {merchantinfo.email}
+                            Name: <span style={{ fontWeight:"bold" }}>{merchantproduct.productname}</span>
                         </Typography>
 
                         <Typography id="transition-modal-title" variant="h6" component="h2">
-                            Store address: {merchantinfo.storeAddress}
+                            price: <span style={{ color: "red" }}>{merchantproduct.productprice} TK</span> 
                         </Typography>
+
                         <Typography id="transition-modal-title" variant="h6" component="h2">
-                            Mobile number: {merchantinfo.mobileNumber}
+                            Description: {merchantproduct.productdescription}
                         </Typography>
-                        <Typography id="transition-modal-title" variant="h6" component="h2">
-                            facebook page: {merchantinfo.faceBookLink}
-                        </Typography>
-                        
+
                     </Box>
                 </Fade>
             </Modal>

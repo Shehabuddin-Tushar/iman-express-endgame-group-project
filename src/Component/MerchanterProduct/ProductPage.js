@@ -19,13 +19,13 @@ import ListItemAvatar from "@mui/material/ListItemAvatar";
 import ListItemText from "@mui/material/ListItemText";
 import { styled, useTheme } from "@mui/material/styles";
 import { Box } from "@mui/system";
-import React,{useState,useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import Footer from "../../Shared/Footer/Footer";
 import Navbar from "../../Shared/Navbar/Navbar";
 import ProductModal from "../Modal/Modal";
 import MerchantinfoModal from "../Modal/MerchantinfoModal";
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import "./merchantproduct.css";
 import axios from "axios";
 
@@ -51,8 +51,8 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
 
 
 function ProductPage() {
-   
-  
+
+
   const theme = useTheme();
   const [openModal, setOpenModal] = React.useState(false);
   const handleOpen = () => setOpenModal(true);
@@ -61,40 +61,42 @@ function ProductPage() {
   const [openinfoModal, setOpeninfoModal] = React.useState(false);
   const handleinfoOpen = () => setOpeninfoModal(true);
   const handleinfoClose = () => setOpeninfoModal(false);
-  
+
   const myinfo = JSON.parse(localStorage.getItem("merchantInfo"))
   const mytoken = (localStorage.getItem("merchant"))
- 
+
+  const { id } = useParams();
+  console.log(id)
+
   // console.log(mytoken)
   // let location = useLocation();
   // const redirect_url = location.state?.from || "/products";
   // console.log(redirect_url)
   const [allproduct, setAllproduct] = useState([]);
+  const [merchantdata, setMerchantdata] = useState({});
   useEffect(() => {
 
-    if (mytoken === null) {
-      navigate("/")
-      
-     
+    axios.get(`https://iman-xpress.herokuapp.com/api/auth/getmerchantuser/${id}`, {
+      headers: {
 
-    } else {
-      axios.get("https://iman-xpress.herokuapp.com/api/merchant/fetchallproducts", {
-        headers: {
-          "auth-token": mytoken,
-          "Content-Type": "application/json"
-        }
-      }).then((res) => setAllproduct(res.data)).catch((err) => console.log(err))
+        "Content-Type": "application/json"
+      }
+    }).then((res) => setMerchantdata(res.data)).catch((err) => console.log(err))
 
-    }
-    return () => {
-      navigate("/")
-    }
-  
+    axios.get(`https://iman-xpress.herokuapp.com/api/merchant/fetchallproductsbyid/${id}`, {
+      headers: {
+
+        "Content-Type": "application/json"
+      }
+    }).then((res) => setAllproduct(res.data)).catch((err) => console.log(err))
 
 
-  },[])
-  
- 
+
+
+
+  }, [])
+
+
   return (
     <>
       <Navbar />
@@ -102,7 +104,7 @@ function ProductPage() {
         <Grid item lg={9} md={9} sm={12} xs={12} className="bannerwithproduct">
           <Box style={{ overflow: "scroll", maxHeight: "100vh" }}>
             <img
-              src={myinfo.image}
+              src={merchantdata.image}
               width="100%"
               height="300px"
             />
@@ -118,7 +120,7 @@ function ProductPage() {
               >
                 <div style={{ display: "flex" }}>
                   <Typography variant="h5" style={{ paddingRight: "15px" }}>
-                    {myinfo.name}
+                    {merchantdata.name}
                   </Typography>
                   <div class="wrap">
                     <div class="search">
@@ -151,9 +153,9 @@ function ProductPage() {
                   return (
                     <Grid item lg={6} md={12} sm={12} xs={12}>
                       <div class="product-container">
-                        <div class="product" style={{height:"160px"}}>
+                        <div class="product" style={{ height: "160px" }}>
                           <div class="product-info">
-                            <h5>{ product.productname}</h5>
+                            <h5>{product.productname}</h5>
                             <h2>{product.productprice} tk</h2>
 
                             <ButtonGroup
@@ -348,8 +350,8 @@ function ProductPage() {
                 </div>
               </ListItem>
               <hr />
-              <Typography style={{ marginLeft: "50px" }}>Total price: <span style={{fontWeight:"bold"}}>3000</span>tk</Typography>
-              
+              <Typography style={{ marginLeft: "50px" }}>Total price: <span style={{ fontWeight: "bold" }}>3000</span>tk</Typography>
+
               ,
             </List>
           </Demo>
@@ -358,7 +360,7 @@ function ProductPage() {
       <Footer />
       <ProductModal openModal={openModal} handleClose={handleClose} />
 
-      <MerchantinfoModal openModal={openinfoModal} handleClose={handleinfoClose} />
+      <MerchantinfoModal openModal={openinfoModal} handleClose={handleinfoClose} merchantinfo={merchantdata} />
     </>
   );
 }
