@@ -14,7 +14,7 @@ const AddBlog = () => {
     // const onSubmit = data => console.log(data);
 
     const onSubmit = async (data) => {
-        // console.log(data)
+         console.log(data)
         let imageURL
         const imageData = new FormData();
         imageData.set("key", "06a916692ea087d185221539196ef3a5");
@@ -36,7 +36,7 @@ const AddBlog = () => {
 
 
 
-        const url = `http://localhost:8080/api/blog/addblog`;
+        const url = `https://iman-xpress.herokuapp.com/api/blog/addblog`;
 
         axios.post(url, data,
             {
@@ -105,7 +105,7 @@ const AddBlog = () => {
     //         time: blogData.time
     //     };
 
-    //     const url = `http://localhost:8080/api/blog/addblog`;
+    //     const url = `https://iman-xpress.herokuapp.com/api/blog/addblog`;
     //     fetch(url, {
     //         method: "POST",
     //         header: {

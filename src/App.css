@@ -20,6 +20,9 @@
 .img {
   margin-left: -28px;
 }
+input {
+  font-family: "Hind Siliguri", sans-serif !important;
+}
 
 /* width */
 ::-webkit-scrollbar {

@@ -1,38 +1,34 @@
-import { Container, Card, CardMedia } from '@mui/material';
-import React from 'react';
-import { Typography } from '@mui/material';
-import { Button } from '@mui/material';
-import pic1 from '../../img/about-us-delivery.jpg';
-import pic2 from '../../img/our-mission.jpg';
-import anik from '../../img/anik.jpg';
-import tushar from '../../img/tushar.jpg';
-import imtiaz from '../../img/imtiaz.jpg';
-import saiful from '../../img/saiful.jpg';
-import tanvir from '../../img/tanvir.jpg';
-import proloy from '../../img/proloy.png';
-import Grid from '@mui/material/Grid';
-import './AboutUs.css';
-import { SiFacebook} from 'react-icons/si';
-import { ImTwitter} from 'react-icons/im';
-import { FaInstagramSquare} from 'react-icons/fa';
-import { BsLinkedin} from 'react-icons/bs';
-import {FaRegFilePowerpoint} from 'react-icons/fa';
-import {FaGithub} from 'react-icons/fa';
-import Box from '@mui/material/Box';
-import Navbar from '../../Shared/Navbar/Navbar';
-
-
+import { Button, Card, CardMedia, Container, Typography } from "@mui/material";
+import Box from "@mui/material/Box";
+import Grid from "@mui/material/Grid";
+import React from "react";
+// import { FaInstagramSquare} from 'react-icons/fa';
+import { BsLinkedin } from "react-icons/bs";
+// import {FaRegFilePowerpoint} from 'react-icons/fa';
+import { FaGithub } from "react-icons/fa";
+import { ImTwitter } from "react-icons/im";
+import { SiFacebook } from "react-icons/si";
+import pic1 from "../../img/about-us-delivery.jpg";
+import anik from "../../img/anik.jpg";
+import imtiaz from "../../img/imtiaz.jpg";
+import pic2 from "../../img/our-mission.jpg";
+import proloy from "../../img/proloy.png";
+import saiful from "../../img/saiful.jpg";
+import tanvir from "../../img/tanvir.jpg";
+import tushar from "../../img/tushar.jpg";
+import Footer from "../../Shared/Footer/Footer";
+import Navbar from "../../Shared/Navbar/Navbar";
+import "./AboutUs.css";
 
 const AboutUs = () => {
-
-    return (
-        <>
-            <Navbar/>
-            <Container className='font'>
-            <Grid sx={{mt:2}} container spacing={2}>
-                <Grid  item xs={12}  lg={6} md={6}>
-                <Card sx={{boxShadow:5 }}>
-                <CardMedia
+  return (
+    <>
+      <Navbar />
+      <Container className="font">
+        <Grid sx={{ mt: 2 }} container spacing={2}>
+          <Grid item xs={12} lg={6} md={6}>
+            <Card sx={{ boxShadow: 5 }}>
+              <CardMedia
                 component="img"
                 height="420"
                 image={pic1}
@@ -84,6 +80,7 @@ const AboutUs = () => {
                 <Typography sx={{ textAlign: 'center',m:2,mt:3,fontWeight:'bold',borderBottom:'2px solid black'}} variant='h5'>
                 Iman_Xpress Developers
                 </Typography>
+              
 
                  {/* Developers  */}
             <Grid sx={{mt:2,mb:3,m:3}} container spacing={2}>
@@ -353,7 +350,8 @@ const AboutUs = () => {
             </Grid>
 
             
-            </Container>   
+            </Container> 
+            <Footer/>
         </>
     );
 };

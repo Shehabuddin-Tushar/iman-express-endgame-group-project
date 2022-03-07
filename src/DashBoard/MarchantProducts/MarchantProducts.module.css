@@ -1,0 +1,64 @@
+.mainBox {
+  margin: 4% 2.5%;
+  text-align: center;
+}
+.merchantText {
+  margin-top: 40px;
+  padding: 20px;
+  border-radius: 15px;
+  background-color: #fdd3d3;
+  /* box-shadow: 0 8px 18px 0 rgba(233, 207, 207, 0.884); */
+}
+.merchantText h5 {
+  font-family: "Hind Siliguri", sans-serif;
+  font-weight: bold;
+}
+.merchantText h5 span {
+  color: #f73c3c;
+  text-transform: uppercase;
+}
+.marchant_products_box {
+  margin-top: 100px;
+ 
+}
+.marchant_products_box img {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+}
+.post_button {
+  background-image: linear-gradient(72deg, #1dbb86, #25df83);
+}
+
+.post_button:hover {
+  background-image: linear-gradient(72deg, #1dbb86, #25df83);
+}
+.product_img {
+  position: relative;
+}
+.product_img_upload {
+  background-color: rgba(53, 53, 53, 0.596);
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  transform: translate(-50%, -51.5%);
+  transition: 0.4s;
+}
+.product_img_upload_button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: 0.4s;
+}
+.product_img:hover .product_img_upload {
+  opacity: 1;
+}
+.product_img:hover .product_img_upload_button {
+  opacity: 1;
+}

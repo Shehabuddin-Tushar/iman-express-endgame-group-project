@@ -13,16 +13,34 @@ import {
   Typography,
 } from "@mui/material";
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Product.css";
 
+// category: "resturant"
+// date: "2022-03-03T16:11:36.810Z"
+// email: "tanjim@gmail.com"
+// faceBookLink: "tanjim page"
+// image: "https://i.ibb.co/XZmM4RR/tanjimhouse.jpg"
+// mobileNumber: 1409130405
+// name: "tanjim house"
+// storeAddress: "Dhanmondi"
+// __v: 0
+// _id: "6220e8b81a9fd042dc67a005"
+
 const Service = ({ service, isLoad }) => {
-  const { name, img, price } = service;
+  const { category, image, name, _id } = service;
+  isLoad=false
+  console.log(service)
   const navigate = useNavigate();
 
-  const handleDetail = (id) => {
-    navigate(`/product/${id}`);
-  };
+  // const handleDetail = (id) => {
+  //   navigate(`/product/${id}`);
+  // };
+
+  const databyid=(id)=> {
+    console.log(id)
+    navigate(`/merchantproduct/${id}`)
+  }
 
   return (
     <>
@@ -42,25 +60,27 @@ const Service = ({ service, isLoad }) => {
                 sx={{ borderRadius: "5px" }}
                 height="220px"
                 width="100%"
-                image={img}
-                alt="Paella dish"
+                image={image}
+                  alt="Paella dish"
+                  
+                 
               />
               <Box className="icon-container">
-                <IconButton
+                {/* <IconButton
                   onClick={() => handleDetail(name)}
                   aria-label="share"
                 >
                   <ShoppingCartIcon />
-                </IconButton>
-                <IconButton aria-label="add to favorites">
+                </IconButton> */}
+                {/* <IconButton aria-label="add to favorites">
                   <FavoriteIcon />
+                </IconButton> */}
+                <IconButton aria-label="share" style={{ width: "150px" }} onClick={() => databyid(_id)}>
+                    <ShuffleIcon />
                 </IconButton>
-                <IconButton aria-label="share">
-                  <ShuffleIcon />
-                </IconButton>
-                <IconButton aria-label="share">
+                {/* <IconButton aria-label="share">
                   <ShareIcon />
-                </IconButton>
+                </IconButton> */}
               </Box>
               {/* <Box className='price'>
                             <Typography sx={{ color: '#fff' }}>
@@ -70,7 +90,7 @@ const Service = ({ service, isLoad }) => {
             </Box>
             <CardContent>
               <Typography variant="body1" color="text.secondary">
-                {name.slice(0, 25)}
+                {name}
               </Typography>
             </CardContent>
           </Card>

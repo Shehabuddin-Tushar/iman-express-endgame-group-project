@@ -3,6 +3,7 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 import InfoIcon from "@mui/icons-material/Info";
 import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+
 import {
   Button,
   ButtonGroup,
@@ -11,17 +12,22 @@ import {
   Typography,
 } from "@mui/material";
 import IconButton from "@mui/material/IconButton";
+import Badge from '@mui/material/Badge';
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemAvatar from "@mui/material/ListItemAvatar";
 import ListItemText from "@mui/material/ListItemText";
 import { styled, useTheme } from "@mui/material/styles";
 import { Box } from "@mui/system";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Footer from "../../Shared/Footer/Footer";
 import Navbar from "../../Shared/Navbar/Navbar";
 import ProductModal from "../Modal/Modal";
+import MerchantinfoModal from "../Modal/MerchantinfoModal";
+import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
+import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
 import "./merchantproduct.css";
+import axios from "axios";
 
 function generate(element) {
   return [0, 1, 2].map((value) =>
@@ -33,11 +39,63 @@ function generate(element) {
 const Demo = styled("div")(({ theme }) => ({
   backgroundColor: theme.palette.background.paper,
 }));
+
+const StyledBadge = styled(Badge)(({ theme }) => ({
+  '& .MuiBadge-badge': {
+    right: -3,
+    top: 13,
+    border: `2px solid ${theme.palette.background.paper}`,
+    padding: '0 4px',
+  },
+}));
+
+
 function ProductPage() {
+
+
   const theme = useTheme();
   const [openModal, setOpenModal] = React.useState(false);
   const handleOpen = () => setOpenModal(true);
   const handleClose = () => setOpenModal(false);
+  const navigate = useNavigate();
+  const [openinfoModal, setOpeninfoModal] = React.useState(false);
+  const handleinfoOpen = () => setOpeninfoModal(true);
+  const handleinfoClose = () => setOpeninfoModal(false);
+
+  const myinfo = JSON.parse(localStorage.getItem("merchantInfo"))
+  const mytoken = (localStorage.getItem("merchant"))
+
+  const { id } = useParams();
+  console.log(id)
+
+  // console.log(mytoken)
+  // let location = useLocation();
+  // const redirect_url = location.state?.from || "/products";
+  // console.log(redirect_url)
+  const [allproduct, setAllproduct] = useState([]);
+  const [merchantdata, setMerchantdata] = useState({});
+  useEffect(() => {
+
+    axios.get(`https://iman-xpress.herokuapp.com/api/auth/getmerchantuser/${id}`, {
+      headers: {
+
+        "Content-Type": "application/json"
+      }
+    }).then((res) => setMerchantdata(res.data)).catch((err) => console.log(err))
+
+    axios.get(`https://iman-xpress.herokuapp.com/api/merchant/fetchallproductsbyid/${id}`, {
+      headers: {
+
+        "Content-Type": "application/json"
+      }
+    }).then((res) => setAllproduct(res.data)).catch((err) => console.log(err))
+
+
+
+
+
+  }, [])
+
 
   return (
     <>
@@ -46,7 +104,7 @@ function ProductPage() {
         <Grid item lg={9} md={9} sm={12} xs={12} className="bannerwithproduct">
           <Box style={{ overflow: "scroll", maxHeight: "100vh" }}>
             <img
-              src="https://images.food52.com/McqpjxUiMekhfX6Rsq7wuuSoz0g=/2016x1344/filters:format(webp)/d815e816-4664-472e-990b-d880be41499f--chicken-biryani-recipe.jpg"
+              src={merchantdata.image}
               width="100%"
               height="300px"
             />
@@ -62,7 +120,7 @@ function ProductPage() {
               >
                 <div style={{ display: "flex" }}>
                   <Typography variant="h5" style={{ paddingRight: "15px" }}>
-                    Biryani house
+                    {merchantdata.name}
                   </Typography>
                   <div class="wrap">
                     <div class="search">
@@ -80,7 +138,7 @@ function ProductPage() {
                     </div>
                   </div>
                 </div>
-                <Button variant="h5" variant="outlined" className="inform">
+                <Button variant="h5" variant="outlined" className="inform" onClick={handleinfoOpen}>
                   Resturent information
                 </Button>
                 <Button className="inform2">
@@ -91,23 +149,23 @@ function ProductPage() {
             <hr style={{ border: "1px solid #E5E7E9" }} />
             <Container>
               <Grid container spacing={2}>
-                {[...Array(10).keys()].map(() => {
+                {allproduct.map((product) => {
                   return (
                     <Grid item lg={6} md={12} sm={12} xs={12}>
                       <div class="product-container">
-                        <div class="product">
+                        <div class="product" style={{ height: "160px" }}>
                           <div class="product-info">
-                            <h5>Product name</h5>
-                            <h2>1000 tk</h2>
+                            <h5>{product.productname}</h5>
+                            <h2>{product.productprice} tk</h2>
 
                             <ButtonGroup
                               variant="outlined"
                               aria-label="outlined button group"
                             >
-                              <Button onClick={handleOpen}>
+                              <Button >
                                 <ShoppingCartIcon />
                               </Button>
-                              <Button>
+                              <Button onClick={handleOpen}>
                                 <RemoveRedEyeIcon />
                               </Button>
                               <Button>
@@ -117,7 +175,7 @@ function ProductPage() {
                           </div>
                           <div class="product-preview">
                             <img
-                              src="https://images.food52.com/McqpjxUiMekhfX6Rsq7wuuSoz0g=/2016x1344/filters:format(webp)/d815e816-4664-472e-990b-d880be41499f--chicken-biryani-recipe.jpg"
+                              src={product.productimage}
                               width="200px"
                               style={{
                                 borderRadius: "5px",
@@ -150,9 +208,13 @@ function ProductPage() {
               padding: "5px",
               color: "#fff",
             }}
-            variant="h4"
+            variant="h5"
           >
-            Your cart(3)
+            cart <IconButton aria-label="cart">
+              <StyledBadge badgeContent={3} color="secondary">
+                <ShoppingCartIcon />
+              </StyledBadge>
+            </IconButton>
           </Typography>
           <Demo>
             <List>
@@ -177,7 +239,7 @@ function ProductPage() {
                 </ListItemAvatar>
                 <div style={{ marginTop: "-5px" }}>
                   <ListItemText>product name</ListItemText>
-                  <ListItemText>product price</ListItemText>
+                  <ListItemText>1000 tk</ListItemText>
                   <ListItemText>
                     <div class="quantity buttons_added">
                       <input type="button" value="-" class="minus" />
@@ -221,7 +283,7 @@ function ProductPage() {
                 </ListItemAvatar>
                 <div style={{ marginTop: "-5px" }}>
                   <ListItemText>product name</ListItemText>
-                  <ListItemText>product price</ListItemText>
+                  <ListItemText>1000 tk</ListItemText>
                   <ListItemText>
                     <div class="quantity buttons_added">
                       <input type="button" value="-" class="minus" />
@@ -265,7 +327,7 @@ function ProductPage() {
                 </ListItemAvatar>
                 <div style={{ marginTop: "-5px" }}>
                   <ListItemText>product name</ListItemText>
-                  <ListItemText>product price</ListItemText>
+                  <ListItemText>1000 tk</ListItemText>
                   <ListItemText>
                     <div class="quantity buttons_added">
                       <input type="button" value="-" class="minus" />
@@ -287,6 +349,9 @@ function ProductPage() {
                   </ListItemText>
                 </div>
               </ListItem>
+              <hr />
+              <Typography style={{ marginLeft: "50px" }}>Total price: <span style={{ fontWeight: "bold" }}>3000</span>tk</Typography>
+
               ,
             </List>
           </Demo>
@@ -294,6 +359,8 @@ function ProductPage() {
       </Grid>
       <Footer />
       <ProductModal openModal={openModal} handleClose={handleClose} />
+
+      <MerchantinfoModal openModal={openinfoModal} handleClose={handleinfoClose} merchantinfo={merchantdata} />
     </>
   );
 }

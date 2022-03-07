@@ -12,15 +12,10 @@ import { Box } from "@mui/system";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 
-const CreatAccount = () => {
+const CreatAccount = ({register}) => {
   const [error, setError] = useState(false);
   const [success, setSuccess] = useState(false);
-  const { register, handleSubmit, reset } = useForm();
-
-  const onSubmit = (data) => {
-    console.log(data);
-  };
-
+ 
   return (
     <div>
       <Grid
@@ -39,7 +34,7 @@ const CreatAccount = () => {
             justifyContent: "center",
           }}
         >
-          <form onSubmit={handleSubmit(onSubmit)}>
+         
             <Box>
               <TextField
                 label="Store Name"
@@ -48,22 +43,8 @@ const CreatAccount = () => {
                 variant="outlined"
                 {...register("storeName")}
               />
-              <TextField
-                label="Owner’s Name"
-                required
-                type="text"
-                sx={{ mt: 2, width: "100%" }}
-                variant="outlined"
-                {...register("ownersName")}
-              />
-              <TextField
-                required
-                label="Mobile Number"
-                type="number"
-                sx={{ mt: 2, width: "100%" }}
-                variant="outlined"
-                {...register("mobileNumber")}
-              />
+              
+             
               <TextField
                 required
                 label="Email Address "
@@ -71,14 +52,22 @@ const CreatAccount = () => {
                 sx={{ my: 2, width: "100%" }}
                 variant="outlined"
                 {...register("email ")}
-              />
+              /><TextField
+              label="Password"
+              required
+              type="password"
+              sx={{ mt: 2, width: "100%" }}
+              variant="outlined"
+              {...register("password")}
+            />
             </Box>{" "}
             <Box sx={{ textAlign: "left", my: 3 }}>
               <Button variant="outlined" color="warning" type="submit">
                 Create Account
               </Button>
             </Box>
-          </form>
+            
+         
           {error && (
             <Alert sx={{ my: 2 }} severity="error">
               Password not matched.

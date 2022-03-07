@@ -1,71 +1,106 @@
+import MessengerCustomerChat from "react-messenger-customer-chat";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import "./App.css";
+import BlogDetails from "./Component/Blogs/BlogDetails/BlogDetails";
+import BlogsHome from "./Component/Blogs/BlogsHome/BlogsHome";
 import ProductPage from "./Component/MerchanterProduct/ProductPage";
-import AddProducts from "./DashBoard/AddCourse/AddProducts";
-import Admin from "./DashBoard/Admin/Admin";
-import AllProducts from "./DashBoard/AllCourses/AllProducts";
 import Nav from "./DashBoard/Dashboard/Dashboard";
-import DashboardHome from "./DashBoard/DashboardHome/DashboardHome";
-import PaymentDash from "./DashBoard/PaymentDash/PaymentDash";
-import Review from "./DashBoard/Review/Review";
-import UserOrder from "./DashBoard/UserOrder/UserOrder";
+import Dashboardhome from "./DashBoard/Dashboard/Dashboardhome/Dashboardhome";
+import Manageporduct from "./DashBoard/Dashboard/Manageproduct/Manageporduct";
+import MarchantProducts from "./DashBoard/MarchantProducts/MarchantProducts";
+import AboutUs from "./Pages/AboutUs/AboutUs";
+import ContactUs from "./Pages/ContactUs/ContactUs";
+import RiderAccount from "./Pages/Dashboard/Rider/RiderAccount";
+import RiderSetting from "./Pages/Dashboard/Setting/RiderSetting";
+
 import Home from "./Pages/Home/Home";
 import Login from "./Pages/Login/Login";
 import Register from "./Pages/Login/Register";
-import BlogsHome from "./Component/Blogs/BlogsHome/BlogsHome";
-import BlogDetails from "./Component/Blogs/BlogDetails/BlogDetails";
-import Merchant from "./Pages/Merchant/Merchant";
+import Account from "./Pages/Merchant/Account";
+
 import Rider from "./Pages/Rider/Rider";
-import ContactUs from "./Pages/ContactUs/ContactUs";
-import AboutUs from './Pages/AboutUs/AboutUs';
+
 import "./App.css";
 import AddBlog from "./DashBoard/DashboardHome/AddBlog/AddBlog";
 import UpdateBlog from "./DashBoard/DashboardHome/AddBlog/UpdateBlog/UpdateBlog";
 import ManageBlog from "./DashBoard/DashboardHome/ManageBlog/ManageBlog";
+import Reviews from "./Component/Reviews/Reviews";
+import Updatemerchantproduct from "./DashBoard/Dashboard/Updatemerchantproduct/Updatemerchantproduct";
+import Merchantprofile from "./DashBoard/Dashboard/Merchantprofile/Merchantprofile";
 function App() {
   return (
-    <div>
+    <>
       <Router>
-         <Routes>
-             <Route path="/" element={<Home></Home>}></Route>
-             <Route path="/login" element={<Login></Login>}></Route>
-             <Route path="/register" element={<Register></Register>}></Route>
-             <Route path="/moreBlogs" element={<BlogsHome></BlogsHome>}></Route>
-             <Route path="/blogDetails/:id" element={<BlogDetails></BlogDetails>}></Route>
-             <Route path="/merchant" element={<Merchant></Merchant>}></Route>
-            <Route path="/rider" element={<Rider></Rider>}></Route>
-            <Route path="/moreBlogs" element={<BlogsHome></BlogsHome>}></Route>
-             <Route path="/contactUs" element={<ContactUs></ContactUs>}></Route>
-          <Route path="/aboutUs" element={<AboutUs></AboutUs>}></Route>
+        <Routes>
+          <Route path="/" element={<Home></Home>}></Route>
+          <Route path="/login" element={<Login></Login>}></Route>
+          <Route path="/register" element={<Register></Register>}></Route>
+          <Route path="/merchant" element={<Account />}></Route>
+          <Route path="/rider" element={<Rider></Rider>}></Route>
+          <Route path="/moreBlogs" element={<BlogsHome></BlogsHome>}></Route>
+          <Route path="/dashboard" element={<Nav />}></Route>
+          <Route
+            path="/merchantproduct/:id"
+            element={<ProductPage></ProductPage>}
+          ></Route>
+                  
+          <Route path="/contactUs" element={<ContactUs></ContactUs>}></Route>
+         
+          <Route path="/aboutUs" element={<AboutUs></AboutUs>}></Route> 
           <Route
             path="/product/:productDetail"
             element={<ProductPage />}
           ></Route>
+          
           <Route path="/dashboard" element={<Nav />}>
             <Route
-              path="/dashboard/dashboardHome"
-              element={<DashboardHome />}
+              path="/dashboard/home"
+              element={<Dashboardhome/>}
             ></Route>
-            <Route path="/dashboard/make-admin" element={<Admin />}></Route>
-            <Route path="/dashboard/userOrders" element={<UserOrder />}></Route>
+            
             <Route
-              path="/dashboard/add-products"
-              element={<AddProducts />}
+              path="/dashboard/rider/profile"
+              element={<RiderAccount />}
             ></Route>
-            <Route
-              path="/dashboard/all-products"
-              element={<AllProducts />}
-            ></Route>
-            <Route path="/dashboard/rate-us" element={<Review />}></Route>
-            <Route path="/dashboard/payment" element={<PaymentDash />}></Route>
+            <Route path="/dashboard/rider/setting" element={<RiderSetting />}></Route>
+            <Route path="/dashboard/updateBlog" element={<UpdateBlog></UpdateBlog>}></Route>
+            <Route path="/dashboard/rate-us" element={<Reviews />}></Route>
+            {/* <Route path="/dashboard/payment" element={<PaymentDash/>}></Route> */}
             <Route path="/dashboard/addBlog" element={<AddBlog />}></Route>
             <Route path="/dashboard/manageBlog" element={<ManageBlog/>}></Route>
+            <Route
+              path="/dashboard/marchant/profile"
+              element={<Merchantprofile />}
+            ></Route>
+
+            <Route
+              path="/dashboard/marchant/add-products"
+              element={<MarchantProducts />}
+            ></Route>
+
+            <Route
+              path="/dashboard/marchant/manageproduct"
+              element={<Manageporduct/>}
+            ></Route>
+
+            <Route
+              path="/dashboard/marchant/updateproduct/:id"
+              element={<Updatemerchantproduct/>}
+            ></Route>
 
           </Route>
-          <Route path="/updateBlog" element={<UpdateBlog></UpdateBlog>}></Route>
-         </Routes>
+        </Routes>
+           
+
+      
         
       </Router>
-    </div>
+
+      <MessengerCustomerChat
+        pageId="104547992167816"
+        appId="3055318624707846"
+      />
+    </>
   );
 }
 export default App;

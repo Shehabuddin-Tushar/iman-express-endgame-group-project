@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect ,useState} from "react";
 import {
   getAuth,
   GoogleAuthProvider,
@@ -16,13 +16,16 @@ initAuth();
 const useFirebase = () => {
   const auth = getAuth();
   const provider = new GoogleAuthProvider();
-
+  const [user,setUser]=useState({})
+  
   ///user state observer
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
         // User is signed in
-        console.log(user);
+        // console.log(user);
+        setUser(user)
+
       } else {
         // User is signed out
       }
@@ -47,6 +50,8 @@ const useFirebase = () => {
   const registerUser = (email, password, name) => {
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
+
+        saveuser(email,password)
         // Signed in
         const user = userCredential.user;
         // ...
@@ -77,6 +82,7 @@ const useFirebase = () => {
     signOut(auth)
       .then(() => {
         // Sign-out successful.
+        setUser({})
       })
       .catch((error) => {
         // An error happened.
@@ -105,11 +111,30 @@ const useFirebase = () => {
       });
   };
 
+  /**user save in database */
+
+  const saveuser = (email, password) => {
+    const userdata = {
+      email: email,
+      password: password,
+      role: "viewer"
+    }
+    fetch("https://iman-xpress.herokuapp.com/api/authgeneral/saveuser", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json"
+      },
+      body: JSON.stringify(userdata)
+    }).then(res => res.json()).then(data => console.log(data))
+  }
+/**user save in database end */
+
   return {
     googleLogin,
     registerUser,
     userLogin,
     logOut,
+    user
   };
 };
 
