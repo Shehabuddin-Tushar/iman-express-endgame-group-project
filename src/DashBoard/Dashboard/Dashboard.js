@@ -96,7 +96,7 @@ function Nav(props) {
             merchanttoken ? <>
               
               <List>
-                <Link className="" to="/dashboard/marchant/add-products">
+                <Link className="" to="/dashboard/marchant/profile">
                   <span>
                     <ClassIcon></ClassIcon>
                   </span>{" "}

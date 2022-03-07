@@ -26,6 +26,7 @@ import UpdateBlog from "./DashBoard/DashboardHome/AddBlog/UpdateBlog/UpdateBlog"
 import ManageBlog from "./DashBoard/DashboardHome/ManageBlog/ManageBlog";
 import Reviews from "./Component/Reviews/Reviews";
 import Updatemerchantproduct from "./DashBoard/Dashboard/Updatemerchantproduct/Updatemerchantproduct";
+import Merchantprofile from "./DashBoard/Dashboard/Merchantprofile/Merchantprofile";
 function App() {
   return (
     <>
@@ -67,7 +68,10 @@ function App() {
             {/* <Route path="/dashboard/payment" element={<PaymentDash/>}></Route> */}
             <Route path="/dashboard/addBlog" element={<AddBlog />}></Route>
             <Route path="/dashboard/manageBlog" element={<ManageBlog/>}></Route>
-          
+            <Route
+              path="/dashboard/marchant/profile"
+              element={<Merchantprofile />}
+            ></Route>
 
             <Route
               path="/dashboard/marchant/add-products"
