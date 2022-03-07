@@ -137,6 +137,7 @@ const Login = () => {
 
   return (
     <div className="login">
+      <title>IMan Xpress || Login</title> 
       <Container
         sx={{
           height: "100vh",

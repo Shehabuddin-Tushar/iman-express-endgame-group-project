@@ -152,13 +152,17 @@
 .quantity.buttons_added .plus:focus {
  outline: none; }
 
-
+.allproductmerchant{
+  display: flex;
+}
 
 
 
 
 @media only screen and (max-width: 600px) {
-
+.allproductmerchant{
+  display: block;
+}
 
     .inform2{
         display: block!important;

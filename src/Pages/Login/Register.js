@@ -33,6 +33,7 @@ const Register = () => {
 
   return (
     <div className="login">
+      <title>IMan Xpress || General register</title> 
       <Container>
         <Grid
           container

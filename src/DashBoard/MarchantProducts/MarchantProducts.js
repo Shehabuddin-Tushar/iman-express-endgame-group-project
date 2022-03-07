@@ -34,7 +34,7 @@ const MarchantProducts = () => {
 
 
     const productData = {
-      productname: data.productname,
+      productname: data.productname.toLowerCase(),
       productdescription: data.productdescription,
       productprice: data.productprice,
       productimage: imageURL,

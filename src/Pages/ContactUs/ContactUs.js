@@ -61,6 +61,7 @@ const ContactUs = () => {
 
     return (
         <div className='font'>
+            <title>IMan Xpress || Contact us</title> 
            <Navbar />
 
            <Container  sx={{mb:3}}>

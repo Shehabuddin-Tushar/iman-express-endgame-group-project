@@ -72,6 +72,7 @@ const Rider = () => {
   };
   return (
     <div className="login">
+      <title>IMan Xpress || Rider register</title> 
       <Container
         sx={{
           height: "100vh",

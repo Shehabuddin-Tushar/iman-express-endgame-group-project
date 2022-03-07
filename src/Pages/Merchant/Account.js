@@ -58,6 +58,7 @@ function Account() {
     };
     return (
       <div>
+        <title>IMan Xpress || Merchant register </title>
       <Grid
          container
          sx={{

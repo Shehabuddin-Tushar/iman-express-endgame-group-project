@@ -26,8 +26,10 @@ import ProductModal from "../Modal/Modal";
 import MerchantinfoModal from "../Modal/MerchantinfoModal";
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import { Link, useLocation, useNavigate, useParams } from "react-router-dom";
+import { useForm } from "react-hook-form";
 import "./merchantproduct.css";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 function generate(element) {
   return [0, 1, 2].map((value) =>
@@ -61,7 +63,7 @@ function ProductPage() {
   const [openinfoModal, setOpeninfoModal] = React.useState(false);
   const handleinfoOpen = () => setOpeninfoModal(true);
   const handleinfoClose = () => setOpeninfoModal(false);
-
+  const { register, reset, handleSubmit, watch, formState: { errors } } = useForm();
   const myinfo = JSON.parse(localStorage.getItem("merchantInfo"))
   const mytoken = (localStorage.getItem("merchant"))
 
@@ -74,6 +76,9 @@ function ProductPage() {
   // console.log(redirect_url)
   const [allproduct, setAllproduct] = useState([]);
   const [merchantdata, setMerchantdata] = useState({});
+  const [Merchantproductdata, setMerchantproductdata] = useState({})
+
+  const [searchproduct, setSearchproduct] = useState([]);
   useEffect(() => {
 
     axios.get(`https://iman-xpress.herokuapp.com/api/auth/getmerchantuser/${id}`, {
@@ -90,15 +95,41 @@ function ProductPage() {
       }
     }).then((res) => setAllproduct(res.data)).catch((err) => console.log(err))
 
-
-
-
-
   }, [])
 
+  const viewdata = (id) => {
+
+    axios.get(`https://iman-xpress.herokuapp.com/api/merchant/fetchproductbyid/${id}`)
+      .then((res) => setMerchantproductdata(res.data)).catch(err => console.log(err))
+    handleOpen()
+  }
+
+  const onSubmit = data => {
+    alert("You search " + "" + data.searchproduct)
+
+    axios.post(`https://iman-xpress.herokuapp.com/api/merchant/getproductbyname/${id}`, data, {
+      headers: {
+
+        "Content-Type": "application/json"
+      }
+    }).then((res) => {
+      setSearchproduct(res.data.products)
+      if (res.data.not) {
+        Swal.fire({
+          icon: 'error',
+          title: res.data.not,
+        });
+
+      } else {
+        setSearchproduct(res.data.products)
+      }
+    }).catch((err) => console.log(err))
+    reset()
+  };
 
   return (
     <>
+      <title>IMan Xpress || Product</title>
       <Navbar />
       <Grid container spacing={2}>
         <Grid item lg={9} md={9} sm={12} xs={12} className="bannerwithproduct">
@@ -118,24 +149,32 @@ function ProductPage() {
                   paddingBottom: "10px",
                 }}
               >
-                <div style={{ display: "flex" }}>
-                  <Typography variant="h5" style={{ paddingRight: "15px" }}>
-                    {merchantdata.name}
+                <div className="allproductmerchant">
+                  <Typography variant="h5" style={{ paddingRight: "15px", marginBottom: "5px" }}>
+                    <Button onClick={() => setSearchproduct([])}>{merchantdata.name}</Button>
                   </Typography>
                   <div class="wrap">
-                    <div class="search">
-                      <input
-                        type="text"
-                        class="searchTerm"
-                        placeholder="What are you looking for?"
-                      />
-                      <button type="submit" class="searchButton">
-                        <i
-                          class="fa fa-search"
-                          style={{ color: "#3781CB" }}
-                        ></i>
-                      </button>
-                    </div>
+                    <form onSubmit={handleSubmit(onSubmit)}>
+                      <div class="search">
+
+                        <input
+
+
+                          type="text"
+                          className="searchTerm"
+                          placeholder="What are you looking for?"
+                          {...register("searchproduct", { required: true })}
+                        />
+                        <button type="submit" class="searchButton">
+
+                          <i
+                            class="fa fa-search"
+                            style={{ color: "#3781CB" }}
+                          ></i>
+                        </button>
+
+                      </div>
+                    </form>
                   </div>
                 </div>
                 <Button variant="h5" variant="outlined" className="inform" onClick={handleinfoOpen}>
@@ -149,12 +188,12 @@ function ProductPage() {
             <hr style={{ border: "1px solid #E5E7E9" }} />
             <Container>
               <Grid container spacing={2}>
-                {allproduct.map((product) => {
+                {searchproduct.length !== 0 ? searchproduct.map((product) => {
                   return (
                     <Grid item lg={6} md={12} sm={12} xs={12}>
                       <div class="product-container">
                         <div class="product" style={{ height: "160px" }}>
-                          <div class="product-info">
+                          <div class="product-info" key={product._id}>
                             <h5>{product.productname}</h5>
                             <h2>{product.productprice} tk</h2>
 
@@ -165,7 +204,44 @@ function ProductPage() {
                               <Button >
                                 <ShoppingCartIcon />
                               </Button>
-                              <Button onClick={handleOpen}>
+                              <Button onClick={() => viewdata(product._id)}>
+                                <RemoveRedEyeIcon />
+                              </Button>
+                              <Button>
+                                <FavoriteIcon />
+                              </Button>
+                            </ButtonGroup>
+                          </div>
+                          <div class="product-preview">
+                            <img
+                              src={product.productimage}
+                              width="200px"
+                              style={{
+                                borderRadius: "5px",
+                              }}
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </Grid>
+                  );
+                }) : allproduct.map((product) => {
+                  return (
+                    <Grid item lg={6} md={12} sm={12} xs={12}>
+                      <div class="product-container">
+                        <div class="product" style={{ height: "160px" }}>
+                          <div class="product-info" key={product._id}>
+                            <h5>{product.productname}</h5>
+                            <h2>{product.productprice} tk</h2>
+
+                            <ButtonGroup
+                              variant="outlined"
+                              aria-label="outlined button group"
+                            >
+                              <Button >
+                                <ShoppingCartIcon />
+                              </Button>
+                              <Button onClick={() => viewdata(product._id)}>
                                 <RemoveRedEyeIcon />
                               </Button>
                               <Button>
@@ -330,21 +406,23 @@ function ProductPage() {
                   <ListItemText>1000 tk</ListItemText>
                   <ListItemText>
                     <div class="quantity buttons_added">
-                      <input type="button" value="-" class="minus" />
-                      <input
-                        type="number"
-                        step="1"
-                        min="1"
-                        max=""
-                        name="quantity"
-                        value="1"
-                        title="Qty"
-                        class="input-text qty text"
-                        size="4"
-                        pattern=""
-                        inputmode=""
-                      />
-                      <input type="button" value="+" class="plus" />
+                      <form>
+                        <input type="button" value="-" class="minus" />
+                        <input
+                          type="number"
+                          step="1"
+                          min="1"
+                          max=""
+                          name="quantity"
+                          value="1"
+                          title="Qty"
+                          class="input-text qty text"
+                          size="4"
+                          pattern=""
+                          inputmode=""
+                        />
+                        <input type="button" value="+" class="plus" />
+                      </form>
                     </div>
                   </ListItemText>
                 </div>
@@ -358,7 +436,7 @@ function ProductPage() {
         </Grid>
       </Grid>
       <Footer />
-      <ProductModal openModal={openModal} handleClose={handleClose} />
+      <ProductModal openModal={openModal} handleClose={handleClose} productinfo={Merchantproductdata} />
 
       <MerchantinfoModal openModal={openinfoModal} handleClose={handleinfoClose} merchantinfo={merchantdata} />
     </>

@@ -37,6 +37,7 @@ const Blogs = () => {
     return (
        
         <div className='blogContainer'>
+            <title>IMan Xpress || Blog</title> 
             <Container>
                 <div>
                     <div className='moreBlogs'>
