@@ -180,7 +180,7 @@ function ProductPage() {
                 <Button variant="h5" variant="outlined" className="inform" onClick={handleinfoOpen}>
                   Resturent information
                 </Button>
-                <Button className="inform2">
+                <Button className="inform2" onClick={handleinfoOpen}>
                   <InfoIcon />
                 </Button>
               </div>
