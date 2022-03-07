@@ -140,6 +140,14 @@ const AddBlog = () => {
                                     <div>
                                         <input type="text" {...register("title", { required: true })} placeholder='Blog title'/>
                                     </div>
+                                    <select className='selectOption' {...register("category", { required: true })}>
+                                            <option value="rider">Rider</option>
+                                            <option value="marchent">Marchent</option>
+                                            <option value="food">Food</option>
+                                            <option value="promotion">Promotion</option>
+                                            <option value="aboutProduct">AboutProduct</option>
+                                            <option value="newFeature">NewFeature</option>
+                                    </select>
                                     <div>
                                         <input type="text" {...register("time", { required: true })} placeholder='Blog date'/> 
                                     </div>

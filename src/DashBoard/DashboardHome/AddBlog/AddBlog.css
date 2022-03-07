@@ -27,6 +27,15 @@
     background: #000000;
     color: white;
 }
+.addBlogFrom .formPartTwo .selectOption{
+    width: 80%;
+    padding: 10px 5px;
+    border: 3px solid gray;
+    border-radius: 20px;
+    margin: 10px 0px;
+    background: #000000;
+    color: white;
+}
 .addBlogFrom .formPartTwo textarea{
     width: 80%;
     height: 100px;
