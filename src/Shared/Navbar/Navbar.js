@@ -320,17 +320,17 @@ const Navbar = () => {
 
                     </MenuItem>
 
-                    <MenuItem
+                    <Link to="/merchantRegister"> <MenuItem
 
                       onClick={handleCloseUserMenu}
                       style={{ width: "200px" }}
                     >
 
-                      <Link to="/merchantRegister"><Typography textAlign="center">Merchant account</Typography></Link>
+                     <Typography textAlign="center">Merchant account</Typography>
                       {/* <Button onClick={merchantlogout}>Merchant logout</Button> */}
 
 
-                    </MenuItem>
+                    </MenuItem></Link>
 
                     <MenuItem
 

@@ -61,7 +61,7 @@ function App() {
               element={<RiderAccount />}
             ></Route>
             <Route path="/dashboard/rider/setting" element={<RiderSetting />}></Route> */}
-            <Route path="/dashboard/updateBlog" element={<UpdateBlog></UpdateBlog>}></Route>
+            <Route path="/dashboard/updateBlog/:blogId" element={<UpdateBlog></UpdateBlog>}></Route>
             <Route path="/dashboard/rate-us" element={<Reviews />}></Route>
             {/* <Route path="/dashboard/payment" element={<PaymentDash/>}></Route> */}
             <Route path="/dashboard/addBlog" element={<AddBlog />}></Route>

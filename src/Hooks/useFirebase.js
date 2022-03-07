@@ -12,6 +12,7 @@ import {
 
 import initAuth from '../Pages/Login/firebase.init'
 import axios from "axios";
+import Swal from "sweetalert2";
 initAuth();
 const useFirebase = () => {
   const auth = getAuth();
@@ -74,6 +75,15 @@ const useFirebase = () => {
         // Signed in
         const user = userCredential.user;
         navigate(redirect);
+        if (user?.email) {
+         
+          Swal.fire({
+            icon: 'success',
+            title: 'User Login Successfully',
+          });
+          
+       
+        }
       })
       .catch((error) => {});
   };
