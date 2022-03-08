@@ -25,6 +25,7 @@ import UpdateBlog from "./DashBoard/DashboardHome/AddBlog/UpdateBlog/UpdateBlog"
 import ManageBlog from "./DashBoard/DashboardHome/ManageBlog/ManageBlog";
 import Reviews from "./Component/Reviews/Reviews";
 import RiderRegistration from "./Pages/Rider/Rider";
+import Checkout from "./Component/Cart/Checkout";
 function App() {
   return (
     <>
@@ -43,6 +44,7 @@ function App() {
           ></Route>
                   
           <Route path="/contactUs" element={<ContactUs></ContactUs>}></Route>
+          <Route path="/checkout" element={<Checkout></Checkout>}></Route>
          
           <Route path="/aboutUs" element={<AboutUs></AboutUs>}></Route> 
           <Route

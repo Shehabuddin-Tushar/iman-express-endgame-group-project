@@ -1,4 +1,9 @@
 ** new idea
 
-##user invitation for creating account 
+## user invitation for creating account 
 ## invoice download as pdf
+## otp verification
+## real time location tracking
+## sms notification
+## order barcode scanning
+## video upload 
