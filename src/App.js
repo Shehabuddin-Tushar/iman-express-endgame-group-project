@@ -19,7 +19,8 @@ import Account from "./Pages/Merchant/Account";
 
 
 
-
+import RiderAccount from './DashBoard/Rider/RiderAccount'
+import RiderSetting from './DashBoard/Setting/RiderSetting'
 import AddBlog from "./DashBoard/DashboardHome/AddBlog/AddBlog";
 import UpdateBlog from "./DashBoard/DashboardHome/AddBlog/UpdateBlog/UpdateBlog";
 import ManageBlog from "./DashBoard/DashboardHome/ManageBlog/ManageBlog";
@@ -62,11 +63,11 @@ function App() {
               element={<Dashboardhome/>}
             ></Route>
             
-            {/* <Route
+            <Route
            path="/dashboard/rider/profile"
               element={<RiderAccount />}
            ></Route>
-           <Route path="/dashboard/rider/setting" element={<RiderSetting />}></Route> */}
+           <Route path="/dashboard/rider/setting" element={<RiderSetting />}></Route>
             <Route path="/dashboard/updateBlog/:blogId" element={<UpdateBlog></UpdateBlog>}></Route>
             <Route path="/dashboard/rate-us" element={<Reviews />}></Route>
             {/* <Route path="/dashboard/payment" element={<PaymentDash/>}></Route> */}
