@@ -50,6 +50,8 @@ function Checkout() {
     
   const onSubmit =  async(data) => {
   
+      data.ordersdata = localdata
+      data.totalamountwithtaxandshipping = totalamountwithtax+200
       console.log(data)
   
       

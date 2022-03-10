@@ -1,6 +1,6 @@
 import MessengerCustomerChat from "react-messenger-customer-chat";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import "./App.css";
+
 import BlogDetails from "./Component/Blogs/BlogDetails/BlogDetails";
 import BlogsHome from "./Component/Blogs/BlogsHome/BlogsHome";
 import ProductPage from "./Component/MerchanterProduct/ProductPage";
@@ -19,7 +19,7 @@ import Account from "./Pages/Merchant/Account";
 
 
 
-import "./App.css";
+
 import AddBlog from "./DashBoard/DashboardHome/AddBlog/AddBlog";
 import UpdateBlog from "./DashBoard/DashboardHome/AddBlog/UpdateBlog/UpdateBlog";
 import ManageBlog from "./DashBoard/DashboardHome/ManageBlog/ManageBlog";
@@ -28,6 +28,8 @@ import Updatemerchantproduct from "./DashBoard/Dashboard/Updatemerchantproduct/U
 import Merchantprofile from "./DashBoard/Dashboard/Merchantprofile/Merchantprofile";
 import RiderRegistration from "./Pages/Rider/Rider";
 import Checkout from "./Component/Cart/Checkout";
+
+import "./App.css";
 function App() {
   return (
     <>
@@ -61,10 +63,10 @@ function App() {
             ></Route>
             
             {/* <Route
-              path="/dashboard/rider/profile"
+           path="/dashboard/rider/profile"
               element={<RiderAccount />}
-            ></Route>
-            <Route path="/dashboard/rider/setting" element={<RiderSetting />}></Route> */}
+           ></Route>
+           <Route path="/dashboard/rider/setting" element={<RiderSetting />}></Route> */}
             <Route path="/dashboard/updateBlog/:blogId" element={<UpdateBlog></UpdateBlog>}></Route>
             <Route path="/dashboard/rate-us" element={<Reviews />}></Route>
             {/* <Route path="/dashboard/payment" element={<PaymentDash/>}></Route> */}
