@@ -88,7 +88,8 @@ function ProductPage() {
   const [totalamount, setTotalamount] = useState(0);
   const [totalamountwithtax, setTotalamountwithtax] = useState(0);
 
-
+  const mydata = totalamountwithtax
+  console.log(mydata)
   useEffect(() => {
 
     axios.get(`https://iman-xpress.herokuapp.com/api/auth/getmerchantuser/${id}`, {
@@ -605,6 +606,11 @@ function ProductPage() {
               <Typography style={{ marginLeft: "50px" }}>Total price with tax: <span style={{ fontWeight: "bold" }}>{totalamountwithtax}</span>tk</Typography>
               ,
             </List>
+            <div style={{ alignItems: "center", display: "flex", justifyContent: "center",padding:"10px" }}>
+              <Button variant="outlined" style={{ width: "80%" }} >
+                <Link to={`/checkout/${id}`}>checkout</Link></Button>
+            </div>
+            
           </Demo>
         </Grid>
       </Grid>
