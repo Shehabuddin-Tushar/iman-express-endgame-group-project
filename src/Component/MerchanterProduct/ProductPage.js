@@ -159,8 +159,7 @@ function ProductPage() {
   };
 
   const addtocart = (product, ids) => {
-    console.log(ids)
-    console.log(product)
+    
 
 
     let localdata = localStorage.getItem(`imanxpresscart-${id}`) ?
@@ -189,7 +188,7 @@ function ProductPage() {
 
   }
   const sumdata = (productid) => {
-   console.log(productid)
+  
     let localdata = localStorage.getItem(`imanxpresscart-${id}`) ?
       JSON.parse(localStorage.getItem(`imanxpresscart-${id}`)) : [];
     const datafind = localdata.filter(cartitem => cartitem._id === productid);
@@ -205,7 +204,7 @@ function ProductPage() {
 
 
   const minusdata = (productid) => {
-    console.log(productid)
+    
     let localdata = localStorage.getItem(`imanxpresscart-${id}`) ?
       JSON.parse(localStorage.getItem(`imanxpresscart-${id}`)) : [];
     const datafind = localdata.filter(cartitem => cartitem._id === productid);
@@ -230,7 +229,7 @@ function ProductPage() {
       let localdata = localStorage.getItem(`imanxpresscart-${id}`) ?
         JSON.parse(localStorage.getItem(`imanxpresscart-${id}`)) : [];
       const datafind = localdata.filter(cartitem => cartitem._id !== productid);
-      console.log(datafind)
+     
       localStorage.setItem(`imanxpresscart-${id}`, JSON.stringify(datafind))
       let mylocalproductdata = JSON.parse(localStorage.getItem(`imanxpresscart-${id}`)) ? JSON.parse(localStorage.getItem(`imanxpresscart-${id}`)) : []
       setLocalproductdata(mylocalproductdata)
