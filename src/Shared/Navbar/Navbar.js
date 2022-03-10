@@ -28,7 +28,6 @@ const Navbar = () => {
 
   const { user, logOut } = usefirebase();
   const navigate = useNavigate();
-  console.log(user.email)
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
@@ -216,6 +215,15 @@ const Navbar = () => {
                 sx={{ my: 2, color: "black" }}
               >
                 About Us
+              </Button>
+            </Link>
+            <Link to="/buyNow" style={{textDecoration:"none"}}>
+              <Button
+                style={{ textDecoration: "none" }}
+                key="6"
+                sx={{ my: 2, color: "black" }}
+              >
+                Buy Now
               </Button>
             </Link>
 

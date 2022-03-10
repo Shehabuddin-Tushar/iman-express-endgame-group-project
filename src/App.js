@@ -25,6 +25,11 @@ import AddBlog from "./DashBoard/DashboardHome/AddBlog/AddBlog";
 import UpdateBlog from "./DashBoard/DashboardHome/AddBlog/UpdateBlog/UpdateBlog";
 import ManageBlog from "./DashBoard/DashboardHome/ManageBlog/ManageBlog";
 import Reviews from "./Component/Reviews/Reviews";
+import BuyNow from './Component/BuyNow/BuyNow';
+import Success from './Component/SSL/Success/Success';
+import AddPartner from './DashBoard/AddPartner/AddPartner';
+import ManagePartner from './DashBoard/DashboardHome/ManagePartner/ManagePartner';
+import FailedPayment from './Component/SSL/FailedPayment/FailedPayment';
 function App() {
   return (
     <>
@@ -37,6 +42,14 @@ function App() {
           <Route path="/rider" element={<Rider></Rider>}></Route>
           <Route path="/moreBlogs" element={<BlogsHome></BlogsHome>}></Route>
           <Route path="/dashboard" element={<Nav />}></Route>
+          {/* buy now paymanet  */}
+          <Route path="/buyNow" element={<BuyNow />}></Route>
+          {/* success  */}
+          <Route path="/success/:id" element={<Success />}></Route>
+          <Route path="/failed" element={<FailedPayment />}></Route>
+          <Route path="/addPartner" element={<AddPartner />}></Route>
+          {/* manage partners  */}
+          <Route path="/managePartners" element={<ManagePartner />}></Route>
           <Route
             path="/merchantproduct"
             element={<ProductPage></ProductPage>}
