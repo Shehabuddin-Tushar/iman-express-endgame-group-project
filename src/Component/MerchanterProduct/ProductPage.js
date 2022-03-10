@@ -30,6 +30,7 @@ import { useForm } from "react-hook-form";
 import "./merchantproduct.css";
 import axios from "axios";
 import Swal from "sweetalert2";
+import { Co2Sharp } from "@mui/icons-material";
 
 function generate(element) {
   return [0, 1, 2].map((value) =>
@@ -79,6 +80,15 @@ function ProductPage() {
   const [Merchantproductdata, setMerchantproductdata] = useState({})
 
   const [searchproduct, setSearchproduct] = useState([]);
+  const [cartproduct, setCartproduct] = useState({});
+  const [localproduct, setLocalproduct] = useState(0);
+  const [localproductdata, setLocalproductdata] = useState([]);
+  const [total, setTotal] = useState(0);
+  const [updatelocal, setUpdatelocal] = useState([]);
+  const [totalamount, setTotalamount] = useState(0);
+  const [totalamountwithtax, setTotalamountwithtax] = useState(0);
+
+
   useEffect(() => {
 
     axios.get(`https://iman-xpress.herokuapp.com/api/auth/getmerchantuser/${id}`, {
@@ -95,7 +105,26 @@ function ProductPage() {
       }
     }).then((res) => setAllproduct(res.data)).catch((err) => console.log(err))
 
+   
+
   }, [])
+
+  useEffect(() => {
+    let mylocalproduct = JSON.parse(localStorage.getItem(`imanxpresscart-${id}`)) ? JSON.parse(localStorage.getItem(`imanxpresscart-${id}`)).length:0
+    setLocalproduct(mylocalproduct)
+
+    let mylocalproductdata = JSON.parse(localStorage.getItem(`imanxpresscart-${id}`)) ? JSON.parse(localStorage.getItem(`imanxpresscart-${id}`)) : []
+    setLocalproductdata(mylocalproductdata)
+    console.log(mylocalproductdata)
+
+    let amount=0
+    for (let pro of mylocalproductdata){
+      amount = (amount + pro.productprice * pro.count)
+    }
+    setTotalamount(amount)
+    setTotalamountwithtax(Math.round(amount + amount * 15 / 100))
+   
+  },[localproduct,updatelocal])
 
   const viewdata = (id) => {
 
@@ -103,6 +132,8 @@ function ProductPage() {
       .then((res) => setMerchantproductdata(res.data)).catch(err => console.log(err))
     handleOpen()
   }
+
+
 
   const onSubmit = data => {
     alert("You search " + "" + data.searchproduct)
@@ -126,6 +157,95 @@ function ProductPage() {
     }).catch((err) => console.log(err))
     reset()
   };
+
+  const addtocart = (product, ids) => {
+    console.log(ids)
+    console.log(product)
+
+
+    let localdata = localStorage.getItem(`imanxpresscart-${id}`) ?
+      JSON.parse(localStorage.getItem(`imanxpresscart-${id}`)) : [];
+
+
+
+
+    const duplicates = localdata.filter(cartitem => cartitem._id === ids)
+
+    if (duplicates.length === 0) {
+      const productToadd = {
+        ...product,
+        count: 1
+
+      }
+      localdata.push(productToadd)
+
+      localStorage.setItem(`imanxpresscart-${id}`, JSON.stringify(localdata))
+
+      setLocalproduct(localproduct + 1)
+
+    }
+
+
+
+  }
+  const sumdata = (productid) => {
+   console.log(productid)
+    let localdata = localStorage.getItem(`imanxpresscart-${id}`) ?
+      JSON.parse(localStorage.getItem(`imanxpresscart-${id}`)) : [];
+    const datafind = localdata.filter(cartitem => cartitem._id === productid);
+
+    datafind[0].count += 1;
+   
+    const countupdate = [...localdata]
+    localStorage.setItem(`imanxpresscart-${id}`, JSON.stringify(countupdate))
+     localdata = localStorage.getItem(`imanxpresscart-${id}`) ?
+      JSON.parse(localStorage.getItem(`imanxpresscart-${id}`)) : [];
+    setUpdatelocal(localdata)
+  }
+
+
+  const minusdata = (productid) => {
+    console.log(productid)
+    let localdata = localStorage.getItem(`imanxpresscart-${id}`) ?
+      JSON.parse(localStorage.getItem(`imanxpresscart-${id}`)) : [];
+    const datafind = localdata.filter(cartitem => cartitem._id === productid);
+
+    datafind[0].count -= 1;
+    if (datafind[0].count<1) {
+      datafind[0].count=1
+    } else {
+      const countupdate = [...localdata]
+      localStorage.setItem(`imanxpresscart-${id}`, JSON.stringify(countupdate))
+      localdata = localStorage.getItem(`imanxpresscart-${id}`) ?
+        JSON.parse(localStorage.getItem(`imanxpresscart-${id}`)) : [];
+      setUpdatelocal(localdata)
+    }
+   
+  }
+
+  const productdeletefromlocalstorage = (productid) => {
+  
+    let confirm = window.confirm("Are you sure you want to remove this product from cart?")
+    if (confirm) {
+      let localdata = localStorage.getItem(`imanxpresscart-${id}`) ?
+        JSON.parse(localStorage.getItem(`imanxpresscart-${id}`)) : [];
+      const datafind = localdata.filter(cartitem => cartitem._id !== productid);
+      console.log(datafind)
+      localStorage.setItem(`imanxpresscart-${id}`, JSON.stringify(datafind))
+      let mylocalproductdata = JSON.parse(localStorage.getItem(`imanxpresscart-${id}`)) ? JSON.parse(localStorage.getItem(`imanxpresscart-${id}`)) : []
+      setLocalproductdata(mylocalproductdata)
+      let amount = 0
+      for (let pro of mylocalproductdata) {
+        amount = (amount + pro.productprice * pro.count)
+      }
+      setTotalamount(amount)
+      setTotalamountwithtax(Math.round(amount + amount * 15 / 100))
+    }
+    
+  }
+
+
+ 
 
   return (
     <>
@@ -196,18 +316,18 @@ function ProductPage() {
                           <div class="product-info" key={product._id}>
                             <h5>{product.productname}</h5>
                             <h2>{product.productprice} tk</h2>
-
+  
                             <ButtonGroup
                               variant="outlined"
                               aria-label="outlined button group"
                             >
-                              <Button >
+                              <Button onClick={() => addtocart(product,product._id)} >
                                 <ShoppingCartIcon />
                               </Button>
                               <Button onClick={() => viewdata(product._id)}>
                                 <RemoveRedEyeIcon />
                               </Button>
-                              <Button>
+                              <Button >
                                 <FavoriteIcon />
                               </Button>
                             </ButtonGroup>
@@ -226,6 +346,7 @@ function ProductPage() {
                     </Grid>
                   );
                 }) : allproduct.map((product) => {
+                 
                   return (
                     <Grid item lg={6} md={12} sm={12} xs={12}>
                       <div class="product-container">
@@ -238,7 +359,7 @@ function ProductPage() {
                               variant="outlined"
                               aria-label="outlined button group"
                             >
-                              <Button >
+                              <Button onClick={() => addtocart(product,product._id)} >
                                 <ShoppingCartIcon />
                               </Button>
                               <Button onClick={() => viewdata(product._id)}>
@@ -287,14 +408,65 @@ function ProductPage() {
             variant="h5"
           >
             cart <IconButton aria-label="cart">
-              <StyledBadge badgeContent={3} color="secondary">
+              <StyledBadge badgeContent={localproduct} color="secondary">
                 <ShoppingCartIcon />
               </StyledBadge>
             </IconButton>
           </Typography>
           <Demo>
             <List>
-              <ListItem
+              {
+              
+                localproductdata?.map((data) => {
+                
+                  return (
+                    <ListItem
+                      secondaryAction={
+                        <IconButton edge="end" aria-label="delete" onClick={()=>productdeletefromlocalstorage(data._id)}>
+                          <DeleteIcon />
+                        </IconButton>
+                      }
+                    >
+                      <ListItemAvatar>
+                        <img
+                          src={data.productimage}
+                          width="100px"
+                          height="80px"
+                          style={{
+                            borderRadius: "5px",
+                            border: "2px solid #1f97e7",
+                            marginRight: "5px",
+                          }}
+                        />
+                      </ListItemAvatar>
+                      <div style={{ marginTop: "-5px" }}>
+                        <ListItemText>{data.productname}</ListItemText>
+                        <ListItemText>{data.productprice + "*" + data.count +"="+ data.productprice * data.count} tk</ListItemText>
+                        <ListItemText>
+                          <div class="quantity buttons_added">
+                            <input type="button" value="-" class="minus" onClick={() => minusdata(data._id)} />
+                            <input
+                              type="number"
+                              step="1"
+                              min="1"
+                              max=""
+                              name="quantity"
+                              value={data.count}
+                              title="Qty"
+                              class="input-text qty text"
+                              size="4"
+                              pattern=""
+                              inputmode=""
+                            />
+                            <input type="button" value="+" class="plus" onClick={()=>sumdata(data._id)} />
+                          </div>
+                        </ListItemText>
+                      </div>
+                    </ListItem>
+                  )
+                })
+              }
+              {/* <ListItem
                 secondaryAction={
                   <IconButton edge="end" aria-label="delete">
                     <DeleteIcon />
@@ -426,10 +598,12 @@ function ProductPage() {
                     </div>
                   </ListItemText>
                 </div>
-              </ListItem>
+              </ListItem> */}
               <hr />
-              <Typography style={{ marginLeft: "50px" }}>Total price: <span style={{ fontWeight: "bold" }}>3000</span>tk</Typography>
-
+              <Typography style={{ marginLeft: "50px" }}>Total price: <span style={{ fontWeight: "bold" }}>{totalamount}</span>tk</Typography>
+              <Typography style={{ marginLeft: "50px" }}>Tax:<span style={{ fontWeight: "bold" }}>15%</span></Typography>
+              <hr></hr>
+              <Typography style={{ marginLeft: "50px" }}>Total price with tax: <span style={{ fontWeight: "bold" }}>{totalamountwithtax}</span>tk</Typography>
               ,
             </List>
           </Demo>
