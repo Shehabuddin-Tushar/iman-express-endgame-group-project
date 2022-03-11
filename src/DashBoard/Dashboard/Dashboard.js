@@ -215,6 +215,24 @@ function Nav(props) {
                     Manage blog
                   </Link>
                 </List>
+
+                <List>
+                  <Link className="" to="/dashboard/addPartner">
+                    <span>
+                      <ClassIcon></ClassIcon>
+                    </span>{" "}
+                    Add partner
+                  </Link>
+                </List>
+
+                <List>
+                  <Link className="" to="/dashboard/managePartners">
+                    <span>
+                      <ClassIcon></ClassIcon>
+                    </span>{" "}
+                    Manage partner
+                  </Link>
+                </List>
                 
               </> : ""
           }

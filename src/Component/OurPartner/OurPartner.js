@@ -1,14 +1,19 @@
-import { Button, Card, Container, Typography } from "@mui/material";
-import React from 'react';
+import {  Container, Typography,Grid } from "@mui/material";
 import Slider from 'react-slick';
 import './OurPartner.css';
-// import img1 from '../../img/bkasj.jpg';
-// import img2 from '../../img/nagad.jpg';
-// import img3 from '../../img/upaypng.png';
-// import img4 from '../../img/visa.jpg';
+import React , { useState,useEffect } from 'react';
+
+
 
 
 const OurPartnerSlider=()=>{
+  const [partners,setPartners] = useState([]);
+  
+  useEffect(()=>{
+    fetch('http://localhost:8080/api/partner/getPartner')
+    .then(res=>res.json())
+    .then(data=>setPartners(data))
+  },[])
   function SamplePrevArrow(props) {
     const { className, style, onClick } = props;
     return (
@@ -71,69 +76,30 @@ const OurPartnerSlider=()=>{
       };
     return(
       
-            <Container  >
+            <Container sx={{my:5}}>
             <Typography sx={{ color: "tomato" }} variant="body1">
           OUR
         </Typography>
         <Typography variant="h4" fontWeight="bold">
          PARTNERS
         </Typography>
-<Slider {...settings}>
+        {/* {
+          partners.map(part=>
+            
+            )
+        } */}
 
-
-
-          <div className="container">
-        <img className='bolimg' style={{width:'300px',marginLeft:'30px'}} src='https://i.ibb.co/nbzKd4W/visa.jpg' alt="visa" />
-        
-        </div>
-           
-         
-        <div className="container">
-        <img className='bolimg' style={{width:'300px'}} src='https://i.ibb.co/0YmnqFS/xpress-money.jpg' alt="xpress-money" />
-       
-        </div>
-       
-        <div className="container">
-        <img className='bolimg' style={{width:'300px'}} src='https://i.ibb.co/0mTcwz2/upaypng.png' alt="upay" />
- 
-        </div>
-         
-        <div className="container">
-        <img className='bolimg' style={{width:'300px'}} src='https://i.ibb.co/SB6XRbg/stripe.png' alt="stripe" />
-
-        </div>
-           
-         
-        <div className="container">
-        <img className='bolimg' style={{width:'300px'}} src='https://i.ibb.co/gg54LG4/rocket.jpg' alt="rocket" />
-
-        </div>
-        
-        <div className="container">
-        <img className='bolimg'style={{width:'280px'}} src='https://i.ibb.co/SQKkTrr/Payoneer-Logo-wine.png' alt="payoneer" />
-
-        </div>
-        <div className="container">
-        <img className='bolimg'style={{width:'300px'}} src='https://i.ibb.co/YbwpFQ7/EBL.jpg' alt="EBL sky" />
-
-        </div>
-        <div className="container">
-        <img className='bolimg'style={{width:'300px'}} src='https://i.ibb.co/74r8kLv/nagad.jpg' alt="nagad" />
-
-        </div>
-        <div className="container">
-        <img className='bolimg'style={{width:'300px'}} src='https://i.ibb.co/8Bfbw2x/datch-bangla.jpg' alt="Datch Bangla" />
-
-        </div>
-        <div className="container">
-        <img className='bolimg'style={{width:'300px'}} src='https://i.ibb.co/B6btH1H/bangladesh-bank.jpg' alt="bd bank" />
-
-        </div>
-        <div className="container">
-        <img className='bolimg'style={{width:'300px'}} src='https://i.ibb.co/MhqM5n4/bkasj.jpg' alt="bkash" />
-
-        </div>
-           
+<Slider {...settings} >
+        {
+        partners.map(partner=>
+          <div
+          key={partner._id}
+          >
+              <img src={partner.image} alt="empty" className='bolimg' style={{width:'300px',height:'150px', marginLeft:'30px'}}/>
+          </div>
+          
+          )
+        }
         
         </Slider></Container>
        
