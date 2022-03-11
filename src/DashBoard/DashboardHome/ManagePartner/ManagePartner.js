@@ -11,7 +11,7 @@ const ManagePartner = () => {
     fetch('https://iman-xpress.herokuapp.com/api/partner/getPartner')
     .then(res=>res.json())
     .then(data=>setPartners(data))
-  },[])
+  }, [partnerApi])
 
   const handlePartner =(id)=>{
     const confirmMsg = window.confirm("Would you like to delete this partner")
