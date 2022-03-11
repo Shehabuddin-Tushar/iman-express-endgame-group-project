@@ -26,6 +26,7 @@ import ManageBlog from "./DashBoard/DashboardHome/ManageBlog/ManageBlog";
 import Reviews from "./Component/Reviews/Reviews";
 import RiderRegistration from "./Pages/Rider/Rider";
 import Checkout from "./Component/Cart/Checkout";
+import Review from "./DashBoard/User/Review";
 function App() {
   return (
     <>
@@ -45,6 +46,7 @@ function App() {
                   
           <Route path="/contactUs" element={<ContactUs></ContactUs>}></Route>
           <Route path="/checkout" element={<Checkout></Checkout>}></Route>
+          
          
           <Route path="/aboutUs" element={<AboutUs></AboutUs>}></Route> 
           <Route
@@ -64,7 +66,8 @@ function App() {
             ></Route>
             <Route path="/dashboard/rider/setting" element={<RiderSetting />}></Route> */}
             <Route path="/dashboard/updateBlog/:blogId" element={<UpdateBlog></UpdateBlog>}></Route>
-            <Route path="/dashboard/rate-us" element={<Reviews />}></Route>
+            <Route path="/dashboard/rate-us" element={<Review></Review>}></Route>
+          
             {/* <Route path="/dashboard/payment" element={<PaymentDash/>}></Route> */}
             <Route path="/dashboard/addBlog" element={<AddBlog />}></Route>
             <Route path="/dashboard/manageBlog" element={<ManageBlog/>}></Route>
