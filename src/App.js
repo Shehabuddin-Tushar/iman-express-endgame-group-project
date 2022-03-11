@@ -36,6 +36,7 @@ import Success from './Component/SSL/Success/Success';
 import AddPartner from './DashBoard/AddPartner/AddPartner';
 import ManagePartner from './DashBoard/DashboardHome/ManagePartner/ManagePartner';
 import FailedPayment from './Component/SSL/FailedPayment/FailedPayment';
+import Review from "./DashBoard/User/Review";
 function App() {
   return (
     <>
@@ -84,7 +85,8 @@ function App() {
            ></Route>
            <Route path="/dashboard/rider/setting" element={<RiderSetting />}></Route>
             <Route path="/dashboard/updateBlog/:blogId" element={<UpdateBlog></UpdateBlog>}></Route>
-            <Route path="/dashboard/rate-us" element={<Reviews />}></Route>
+            <Route path="/dashboard/rate-us" element={<Review></Review>}></Route>
+          
             {/* <Route path="/dashboard/payment" element={<PaymentDash/>}></Route> */}
             <Route path="/dashboard/addBlog" element={<AddBlog />}></Route>
             <Route path="/dashboard/manageBlog" element={<ManageBlog/>}></Route>
