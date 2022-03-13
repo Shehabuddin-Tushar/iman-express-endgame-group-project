@@ -218,15 +218,6 @@ const Navbar = () => {
                 About Us
               </Button>
             </Link>
-            <Link to="/buyNow" style={{textDecoration:"none"}}>
-              <Button
-                style={{ textDecoration: "none" }}
-                key="6"
-                sx={{ my: 2, color: "black" }}
-              >
-                Buy Now
-              </Button>
-            </Link>
 
             <Button>
               <a style={{ textDecoration: "none" }} href="https://imanxpress.netlify.app/">

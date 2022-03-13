@@ -18,13 +18,13 @@ const useFirebase = () => {
   const auth = getAuth();
   const provider = new GoogleAuthProvider();
   const [user,setUser]=useState({})
-  
+ 
   ///user state observer
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
         // User is signed in
-        // console.log(user);
+      //  console.log(user.email);
         setUser(user)
 
       } else {

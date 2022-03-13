@@ -16,7 +16,7 @@ const Success = () => {
     const [order,setOrder]= useState([]);
 
     useEffect(()=>{
-        fetch(`http://localhost:8080/api/payNow/orders/${id}`)
+        fetch(`https://iman-xpress.herokuapp.com/api/payNow/orders/${id}`)
         .then(res => res.json())
         .then(data => {
             setOrder(data);
@@ -29,7 +29,7 @@ const Success = () => {
             val_id: order.val_id
         }
         console.log(data)
-       axios.post(`http://localhost:8080/api/payNow/validate`,data)
+       axios.post(`https://iman-xpress.herokuapp.com/api/payNow/validate`,data)
        .then(res => {
           console.log(res.data)
            if(res.data === true){

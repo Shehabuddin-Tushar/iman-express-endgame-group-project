@@ -31,10 +31,17 @@ import ManagePartner from './DashBoard/DashboardHome/ManagePartner/ManagePartner
 import FailedPayment from './Component/SSL/FailedPayment/FailedPayment';
 import PayNow from "./Component/BuyNow/PayNow";
 import Review from "./DashBoard/User/Review";
+import Authprovider from './Hooks/Context'
+import PrivateRoute from "./Privateroute/PrivateRoute";
+import PrivateRouteMerchant from "./Privateroute/PrivateRouteMerchant";
+import PrivateRouteRider from "./Privateroute/PrivateRouteRider";
+
 function App() {
   return (
     <>
-      <Router>
+      <Authprovider>
+       
+       <Router>
         <Routes>
           <Route path="/" element={<Home></Home>}></Route>
           <Route path="/login" element={<Login></Login>}></Route>
@@ -43,9 +50,6 @@ function App() {
           <Route path="/riderRegister" element={<RiderRegistration></RiderRegistration>}></Route>
           <Route path="/moreBlogs" element={<BlogsHome></BlogsHome>}></Route>
           <Route path="/dashboard" element={<Nav />}></Route>
-          <Route path="/payNow" element={<PayNow />}></Route>
-          {/* buy now paymanet  */}
-          <Route path="/buyNow" element={<BuyNow />}></Route>
           {/* success  */}
           <Route path="/success/:id" element={<Success />}></Route>
           <Route path="/failed" element={<FailedPayment />}></Route>
@@ -56,7 +60,7 @@ function App() {
           ></Route>
                   
           <Route path="/contactUs" element={<ContactUs></ContactUs>}></Route>
-          <Route path="/checkout/:id" element={<Checkout></Checkout>}></Route>
+          <Route path="/checkout/:id" element={<PrivateRoute><Checkout></Checkout></PrivateRoute>}></Route>
          
           <Route path="/aboutUs" element={<AboutUs></AboutUs>}></Route> 
           <Route
@@ -70,48 +74,46 @@ function App() {
               element={<Dashboardhome/>}
             ></Route>
 
-            <Route path="/dashboard/addPartner" element={<AddPartner />}></Route>
+              <Route path="/dashboard/addPartner" element={<PrivateRoute><AddPartner /></PrivateRoute>}></Route>
             {/* manage partners  */}
-            <Route path="/dashboard/managePartners" element={<ManagePartner />}></Route>
+          <Route path="/dashboard/managePartners" element={<PrivateRoute><ManagePartner /></PrivateRoute>}></Route>
             
             <Route
            path="/dashboard/rider/profile"
-              element={<RiderAccount />}
+                element={<PrivateRouteRider><RiderAccount /></PrivateRouteRider>}
            ></Route>
-           <Route path="/dashboard/rider/setting" element={<RiderSetting />}></Route>
+              <Route path="/dashboard/rider/setting" element={<PrivateRouteRider><RiderSetting /></PrivateRouteRider>}></Route>
             <Route path="/dashboard/updateBlog/:blogId" element={<UpdateBlog></UpdateBlog>}></Route>
             <Route path="/dashboard/rate-us" element={<Review></Review>}></Route>
           
             {/* <Route path="/dashboard/payment" element={<PaymentDash/>}></Route> */}
-            <Route path="/dashboard/addBlog" element={<AddBlog />}></Route>
-            <Route path="/dashboard/manageBlog" element={<ManageBlog/>}></Route>
+            <Route path="/dashboard/addBlog" element={<PrivateRoute><AddBlog /></PrivateRoute>}></Route>
+              <Route path="/dashboard/manageBlog" element={<PrivateRoute><ManageBlog /></PrivateRoute>}></Route>
             <Route
               path="/dashboard/marchant/profile"
-              element={<Merchantprofile />}
+                element={<PrivateRouteMerchant><Merchantprofile /></PrivateRouteMerchant>}
             ></Route>
 
             <Route
               path="/dashboard/marchant/add-products"
-              element={<MarchantProducts />}
+                element={<PrivateRouteMerchant><MarchantProducts /></PrivateRouteMerchant>}
             ></Route>
 
             <Route
               path="/dashboard/marchant/manageproduct"
-              element={<Manageporduct/>}
+              element={<PrivateRouteMerchant><Manageporduct/></PrivateRouteMerchant>}
             ></Route>
 
             <Route
               path="/dashboard/marchant/updateproduct/:id"
-              element={<Updatemerchantproduct/>}
+              element={<PrivateRouteMerchant><Updatemerchantproduct/></PrivateRouteMerchant>}
             ></Route>
 
           </Route>
         </Routes>
-           
-
-      
-        
-      </Router>
+       </Router>
+       
+      </Authprovider>
          {/* pageId="104547992167816"
         appId="3055318624707846" */}
 {/* 101209389196237 292099619137695*/}
