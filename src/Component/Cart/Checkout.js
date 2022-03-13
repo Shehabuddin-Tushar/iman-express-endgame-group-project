@@ -48,9 +48,7 @@ function Checkout() {
       cus_postcode: data.postalCode,
       streetAddress: data.streetAddress,
       merchant_id: data.ordersdata[0].merchantid,
-      product_name: JSON.stringify(data.ordersdata),
-      product_profile: "product_profile",
-      product_image: "product_image",
+      product_details: JSON.stringify(data.ordersdata),
       total_amount: totalamountwithtax+200,
       cus_phone: data.phone,
 

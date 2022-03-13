@@ -33,10 +33,14 @@ const Success = () => {
        .then(res => {
           
            if(res.data === true){
-            toast.success("Payment Confirmed successfully")
+            toast.success("Payment Confirmed successfully",{
+                theme: "dark"
+            })
            }
            else{
-            toast.warn('Already Confirmed or Payment Failed')
+            toast.warn('Already Confirmed or Payment Failed',{
+                theme: "dark"
+            })
            }
        })
     }
