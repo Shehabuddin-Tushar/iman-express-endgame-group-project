@@ -46,7 +46,7 @@ function Nav(props) {
   const ridertoken = localStorage.getItem("riderToken");
 
   const { user, logOut } = usefirebase();
-  console.log(user.email)
+ 
 
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);

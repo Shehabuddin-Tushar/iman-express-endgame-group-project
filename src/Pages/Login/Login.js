@@ -78,7 +78,7 @@ const Login = () => {
               icon: 'success',
               title: 'Merchant Login Successfully',
             });
-            navigate("/")
+            navigate(redirect)
 
           }
         }
@@ -114,7 +114,7 @@ const Login = () => {
               icon: 'success',
               title: 'Rider Login Successfully',
             });
-            navigate("/")
+            navigate(redirect)
           }
         }
 
