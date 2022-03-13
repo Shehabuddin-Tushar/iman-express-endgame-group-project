@@ -31,7 +31,7 @@ const Success = () => {
         console.log(data)
        axios.post(`http://localhost:8080/api/payNow/validate`,data)
        .then(res => {
-          
+          console.log(res.data)
            if(res.data === true){
             toast.success("Payment Confirmed successfully",{
                 theme: "dark"
@@ -83,7 +83,7 @@ const Success = () => {
                 onClick={validatePayment}
                 variant='contained'
                 >
-                    Confirm Payment
+                    Please Confirm Payment
                 </Button>
                 </Grid>
             </Grid>

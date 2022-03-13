@@ -175,7 +175,7 @@ function Nav(props) {
           }
 
           {
-           user.email && uservalue?.role=="viewer" ?
+           user.email && uservalue?.role==="viewer" ?
               <>
                 <List>
                   <Link className="" to="/dashboard">
@@ -185,12 +185,21 @@ function Nav(props) {
                     My order
                   </Link>
                 </List>
+               
                 <List>
                   <Link className="" to="/dashboard">
                     <span>
                       <ClassIcon></ClassIcon>
                     </span>{" "}
                     payment option
+                  </Link>
+                </List>
+                <List>
+                  <Link className="" to="/dashboard/rate-us">
+                    <span>
+                      <ClassIcon></ClassIcon>
+                    </span>{" "}
+                    Give Review
                   </Link>
                 </List>
             </> : ""
@@ -213,6 +222,24 @@ function Nav(props) {
                       <ClassIcon></ClassIcon>
                     </span>{" "}
                     Manage blog
+                  </Link>
+                </List>
+
+                <List>
+                  <Link className="" to="/dashboard/addPartner">
+                    <span>
+                      <ClassIcon></ClassIcon>
+                    </span>{" "}
+                    Add partner
+                  </Link>
+                </List>
+
+                <List>
+                  <Link className="" to="/dashboard/managePartners">
+                    <span>
+                      <ClassIcon></ClassIcon>
+                    </span>{" "}
+                    Manage partner
                   </Link>
                 </List>
                 

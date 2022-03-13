@@ -13,7 +13,7 @@ import MenuItem from "@mui/material/MenuItem";
 import Toolbar from "@mui/material/Toolbar";
 import Tooltip from "@mui/material/Tooltip";
 import Typography from "@mui/material/Typography";
-import * as React from "react";
+import React,{useState,useEffect} from "react";
 import usefirebase from '../../Hooks/useFirebase'
 import { Link,useNavigate } from "react-router-dom";
 
@@ -43,12 +43,13 @@ const Navbar = () => {
     setAnchorElUser(null);
   };
 
+  
+
   const merchant = localStorage.getItem("merchant");
   const merchantinfo = JSON.parse(localStorage.getItem("merchantInfo"));
 
   const rider = localStorage.getItem("riderToken");
   const riderinfo = JSON.parse(localStorage.getItem("riderInfo"));
-
  
 
   const merchantlogout = () => {
@@ -233,20 +234,24 @@ const Navbar = () => {
               </a>
             </Button>
           </Box>
-          {/* {
-            user.email && merchant == null ? <h4 style={{ color: "black",marginTop:"13px" }}>{user.displayName}</h4> : !user.email && merchant ? 
-              <h4 style={{ color: "black", marginTop: "13px"  }}>{merchantinfo.name}</h4>
-              : !user.email && merchant == null && rider ? <h4 style={{ color: "black", marginTop: "13px" }}>{riderinfo.lname}</h4> : <Button> <Link style={{ textDecoration: "none" }} to="/login">
+          {
+            user?.email && merchant ===  null && rider === null  ? 
+              <h4 style={{ color: "black", marginTop: "13px" }}>{user?.displayName}</h4>
+              : !user.email && rider === null && merchant ? 
+               <h4 style={{ color: "black", marginTop: "13px"  }}>{merchantinfo?.name}</h4>
+                : !user.email && merchant == null && rider ?
+                  <h4 style={{ color: "black", marginTop: "13px" }}>{riderinfo?.lname}</h4>
+                : <Button> <Link style={{ textDecoration: "none" }} to="/login">
                 Log in
               </Link>
               </Button>
               
-          } */}
+          }
 
-          <Button> <Link style={{ textDecoration: "none" }} to="/login">
+          {/* <Button> <Link style={{ textDecoration: "none" }} to="/login">
             Log in
           </Link>
-          </Button>
+          </Button> */}
 
           {/* {
             rider ? <h2 style={{ color: "red" }}>{riderinfo.name}</h2> :

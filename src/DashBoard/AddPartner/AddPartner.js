@@ -33,7 +33,7 @@ const AddPartner = () => {
 
 
 
-        const url = `http://localhost:8080/api/partner/addPartner`;
+        const url = `https://iman-xpress.herokuapp.com/api/partner/addPartner`;
 
         axios.post(url, data,
             {

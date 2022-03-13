@@ -52,7 +52,7 @@ const Order = ({handleCheck,allproduct,totalamount,totalwithtax}) => {
                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
               >
                 <TableCell sx={{ fontWeight: 'bold', fontSize: '16px' }} component="th" scope="row">
-                  Total with tax(15%) 
+                  Subtotal with tax(15%) 
                 </TableCell>
                 <TableCell align="right" style={{color:"red"}}>{totalwithtax} Tk</TableCell>
 
