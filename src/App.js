@@ -60,7 +60,7 @@ function App() {
           ></Route>
                   
           <Route path="/contactUs" element={<ContactUs></ContactUs>}></Route>
-          <Route path="/checkout/:id" element={<Checkout></Checkout>}></Route>
+            <Route path="/checkout/:id" element={<PrivateRoute><Checkout></Checkout></PrivateRoute>}></Route>
          
           <Route path="/aboutUs" element={<AboutUs></AboutUs>}></Route> 
           <Route
