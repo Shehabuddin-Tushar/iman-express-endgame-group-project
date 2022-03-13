@@ -22,7 +22,8 @@ import "./AboutUs.css";
 
 const AboutUs = () => {
   return (
-    <>
+      <>
+          <title>IMan Xpress || About us</title> 
       <Navbar />
       <Container className="font">
         <Grid sx={{ mt: 2 }} container spacing={2}>

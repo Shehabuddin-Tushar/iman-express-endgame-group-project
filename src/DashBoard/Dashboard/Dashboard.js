@@ -96,7 +96,7 @@ function Nav(props) {
             merchanttoken ? <>
               
               <List>
-                <Link className="" to="/dashboard/marchant/add-products">
+                <Link className="" to="/dashboard/marchant/profile">
                   <span>
                     <ClassIcon></ClassIcon>
                   </span>{" "}
@@ -215,14 +215,7 @@ function Nav(props) {
                     Manage blog
                   </Link>
                 </List>
-                <List>
-                  <Link className="" to="/dashboard/updateBlog">
-                    <span>
-                      <ClassIcon></ClassIcon>
-                    </span>{" "}
-                    Update Blog
-                  </Link>
-                </List>
+                
               </> : ""
           }
           

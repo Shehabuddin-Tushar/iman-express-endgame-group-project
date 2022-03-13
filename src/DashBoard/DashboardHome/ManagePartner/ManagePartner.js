@@ -11,7 +11,7 @@ const ManagePartner = () => {
     fetch('http://localhost:8080/api/partner/getPartner')
     .then(res=>res.json())
     .then(data=>setPartners(data))
-  },[])
+  },[partnerApi])
 
   const handlePartner =(id)=>{
     const confirmMsg = window.confirm("Would you like to delete this partner")
@@ -24,8 +24,8 @@ const ManagePartner = () => {
         }).then((res)=> {
             console.log("deletedCount",res.data.deletedCount)
             console.log(res.data)
-            const withOutDeletedBlog = partnerApi.filter(blog => blog._id !== id)
-            setPartnerApi(withOutDeletedBlog)
+            const withOutDeletedpartner = partnerApi.filter(partner => partner._id !== id)
+            setPartnerApi(withOutDeletedpartner)
             alert("Partner deleted successfully!")
 
         }).catch((err)=>console.log(err))

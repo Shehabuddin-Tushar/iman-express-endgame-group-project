@@ -42,7 +42,7 @@ const states = [
 ];
 
 
-const Rider = () => {
+const RiderRegistration = () => {
   const [error, setError] = useState(false);
   const [success, setSuccess] = useState(false);
   const { register, handleSubmit, reset } = useForm();
@@ -72,6 +72,7 @@ const Rider = () => {
   };
   return (
     <div className="login">
+      <title>IMan Xpress || Rider register</title> 
       <Container
         sx={{
           height: "100vh",
@@ -223,4 +224,4 @@ const Rider = () => {
   );
 };
 
-export default Rider;
+export default RiderRegistration;

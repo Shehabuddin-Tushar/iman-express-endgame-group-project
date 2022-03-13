@@ -1,4 +1,5 @@
 import { Box, Button, Container, Grid, Typography } from '@mui/material';
+import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import Product from '../Product/Product';
 
@@ -6,39 +7,63 @@ import Product from '../Product/Product';
 
 const Products = () => {
     const [servics, setServics] = useState([]);
-    const [category, setCategory] = useState("restauant");
+    const [alldata, setAlldata] = useState([]);
+    const [category, setCategory] = useState("resturant");
     const [isLoad, setIsLoad] = useState(true)
 
     useEffect(() => {
-        const run = async () => {
-            setIsLoad(true)
-            const res = await fetch('./productDb.json')
-            const data = await res.json()
+        axios.get(`https://iman-xpress.herokuapp.com/api/auth/getmerchantuserbycategory/${category}`, {
+            headers: {
 
-            console.log(data)
-            const matchData = data.filter(service => service.category === category)
-            setServics(matchData)
-            setIsLoad(false)
-        }
-        run()
-    }, [category])
+                "Content-Type": "application/json"
+            }
+        }).then((res) => setAlldata(res.data)).catch((err) => console.log(err))
+
+    }, [])
+
+    const allresturant = (category) => {
+        axios.get(`https://iman-xpress.herokuapp.com/api/auth/getmerchantuserbycategory/${category}`, {
+            headers: {
+
+                "Content-Type": "application/json"
+            }
+        }).then((res) => setAlldata(res.data)).catch((err) => console.log(err))
+    }
+
+    const allmedicine = (category) => {
+        axios.get(`https://iman-xpress.herokuapp.com/api/auth/getmerchantuserbycategory/${category}`, {
+            headers: {
+
+                "Content-Type": "application/json"
+            }
+        }).then((res) => setAlldata(res.data)).catch((err) => console.log(err))
+    }
+
+    const allsupershop = (category) => {
+        axios.get(`https://iman-xpress.herokuapp.com/api/auth/getmerchantuserbycategory/${category}`, {
+            headers: {
+
+                "Content-Type": "application/json"
+            }
+        }).then((res) => setAlldata(res.data)).catch((err) => console.log(err))
+    }
 
     return (
         <Container>
             <Box sx={{ my: 4, display: 'flex', alignItems: 'center', flexWrap: 'wrap', p: 1 }}>
                 <Box>
-                    <Typography variant='h4' sx={{ fontWeight: 'bold', color: '#323232', mr: 3 }}>ALL FOR THE CATAGORYS</Typography>
-                    <Typography color='text.secondary' sx={{ textAlign: 'left' }}>We are providing Restauants booking, Medicines, Foods. </Typography>
+                    <Typography variant='h4' sx={{ fontWeight: 'bold', color: '#323232', mr: 3 }}>ALL FOR THE categories</Typography>
+                    <Typography color='text.secondary' sx={{ textAlign: 'left' }}>We are providing shopping in resturant,medicine and shopping </Typography>
                 </Box>
-                <Button onClick={() => setCategory("restauant")} className={category === 'restauant' ? 'selected' : ''} sx={{ color: 'text.secondary', fontWeight: 'bold', mr: 1 }} variant='text'>Restauants</Button>
-                <Button onClick={() => setCategory("madicine")} sx={{ color: 'text.secondary', fontWeight: 'bold', mr: 1 }} variant='text' className={category === 'madicine' ? 'selected' : ''}>Madicines</Button>
-                <Button onClick={() => setCategory("food")} sx={{ color: 'text.secondary', fontWeight: 'bold', mr: 1 }} variant='text' className={category === 'food' ? 'selected' : ''}>Super Shop</Button>
+                <Button onClick={() => allresturant("resturant")} className={category === 'resturant' ? 'selected' : ''} sx={{ color: 'text.secondary', fontWeight: 'bold', mr: 1 }} variant='text'>Resturants</Button>
+                <Button onClick={() => allmedicine("medicine")} sx={{ color: 'text.secondary', fontWeight: 'bold', mr: 1 }} variant='text' className={category === 'medicine' ? 'selected' : ''}>Medicines</Button>
+                <Button onClick={() => allsupershop("supershop")} sx={{ color: 'text.secondary', fontWeight: 'bold', mr: 1 }} variant='text' className={category === 'supershop' ? 'selected' : ''}>Super Shops</Button>
             </Box>
             <Grid container spacing={{ xs: 2, md: 1 }} columns={{ xs: 4, sm: 8, md: 12 }}>
                 {
-                    servics.map(service => <Product
-                        key={service._id}
-                        service={service}
+                    alldata.map(data => <Product
+                        key={alldata._id}
+                        service={data}
                         isLoad={isLoad}
                     />)
                 }

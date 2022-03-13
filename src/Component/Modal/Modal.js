@@ -19,7 +19,8 @@ const style = {
   borderRadius: "3px",
 };
 
-export default function ProductModal({ openModal, handleClose }) {
+export default function ProductModal({ openModal, handleClose,productinfo }) {
+ 
   return (
     <>
       <Modal
@@ -35,16 +36,22 @@ export default function ProductModal({ openModal, handleClose }) {
       >
         <Fade in={openModal}>
           <Box sx={style}>
-            <Typography id="transition-modal-title" variant="h6" component="h2">
-              kacci biriany
-            </Typography>
+            
             <img
               width="100%"
               style={{ borderRadius: "3px" }}
-              src="https://i.ibb.co/pnvtR1D/Biriyani1.jpg"
+              src={productinfo[0]?.productimage}
               alt=""
             />
-            <Typography>this is the best biriany in our city.scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</Typography>
+            <Typography id="transition-modal-title" variant="h6" component="h2">
+              Name: {productinfo[0]?.productname}
+            </Typography>
+            <Typography id="transition-modal-title" variant="h6" component="h2">
+             price: {productinfo[0]?.productprice}TK
+            </Typography>
+            <Typography>
+              <span style={{fontWeight:"bold"}}>Description:</span> {productinfo[0]?.productdescription}
+            </Typography>
             
           </Box>
         </Fade>

@@ -1,21 +1,28 @@
 import { Container, Grid, Paper } from '@mui/material';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { useForm } from "react-hook-form";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './AddBlog.css';
+import { CKEditor } from '@ckeditor/ckeditor5-react';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import { Box } from '@mui/system';
 
 const AddBlog = () => {
     
-
+const [description,setDescription]=useState('')
     const { register, reset, handleSubmit, watch, formState: { errors } } = useForm();
-    // const onSubmit = data => console.log(data);
 
+ 
     const onSubmit = async (data) => {
-        // console.log(data)
+        data.description = description
+        console.log(data)
+        console.log('it is',description)
+        
         let imageURL
+      
         const imageData = new FormData();
         imageData.set("key", "06a916692ea087d185221539196ef3a5");
         imageData.append("image", data.image[0]);
@@ -36,7 +43,7 @@ const AddBlog = () => {
 
 
 
-        const url = `https://iman-xpress.herokuapp.com/api/blog/addblog`;
+        const url = `http://localhost:8080/api/blog/addblog`;
 
         axios.post(url, data,
             {
@@ -65,7 +72,7 @@ const AddBlog = () => {
                 <div className="addBlogFrom">
                     <Paper elevation={12}>
                     <Grid container spacing={2}>
-                        <Grid item xs={12} md={6} sm={6}>
+                        <Grid item xs={12} md={12} sm={12}>
                             <ToastContainer />
                             <div className='formPartTwo'>
                                 <h1>Write YOur Blog</h1>
@@ -79,25 +86,31 @@ const AddBlog = () => {
                                     <div>
                                         <input type="text" {...register("time", { required: true })} placeholder='Blog date'/> 
                                     </div>
-                                    <textarea type="text" {...register("description", { required: true })} placeholder='Write description' ></textarea>
+                                        {/* <textarea type="text" {...register("description", { required: true })} placeholder='Write description' ></textarea> */}
+                                        <div style={{display: "flex",
+                                    justifyContent: "center",alignItems:'center'}}>
+                                    <Box >    <CKEditor   
+                    editor={ ClassicEditor }
+                    data="<p>Hello from CKEditor 5!</p>"
+                    onReady={ editor => {
+                        // You can store the "editor" and use when it is needed.
+                        console.log( 'Editor is ready to use!', editor );
+                    } } 
+                    onChange={ ( event, editor ) => {
+                        const data = editor.getData();
+                        console.log(data);
+                        setDescription(data)
+                        
+                                            }}
+                     
+                /></Box></div>
                                     <div>
                                         <button type="submit" className="addBlogBtn">Share Blog</button>
                                     </div>
                                 </form>
                             </div>
                         </Grid>
-                        <Grid item xs={12} md={6} sm={6}>
-                            <div className='formPartOne'>
-                                <div>
-                                    <div>
-                                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRL_qy0z4GCjNErMYO_Ji7d17nRL-m3N2rFaeTcXUXxoW7lsDywbRq_QmPVAdTrw1izhok&usqp=CAU" alt='Empty' width="200px"/>
-                                        <div style={{textAlign: "center"}}>
-                                            <Link to="/updateBlog"><button className='addBlogBtn'>Update Your Blog</button></Link>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </Grid>
+                     
 
                     </Grid>
                     </Paper>

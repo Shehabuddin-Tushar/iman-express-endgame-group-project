@@ -10,6 +10,7 @@ import Navbar from '../../Shared/Navbar/Navbar';
 
 function Home() {
   return <div>
+    <title>IMan Xpress || Home</title> 
     <Navbar />
     <MySlider />
     <Services />
