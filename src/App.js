@@ -18,18 +18,18 @@ import RiderSetting from './DashBoard/Setting/RiderSetting'
 import AddBlog from "./DashBoard/DashboardHome/AddBlog/AddBlog";
 import UpdateBlog from "./DashBoard/DashboardHome/AddBlog/UpdateBlog/UpdateBlog";
 import ManageBlog from "./DashBoard/DashboardHome/ManageBlog/ManageBlog";
-import Reviews from "./Component/Reviews/Reviews";
+
 import Updatemerchantproduct from "./DashBoard/Dashboard/Updatemerchantproduct/Updatemerchantproduct";
 import Merchantprofile from "./DashBoard/Dashboard/Merchantprofile/Merchantprofile";
 import RiderRegistration from "./Pages/Rider/Rider";
 import Checkout from "./Component/Cart/Checkout";
 import "./App.css";
-import BuyNow from './Component/BuyNow/BuyNow';
+
 import Success from './Component/SSL/Success/Success';
 import AddPartner from './DashBoard/AddPartner/AddPartner';
 import ManagePartner from './DashBoard/DashboardHome/ManagePartner/ManagePartner';
 import FailedPayment from './Component/SSL/FailedPayment/FailedPayment';
-import PayNow from "./Component/BuyNow/PayNow";
+
 import Review from "./DashBoard/User/Review";
 import Authprovider from './Hooks/Context'
 import PrivateRoute from "./Privateroute/PrivateRoute";
@@ -60,7 +60,7 @@ function App() {
           ></Route>
                   
           <Route path="/contactUs" element={<ContactUs></ContactUs>}></Route>
-          <Route path="/checkout/:id" element={<PrivateRoute><Checkout></Checkout></PrivateRoute>}></Route>
+          <Route path="/checkout/:id" element={<Checkout></Checkout>}></Route>
          
           <Route path="/aboutUs" element={<AboutUs></AboutUs>}></Route> 
           <Route
