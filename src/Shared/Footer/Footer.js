@@ -6,7 +6,7 @@ const Footer = () => {
     <Box sx={{ bgcolor: "rgb(0 0 0)", color: "#706f6d", pt: 10 }}>
       <Container>
         <Grid container spacing={2}>
-          <Grid item xs={6}>
+          <Grid item xs={12} md={6} sm={6}>
             <Box>
               <img
                 className="img"
@@ -23,32 +23,36 @@ const Footer = () => {
                 style={{ display: "flex", padding: "0px", marginTop: "30px" }}
               >
                 <li className="footer-icon">
-                  <i className="fas fa-vr-cardboard"></i>
+                  <a href="https://www.facebook.com/" target="_blank"><i className="fas fa-vr-cardboard" style={{color: "white"}}></i></a>
                 </li>
                 <li className="footer-icon">
-                  <i className="fab fa-twitter"></i>
+                  <a href="https://www.facebook.com/" target="_blank"><i className="fab fa-twitter" style={{color: "white"}}></i></a>
                 </li>
                 <li className="footer-icon">
-                  <i className="fab fa-facebook-f"></i>
+                  <a href="https://www.facebook.com/" target="_blank"><i className="fab fa-facebook-f" style={{color: "white"}}></i></a>
                 </li>
                 <li className="footer-icon">
-                  <i className="fab fa-youtube"></i>
+                  <a href="https://www.youtube.com/" target="_blank"><i className="fab fa-youtube" style={{color: "white"}}></i></a>
                 </li>
               </ul>
               <Typography sx={{ mt: 4 }}>We are in</Typography>
+              <a href="https://www.google.com" target="_blank">
               <img
                 style={{ width: "120px" }}
                 src="https://pathao.com/wp-content/uploads/2019/03/Google-Play-footer-.png"
                 alt=""
               />
+              </a>
+              <a href="https://www.google.com" target="_blank">
               <img
                 style={{ width: "120px" }}
                 src="https://pathao.com/wp-content/uploads/2019/03/App-Store-footer-.png"
                 alt=""
               />
+              </a>
             </Box>
           </Grid>
-          <Grid item xs={2}>
+          <Grid item xs={12} md={2} sm={6}>
             <Box sx={{ lineHeight: 2 }}>
               <Typography
                 variant="h5"
@@ -80,7 +84,7 @@ const Footer = () => {
               </li>
             </Box>
           </Grid>
-          <Grid item xs={2}>
+          <Grid item xs={12} md={2} sm={6}>
             <Box sx={{ lineHeight: 2 }}>
               <Typography
                 variant="h5"
@@ -112,7 +116,7 @@ const Footer = () => {
               </li>
             </Box>
           </Grid>
-          <Grid item xs={2}>
+          <Grid item xs={12} md={2} sm={6}>
             <Box sx={{ lineHeight: 2 }}>
               <Typography
                 variant="h5"
