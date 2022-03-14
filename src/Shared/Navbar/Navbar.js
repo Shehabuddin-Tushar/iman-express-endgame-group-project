@@ -219,6 +219,16 @@ const Navbar = () => {
               </Button>
             </Link>
 
+            <Link to="/allriders" style={{ textDecoration: "none" }}>
+              <Button
+                style={{ textDecoration: "none" }}
+                key="6"
+                sx={{ my: 2, color: "black" }}
+              >
+                All Riders
+              </Button>
+            </Link>
+
             <Button>
               <a style={{ textDecoration: "none" }} href="https://imanxpress.netlify.app/">
                 Chat with Rider

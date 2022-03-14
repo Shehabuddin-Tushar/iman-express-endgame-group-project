@@ -35,6 +35,7 @@ import Authprovider from './Hooks/Context'
 import PrivateRoute from "./Privateroute/PrivateRoute";
 import PrivateRouteMerchant from "./Privateroute/PrivateRouteMerchant";
 import PrivateRouteRider from "./Privateroute/PrivateRouteRider";
+import Allriders from "./Pages/Allriders/Allriders";
 
 function App() {
   return (
@@ -53,7 +54,7 @@ function App() {
           {/* success  */}
           <Route path="/success/:id" element={<Success />}></Route>
           <Route path="/failed" element={<FailedPayment />}></Route>
-         
+            <Route path="/allriders" element={<PrivateRoute><Allriders /></PrivateRoute>}></Route>
           <Route
             path="/merchantproduct/:id"
             element={<ProductPage></ProductPage>}
