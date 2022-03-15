@@ -15,7 +15,7 @@ function Allriders() {
                           return (
                               <Grid item lg={3}md={4}sm={6}xs={12}>
                                   <div className="card-container">
-                                      <span className="pro">Online</span>
+                                      <span className="pro" style={{backgroundColor:"green"}}>Online</span>
                                       <img className="round" src="https://i.postimg.cc/Wz3xxggH/tushar.jpg" height="120px" width="120px" alt="user" />
                                       <h3>Tushar</h3>
                                       <h6>Dhaka-Dhanmondi</h6>

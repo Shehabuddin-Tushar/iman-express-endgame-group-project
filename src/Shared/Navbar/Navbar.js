@@ -132,7 +132,11 @@ const Navbar = () => {
                 onClick={handleCloseNavMenu}
                 style={{ width: "200px" }}
               >
-                <Typography textAlign="center">Home</Typography>
+                
+                  <Link to="/" style={{ textDecoration: "none", color: "black" }}>
+                    Home
+                  </Link>
+                
               </MenuItem>
 
               <MenuItem
@@ -140,14 +144,54 @@ const Navbar = () => {
                 onClick={handleCloseNavMenu}
                 style={{ width: "200px" }}
               >
-                <Typography textAlign="center">About us</Typography>
+                <Link
+                  to="/moreBlogs"
+                  style={{ textDecoration: "none", color: "black" }}
+                >
+                  Blog
+                </Link>
               </MenuItem>
+
               <MenuItem
                 key="1"
                 onClick={handleCloseNavMenu}
                 style={{ width: "200px" }}
               >
-                <Typography textAlign="center">Contact us</Typography>
+
+                <Link to="/aboutus" style={{ textDecoration: "none", color: "black" }}>
+                  About us
+                </Link>
+
+              </MenuItem>
+
+              <MenuItem
+                key="1"
+                onClick={handleCloseNavMenu}
+                style={{ width: "200px" }}
+              >
+                <Link to="/contactus" style={{ textDecoration: "none", color: "black" }}>
+                  Contact us
+                </Link>
+              </MenuItem>
+
+              <MenuItem
+                key="1"
+                onClick={handleCloseNavMenu}
+                style={{ width: "200px" }}
+              >
+                <Link to="/allriders" style={{ textDecoration: "none", color: "black" }}>
+                  All Riders
+                </Link>
+              </MenuItem>
+
+              <MenuItem
+                key="1"
+                onClick={handleCloseNavMenu}
+                style={{ width: "200px" }}
+              >
+                <Link to="/dashboard" style={{ textDecoration: "none", color: "black" }}>
+                  Dashboard
+                </Link>
               </MenuItem>
 
               
