@@ -1,6 +1,5 @@
 import MessengerCustomerChat from "react-messenger-customer-chat";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import BlogDetails from "./Component/Blogs/BlogDetails/BlogDetails";
 import BlogsHome from "./Component/Blogs/BlogsHome/BlogsHome";
 import ProductPage from "./Component/MerchanterProduct/ProductPage";
 import Nav from "./DashBoard/Dashboard/Dashboard";
@@ -18,23 +17,21 @@ import RiderSetting from './DashBoard/Setting/RiderSetting'
 import AddBlog from "./DashBoard/DashboardHome/AddBlog/AddBlog";
 import UpdateBlog from "./DashBoard/DashboardHome/AddBlog/UpdateBlog/UpdateBlog";
 import ManageBlog from "./DashBoard/DashboardHome/ManageBlog/ManageBlog";
-import Reviews from "./Component/Reviews/Reviews";
 import Updatemerchantproduct from "./DashBoard/Dashboard/Updatemerchantproduct/Updatemerchantproduct";
 import Merchantprofile from "./DashBoard/Dashboard/Merchantprofile/Merchantprofile";
 import RiderRegistration from "./Pages/Rider/Rider";
 import Checkout from "./Component/Cart/Checkout";
 import "./App.css";
-import BuyNow from './Component/BuyNow/BuyNow';
 import Success from './Component/SSL/Success/Success';
 import AddPartner from './DashBoard/AddPartner/AddPartner';
 import ManagePartner from './DashBoard/DashboardHome/ManagePartner/ManagePartner';
 import FailedPayment from './Component/SSL/FailedPayment/FailedPayment';
-import PayNow from "./Component/BuyNow/PayNow";
 import Review from "./DashBoard/User/Review";
 import Authprovider from './Hooks/Context'
 import PrivateRoute from "./Privateroute/PrivateRoute";
 import PrivateRouteMerchant from "./Privateroute/PrivateRouteMerchant";
 import PrivateRouteRider from "./Privateroute/PrivateRouteRider";
+import MyOrder from "./DashBoard/DashboardHome/MyOrder/MyOrder";
 
 function App() {
   return (
@@ -53,7 +50,8 @@ function App() {
           {/* success  */}
           <Route path="/success/:id" element={<Success />}></Route>
           <Route path="/failed" element={<FailedPayment />}></Route>
-         
+         {/* My Order  */}
+         <Route path="/myOrder" element={<MyOrder />}></Route>
           <Route
             path="/merchantproduct/:id"
             element={<ProductPage></ProductPage>}
