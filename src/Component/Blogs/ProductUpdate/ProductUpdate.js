@@ -31,7 +31,7 @@ const ProductUpdate = () => {
     // ]
 
     useEffect(() => {
-        const url = `http://localhost:8080/api/blog/fetchblogbycategory/aboutProduct`;
+        const url = `https://iman-xpress.herokuapp.com/api/blog/fetchblogbycategory/aboutProduct`;
         axios.get(url)
             .then((res) => setBlogApiTwo(res.data))
             .catch(error => console.log(error))
@@ -51,7 +51,7 @@ const ProductUpdate = () => {
                         </Link>
                     </div>
                 <Grid container spacing={2}>
-                    {blogApiTwo.map(blog => <Grid item xs={12} md={4} sm={6} key={blog._id}>
+                    {blogApiTwo.slice(0, 3).map(blog => <Grid item xs={12} md={4} sm={6} key={blog._id}>
                         <Paper elevation={4}>
                             <div className='blogBox'>
                                 <div>

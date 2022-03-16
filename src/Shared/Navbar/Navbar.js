@@ -13,7 +13,7 @@ import MenuItem from "@mui/material/MenuItem";
 import Toolbar from "@mui/material/Toolbar";
 import Tooltip from "@mui/material/Tooltip";
 import Typography from "@mui/material/Typography";
-import * as React from "react";
+import React,{useState,useEffect} from "react";
 import usefirebase from '../../Hooks/useFirebase'
 import { Link,useNavigate } from "react-router-dom";
 
@@ -28,7 +28,6 @@ const Navbar = () => {
 
   const { user, logOut } = usefirebase();
   const navigate = useNavigate();
-  console.log(user.email)
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
@@ -44,12 +43,13 @@ const Navbar = () => {
     setAnchorElUser(null);
   };
 
+  
+
   const merchant = localStorage.getItem("merchant");
   const merchantinfo = JSON.parse(localStorage.getItem("merchantInfo"));
 
   const rider = localStorage.getItem("riderToken");
   const riderinfo = JSON.parse(localStorage.getItem("riderInfo"));
-
  
 
   const merchantlogout = () => {
@@ -132,7 +132,11 @@ const Navbar = () => {
                 onClick={handleCloseNavMenu}
                 style={{ width: "200px" }}
               >
-                <Typography textAlign="center">Home</Typography>
+                
+                  <Link to="/" style={{ textDecoration: "none", color: "black" }}>
+                    Home
+                  </Link>
+                
               </MenuItem>
 
               <MenuItem
@@ -140,14 +144,54 @@ const Navbar = () => {
                 onClick={handleCloseNavMenu}
                 style={{ width: "200px" }}
               >
-                <Typography textAlign="center">About us</Typography>
+                <Link
+                  to="/moreBlogs"
+                  style={{ textDecoration: "none", color: "black" }}
+                >
+                  Blog
+                </Link>
               </MenuItem>
+
               <MenuItem
                 key="1"
                 onClick={handleCloseNavMenu}
                 style={{ width: "200px" }}
               >
-                <Typography textAlign="center">Contact us</Typography>
+
+                <Link to="/aboutus" style={{ textDecoration: "none", color: "black" }}>
+                  About us
+                </Link>
+
+              </MenuItem>
+
+              <MenuItem
+                key="1"
+                onClick={handleCloseNavMenu}
+                style={{ width: "200px" }}
+              >
+                <Link to="/contactus" style={{ textDecoration: "none", color: "black" }}>
+                  Contact us
+                </Link>
+              </MenuItem>
+
+              <MenuItem
+                key="1"
+                onClick={handleCloseNavMenu}
+                style={{ width: "200px" }}
+              >
+                <Link to="/allriders" style={{ textDecoration: "none", color: "black" }}>
+                  All Riders
+                </Link>
+              </MenuItem>
+
+              <MenuItem
+                key="1"
+                onClick={handleCloseNavMenu}
+                style={{ width: "200px" }}
+              >
+                <Link to="/dashboard" style={{ textDecoration: "none", color: "black" }}>
+                  Dashboard
+                </Link>
               </MenuItem>
 
               
@@ -219,26 +263,40 @@ const Navbar = () => {
               </Button>
             </Link>
 
+            <Link to="/allriders" style={{ textDecoration: "none" }}>
+              <Button
+                style={{ textDecoration: "none" }}
+                key="6"
+                sx={{ my: 2, color: "black" }}
+              >
+                All Riders
+              </Button>
+            </Link>
+
             <Button>
               <a style={{ textDecoration: "none" }} href="https://imanxpress.netlify.app/">
                 Chat with Rider
               </a>
             </Button>
           </Box>
-          {/* {
-            user.email && merchant == null ? <h4 style={{ color: "black",marginTop:"13px" }}>{user.displayName}</h4> : !user.email && merchant ? 
-              <h4 style={{ color: "black", marginTop: "13px"  }}>{merchantinfo.name}</h4>
-              : !user.email && merchant == null && rider ? <h4 style={{ color: "black", marginTop: "13px" }}>{riderinfo.lname}</h4> : <Button> <Link style={{ textDecoration: "none" }} to="/login">
+          {
+            user?.email && merchant ===  null && rider === null  ? 
+              <h4 style={{ color: "black", marginTop: "13px" }}>{user?.displayName}</h4>
+              : !user.email && rider === null && merchant ? 
+               <h4 style={{ color: "black", marginTop: "13px"  }}>{merchantinfo?.name}</h4>
+                : !user.email && merchant == null && rider ?
+                  <h4 style={{ color: "black", marginTop: "13px" }}>{riderinfo?.lname}</h4>
+                : <Button> <Link style={{ textDecoration: "none" }} to="/login">
                 Log in
               </Link>
               </Button>
               
-          } */}
+          }
 
-          <Button> <Link style={{ textDecoration: "none" }} to="/login">
+          {/* <Button> <Link style={{ textDecoration: "none" }} to="/login">
             Log in
           </Link>
-          </Button>
+          </Button> */}
 
           {/* {
             rider ? <h2 style={{ color: "red" }}>{riderinfo.name}</h2> :
@@ -320,24 +378,24 @@ const Navbar = () => {
 
                     </MenuItem>
 
-                    <MenuItem
+                    <Link to="/merchantRegister"> <MenuItem
 
                       onClick={handleCloseUserMenu}
                       style={{ width: "200px" }}
                     >
 
-                      <Link to="/merchant"><Typography textAlign="center">Merchant account</Typography></Link>
+                     <Typography textAlign="center">Merchant account</Typography>
                       {/* <Button onClick={merchantlogout}>Merchant logout</Button> */}
 
 
-                    </MenuItem>
+                    </MenuItem></Link>
 
                     <MenuItem
 
                       onClick={handleCloseUserMenu}
                       style={{ width: "200px" }}
                     >
-                      <Link to="/rider"><Typography textAlign="center">Rider account</Typography></Link>
+                      <Link to="/riderRegister"><Typography textAlign="center">Rider account</Typography></Link>
                     </MenuItem>
                   </>
               }

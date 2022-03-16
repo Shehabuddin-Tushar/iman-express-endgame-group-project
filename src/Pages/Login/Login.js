@@ -28,7 +28,7 @@ import useFirebase from "../../Hooks/useFirebase";
 const Login = () => {
   const [error, setError] = useState(false);
   const [success, setSuccess] = useState(false);
-  const { googleLogin, userLogin } = useFirebase();
+  const { googleLogin, userLogin,user } = useFirebase();
   const { register, handleSubmit, reset } = useForm();
 
   ///redirect user  destination
@@ -64,17 +64,21 @@ const Login = () => {
                   "Content-Type": "application/json"
                 }
               }).then(res => {
+                setSuccess(true)
                 console.log("res", res.data);
                 const merchantInfo = JSON.stringify(res.data)
                 console.log(merchantInfo)
                 localStorage.setItem("merchantInfo", merchantInfo);
               }
-              ).catch(err => console.log(err))
+            ).catch(err => {
+              setError(true);
+              console.log(err)
+            })
             Swal.fire({
               icon: 'success',
               title: 'Merchant Login Successfully',
             });
-            navigate("/")
+            navigate(redirect)
 
           }
         }
@@ -98,18 +102,19 @@ const Login = () => {
                 "Content-Type": "application/json"
               }
             }).then(res => {
+              setSuccess(true)
               console.log("res", res.data);
               const riderInfo = JSON.stringify(res.data)
               localStorage.setItem("riderInfo", riderInfo);
             }
             ).catch(err => console.log(err))
-
+            setError(true);
 
             Swal.fire({
               icon: 'success',
               title: 'Rider Login Successfully',
             });
-            navigate("/")
+            navigate(redirect)
           }
         }
 
@@ -117,12 +122,12 @@ const Login = () => {
 
       }
       if (data.user === 'user') {
-        userLogin(email, password, redirect, navigate);
-        setSuccess(true);
-
+        userLogin(email, password, redirect, navigate)       
+        
       }
+      
     } catch {
-      setError(true);
+      // setError(true);
 
     }
 
@@ -137,6 +142,7 @@ const Login = () => {
 
   return (
     <div className="login">
+      <title>IMan Xpress || Login</title> 
       <Container
         sx={{
           height: "100vh",

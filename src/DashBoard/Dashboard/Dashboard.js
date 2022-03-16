@@ -46,7 +46,7 @@ function Nav(props) {
   const ridertoken = localStorage.getItem("riderToken");
 
   const { user, logOut } = usefirebase();
-  console.log(user.email)
+ 
 
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -175,7 +175,7 @@ function Nav(props) {
           }
 
           {
-           user.email && uservalue?.role=="viewer" ?
+           user.email && uservalue?.role==="viewer" ?
               <>
                 <List>
                   <Link className="" to="/dashboard">
@@ -185,12 +185,21 @@ function Nav(props) {
                     My order
                   </Link>
                 </List>
+               
                 <List>
                   <Link className="" to="/dashboard">
                     <span>
                       <ClassIcon></ClassIcon>
                     </span>{" "}
                     payment option
+                  </Link>
+                </List>
+                <List>
+                  <Link className="" to="/dashboard/rate-us">
+                    <span>
+                      <ClassIcon></ClassIcon>
+                    </span>{" "}
+                    Give Review
                   </Link>
                 </List>
             </> : ""
@@ -215,14 +224,25 @@ function Nav(props) {
                     Manage blog
                   </Link>
                 </List>
+
                 <List>
-                  <Link className="" to="/dashboard/updateBlog">
+                  <Link className="" to="/dashboard/addPartner">
                     <span>
                       <ClassIcon></ClassIcon>
                     </span>{" "}
-                    Update Blog
+                    Add partner
                   </Link>
                 </List>
+
+                <List>
+                  <Link className="" to="/dashboard/managePartners">
+                    <span>
+                      <ClassIcon></ClassIcon>
+                    </span>{" "}
+                    Manage partner
+                  </Link>
+                </List>
+                
               </> : ""
           }
           

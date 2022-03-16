@@ -6,7 +6,7 @@
     text-align: center;
 }
 .UpdateFormPartOne input{
-    width: 60%;
+    width: 55%;
     padding: 10px 5px;
     margin: 10px 0px;
     border: 0;
@@ -23,4 +23,9 @@
     background-color: #000000;
     border-radius: 10px;
     /* color: */
+}
+
+.ck-editor__editable {
+    min-height: 300px;    
+   
 }

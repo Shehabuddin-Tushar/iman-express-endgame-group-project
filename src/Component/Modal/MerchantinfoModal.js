@@ -37,11 +37,12 @@ export default function MerchantinfoModal({ openModal, handleClose,merchantinfo}
             >
                 <Fade in={openModal}>
                     <Box sx={style}>
-                        <Typography id="transition-modal-title" variant="h6" component="h2">
-                            Store name: {merchantinfo.name}
+                        <Typography id="transition-modal-title" style={{textAlign:"center",fontWeight:"bold",marginBottom:"5px"}} variant="h5" component="h2">
+                            Store name: <span style={{textTransform:"uppercase",color:"green"}}>{merchantinfo.name}</span>
                         </Typography>
                         <img
                             width="100%"
+                            height="300px"
                             style={{ borderRadius: "3px" }}
                             src={merchantinfo.image}
                             alt=""
@@ -54,7 +55,7 @@ export default function MerchantinfoModal({ openModal, handleClose,merchantinfo}
                             Store address: {merchantinfo.storeAddress}
                         </Typography>
                         <Typography id="transition-modal-title" variant="h6" component="h2">
-                            Mobile number: {merchantinfo.mobileNumber}
+                            Mobile number: 0{merchantinfo.mobileNumber}
                         </Typography>
                         <Typography id="transition-modal-title" variant="h6" component="h2">
                             facebook page: {merchantinfo.faceBookLink}

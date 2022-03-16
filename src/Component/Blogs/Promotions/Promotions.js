@@ -24,7 +24,7 @@ const Promotions = () => {
     // ]
 
     useEffect(() => {
-        const url = `http://localhost:8080/api/blog/fetchblogbycategory/promotion`;
+        const url = `https://iman-xpress.herokuapp.com/api/blog/fetchblogbycategory/promotion`;
         axios.get(url)
             .then((res) => setBlogApiThree(res.data))
             .catch(error => console.log(error))
@@ -44,7 +44,7 @@ const Promotions = () => {
                         </Link>
                     </div>
                 <Grid container spacing={2}>
-                    {blogApiThree.map(blog => <Grid item xs={12} md={6} sm={12} key={blog._id}>
+                    {blogApiThree.slice(0, 2).map(blog => <Grid item xs={12} md={6} sm={12} key={blog._id}>
                         <Paper elevation={4}>
                             <div className='blogBox' >
                                 <div>

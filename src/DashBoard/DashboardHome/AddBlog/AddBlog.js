@@ -1,5 +1,5 @@
 import { Container, Grid, Paper } from '@mui/material';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { useForm } from "react-hook-form";
@@ -7,14 +7,16 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './AddBlog.css';
 
-const AddBlog = () => {
-    
 
+const AddBlog = () => {
+
+    const [description, setDescription] = useState('')
     const { register, reset, handleSubmit, watch, formState: { errors } } = useForm();
-    // const onSubmit = data => console.log(data);
+
 
     const onSubmit = async (data) => {
         let imageURL
+
         const imageData = new FormData();
         imageData.set("key", "06a916692ea087d185221539196ef3a5");
         imageData.append("image", data.image[0]);
@@ -25,7 +27,7 @@ const AddBlog = () => {
             );
             imageURL = res.data.data.display_url;
         } catch (error) {
-            
+
             return alert("Failed to upload the image!");
         }
 
@@ -39,20 +41,20 @@ const AddBlog = () => {
 
         axios.post(url, data,
             {
-              headers: {
-                "Content-Type": "application/json"
-              }
+                headers: {
+                    "Content-Type": "application/json"
+                }
             }).then(res => {
-              console.log(res)
-              if (res.status==200) {
+                console.log(res)
+                if (res.status == 200) {
                     toast.success("Blog inserted successfully");
                     return
                 }
-              
+
             })
             .catch(err => console.log(err))
-          reset();
-        
+        reset();
+
     }
     
     
@@ -60,7 +62,7 @@ const AddBlog = () => {
         <div className='addBlogContainer'>
             <Container>
                 <div className='addBlogTitle'>
-                    <img src="https://i.ibb.co/pZsbPZj/IMan-Xpress.png" alt="Empty"/>
+                    <img src="https://i.ibb.co/pZsbPZj/IMan-Xpress.png" alt="Empty" />
                 </div>
                 <div className="addBlogFrom">
                     <Paper elevation={12}>
@@ -101,10 +103,11 @@ const AddBlog = () => {
                                         <div style={{textAlign: "center"}}>
                                             <Link to="/updateBlog"><button className='addBlogBtn'>Update Your Blog</button></Link>
                                         </div>
-                                    </div>
+                                    </div> 
                                 </div>
                             </div>
                         </Grid>
+
 
                     </Grid>
                     </Paper>
