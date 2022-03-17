@@ -11,6 +11,9 @@ import {
 } from "firebase/auth";
 
 import initAuth from '../Pages/Login/firebase.init'
+import {db} from '../Pages/Login/firebase.init'
+
+
 import axios from "axios";
 import Swal from "sweetalert2";
 initAuth();
@@ -19,9 +22,12 @@ const useFirebase = () => {
   const provider = new GoogleAuthProvider();
   const [user, setUser] = useState({})
   const [isloading, setIsloading] = useState(true);
+
+
  
   ///user state observer
   useEffect(() => {
+    console.log(db)
     onAuthStateChanged(auth, (user) => {
       if (user) {
         // User is signed in
