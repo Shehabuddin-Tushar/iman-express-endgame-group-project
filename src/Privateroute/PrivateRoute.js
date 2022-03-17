@@ -4,8 +4,11 @@ import useAuth from '../Hooks/useAuth';
 
 export default  function PrivateRoute({ children }) {
   
-  const { user } = useAuth();
+  const { user,isloading} = useAuth();
   console.log(user)
+  if (isloading) {
+    return "...loading";
+  }
   return (
     user.email ? children : < Navigate to="/login" />
   ) 

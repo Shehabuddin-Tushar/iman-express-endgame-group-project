@@ -32,6 +32,8 @@ import PrivateRoute from "./Privateroute/PrivateRoute";
 import PrivateRouteMerchant from "./Privateroute/PrivateRouteMerchant";
 import PrivateRouteRider from "./Privateroute/PrivateRouteRider";
 import MyOrder from "./DashBoard/DashboardHome/MyOrder/MyOrder";
+import Allriders from "./Pages/Allriders/Allriders";
+import AllOrders from './DashBoard/DashboardHome/AllOrders/AllOrders';
 
 function App() {
   return (
@@ -50,15 +52,14 @@ function App() {
           {/* success  */}
           <Route path="/success/:id" element={<Success />}></Route>
           <Route path="/failed" element={<FailedPayment />}></Route>
-         {/* My Order  */}
-         <Route path="/myOrder" element={<MyOrder />}></Route>
+            <Route path="/allriders" element={<PrivateRoute><Allriders /></PrivateRoute>}></Route>
           <Route
             path="/merchantproduct/:id"
             element={<ProductPage></ProductPage>}
           ></Route>
                   
           <Route path="/contactUs" element={<ContactUs></ContactUs>}></Route>
-          <Route path="/checkout/:id" element={<PrivateRoute><Checkout></Checkout></PrivateRoute>}></Route>
+            <Route path="/checkout/:id" element={<PrivateRoute><Checkout></Checkout></PrivateRoute>}></Route>
          
           <Route path="/aboutUs" element={<AboutUs></AboutUs>}></Route> 
           <Route
@@ -73,6 +74,9 @@ function App() {
             ></Route>
 
               <Route path="/dashboard/addPartner" element={<PrivateRoute><AddPartner /></PrivateRoute>}></Route>
+              {/* My Order  */}
+              <Route path="/dashboard/myOrder" element={<PrivateRoute><MyOrder /></PrivateRoute>}></Route>
+              <Route path="/dashboard/allorders" element={<PrivateRoute><AllOrders /></PrivateRoute>}></Route>
             {/* manage partners  */}
           <Route path="/dashboard/managePartners" element={<PrivateRoute><ManagePartner /></PrivateRoute>}></Route>
             

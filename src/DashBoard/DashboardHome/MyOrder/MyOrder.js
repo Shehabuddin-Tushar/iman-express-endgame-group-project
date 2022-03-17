@@ -1,59 +1,62 @@
 import React from 'react';
 import useAuth from '../../../Hooks/useAuth';
 import { useState, useEffect } from 'react';
+import './MyOrder.css';
 import { Table, Thead, Tbody, Tr, Th, Td } from 'react-super-responsive-table';
 import 'react-super-responsive-table/dist/SuperResponsiveTableStyle.css';
+import { Typography } from '@mui/material';
+
+
 
 const MyOrder = () => {
     const {user} = useAuth();
-    console.log(user)
-    const [myOrders,setMyOrders] = useState();
+    const [myOrders,setMyOrders] = useState([]);
     useEffect(()=>{
-        fetch(`http://localhost:8080/orders/${user.email}`)
+        fetch(`http://localhost:8080/api/payNow/orders/${user.email}`)
         .then(res=>res.json())
         .then(data=>{
             console.log(data)
             setMyOrders(data)
         })
     },[])
+
     return (
-        <div>
-           <div>
-            <h4 className="text-warning fw-bold bg-dark p-2 rounded-3">My Orders  :{user.email}  </h4>
-            <Table className="bg-dark text-light mx-auto mt-3">
-                  <Thead className="thead">
+      <div     className='TotalOrder'>
+         <Typography
+        varient = 'body1'
+        color = '#795548'
+        >
+        Total Order: {myOrders.length}  
+        </Typography> 
+        <Table className='table' style={{marginTop:'15px'}}>
+        <Thead className="thead">
                     <Tr>
-                      <Th>Package Name</Th>
-                      <Th>User Name</Th>
-                      <Th>Booking Status</Th>
-                      <Th>Address</Th>
-                      <Th>Date</Th>
+                      <Th>Customer Name</Th>
+                      <Th>Tran ID</Th>
+                      <Th>Payment Status</Th> 
+                      <Th>Total Amount</Th>
                       <Th>Contact Number</Th>
-                      <Th>Delete Item</Th>
+                      <Th>Date</Th>                                         
                     </Tr>
                   </Thead>
-                  <Tbody>
-                 
+      <Tbody>
+      {myOrders.map(({cus_name,tran_id,_id,payment_status,total_amount,cus_phone,date})=>(
 
-                {/* {myOrders.map(({packageName,userName,address,date,status,contact,_id})=>( */}
-
-                <Tr key={'_id'} className="tableData">
-                <Td> {'packageName'} </Td>
-                <Td>{'userName'}</Td>
-                <Td className="text-danger fw-bold">{'status'}</Td>
-                <Td>{'address'}</Td>
-                <Td>{'date'}</Td>
-                <Td>{'contact'}</Td>
-                {/* <Td><button className="btn btn-danger" onClick={()=>handleDelete(_id)}><RiDeleteBack2Fill/>
-
-                </button></Td> */}
-                </Tr>
-                {/* ))}               */}
-                  </Tbody>
-                </Table>
-        </div>
-        </div>
-    );
+<Tr key={_id} className="tableData">
+<Td> {cus_name} </Td>
+<Td>{tran_id}</Td>
+<Td>{payment_status}</Td>
+<Td>BDT:{total_amount}</Td>
+<Td>{cus_phone}</Td>
+<Td>{date}</Td>
+</Tr>
+))} 
+      </Tbody>
+    </Table>
+      </div>
+    )
+    
 };
 
 export default MyOrder;
+

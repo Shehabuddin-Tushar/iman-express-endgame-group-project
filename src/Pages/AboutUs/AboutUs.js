@@ -84,8 +84,8 @@ const AboutUs = () => {
               
 
                  {/* Developers  */}
-            <Grid sx={{mt:2,mb:3,m:3}} container spacing={2}>
-                <Grid  item xs={12}  lg={4} md={4}>
+            <Grid  container spacing={2} style={{marginBottom:"20px"}}>
+                  <Grid item lg={3} md={4} sm={6}xs={12} >
                 {/* Anik  */}
                 <Card sx={{boxShadow:5,textAlign: 'center' }}>
                 <CardMedia
@@ -128,7 +128,7 @@ const AboutUs = () => {
                 </Box>
                 </Card>
                 </Grid>
-                <Grid  item xs={12}  lg={4} md={4}>
+                  <Grid item lg={3} md={4} sm={6} xs={12} >
                 {/* Tushar  */}
                 <Card sx={{boxShadow:5,textAlign: 'center' }}>
                 <CardMedia
@@ -171,7 +171,7 @@ const AboutUs = () => {
                 </Box>
                 </Card>
                 </Grid>
-                <Grid  item xs={12}  lg={4} md={4}>
+                  <Grid item lg={3} md={4} sm={6} xs={12}>
                 {/* imtiaz  */}
                 <Card sx={{boxShadow:5,textAlign: 'center' }}>
                 <CardMedia
@@ -213,145 +213,52 @@ const AboutUs = () => {
               
                 </Box>
                 </Card>
-                </Grid>
+                  </Grid>
+                  <Grid item lg={3} md={4} sm={6} xs={12}>
+                      {/* U K P Proloy  */}
+                      <Card sx={{ boxShadow: 5, textAlign: 'center' }}>
+                          <CardMedia
+                              component="img"
+                              height="340"
+                              image={proloy}
+                              alt="about-us-delivery"
+                          />
+                          <Typography sx={{ fontWeight: 'bold' }} variant='h6'>
+                              U K P Proloy
+                          </Typography>
+                          <Typography variant='p'>
+                              Web Developer
+                          </Typography>
+                          {/* SOcial Links  */}
+                          <Box sx={{ textAlign: 'center' }}>
+                              <Button sx={{ fontSize: 'h6.fontSize' }}  >
+                                  <a target="_blank" href="https://www.facebook.com" rel="noreferrer">
+                                      <SiFacebook />
+                                  </a>
+                              </Button>
+                              <Button sx={{ fontSize: 'h6.fontSize' }}  >
+                                  <a target="_blank" href="https://www.twitter.com" rel="noreferrer">
+                                      <ImTwitter />
+                                  </a>
+                              </Button>
+
+                              <Button sx={{ fontSize: 'h6.fontSize' }}  >
+                                  <a target="_blank" href="https://www.instragram.com" rel="noreferrer">
+                                      <BsLinkedin />
+                                  </a>
+                              </Button>
+
+                              <Button sx={{ fontSize: 'h6.fontSize' }}  >
+                                  <a target="_blank" href="https://www.instragram.com" rel="noreferrer">
+                                      <FaGithub />
+                                  </a>
+                              </Button>
+
+                          </Box>
+                      </Card>
+                  </Grid>
             </Grid>
-            {/* 2nd container  */}
-            <Grid sx={{mt:2,mb:3,m:3}} container spacing={2}>
-                <Grid  item xs={12}  lg={4} md={4}>
-                {/*saiful  */}
-                <Card sx={{boxShadow:5,textAlign: 'center' }}>
-                <CardMedia
-                component="img"
-                height="340"
-                image={saiful}
-                alt="about-us-delivery"
-                />
-                <Typography sx={{fontWeight:'bold'}} variant='h6'>
-                Sif Fahim
-                </Typography>
-                <Typography variant='p'>
-                    Web Developer
-                </Typography>
-                  {/* SOcial Links  */}
-                  <Box sx={{textAlign:'center'}}>
-                                <Button sx={{ fontSize: 'h6.fontSize' }}  >
-                                    <a target="_blank" href="https://www.facebook.com" rel="noreferrer">
-                                        <SiFacebook />
-                                    </a>
-                                </Button>
-                                <Button sx={{ fontSize: 'h6.fontSize' }}  >
-                                    <a target="_blank" href="https://www.twitter.com" rel="noreferrer">
-                                        <ImTwitter />
-                                    </a>
-                                </Button>
-
-                                <Button sx={{ fontSize: 'h6.fontSize' }}  >
-                                    <a target="_blank" href="https://www.instragram.com" rel="noreferrer">
-                                        <BsLinkedin />
-                                    </a>
-                                </Button>
-
-                                <Button sx={{ fontSize: 'h6.fontSize' }}  >
-                                    <a target="_blank" href="https://www.instragram.com" rel="noreferrer">
-                                        <FaGithub />
-                                    </a>
-                                </Button>
-              
-                </Box>
-                </Card>
-                </Grid>
-                <Grid  item xs={12}  lg={4} md={4}>
-                {/* Tanvir  */}
-                <Card sx={{boxShadow:5,textAlign: 'center' }}>
-                <CardMedia
-                component="img"
-                height="340"
-                image={tanvir}
-                alt="about-us-delivery"
-                />
-                <Typography sx={{fontWeight:'bold'}} variant='h6'>
-                Tanvir Hossain
-                </Typography>
-                <Typography variant='p'>
-                    Web Developer
-                </Typography>
-                  {/* SOcial Links  */}
-                  <Box sx={{textAlign:'center'}}>
-                
-                                <Button sx={{ fontSize: 'h6.fontSize' }}  >
-                                    <a target="_blank" href="https://www.facebook.com" rel="noreferrer">
-                                        <SiFacebook />
-                                    </a>
-                                </Button>
-                                <Button sx={{ fontSize: 'h6.fontSize' }}  >
-                                    <a target="_blank" href="https://www.twitter.com" rel="noreferrer">
-                                        <ImTwitter />
-                                    </a>
-                                </Button>
-
-                                <Button sx={{ fontSize: 'h6.fontSize' }}  >
-                                    <a target="_blank" href="https://www.instragram.com" rel="noreferrer">
-                                        <BsLinkedin />
-                                    </a>
-                                </Button>
-
-                                <Button sx={{ fontSize: 'h6.fontSize' }}  >
-                                    <a target="_blank" href="https://www.instragram.com" rel="noreferrer">
-                                        <FaGithub />
-                                    </a>
-                                </Button>
-              
-              
-                </Box>
-                </Card>
-                </Grid>
-                <Grid  item xs={12}  lg={4} md={4}>
-                {/* U K P Proloy  */}
-                <Card sx={{boxShadow:5,textAlign: 'center' }}>
-                <CardMedia
-                component="img"
-                height="340"
-                image={proloy}
-                alt="about-us-delivery"
-                />
-                <Typography sx={{fontWeight:'bold'}} variant='h6'>
-                U K P Proloy
-                </Typography>
-                <Typography variant='p'>
-                    Web Developer
-                </Typography>
-                  {/* SOcial Links  */}
-                  <Box sx={{textAlign:'center'}}>
-                <Button sx={{fontSize: 'h6.fontSize'}}  >
-                  <a target="_blank" href="https://www.facebook.com" rel="noreferrer">
-                      <SiFacebook/>
-                  </a>
-              </Button>
-              <Button sx={{fontSize: 'h6.fontSize'}}  >
-                  <a target="_blank" href="https://www.twitter.com" rel="noreferrer">
-                      <ImTwitter/>
-                  </a>
-              </Button>
-             
-              <Button sx={{fontSize: 'h6.fontSize'}}  >
-                  <a target="_blank" href="https://www.instragram.com" rel="noreferrer">
-                      <BsLinkedin/>
-                  </a>
-              </Button>
-              
-              <Button sx={{fontSize: 'h6.fontSize'}}  >
-                  <a target="_blank" href="https://www.instragram.com" rel="noreferrer">
-                      <FaGithub/>
-                  </a>
-              </Button>
-              
-                </Box>
-                </Card>
-                </Grid>
-            </Grid>
-
-            
-            </Container> 
+           </Container> 
             <Footer/>
         </>
     );
