@@ -169,12 +169,6 @@ function Nav(props) {
                     </span>{" "}
                     My order
                   </Link>
-                  <Link className="" to="/dashboard/allorders">
-                    <span style={{fontSize:'25px'}}>
-                      <BsCartPlus/>
-                    </span>{" "}
-                    All orders
-                  </Link>
                 </List>
                
                 <List>
@@ -231,6 +225,14 @@ function Nav(props) {
                       <ClassIcon></ClassIcon>
                     </span>{" "}
                     Manage partner
+                  </Link>
+                </List>
+                <List>
+                <Link className="" to="/dashboard/allorders">
+                    <span style={{fontSize:'25px'}}>
+                      <BsCartPlus/>
+                    </span>{" "}
+                    All orders
                   </Link>
                 </List>
                 
