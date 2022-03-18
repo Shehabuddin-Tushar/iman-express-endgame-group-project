@@ -56,7 +56,7 @@ function App() {
           <Route path="/success/:id" element={<Success />}></Route>
           <Route path="/failed" element={<FailedPayment />}></Route>
             <Route path="/allriders" element={<PrivateRoute><Allriders /></PrivateRoute>}></Route>
-            <Route path="/allusers" element={<Allusers />}></Route>
+            <Route path="/allusers" element={<PrivateRouteRider><Allusers /></PrivateRouteRider>}></Route>
           <Route
             path="/merchantproduct/:id"
             element={<ProductPage></ProductPage>}

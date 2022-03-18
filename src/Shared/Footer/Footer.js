@@ -4,10 +4,10 @@ import { Offline, Online } from "react-detect-offline";
 const Footer = () => {
   return (
     <Box sx={{ bgcolor: "rgb(0 0 0)", color: "#706f6d", pt: 10 }}>
-      <div>
+      {/* <div>
         <Online ><p style={{ color: "green" }}>Only shown when you're online</p></Online>
         <Offline ><p style={{ color: "red" }}>Only shown offline (surprise!)</p></Offline>
-      </div>
+      </div> */}
       <Container>
         <Grid container spacing={2}>
           <Grid item xs={6}>

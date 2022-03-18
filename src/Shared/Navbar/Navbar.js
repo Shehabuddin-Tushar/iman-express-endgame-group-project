@@ -14,7 +14,7 @@ import Toolbar from "@mui/material/Toolbar";
 import Tooltip from "@mui/material/Tooltip";
 import Typography from "@mui/material/Typography";
 import React,{useState,useEffect} from "react";
-import usefirebase from '../../Hooks/useFirebase'
+import useAuth from '../../Hooks/useAuth'
 import { Link,useNavigate } from "react-router-dom";
 
 import styles from "./Navbar.module.css";
@@ -25,8 +25,8 @@ import styles from "./Navbar.module.css";
 const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
-
-  const { user, logOut } = usefirebase();
+  
+  const { user, logOut } = useAuth();
   const navigate = useNavigate();
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -43,14 +43,14 @@ const Navbar = () => {
     setAnchorElUser(null);
   };
 
-  
-
+ 
   const merchant = localStorage.getItem("merchant");
   const merchantinfo = JSON.parse(localStorage.getItem("merchantInfo"));
 
   const rider = localStorage.getItem("riderToken");
   const riderinfo = JSON.parse(localStorage.getItem("riderInfo"));
  
+
 
   const merchantlogout = () => {
     let confirmmessage = window.confirm("are you sure you want to logout")
@@ -174,15 +174,30 @@ const Navbar = () => {
                 </Link>
               </MenuItem>
 
-              <MenuItem
-                key="1"
-                onClick={handleCloseNavMenu}
-                style={{ width: "200px" }}
-              >
-                <Link to="/allriders" style={{ textDecoration: "none", color: "black" }}>
-                  All Riders
-                </Link>
-              </MenuItem>
+              {
+                user?.email ? <MenuItem
+                  key="1"
+                  onClick={handleCloseNavMenu}
+                  style={{ width: "200px" }}
+                >
+                  <Link to="/allriders" style={{ textDecoration: "none", color: "black" }}>
+                    All Riders
+                  </Link>
+                </MenuItem>:""
+             } 
+
+              {
+                riderinfo !== null ?<MenuItem
+                  key="1"
+                  onClick={handleCloseNavMenu}
+                  style={{ width: "200px" }}
+                >
+                  <Link to="/allusers" style={{ textDecoration: "none", color: "black" }}>
+                    All Users
+                  </Link>
+                </MenuItem>:""
+              
+              }
 
               <MenuItem
                 key="1"
@@ -263,17 +278,19 @@ const Navbar = () => {
               </Button>
             </Link>
 
-            <Link to="/allriders" style={{ textDecoration: "none" }}>
-              <Button
-                style={{ textDecoration: "none" }}
-                key="6"
-                sx={{ my: 2, color: "black" }}
-              >
-                All Riders
-              </Button>
-            </Link>
-
-            <Link to="/allusers" style={{ textDecoration: "none" }}>
+            {
+              user?.email ? <Link to="/allriders" style={{ textDecoration: "none" }}>
+                <Button
+                  style={{ textDecoration: "none" }}
+                  key="6"
+                  sx={{ my: 2, color: "black" }}
+                >
+                  All Riders
+                </Button>
+              </Link>:""
+            }
+            {
+              riderinfo!==null?<Link to="/allusers" style={{ textDecoration: "none" }}>
               <Button
                 style={{ textDecoration: "none" }}
                 key="6"
@@ -281,8 +298,8 @@ const Navbar = () => {
               >
                 All Users
               </Button>
-            </Link>
-
+            </Link>:""
+                }
             {/* <Button>
               <a style={{ textDecoration: "none" }} href="https://imanxpress.netlify.app/">
                 Chat with Rider
