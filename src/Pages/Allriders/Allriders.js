@@ -19,7 +19,7 @@ function Allriders() {
     
     useEffect(() => {
          
-        axios.get("http://localhost:8080/api/riderProfile/getallriders").then(res=>setAllriders(res.data.riders)).catch(err=>console.log(err))
+        axios.get("https://iman-xpress.herokuapp.com/api/riderProfile/getallriders").then(res=>setAllriders(res.data.riders)).catch(err=>console.log(err))
 
         // db.collection("messages").add({
         //     message:"my name is tushar",
@@ -39,7 +39,7 @@ function Allriders() {
 
     const chatwithrider = (riderid) => {
 
-        axios.get(`http://localhost:8080/api/riderProfile/getriderbyid/${riderid}`)
+        axios.get(`https://iman-xpress.herokuapp.com/api/riderProfile/getriderbyid/${riderid}`)
             .then(res => setRiderinfo(res.data.rider)).catch(err => console.log(err))
         
         

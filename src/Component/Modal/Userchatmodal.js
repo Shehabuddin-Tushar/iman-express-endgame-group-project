@@ -49,18 +49,13 @@ export default function Userchatmodal({ openModal, handleClose, riderallinfo }) 
     
   };
 
-  // const mydata = {
-  //   userid: userdata?._id,
-  //   riderid:riderallinfo?._id
-  // }
-
-  // console.log(mydata)
+  
 
   useEffect(() => {
-    axios.get(`http://localhost:8080/api/authgeneral/getuserdata/${user?.email}`)
+    axios.get(`https://iman-xpress.herokuapp.com/api/authgeneral/getuserdata/${user?.email}`)
       .then(res => setUserdata(res.data)).catch(err => console.log(err))
     
-    // const q2 = citiesRef.where("state", "==", "CA").where("population", "<", 1000000);
+    
         
   }, [])
 
@@ -154,21 +149,7 @@ export default function Userchatmodal({ openModal, handleClose, riderallinfo }) 
 
              
             </div>
-            {/* <img
-              width="100%"
-              style={{ borderRadius: "3px" }}
-              src={productinfo[0]?.productimage}
-              alt=""
-            />
-            <Typography id="transition-modal-title" variant="h6" component="h2">
-              Name: {productinfo[0]?.productname}
-            </Typography>
-            <Typography id="transition-modal-title" variant="h6" component="h2">
-             price: {productinfo[0]?.productprice}TK
-            </Typography>
-            <Typography>
-              <span style={{fontWeight:"bold"}}>Description:</span> {productinfo[0]?.productdescription}
-            </Typography> */}
+            
             
           </Box>
         </Fade>
