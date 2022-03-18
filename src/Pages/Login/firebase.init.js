@@ -1,12 +1,16 @@
-import { initializeApp } from "firebase/app";
-import firebaseConfig from "./firebase.config";
-import { getFirestore } from "firebase/firestore";
 
+import firebase from 'firebase/compat/app'
+import 'firebase/compat/firestore'
+import { initializeApp } from "firebase/app";
+
+import firebaseConfig from "./firebase.config";
 
 const initAuth = () => {
   return initializeApp(firebaseConfig);
 };
 
-export const db = getFirestore(initAuth());
+firebase.initializeApp(firebaseConfig)
+
+export const db = firebase.firestore();
 
 export default initAuth;
