@@ -36,6 +36,7 @@ import PrivateRoute from "./Privateroute/PrivateRoute";
 import PrivateRouteMerchant from "./Privateroute/PrivateRouteMerchant";
 import PrivateRouteRider from "./Privateroute/PrivateRouteRider";
 import Allriders from "./Pages/Allriders/Allriders";
+import Allusers from "./Pages/Allusers/Allusers";
 
 function App() {
   return (
@@ -55,6 +56,7 @@ function App() {
           <Route path="/success/:id" element={<Success />}></Route>
           <Route path="/failed" element={<FailedPayment />}></Route>
             <Route path="/allriders" element={<PrivateRoute><Allriders /></PrivateRoute>}></Route>
+            <Route path="/allusers" element={<Allusers />}></Route>
           <Route
             path="/merchantproduct/:id"
             element={<ProductPage></ProductPage>}
