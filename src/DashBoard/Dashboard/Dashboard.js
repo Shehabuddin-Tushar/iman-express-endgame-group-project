@@ -1,22 +1,9 @@
-import React,{useState,useEffect} from 'react'
-import AccountBalanceIcon from "@mui/icons-material/AccountBalance";
-import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import AddModeratorIcon from "@mui/icons-material/AddModerator";
-import AddTaskIcon from "@mui/icons-material/AddTask";
-import BarChartIcon from "@mui/icons-material/BarChart";
-import CategoryIcon from "@mui/icons-material/Category";
+import React,{useState,useEffect} from 'react';
 import ClassIcon from "@mui/icons-material/Class";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import GroupsIcon from "@mui/icons-material/Groups";
 import GroupTwoToneIcon from "@mui/icons-material/GroupTwoTone";
 import HomeIcon from "@mui/icons-material/Home";
 import MenuIcon from "@mui/icons-material/Menu";
 import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
-import ProductionQuantityLimitsIcon from "@mui/icons-material/ProductionQuantityLimits";
-import ThumbsUpDownIcon from "@mui/icons-material/ThumbsUpDown";
-import Accordion from "@mui/material/Accordion";
-import AccordionDetails from "@mui/material/AccordionDetails";
-import AccordionSummary from "@mui/material/AccordionSummary";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -25,14 +12,12 @@ import IconButton from "@mui/material/IconButton";
 import List from "@mui/material/List";
 import Toolbar from "@mui/material/Toolbar";
 import PropTypes from "prop-types";
-
 import { Link, Outlet } from "react-router-dom";
-import BD from "../images/bd.png";
 import logo from "../images/logo.png";
 import usefirebase from '../../Hooks/useFirebase'
 import "./Dashboard.css";
 import axios from 'axios';
-import Dashboardhome from './Dashboardhome/Dashboardhome';
+import { BsCart4,BsCartPlus } from 'react-icons/bs';
 
 const drawerWidth = 220;
 
@@ -45,7 +30,7 @@ function Nav(props) {
   const merchanttoken = localStorage.getItem("merchant");
   const ridertoken = localStorage.getItem("riderToken");
 
-  const { user, logOut } = usefirebase();
+  const { user} = usefirebase();
  
 
   const { window } = props;
@@ -71,12 +56,12 @@ function Nav(props) {
           </div>
           <div className="hr"></div>
 
-          <div className="user_img">
+          {/* <div className="user_img">
             <img
               src="https://bidinnovacion.org/economiacreativa/wp-content/uploads/2014/10/speaker-3.jpg"
               alt=""
             />
-          </div>
+          </div> */}
         </div>
       </List>
       {/* List of Route */}
@@ -178,9 +163,9 @@ function Nav(props) {
            user.email && uservalue?.role==="viewer" ?
               <>
                 <List>
-                  <Link className="" to="/dashboard">
-                    <span>
-                      <ClassIcon></ClassIcon>
+                  <Link className="" to="/dashboard/myOrder">
+                    <span style={{fontSize:'25px'}}>
+                      <BsCart4/>
                     </span>{" "}
                     My order
                   </Link>
@@ -242,6 +227,14 @@ function Nav(props) {
                     Manage partner
                   </Link>
                 </List>
+                <List>
+                <Link className="" to="/dashboard/allorders">
+                    <span style={{fontSize:'25px'}}>
+                      <BsCartPlus/>
+                    </span>{" "}
+                    All orders
+                  </Link>
+                </List>
                 
               </> : ""
           }
@@ -300,18 +293,18 @@ function Nav(props) {
             <MenuIcon sx={{ color: "#000000" }} />
           </IconButton>
           <Box className="toolbar_box">
-            <img src={BD} className="img-fluid flag_img" alt="" />
+            {/* <img src={BD} className="img-fluid flag_img" alt="" /> */}
             <IconButton sx={{ mr: 2 }}>
               <GroupTwoToneIcon />
             </IconButton>
             <IconButton sx={{ mr: 2 }}>
               <NotificationsNoneOutlinedIcon />
             </IconButton>
-            <img
+            {/* <img
               src="https://bidinnovacion.org/economiacreativa/wp-content/uploads/2014/10/speaker-3.jpg"
               className="toolbar_img"
               alt=""
-            />
+            /> */}
           </Box>
         </Toolbar>
       </AppBar>

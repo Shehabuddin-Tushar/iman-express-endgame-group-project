@@ -340,7 +340,7 @@ const Navbar = () => {
             key="5"
             sx={{ my: 2, color: "black", display: "block" }}
           >
-           Sign up / Logout
+           Logout
             <IconButton sx={{ p: 0 }}>
               <ArrowDropDownIcon />
             </IconButton>

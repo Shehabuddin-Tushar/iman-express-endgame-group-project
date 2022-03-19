@@ -36,6 +36,7 @@ const Success = () => {
                     toast.success("Payment Confirmed successfully", {
                         theme: "dark"
                     })
+                    window.location.replace(`https://iman-xpress-9b3a9.web.app/dashboard/myOrder`)
                 }
                 else {
                     toast.warn('Already Confirmed or Payment Failed', {
@@ -43,6 +44,7 @@ const Success = () => {
                     })
                 }
             })
+            
     }
     return (
         <>
@@ -71,8 +73,8 @@ const Success = () => {
                         <p>Date: {order.date} </p>
                         <p>Payment Status: <b>{order.payment_status}</b> </p>
                         <h3>Your Merchant ID: {order.merchant_id}</h3>
-                        <p>Total Phone: {order.cus_phone}</p>
-                        <p>Total Email: <b>{order.cus_email}</b></p>
+                        <p>Phone: {order.cus_phone}</p>
+                        <p>Email: <b>{order.cus_email}</b></p>
                         <p>Total Ammount: BDT <b>{order.total_amount}</b></p>
                         <p>Your tran_id: <b>{order.tran_id}</b></p>
                         <p>City: {order.cus_city}</p>

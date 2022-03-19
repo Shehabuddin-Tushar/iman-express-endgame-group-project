@@ -1,0 +1,13 @@
+.thead{
+    background-color: rgba(19, 1, 1, 0.842);
+    color: white;
+    margin-top: 20px;
+    margin-bottom: 10px; 
+ }
+ .tableData Td{ 
+    border: 1px solid black;
+    margin-bottom: 10px; 
+ }
+ .TotalOrder{
+   margin-top: 30px;
+ }
