@@ -56,7 +56,7 @@ function Checkout() {
 
 }
 
-   fetch(`http://localhost:8080/api/payNow/init`,{
+   fetch(`https://iman-xpress.herokuapp.com/api/payNow/init`,{
    method: 'POST',
    headers: {
        "content-type": "application/json"
