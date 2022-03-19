@@ -12,7 +12,7 @@ const MyOrder = () => {
     const {user} = useAuth();
     const [myOrders,setMyOrders] = useState([]);
     useEffect(()=>{
-        fetch(`https://iman-xpress.herokuapp.com/api/payNow/orders/${user.email}`)
+        fetch(`https://iman-xpress.herokuapp.com/api/payNow/ordersbyemail/${user.email}`)
         .then(res=>res.json())
         .then(data=>{
             console.log(data)

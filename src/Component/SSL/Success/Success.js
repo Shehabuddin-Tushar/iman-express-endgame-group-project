@@ -20,6 +20,7 @@ const Success = () => {
             .then(res => res.json())
             .then(data => {
                 setOrder(data);
+                console.log(data)
             })
     }, [id])
 
@@ -30,6 +31,7 @@ const Success = () => {
         }
         console.log(data)
         axios.post(`https://iman-xpress.herokuapp.com/api/payNow/validate`, data)
+        
             .then(res => {
                 console.log(res.data)
                 if (res.data === true) {
