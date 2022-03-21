@@ -110,11 +110,13 @@ ul {
 .chat-messages {
   border-top: 1px solid rgba(0, 0, 0, .05);
   padding: 10px;
-  overflow: auto;
-  display: flex;
-  flex-flow: row wrap;
-  align-content: flex-start;
-  flex: 1;
+  padding-right: 0px;
+  overflow-y: scroll;
+  height:320px;
+  
+  
+ 
+
 }
 
 .message-box-holder {
