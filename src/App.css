@@ -1,5 +1,7 @@
 .App {
-  text-align: center;
+  /* text-align: center; */
+  background-color: #000000;
+  color: #FFFFFF;
 }
 .login {
   background-color: rgb(241, 242, 243);

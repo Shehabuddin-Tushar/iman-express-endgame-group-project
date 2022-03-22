@@ -13,8 +13,7 @@ import anik from "../../img/anik.jpg";
 import imtiaz from "../../img/imtiaz.jpg";
 import pic2 from "../../img/our-mission.jpg";
 import proloy from "../../img/proloy.png";
-import saiful from "../../img/saiful.jpg";
-import tanvir from "../../img/tanvir.jpg";
+
 import tushar from "../../img/tushar.jpg";
 import Footer from "../../Shared/Footer/Footer";
 import Navbar from "../../Shared/Navbar/Navbar";
@@ -23,10 +22,10 @@ import "./AboutUs.css";
 const AboutUs = () => {
   return (
       <>
-          <title>IMan Xpress || About us</title> 
-      <Navbar />
+          <title>IMan Xpress || About us</title>
+      <Navbar/>   
       <Container className="font">
-        <Grid sx={{ mt: 2 }} container spacing={2}>
+        <Grid sx={{ }} container spacing={2}>
           <Grid item xs={12} lg={6} md={6}>
             <Card sx={{ boxShadow: 5 }}>
               <CardMedia

@@ -1,6 +1,8 @@
+import React, {useState} from 'react';
 import MessengerCustomerChat from "react-messenger-customer-chat";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import BlogsHome from "./Component/Blogs/BlogsHome/BlogsHome";
+import BlogDetails from "./Component/Blogs/BlogDetails/BlogDetails";
 import ProductPage from "./Component/MerchanterProduct/ProductPage";
 import Nav from "./DashBoard/Dashboard/Dashboard";
 import Dashboardhome from "./DashBoard/Dashboard/Dashboardhome/Dashboardhome";
@@ -42,18 +44,20 @@ import AllMarchent from "./DashBoard/DashboardHome/AllMarchent/AllMarchent";
 import AllAdmin from "./DashBoard/DashboardHome/AllAdmin/AllAdmin";
 
 function App() {
+  const [darkMode, setDarkMode] = useState(false)
   return (
-    <>
+    <div className={darkMode? "App": ""}>
       <Authprovider>
        
        <Router>
         <Routes>
-          <Route path="/" element={<Home></Home>}></Route>
+          <Route path="/" element={<Home setDarkMode={setDarkMode} darkMode={darkMode}></Home>}></Route>
           <Route path="/login" element={<Login></Login>}></Route>
           <Route path="/register" element={<Register></Register>}></Route>
           <Route path="/merchantRegister" element={<Account />}></Route>
           <Route path="/riderRegister" element={<RiderRegistration></RiderRegistration>}></Route>
           <Route path="/moreBlogs" element={<BlogsHome></BlogsHome>}></Route>
+          <Route path="/blogDetails/:id" element={<BlogDetails></BlogDetails>}></Route>
           <Route path="/dashboard" element={<Nav />}></Route>
           {/* success  */}
           <Route path="/success/:id" element={<Success />}></Route>
@@ -137,12 +141,12 @@ function App() {
       </Authprovider>
          {/* pageId="104547992167816"
         appId="3055318624707846" */}
-{/* 101209389196237 292099619137695*/}
+        {/* 101209389196237 292099619137695*/}
       <MessengerCustomerChat
         pageId="101209389196237"
         appId="292099619137695" 
       />
-    </>
+    </div>
   );
 }
 export default App;

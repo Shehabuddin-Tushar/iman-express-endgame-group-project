@@ -22,7 +22,7 @@ import styles from "./Navbar.module.css";
 
 
 
-const Navbar = () => {
+const Navbar = ({setDarkMode, darkMode}) => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -172,7 +172,7 @@ const Navbar = () => {
 
               </MenuItem>
 
-              <MenuItem
+              {/* <MenuItem
                 key="1"
                 onClick={handleCloseNavMenu}
                 style={{ width: "200px" }}
@@ -180,7 +180,7 @@ const Navbar = () => {
                 <Link to="/contactus" style={{ textDecoration: "none", color: "black" }}>
                   Contact us
                 </Link>
-              </MenuItem>
+              </MenuItem> */}
 
               {
                 user?.email ? <MenuItem
@@ -266,7 +266,7 @@ const Navbar = () => {
 
             {/* contact us added  */}
 
-            <Link to="/contactUs" style={{ textDecoration: "none" }}>
+            {/* <Link to="/contactUs" style={{ textDecoration: "none" }}>
               <Button
                 style={{ textDecoration: "none" }}
                 key="6"
@@ -274,7 +274,7 @@ const Navbar = () => {
               >
                 Contact Us
               </Button>
-            </Link>
+            </Link> */}
 
             <Link to="/aboutUs" style={{ textDecoration: "none" }}>
               <Button
@@ -312,7 +312,8 @@ const Navbar = () => {
               <a style={{ textDecoration: "none" }} href="https://imanxpress.netlify.app/">
                 Chat with Rider
               </a>
-            </Button> */}
+            </Button>
+             */}
           </Box>
           {
             user?.email && merchant === null && rider === null ?
@@ -331,7 +332,7 @@ const Navbar = () => {
           {/* <Button> <Link style={{ textDecoration: "none" }} to="/login">
             Log in
           </Link>
-          </Button> */}
+          </Button>
 
           {/* {
             rider ? <h2 style={{ color: "red" }}>{riderinfo.name}</h2> :
