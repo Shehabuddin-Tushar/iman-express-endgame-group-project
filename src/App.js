@@ -35,6 +35,7 @@ import MyOrder from "./DashBoard/DashboardHome/MyOrder/MyOrder";
 import Allriders from "./Pages/Allriders/Allriders";
 import Allusers from "./Pages/Allusers/Allusers";
 import AllOrders from './DashBoard/DashboardHome/AllOrders/AllOrders';
+import Merchantorders from "./DashBoard/Dashboard/Merchantsorders/Merchantorders";
 
 function App() {
   return (
@@ -113,6 +114,11 @@ function App() {
               element={<PrivateRouteMerchant><Updatemerchantproduct/></PrivateRouteMerchant>}
             ></Route>
 
+              
+              <Route
+                path="/dashboard/marchant/manageorders"
+                element={<PrivateRouteMerchant><Merchantorders /></PrivateRouteMerchant>}
+              ></Route>
           </Route>
         </Routes>
        </Router>

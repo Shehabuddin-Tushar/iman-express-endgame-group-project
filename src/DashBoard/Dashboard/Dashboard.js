@@ -75,7 +75,7 @@ function Nav(props) {
           </Link>
         </List>{" "}
         <Box>
-        
+         
 
           {
             merchanttoken ? <>
@@ -107,11 +107,11 @@ function Nav(props) {
                 </Link>
               </List>
               <List>
-                <Link className="" to="/dashboard">
+                <Link className="" to="/dashboard/marchant/manageorders">
                   <span>
                     <ClassIcon></ClassIcon>
-                  </span>{" "}
-                   Orders
+                  </span>
+                   Manage Orders
                 </Link>
               </List>
             </>:""
