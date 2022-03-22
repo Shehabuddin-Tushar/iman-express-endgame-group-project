@@ -4,7 +4,7 @@ import axios from 'axios';
 import { useForm } from "react-hook-form";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import './AddPartner.css';
 const AddPartner = () => {
     
 
@@ -56,7 +56,7 @@ const AddPartner = () => {
     }
     
     return (
-        <div className='addBlogContainer'>
+        <div>
             <Container>
                 <div className="addBlogFrom">
                     <h2 style={{textAlign:'center'}}>Upload partners Image</h2>
@@ -66,7 +66,7 @@ const AddPartner = () => {
                             <ToastContainer />
                             <div className='formPartTwo'>
                                 <form onSubmit={handleSubmit(onSubmit)}>
-                                    <Input accept="image/*" type="file" {...register("image", { required: true })} placeholder='Partner Image'  /> <br />
+                                    <Input style={{textAlign:'center'}} sx={{width:'800px'}} accept="image/*" type="file" {...register("image", { required: true })} placeholder='Partner Image'  /> <br />
                                     <Button sx={{mt:2}} variant="contained" type="submit" >
                                         Upload
                                     </Button>

@@ -11,3 +11,13 @@
  .TotalOrder{
    margin-top: 30px;
  }
+
+ .success{
+    color:white;
+    background-color:green;
+ }
+
+ .pending{
+    color:black ;
+    background-color: rgb(255, 166, 0);
+ }

@@ -36,6 +36,10 @@ import Allriders from "./Pages/Allriders/Allriders";
 import Allusers from "./Pages/Allusers/Allusers";
 import AllOrders from './DashBoard/DashboardHome/AllOrders/AllOrders';
 import Merchantorders from "./DashBoard/Dashboard/Merchantsorders/Merchantorders";
+import MakeAdmin from "./DashBoard/DashboardHome/MakeAdmin/MakeAdmin";
+import AllUser from "./DashBoard/DashboardHome/AllUser/AllUser";
+import AllMarchent from "./DashBoard/DashboardHome/AllMarchent/AllMarchent";
+import AllAdmin from "./DashBoard/DashboardHome/AllAdmin/AllAdmin";
 
 function App() {
   return (
@@ -82,7 +86,14 @@ function App() {
               <Route path="/dashboard/allorders" element={<PrivateRoute><AllOrders /></PrivateRoute>}></Route>
             {/* manage partners  */}
           <Route path="/dashboard/managePartners" element={<PrivateRoute><ManagePartner /></PrivateRoute>}></Route>
-            
+          {/* make admin  */}
+          <Route path="/dashboard/makeadmin" element={<PrivateRoute><MakeAdmin/></PrivateRoute>}></Route>
+          {/* ALl user  */}
+          <Route path="/dashboard/allusers" element={<PrivateRoute><AllUser/></PrivateRoute>}></Route>
+            {/* All marchent  */}
+            <Route path="/dashboard/allmarchent" element={<PrivateRoute><AllMarchent /></PrivateRoute>}></Route>
+            {/* all admins  */}
+            <Route path="/dashboard/alladmin" element={<PrivateRoute><AllAdmin /></PrivateRoute>}></Route>
             <Route
            path="/dashboard/rider/profile"
                 element={<PrivateRouteRider><RiderAccount /></PrivateRouteRider>}

@@ -14,26 +14,26 @@ const OurPartnerSlider=()=>{
     .then(res=>res.json())
     .then(data=>setPartners(data))
   },[])
-  function SamplePrevArrow(props) {
-    const { className, style, onClick } = props;
-    return (
-      <div
-        className={className}
-        style={{ ...style,borderRadius:'90%', display: "block",padding:'2px', background: "black" }}
-        onClick={onClick}
-      />
-    );
-  }
-  function SampleNextArrow(props) {
-    const { className, style, onClick } = props;
-    return (
-      <div
-        className={className}
-        style={{ ...style,borderRadius:'90%', display: "block",padding:'2px', background: "black" }}
-        onClick={onClick}
-      />
-    );
-  }
+  // function SamplePrevArrow(props) {
+  //   const { className, style, onClick } = props;
+  //   return (
+  //     <div
+  //       className={className}
+  //       style={{ ...style,borderRadius:'90%', display: "block",padding:'2px', background: "black" }}
+  //       onClick={onClick}
+  //     />
+  //   );
+  // }
+  // function SampleNextArrow(props) {
+  //   const { className, style, onClick } = props;
+  //   return (
+  //     <div
+  //       className={className}
+  //       style={{ ...style,borderRadius:'90%', display: "block",padding:'2px', background: "black" }}
+  //       onClick={onClick}
+  //     />
+  //   );
+  // }
     const settings = {
         dots: false,
         infinite: true,
@@ -43,9 +43,9 @@ const OurPartnerSlider=()=>{
         speed: 3000,
         autoplaySpeed: 3000,
         cssEase: "linear",
-        margin:10,
-        prevArrow:<SamplePrevArrow />,
-        nextArrow:<SampleNextArrow />,
+        margin:5,
+        // prevArrow:<SamplePrevArrow />,
+        // nextArrow:<SampleNextArrow />,
         responsive: [
             {
               breakpoint: 1024,
@@ -83,26 +83,20 @@ const OurPartnerSlider=()=>{
         <Typography variant="h4" fontWeight="bold">
          PARTNERS
         </Typography>
-        {/* {
-          partners.map(part=>
-            
-            )
-        } */}
 
-<Slider {...settings} >
+<Slider className="container" {...settings} >
         {
         partners.map(partner=>
           <div
           key={partner._id}
           >
-              <img src={partner.image} alt="empty" className='bolimg' style={{width:'300px',height:'150px', marginLeft:'30px'}}/>
+              <img src={partner.image} alt="empty" className='bolimg' style={{width:'100px',height:'50px'}}/>
           </div>
           
           )
         }
-        
-        </Slider></Container>
-       
+        </Slider>
+        </Container>      
     );
 }
 
