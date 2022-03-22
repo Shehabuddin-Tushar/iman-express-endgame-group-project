@@ -97,7 +97,7 @@ const Navbar = () => {
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <img
-            src="https://i.ibb.co/jz5WkPr/logo.png"
+            src="https://i.postimg.cc/Vvdv93dn/imanimage.png"
             alt=""
             className={styles.logooursite}
           />
@@ -230,7 +230,7 @@ const Navbar = () => {
             }}
           >
 
-            <img src="https://i.ibb.co/jz5WkPr/logo.png" alt="" width="150px" />
+            <img src="https://i.postimg.cc/Vvdv93dn/imanimage.png" alt="" width="150px" />
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             <Button
