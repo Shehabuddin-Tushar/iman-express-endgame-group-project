@@ -10,7 +10,7 @@ const MakeAdmin = () => {
     
     const handleMakeAdmin = e =>{
         const userEmail = {email}
-        fetch('http://localhost:8080/api/authgeneral/getallusers/admin',{
+        fetch('https://iman-xpress.herokuapp.com/api/authgeneral/getallusers/admin',{
             method:"PUT",
             headers:{
                 'content-type':'application/json'
