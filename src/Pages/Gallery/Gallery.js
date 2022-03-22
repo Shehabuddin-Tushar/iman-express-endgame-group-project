@@ -21,7 +21,7 @@ function Gallery() {
                               <Button variant="outlined" style={{color:"#000",border:"2px solid white"}}>All information</Button>
                           </div>
                       <img class="left" src="https://i.insider.com/5dcc135ce94e86714253af21?width=1000&format=jpeg&auto=webp" alt=""/>
-                      <img class="right" src="http://localhost:3000/static/media/tushar.e5c6cb459a3e706426cf.jpg" alt=""/>
+                      <img class="right" src="https://i.postimg.cc/Wz3xxggH/tushar.jpg" alt=""/>
 
                               </div>
                           </div>
@@ -50,7 +50,7 @@ function Gallery() {
                                                       <p>Riders can open his account and he provide ride sharing and delivery services from this site</p>
                                                       <Button variant="outlined" style={{ color: "#000", border: "2px solid white" }}>All information</Button>
                                                   </div>
-                                                     <img class="left" src="https://thumbs.dreamstime.com/b/delivery-man-stand-holding-goods-parcel-front-motorbike-going-to-fast-express-deliver-food-product-customer-175076956.jpg" alt=""/>
+                                                     <img class="left" src="https://i.postimg.cc/zGmk5V2X/firstimageimanslider.jpg" alt=""/>
                                                      <img class="right" src="https://www.netsolutions.com/insights/wp-content/uploads/2021/11/essential-features-of-building-an-on-demand-food-ordering-app.jpg" alt=""/>
 
                                                       </div>
