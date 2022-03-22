@@ -22,7 +22,7 @@ import styles from "./Navbar.module.css";
 
 
 
-const Navbar = () => {
+const Navbar = ({setDarkMode, darkMode}) => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -133,7 +133,7 @@ const Navbar = () => {
                 style={{ width: "200px" }}
               >
                 
-                  <Link to="/" style={{ textDecoration: "none", color: "black" }}>
+                  <Link to="/" style={{ textDecoration: "none", color: "black" }} data-testid="optionOne">
                     Home
                   </Link>
                 
@@ -243,7 +243,7 @@ const Navbar = () => {
            
             {/* contact us added  */}
 
-            <Link to="/contactUs" style={{ textDecoration: "none" }}>
+            {/* <Link to="/contactUs" style={{ textDecoration: "none" }}>
               <Button
                 style={{ textDecoration: "none" }}
                 key="6"
@@ -261,7 +261,7 @@ const Navbar = () => {
               >
                 About Us
               </Button>
-            </Link>
+            </Link> */}
 
             <Link to="/allriders" style={{ textDecoration: "none" }}>
               <Button
@@ -278,6 +278,7 @@ const Navbar = () => {
                 Chat with Rider
               </a>
             </Button>
+            <Button>{darkMode? <span style={{color: "black"}}>Dark</span>: <span style={{color: "black"}}>White</span>}<input type="radio" name="darkMode" value="darkMode" onClick={() => setDarkMode(true)}/><input type="radio" name="darkMode" value="darkMode" onClick={() => setDarkMode(false)}/></Button>
           </Box>
           {
             user?.email && merchant ===  null && rider === null  ? 

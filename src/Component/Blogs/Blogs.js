@@ -57,11 +57,11 @@ const Blogs = () => {
             <Container>
                 <div>
                     <div className='moreBlogs'>
-                        <h1>From Blogs</h1>
+                        <h1 data-testid="blogTitle">From Blogs</h1>
                         <Link to="/moreBlogs">
                             <button className='allBlogsBtn'>
                             <p>Go To Blogs</p>
-                            <i><i class="fas fa-arrow-right"></i></i>
+                            <i><i className="fas fa-arrow-right"></i></i>
                             </button>
                         </Link>
                     </div>

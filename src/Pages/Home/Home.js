@@ -7,16 +7,20 @@ import Reviews from '../../Component/Reviews/Reviews';
 import MySlider from '../../Component/Slider/MySlider';
 import Footer from '../../Shared/Footer/Footer';
 import Navbar from '../../Shared/Navbar/Navbar';
+import AboutUs from '../AboutUs/AboutUs';
+import ContactUs from '../ContactUs/ContactUs';
 
-function Home() {
+function Home({setDarkMode, darkMode}) {
   return <div>
     <title>IMan Xpress || Home</title> 
-    <Navbar />
+    <Navbar setDarkMode={setDarkMode} darkMode={darkMode}/>
     <MySlider />
     <Services />
     <Products />
     <Blogs></Blogs>
     <Reviews></Reviews>
+    <AboutUs></AboutUs>
+    <ContactUs></ContactUs>
     <OurPartnerSlider></OurPartnerSlider>
     <Footer></Footer>
         </div>;

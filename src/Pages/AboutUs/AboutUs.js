@@ -17,14 +17,12 @@ import saiful from "../../img/saiful.jpg";
 import tanvir from "../../img/tanvir.jpg";
 import tushar from "../../img/tushar.jpg";
 import Footer from "../../Shared/Footer/Footer";
-import Navbar from "../../Shared/Navbar/Navbar";
 import "./AboutUs.css";
 
 const AboutUs = () => {
   return (
       <>
           <title>IMan Xpress || About us</title> 
-      <Navbar />
       <Container className="font">
         <Grid sx={{ mt: 2 }} container spacing={2}>
           <Grid item xs={12} lg={6} md={6}>
