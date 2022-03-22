@@ -13,7 +13,7 @@ function Home() {
     <title>IMan Xpress || Home</title> 
     <Navbar />
     <MySlider />
-    <Services />
+    {/* <Services /> */}
     <Products />
     <Blogs></Blogs>
     <Reviews></Reviews>
