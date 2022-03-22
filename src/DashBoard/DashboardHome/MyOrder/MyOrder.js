@@ -45,7 +45,10 @@ const MyOrder = () => {
 <Tr key={_id} className="tableData">
 <Td> {cus_name} </Td>
 <Td>{tran_id}</Td>
-<Td>{payment_status}</Td>
+<Td
+className={`${payment_status === "Success"? "success":"pending"}`}
+>
+{payment_status}</Td>
 <Td>BDT:{total_amount}</Td>
 <Td>{cus_phone}</Td>
 <Td>{date}</Td>

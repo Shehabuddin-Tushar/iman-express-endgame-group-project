@@ -17,22 +17,21 @@ import logo from "../images/logo.png";
 import usefirebase from '../../Hooks/useFirebase'
 import "./Dashboard.css";
 import axios from 'axios';
-import { BsCart4,BsCartPlus } from 'react-icons/bs';
+import { BsCart4,BsCartPlus,BsShop } from 'react-icons/bs';
+import {HiOutlineUsers} from 'react-icons/hi';
+import {AiOutlineUsergroupAdd} from 'react-icons/ai';
+import {FiUsers} from 'react-icons/fi';
+import {BiCommentAdd} from 'react-icons/bi';
+import {RiImageAddLine} from 'react-icons/ri';
 
 const drawerWidth = 220;
 
 function Nav(props) {
 
   const [uservalue, setUservalue] = useState({});
-
-  
-
   const merchanttoken = localStorage.getItem("merchant");
   const ridertoken = localStorage.getItem("riderToken");
-
   const { user} = usefirebase();
- 
-
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -55,20 +54,13 @@ function Nav(props) {
             <img width="100px" src={logo} alt="" />{" "}
           </div>
           <div className="hr"></div>
-
-          {/* <div className="user_img">
-            <img
-              src="https://bidinnovacion.org/economiacreativa/wp-content/uploads/2014/10/speaker-3.jpg"
-              alt=""
-            />
-          </div> */}
         </div>
       </List>
       {/* List of Route */}
       <div className=" list_of_route">
         <List>
           <Link className="" to="/">
-            <span>
+            <span style={{color:'#2979ff'}}>
               <HomeIcon />
             </span>
             Home
@@ -164,7 +156,7 @@ function Nav(props) {
               <>
                 <List>
                   <Link className="" to="/dashboard/myOrder">
-                    <span style={{fontSize:'25px'}}>
+                    <span style={{fontSize:'25px',color:'#2979ff'}}>
                       <BsCart4/>
                     </span>{" "}
                     My order
@@ -191,8 +183,67 @@ function Nav(props) {
           }
 
           {
-            user?.email && uservalue?.role == "admin" ?
+            user?.email && uservalue?.role === "admin" ?
               <>
+              {/* All Order  */}
+                <List>
+                <Link className="" to="/dashboard/allorders">
+                    <span style={{fontSize:'25px',color:'#2979ff'}}>
+                      <BsCartPlus/>
+                    </span>{" "}
+                    All orders
+                  </Link>
+                </List>
+               {/* make aadmin  */}
+               <List>
+                  <Link  className="" to="/dashboard/alladmin">
+                    <span style={{fontSize:'25px',color:'#2979ff'}}>
+                      <HiOutlineUsers/>
+                    </span>{" "}
+                    Our All Admin
+                  </Link>
+                </List>
+               <List>
+                  <Link className="" to="/dashboard/makeadmin">
+                    <span style={{fontSize:'25px',color:'#2979ff'}}>
+                      <AiOutlineUsergroupAdd/>
+                    </span>{" "}
+                    Make Admin
+                  </Link>
+                </List>
+               <List>
+                  <Link className="" to="/dashboard/allmarchent">
+                    <span style={{fontSize:'25px',color:'#2979ff'}}>
+                      <BsShop/>
+                    </span>{" "}
+                    All Marchent
+                  </Link>
+                </List>
+                <List>
+                  <Link className="" to="/dashboard/allusers">
+                    <span style={{fontSize:'25px',color:'#2979ff'}}>
+                      <FiUsers/>
+                    </span>{" "}
+                    Our All User
+                  </Link>
+                </List>
+                <List>
+                  <Link className="" to="/dashboard/addPartner">
+                    <span style={{fontSize:'25px',color:'#2979ff'}}>
+                      <RiImageAddLine/>
+                    </span>{" "}
+                    Add partner
+                  </Link>
+                </List>
+
+                <List>
+                  <Link className="" to="/dashboard/managePartners">
+                    <span style={{fontSize:'25px',color:'#2979ff'}}>
+                      <BiCommentAdd/>
+                    </span>{" "}
+                    Manage partner
+                  </Link>
+                </List>
                 <List>
                   <Link className="" to="/dashboard/addBlog">
                     <span>
@@ -207,32 +258,6 @@ function Nav(props) {
                       <ClassIcon></ClassIcon>
                     </span>{" "}
                     Manage blog
-                  </Link>
-                </List>
-
-                <List>
-                  <Link className="" to="/dashboard/addPartner">
-                    <span>
-                      <ClassIcon></ClassIcon>
-                    </span>{" "}
-                    Add partner
-                  </Link>
-                </List>
-
-                <List>
-                  <Link className="" to="/dashboard/managePartners">
-                    <span>
-                      <ClassIcon></ClassIcon>
-                    </span>{" "}
-                    Manage partner
-                  </Link>
-                </List>
-                <List>
-                <Link className="" to="/dashboard/allorders">
-                    <span style={{fontSize:'25px'}}>
-                      <BsCartPlus/>
-                    </span>{" "}
-                    All orders
                   </Link>
                 </List>
                 
