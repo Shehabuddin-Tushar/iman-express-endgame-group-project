@@ -22,7 +22,8 @@ const useFirebase = () => {
   const provider = new GoogleAuthProvider();
   const [user, setUser] = useState({})
   const [isloading, setIsloading] = useState(true);
-
+  const [loginstatus, setLoginstatus] = useState(0);
+  
 
  
   ///user state observer
@@ -176,6 +177,9 @@ const useFirebase = () => {
 
   
   return {
+   
+    loginstatus,
+    setLoginstatus,
     isloading,
     setIsloading,
     googleLogin,

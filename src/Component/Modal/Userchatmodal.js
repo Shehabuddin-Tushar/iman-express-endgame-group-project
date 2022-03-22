@@ -147,7 +147,7 @@ export default function Userchatmodal({ openModal, handleClose, riderallinfo }) 
 
              
             </div>
-            
+           
             
           </Box>
         </Fade>

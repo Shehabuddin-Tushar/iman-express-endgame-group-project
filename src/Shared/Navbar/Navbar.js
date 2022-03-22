@@ -16,7 +16,7 @@ import Typography from "@mui/material/Typography";
 import React,{useState,useEffect} from "react";
 import useAuth from '../../Hooks/useAuth'
 import { Link,useNavigate } from "react-router-dom";
-
+import axios from 'axios'
 import styles from "./Navbar.module.css";
 
 
@@ -26,7 +26,7 @@ const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
   
-  const { user, logOut } = useAuth();
+  const { user, logOut,setLoginstatus} = useAuth();
   const navigate = useNavigate();
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -65,8 +65,16 @@ const Navbar = () => {
   const riderlogout = () => {
     let confirmmessage = window.confirm("are you sure you want to logout")
     if (confirmmessage === true) {
+      axios.put(`http://localhost:8080/api/authRider/updateloginstatuswhenlogout/${riderinfo.email}`)
+        .then(res => {
+          console.log(res.change);
+          setLoginstatus(0)
+      
+        }).catch(err => console.log(err))
+      
       localStorage.removeItem("riderToken");
       localStorage.removeItem("riderInfo");
+      
       navigate("/")
     }
 
