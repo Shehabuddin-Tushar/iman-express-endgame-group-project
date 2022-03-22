@@ -1,6 +1,5 @@
 import { Container,Typography } from '@mui/material';
 import React from 'react';
-import Navbar from '../../Shared/Navbar/Navbar';
 import TextField from '@mui/material/TextField';
 import Grid from '@mui/material/Grid';
 import { styled } from '@mui/material/styles';
@@ -16,7 +15,6 @@ import emailjs from '@emailjs/browser';
 import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
 import './ContactUs.css';
-import Footer from '../../Shared/Footer/Footer';
 import './ContactUs.css';
 import { Button } from '@mui/material';
 import usefirebase from '../../Hooks/useFirebase'
@@ -67,8 +65,6 @@ const ContactUs = () => {
     return (
         <div className='font'>
             <title>IMan Xpress || Contact us</title> 
-           <Navbar />
-
            <Container  sx={{mb:3}}>
            <Typography sx={{ textAlign: 'center',m:2,mt:3,fontWeight:'bold' }} variant='h5'>
             Contact Informations

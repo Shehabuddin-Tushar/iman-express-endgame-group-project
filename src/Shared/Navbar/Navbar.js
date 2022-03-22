@@ -22,7 +22,7 @@ import styles from "./Navbar.module.css";
 
 
 
-const Navbar = () => {
+const Navbar = ({setDarkMode, darkMode}) => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -266,7 +266,7 @@ const Navbar = () => {
 
             {/* contact us added  */}
 
-            <Link to="/contactUs" style={{ textDecoration: "none" }}>
+            {/* <Link to="/contactUs" style={{ textDecoration: "none" }}>
               <Button
                 style={{ textDecoration: "none" }}
                 key="6"
@@ -284,7 +284,7 @@ const Navbar = () => {
               >
                 About Us
               </Button>
-            </Link>
+            </Link> */}
 
             {
               user?.email ? <Link to="/allriders" style={{ textDecoration: "none" }}>
@@ -312,7 +312,8 @@ const Navbar = () => {
               <a style={{ textDecoration: "none" }} href="https://imanxpress.netlify.app/">
                 Chat with Rider
               </a>
-            </Button> */}
+            </Button>
+             */}
           </Box>
           {
             user?.email && merchant === null && rider === null ?
@@ -331,7 +332,7 @@ const Navbar = () => {
           {/* <Button> <Link style={{ textDecoration: "none" }} to="/login">
             Log in
           </Link>
-          </Button> */}
+          </Button>
 
           {/* {
             rider ? <h2 style={{ color: "red" }}>{riderinfo.name}</h2> :
@@ -434,11 +435,6 @@ const Navbar = () => {
                     </MenuItem>
                   </>
               }
-
-
-
-
-
             </Menu>
           </Box>
         </Toolbar>
