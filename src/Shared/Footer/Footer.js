@@ -1,13 +1,14 @@
 import { Box, Container, Grid, Typography } from "@mui/material";
 import React from "react";
 import { Offline, Online } from "react-detect-offline";
+import { Link } from "react-router-dom";
 const Footer = () => {
   return (
     <Box sx={{ bgcolor: "rgb(0 0 0)", color: "#706f6d", pt: 10 }}>
-      <div>
+      {/* <div>
         <Online ><p style={{ color: "green" }}>Only shown when you're online</p></Online>
         <Offline ><p style={{ color: "red" }}>Only shown offline (surprise!)</p></Offline>
-      </div>
+      </div> */}
       <Container>
         <Grid container spacing={2}>
           <Grid item xs={12} md={6} sm={6}>
@@ -27,32 +28,32 @@ const Footer = () => {
                 style={{ display: "flex", padding: "0px", marginTop: "30px" }}
               >
                 <li className="footer-icon">
-                  <a href="https://www.facebook.com/" target="_blank"><i className="fas fa-vr-cardboard" style={{color: "white"}}></i></a>
+                  <a href="https://www.facebook.com/" target="_blank"><i className="fas fa-vr-cardboard" style={{ color: "white" }}></i></a>
                 </li>
                 <li className="footer-icon">
-                  <a href="https://www.facebook.com/" target="_blank"><i className="fab fa-twitter" style={{color: "white"}}></i></a>
+                  <a href="https://www.facebook.com/" target="_blank"><i className="fab fa-twitter" style={{ color: "white" }}></i></a>
                 </li>
                 <li className="footer-icon">
-                  <a href="https://www.facebook.com/" target="_blank"><i className="fab fa-facebook-f" style={{color: "white"}}></i></a>
+                  <a href="https://www.facebook.com/" target="_blank"><i className="fab fa-facebook-f" style={{ color: "white" }}></i></a>
                 </li>
                 <li className="footer-icon">
-                  <a href="https://www.youtube.com/" target="_blank"><i className="fab fa-youtube" style={{color: "white"}}></i></a>
+                  <a href="https://www.youtube.com/" target="_blank"><i className="fab fa-youtube" style={{ color: "white" }}></i></a>
                 </li>
               </ul>
               <Typography sx={{ mt: 4 }}>We are in</Typography>
               <a href="https://www.google.com" target="_blank">
-              <img
-                style={{ width: "120px" }}
-                src="https://pathao.com/wp-content/uploads/2019/03/Google-Play-footer-.png"
-                alt=""
-              />
+                <img
+                  style={{ width: "120px" }}
+                  src="https://pathao.com/wp-content/uploads/2019/03/Google-Play-footer-.png"
+                  alt=""
+                />
               </a>
               <a href="https://www.google.com" target="_blank">
-              <img
-                style={{ width: "120px" }}
-                src="https://pathao.com/wp-content/uploads/2019/03/App-Store-footer-.png"
-                alt=""
-              />
+                <img
+                  style={{ width: "120px" }}
+                  src="https://pathao.com/wp-content/uploads/2019/03/App-Store-footer-.png"
+                  alt=""
+                />
               </a>
             </Box>
           </Grid>
@@ -65,26 +66,26 @@ const Footer = () => {
                 Platform
               </Typography>
               <li>
-                <Typography variant="body.1">Home</Typography>
+                <Typography variant="body.1"><Link to="/home" style={{textDecoration:"none", color: "white"}}>Home</Link></Typography>
               </li>
               <li>
-                <Typography variant="body.1">Tournaments</Typography>
+                <Typography variant="body.1"><Link to="/home" style={{textDecoration:"none", color: "white"}}>Tournaments</Link></Typography>
               </li>
 
               <li>
-                <Typography variant="body.1">About Us</Typography>
+                <Typography variant="body.1"><Link to="/aboutUs" style={{textDecoration:"none", color: "white"}}>About</Link></Typography>
               </li>
               <li>
-                <Typography variant="body.1">Reviews</Typography>
+                <Typography variant="body.1"><Link to="/home" style={{textDecoration:"none", color: "white"}}>Reviews</Link></Typography>
               </li>
               <li>
-                <Typography variant="body.1">Contact Us</Typography>
+                <Typography variant="body.1"><Link to="contactUS" style={{textDecoration:"none", color: "white"}}>Contact Us</Link></Typography>
               </li>
               <li>
-                <Typography variant="body.1">Blogs</Typography>
+                <Typography variant="body.1"><Link to="/blogs" style={{textDecoration:"none", color: "white"}}>Blogs</Link></Typography>
               </li>
               <li>
-                <Typography variant="body.1">VR 3D</Typography>
+                <Typography variant="body.1"><Link to="/home" style={{textDecoration:"none", color: "white"}}>VR 3D</Link></Typography>
               </li>
             </Box>
           </Grid>
@@ -97,26 +98,26 @@ const Footer = () => {
                 Merchant
               </Typography>
               <li>
-                <Typography variant="body.1">Create Account</Typography>
+                <Typography variant="body.1"><Link to="/home" style={{textDecoration:"none", color: "white"}}>Create Account</Link></Typography>
               </li>
               <li>
-                <Typography variant="body.1">Subscription</Typography>
+                <Typography variant="body.1"><Link to="/home" style={{textDecoration:"none", color: "white"}}>Subscription</Link></Typography>
               </li>
 
               <li>
-                <Typography variant="body.1">Affiliat</Typography>
+                <Typography variant="body.1"><Link to="/home" style={{textDecoration:"none", color: "white"}}>Affiliat</Link></Typography>
               </li>
               <li>
-                <Typography variant="body.1">Site Condition</Typography>
+                <Typography variant="body.1"><Link to="/home" style={{textDecoration:"none", color: "white"}}>Site Condition</Link></Typography>
               </li>
               <li>
-                <Typography variant="body.1">IMAN Shop</Typography>
+                <Typography variant="body.1"><Link to="/home" style={{textDecoration:"none", color: "white"}}>IMAN Shop</Link></Typography>
               </li>
               <li>
-                <Typography variant="body.1">IMAN Madicine</Typography>
+                <Typography variant="body.1"><Link to="/home" style={{textDecoration:"none", color: "white"}}>IMAN Madicine</Link></Typography>
               </li>
               <li>
-                <Typography variant="body.1">IMAN Food</Typography>
+                <Typography variant="body.1"><Link to="/home" style={{textDecoration:"none", color: "white"}}>IMAN Food</Link></Typography>
               </li>
             </Box>
           </Grid>
@@ -129,17 +130,17 @@ const Footer = () => {
                 Information
               </Typography>
               <li>
-                <Typography variant="body.1">FAQ</Typography>
+                <Typography variant="body.1"><Link to="/home" style={{textDecoration:"none", color: "white"}}>FAQ</Link></Typography>
               </li>
               <li>
-                <Typography variant="body.1">Site Maps</Typography>
+                <Typography variant="body.1"><Link to="/home" style={{textDecoration:"none", color: "white"}}>Site Maps</Link></Typography>
               </li>
 
               <li>
-                <Typography variant="body.1">Privacy Policy</Typography>
+                <Typography variant="body.1"><Link to="/home" style={{textDecoration:"none", color: "white"}}>Privacy Policy</Link></Typography>
               </li>
               <li>
-                <Typography variant="body.1">Contact Us</Typography>
+                <Typography variant="body.1"><Link to="/contactUs" style={{textDecoration:"none", color: "white"}}>Contact Us</Link></Typography>
               </li>
             </Box>
           </Grid>

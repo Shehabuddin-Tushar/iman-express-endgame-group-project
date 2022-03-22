@@ -257,7 +257,7 @@ const AboutUs = () => {
                   </Grid>
             </Grid>
            </Container> 
-            <Footer/>
+            {/* <Footer/> */}
         </>
     );
 };

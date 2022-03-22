@@ -14,9 +14,9 @@ import Toolbar from "@mui/material/Toolbar";
 import Tooltip from "@mui/material/Tooltip";
 import Typography from "@mui/material/Typography";
 import React,{useState,useEffect} from "react";
-import usefirebase from '../../Hooks/useFirebase'
+import useAuth from '../../Hooks/useAuth'
 import { Link,useNavigate } from "react-router-dom";
-
+import axios from 'axios'
 import styles from "./Navbar.module.css";
 
 
@@ -25,8 +25,8 @@ import styles from "./Navbar.module.css";
 const Navbar = ({setDarkMode, darkMode}) => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
-
-  const { user, logOut } = usefirebase();
+  
+  const { user, logOut,setLoginstatus} = useAuth();
   const navigate = useNavigate();
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -43,14 +43,14 @@ const Navbar = ({setDarkMode, darkMode}) => {
     setAnchorElUser(null);
   };
 
-  
-
+ 
   const merchant = localStorage.getItem("merchant");
   const merchantinfo = JSON.parse(localStorage.getItem("merchantInfo"));
 
   const rider = localStorage.getItem("riderToken");
   const riderinfo = JSON.parse(localStorage.getItem("riderInfo"));
  
+
 
   const merchantlogout = () => {
     let confirmmessage = window.confirm("are you sure you want to logout")
@@ -65,8 +65,16 @@ const Navbar = ({setDarkMode, darkMode}) => {
   const riderlogout = () => {
     let confirmmessage = window.confirm("are you sure you want to logout")
     if (confirmmessage === true) {
+      axios.put(`http://localhost:8080/api/authRider/updateloginstatuswhenlogout/${riderinfo.email}`)
+        .then(res => {
+          console.log(res.change);
+          setLoginstatus(0)
+      
+        }).catch(err => console.log(err))
+      
       localStorage.removeItem("riderToken");
       localStorage.removeItem("riderInfo");
+      
       navigate("/")
     }
 
@@ -174,15 +182,30 @@ const Navbar = ({setDarkMode, darkMode}) => {
                 </Link>
               </MenuItem>
 
-              <MenuItem
-                key="1"
-                onClick={handleCloseNavMenu}
-                style={{ width: "200px" }}
-              >
-                <Link to="/allriders" style={{ textDecoration: "none", color: "black" }}>
-                  All Riders
-                </Link>
-              </MenuItem>
+              {
+                user?.email ? <MenuItem
+                  key="1"
+                  onClick={handleCloseNavMenu}
+                  style={{ width: "200px" }}
+                >
+                  <Link to="/allriders" style={{ textDecoration: "none", color: "black" }}>
+                    All Riders
+                  </Link>
+                </MenuItem>:""
+             } 
+
+              {
+                riderinfo !== null ?<MenuItem
+                  key="1"
+                  onClick={handleCloseNavMenu}
+                  style={{ width: "200px" }}
+                >
+                  <Link to="/allusers" style={{ textDecoration: "none", color: "black" }}>
+                    All Users
+                  </Link>
+                </MenuItem>:""
+              
+              }
 
               <MenuItem
                 key="1"
@@ -263,22 +286,36 @@ const Navbar = ({setDarkMode, darkMode}) => {
               </Button>
             </Link> */}
 
-            <Link to="/allriders" style={{ textDecoration: "none" }}>
+            {
+              user?.email ? <Link to="/allriders" style={{ textDecoration: "none" }}>
+                <Button
+                  style={{ textDecoration: "none" }}
+                  key="6"
+                  sx={{ my: 2, color: "black" }}
+                >
+                  All Riders
+                </Button>
+              </Link>:""
+            }
+            {
+              riderinfo!==null?<Link to="/allusers" style={{ textDecoration: "none" }}>
               <Button
                 style={{ textDecoration: "none" }}
                 key="6"
                 sx={{ my: 2, color: "black" }}
               >
-                All Riders
+                All Users
               </Button>
-            </Link>
-
-            <Button>
+            </Link>:""
+                }
+              
+              <Button>{darkMode? <span style={{color: "black"}}>Dark</span>: <span style={{color: "black"}}>White</span>}<input type="radio" name="darkMode" value="darkMode" onClick={() => setDarkMode(true)}/><input type="radio" name="darkMode" value="darkMode" onClick={() => setDarkMode(false)}/></Button>
+            {/* <Button>
               <a style={{ textDecoration: "none" }} href="https://imanxpress.netlify.app/">
                 Chat with Rider
               </a>
             </Button>
-            <Button>{darkMode? <span style={{color: "black"}}>Dark</span>: <span style={{color: "black"}}>White</span>}<input type="radio" name="darkMode" value="darkMode" onClick={() => setDarkMode(true)}/><input type="radio" name="darkMode" value="darkMode" onClick={() => setDarkMode(false)}/></Button>
+             */}
           </Box>
           {
             user?.email && merchant ===  null && rider === null  ? 
@@ -297,7 +334,7 @@ const Navbar = ({setDarkMode, darkMode}) => {
           {/* <Button> <Link style={{ textDecoration: "none" }} to="/login">
             Log in
           </Link>
-          </Button> */}
+          </Button>
 
           {/* {
             rider ? <h2 style={{ color: "red" }}>{riderinfo.name}</h2> :
@@ -314,7 +351,7 @@ const Navbar = ({setDarkMode, darkMode}) => {
             key="5"
             sx={{ my: 2, color: "black", display: "block" }}
           >
-           Sign up / Logout
+           Logout
             <IconButton sx={{ p: 0 }}>
               <ArrowDropDownIcon />
             </IconButton>

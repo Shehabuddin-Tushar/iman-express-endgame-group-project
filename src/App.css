@@ -28,7 +28,7 @@ input {
 
 /* width */
 ::-webkit-scrollbar {
-  width: 1px;
+  width: 3px;
 }
 
 /* Track */
