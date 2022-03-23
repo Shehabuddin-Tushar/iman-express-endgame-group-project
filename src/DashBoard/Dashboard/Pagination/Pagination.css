@@ -1,0 +1,13 @@
+.pagination{
+    border:3px solid rgb(0, 60, 255);
+    padding:5px 10px;
+    cursor: pointer;
+    margin-right: 5px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.pagination:hover{
+    color:rgb(8, 8, 8);
+    background-color: rgb(0, 255, 76);
+}

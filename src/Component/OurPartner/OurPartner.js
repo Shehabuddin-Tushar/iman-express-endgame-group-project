@@ -19,7 +19,7 @@ const OurPartnerSlider=()=>{
     return (
       <div
         className={className}
-        style={{ ...style,borderRadius:'90%', display: "block",padding:'2px', background: "black" }}
+        style={{ ...style,borderRadius:'90%', display: "block",padding:'2px',marginLeft:'10px',zIndex:'1', background: "black" }}
         onClick={onClick}
       />
     );
@@ -29,7 +29,7 @@ const OurPartnerSlider=()=>{
     return (
       <div
         className={className}
-        style={{ ...style,borderRadius:'90%', display: "block",padding:'2px', background: "black" }}
+        style={{ ...style,borderRadius:'90%', display: "block",padding:'2px',marginRight:'10px',zIndex:'1', background: "black" }}
         onClick={onClick}
       />
     );
@@ -43,7 +43,7 @@ const OurPartnerSlider=()=>{
         speed: 3000,
         autoplaySpeed: 3000,
         cssEase: "linear",
-        margin:10,
+        margin:5,
         prevArrow:<SamplePrevArrow />,
         nextArrow:<SampleNextArrow />,
         responsive: [
@@ -76,33 +76,27 @@ const OurPartnerSlider=()=>{
       };
     return(
       
-            <Container sx={{my:5}}>
+            <Container className="container" sx={{my:5}}>
             <Typography sx={{ color: "tomato" }} variant="body1">
           OUR
         </Typography>
         <Typography variant="h4" fontWeight="bold">
          PARTNERS
         </Typography>
-        {/* {
-          partners.map(part=>
-            
-            )
-        } */}
 
-<Slider {...settings} >
+<Slider  {...settings} >
         {
         partners.map(partner=>
           <div
           key={partner._id}
           >
-              <img src={partner.image} alt="empty" className='bolimg' style={{width:'300px',height:'150px', marginLeft:'30px'}}/>
+              <img src={partner.image} alt="empty" className='bolimg' style={{width:'300px',height:'150px'}}/>
           </div>
           
           )
         }
-        
-        </Slider></Container>
-       
+        </Slider>
+        </Container>      
     );
 }
 

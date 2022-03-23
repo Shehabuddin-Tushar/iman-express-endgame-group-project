@@ -20,14 +20,14 @@ const ManageBlog = () => {
     const handleDltBtn = id => {
         const confirmMsg = window.confirm("Would you like to delete this blog")
         if (confirmMsg) {
-            console.log(id)
+           
             axios.delete(`https://iman-xpress.herokuapp.com/api/blog/deleteblog/${id}`, {
                 headers: {
                     "Content-Type": "application/json"
                 }
             }).then((res) => {
                 console.log("deletedCount", res.data.deletedCount)
-                console.log(res.data)
+              
                 const withOutDeletedBlog = blogApi.filter(blog => blog._id !== id)
                 setBlogApi(withOutDeletedBlog)
                 alert("Blog delete successfully!")

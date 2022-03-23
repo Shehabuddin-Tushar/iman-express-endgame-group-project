@@ -1,6 +1,8 @@
+import React, {useState} from 'react';
 import MessengerCustomerChat from "react-messenger-customer-chat";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import BlogsHome from "./Component/Blogs/BlogsHome/BlogsHome";
+import BlogDetails from "./Component/Blogs/BlogDetails/BlogDetails";
 import ProductPage from "./Component/MerchanterProduct/ProductPage";
 import Nav from "./DashBoard/Dashboard/Dashboard";
 import Dashboardhome from "./DashBoard/Dashboard/Dashboardhome/Dashboardhome";
@@ -35,20 +37,27 @@ import MyOrder from "./DashBoard/DashboardHome/MyOrder/MyOrder";
 import Allriders from "./Pages/Allriders/Allriders";
 import Allusers from "./Pages/Allusers/Allusers";
 import AllOrders from './DashBoard/DashboardHome/AllOrders/AllOrders';
+import Merchantorders from "./DashBoard/Dashboard/Merchantsorders/Merchantorders";
+import MakeAdmin from "./DashBoard/DashboardHome/MakeAdmin/MakeAdmin";
+import AllUser from "./DashBoard/DashboardHome/AllUser/AllUser";
+import AllMarchent from "./DashBoard/DashboardHome/AllMarchent/AllMarchent";
+import AllAdmin from "./DashBoard/DashboardHome/AllAdmin/AllAdmin";
 
 function App() {
+  const [darkMode, setDarkMode] = useState(false)
   return (
-    <>
+    <div className={darkMode? "App": ""}>
       <Authprovider>
        
        <Router>
         <Routes>
-          <Route path="/" element={<Home></Home>}></Route>
+          <Route path="/" element={<Home setDarkMode={setDarkMode} darkMode={darkMode}></Home>}></Route>
           <Route path="/login" element={<Login></Login>}></Route>
           <Route path="/register" element={<Register></Register>}></Route>
           <Route path="/merchantRegister" element={<Account />}></Route>
           <Route path="/riderRegister" element={<RiderRegistration></RiderRegistration>}></Route>
           <Route path="/moreBlogs" element={<BlogsHome></BlogsHome>}></Route>
+          <Route path="/blogDetails/:id" element={<BlogDetails></BlogDetails>}></Route>
           <Route path="/dashboard" element={<Nav />}></Route>
           {/* success  */}
           <Route path="/success/:id" element={<Success />}></Route>
@@ -81,7 +90,14 @@ function App() {
               <Route path="/dashboard/allorders" element={<PrivateRoute><AllOrders /></PrivateRoute>}></Route>
             {/* manage partners  */}
           <Route path="/dashboard/managePartners" element={<PrivateRoute><ManagePartner /></PrivateRoute>}></Route>
-            
+          {/* make admin  */}
+          <Route path="/dashboard/makeadmin" element={<PrivateRoute><MakeAdmin/></PrivateRoute>}></Route>
+          {/* ALl user  */}
+          <Route path="/dashboard/allusers" element={<PrivateRoute><AllUser/></PrivateRoute>}></Route>
+            {/* All marchent  */}
+            <Route path="/dashboard/allmarchent" element={<PrivateRoute><AllMarchent /></PrivateRoute>}></Route>
+            {/* all admins  */}
+            <Route path="/dashboard/alladmin" element={<PrivateRoute><AllAdmin /></PrivateRoute>}></Route>
             <Route
            path="/dashboard/rider/profile"
                 element={<PrivateRouteRider><RiderAccount /></PrivateRouteRider>}
@@ -113,6 +129,11 @@ function App() {
               element={<PrivateRouteMerchant><Updatemerchantproduct/></PrivateRouteMerchant>}
             ></Route>
 
+              
+              <Route
+                path="/dashboard/marchant/manageorders"
+                element={<PrivateRouteMerchant><Merchantorders /></PrivateRouteMerchant>}
+              ></Route>
           </Route>
         </Routes>
        </Router>
@@ -120,12 +141,12 @@ function App() {
       </Authprovider>
          {/* pageId="104547992167816"
         appId="3055318624707846" */}
-{/* 101209389196237 292099619137695*/}
+        {/* 101209389196237 292099619137695*/}
       <MessengerCustomerChat
         pageId="101209389196237"
         appId="292099619137695" 
       />
-    </>
+    </div>
   );
 }
 export default App;

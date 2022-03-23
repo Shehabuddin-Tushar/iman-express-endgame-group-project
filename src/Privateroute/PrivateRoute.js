@@ -5,7 +5,7 @@ import useAuth from '../Hooks/useAuth';
 export default  function PrivateRoute({ children }) {
   
   const { user,isloading} = useAuth();
-  console.log(user)
+  
   if (isloading) {
     return "...loading";
   }

@@ -104,7 +104,7 @@ function Reviews() {
   return (
     <div>
       <Container sx={{ my: 6 }}>
-        <Typography sx={{ color: "tomato" }} variant="body1">
+        <Typography sx={{ color: "tomato" }} variant="body1" data-testId="reviewTitle">
           REVIEWS
         </Typography>
         <Typography variant="h4" fontWeight="bold">

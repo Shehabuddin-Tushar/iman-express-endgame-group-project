@@ -9,6 +9,7 @@ import { db } from '../../Pages/Login/firebase.init'
 import Riderchatmodal from '../../Component/Modal/Riderchatmodal'
 
 import axios from 'axios'
+import useAuth from '../../Hooks/useAuth'
 function Allusers() {
 
     const [allusers, setAllusers] = useState([])
@@ -17,18 +18,20 @@ function Allusers() {
     const handleOpen = () => setOpenModal(true);
     const handleClose = () => setOpenModal(false);
 
+    const {loginstatus}=useAuth()
+
     useEffect(() => {
 
         axios.get("https://iman-xpress.herokuapp.com/api/authgeneral/getallusers").then(res => setAllusers(res.data.allusers)).catch(err => console.log(err))
 
     
-    }, [])
+    }, [loginstatus])
 
 
 
 
     const chatwithuser = (userid) => {
-        console.log(userid)
+     
 
         axios.get(`https://iman-xpress.herokuapp.com/api/authgeneral/getuserbyid/${userid}`)
             .then(res => setUserinfo(res.data.userdata)).catch(err => console.log(err))

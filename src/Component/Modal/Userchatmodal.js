@@ -13,6 +13,7 @@ import { db } from '../../Pages/Login/firebase.init'
 import firebase from 'firebase/compat/app'
 import './Userchatmodal.css'
 import { ResetTvTwoTone } from "@mui/icons-material";
+import ScrollableFeed from 'react-scrollable-feed'
 const style = {
   position: "absolute",
   top: "50%",
@@ -109,6 +110,7 @@ export default function Userchatmodal({ openModal, handleClose, riderallinfo }) 
                   
                 </div>
                 <div className="chat-messages">
+                <ScrollableFeed>
                 {messages?.filter(data=>data.allmessage.message.userid===userdata?._id && data.allmessage.message.riderid===riderallinfo?._id ).map((el)=>{
                     
                       return(
@@ -122,15 +124,11 @@ export default function Userchatmodal({ openModal, handleClose, riderallinfo }) 
                             </div>
                           </div>
                        
-
-                         
-
-                        </>
-                     
-                      )
+                       </>
+                     )
                   })
               }
-           
+                  </ScrollableFeed>
                 </div>
 
 
@@ -149,7 +147,7 @@ export default function Userchatmodal({ openModal, handleClose, riderallinfo }) 
 
              
             </div>
-            
+           
             
           </Box>
         </Fade>

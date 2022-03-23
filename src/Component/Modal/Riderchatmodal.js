@@ -11,6 +11,7 @@ import useAuth from '../../Hooks/useAuth'
 import { useForm } from "react-hook-form";
 import { db } from '../../Pages/Login/firebase.init'
 import firebase from 'firebase/compat/app'
+import ScrollableFeed from 'react-scrollable-feed'
 import './Userchatmodal.css'
 
 const style = {
@@ -110,6 +111,7 @@ export default function Riderchatmodal({ openModal, handleClose, userallinfo }) 
                   
                 </div>
                 <div className="chat-messages">
+                  <ScrollableFeed>
                   {messages?.filter(data => data.allmessage.message.userid === userallinfo?._id && data.allmessage.message.riderid === riderdata?._id ).map((el)=>{
                     
                       return(
@@ -129,9 +131,9 @@ export default function Riderchatmodal({ openModal, handleClose, userallinfo }) 
                         </>
                      
                       )
-                  })
-              }
-           
+                     })
+                  }
+                  </ScrollableFeed>
                 </div>
 
 

@@ -21,6 +21,7 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import useAuth from "../../Hooks/useAuth";
 import useFirebase from "../../Hooks/useFirebase";
 
 
@@ -30,6 +31,7 @@ const Login = () => {
   const [success, setSuccess] = useState(false);
   const { googleLogin, userLogin,user } = useFirebase();
   const { register, handleSubmit, reset } = useForm();
+  const {setLoginstatus} = useAuth();
 
   ///redirect user  destination
   const location = useLocation();
@@ -88,7 +90,7 @@ const Login = () => {
       if (data.rider === 'rider') {
 
         // rider login 
-        console.log(data);
+        console.log(data.email);
         axios.post('https://iman-xpress.herokuapp.com/api/authRider/login', data).then(res => {
           console.log("res", res.data);
           if (res.data.authToken) {
@@ -102,6 +104,18 @@ const Login = () => {
                 "Content-Type": "application/json"
               }
             }).then(res => {
+              console.log(res.status)
+              if (res.status === 200) {
+                
+                
+                 axios.put(`https://iman-xpress.herokuapp.com/api/authRider/updateloginstatus/${data.email}`)
+                    .then(res => {
+                      console.log(res.change);
+                      setLoginstatus(1)
+                    }).catch(err => console.log(err))
+               
+              
+              }
               setSuccess(true)
               console.log("res", res.data);
               const riderInfo = JSON.stringify(res.data)

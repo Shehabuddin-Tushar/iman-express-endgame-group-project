@@ -35,11 +35,11 @@ const ManagePartner = () => {
   }
     return (
      <Container>
-        <h2 style={{textAlign:'center'}}>Manage Your Partners {partners.length}</h2>
-        <Grid  container spacing={2}>
+        <h2 style={{textAlign:'center'}}>Manage Your Partners-{partners.length}</h2>
+        <Grid container alignItems='center' justifyContent='center' spacing={4}>
         {
         partners.map(partner=>
-          <Grid  item xs={12} md={4} sm={6} lg={3}
+          <Grid sx={{boxShadow:10, padding:'10px',margin:'20px'}} item xs={12} md={4} sm={6} lg={4}
           key={partner._id} 
           >
              <div>

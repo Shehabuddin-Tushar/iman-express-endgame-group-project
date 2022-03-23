@@ -9,6 +9,7 @@ import { db } from '../../Pages/Login/firebase.init'
 import Userchatmodal from '../../Component/Modal/Userchatmodal'
 
 import axios from 'axios'
+import useAuth from '../../Hooks/useAuth'
 function Allriders() {
 
     const [allriders, setAllriders] = useState([])
@@ -16,29 +17,25 @@ function Allriders() {
     const [riderinfo, setRiderinfo] =useState({});
     const handleOpen = () => setOpenModal(true);
     const handleClose = () => setOpenModal(false);
+    const [status, setStatus] = useState();
+    const { loginstatus } = useAuth();
+    console.log(loginstatus)
+   
     
     useEffect(() => {
-         
+        const d = new Date();
+        let time = d.getTime();
+        console.log(time)
         axios.get("https://iman-xpress.herokuapp.com/api/riderProfile/getallriders").then(res=>setAllriders(res.data.riders)).catch(err=>console.log(err))
 
-        // db.collection("messages").add({
-        //     message:"my name is tushar",
-        //     timestamp:firebase.firestore.FieldValue.serverTimestamp()
-        // })
-
-
-        // db.collection('messages')
-        // .orderBy('timestamp','asc')
-        // .onSnapshot(snapshot=>(
-        //     setMessage(snapshot.docs.map(doc=>({id:doc.id,message:doc.data()})))
-        // ))
+        
     },[])
  
 
-
+console.log(loginstatus)
 
     const chatwithrider = (riderid) => {
-
+        // https://iman-xpress.herokuapp.com/
         axios.get(`https://iman-xpress.herokuapp.com/api/riderProfile/getriderbyid/${riderid}`)
             .then(res => setRiderinfo(res.data.rider)).catch(err => console.log(err))
         
@@ -56,7 +53,7 @@ function Allriders() {
                           return (
                               <Grid item lg={3}md={4}sm={6}xs={12} key={info._id}>
                                   <div className="card-container">
-                                      <span className="pro" style={{backgroundColor:"green"}}>Online</span>
+                                      <span className={`${info.login_status == 0 ? "pro" : "pro-online"}`}>{info.login_status==0?"offline":"online"}</span>
                                       <img className="round" src="https://i.postimg.cc/Wz3xxggH/tushar.jpg" height="120px" width="120px" alt="user" />
                                       <h3>{ info.fname}</h3>
                                       <h6>{ info.address}</h6>
@@ -68,10 +65,8 @@ function Allriders() {
                                           </Button>
                                       </div>
                                       </div>
-                                  
-
-
                               </Grid> 
+                             
                           )
                       })
                   }
