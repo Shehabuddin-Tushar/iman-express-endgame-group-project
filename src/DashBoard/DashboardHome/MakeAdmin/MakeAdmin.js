@@ -3,6 +3,7 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import Swal from 'sweetalert2';
 import useAuth from '../../../Hooks/useAuth';
+import './MakeAdmin.css';
 const MakeAdmin = () => {
     const [email,setEmail] = useState('');
     const {user} = useAuth();
@@ -59,7 +60,7 @@ const MakeAdmin = () => {
             <form onSubmit={handleMakeAdmin}>
                 <Grid container spacing={2}>
                     <Grid item xs={12} sm={12} md={6} lg={6}>
-                   <img width='550px' src="https://i.pinimg.com/originals/b6/6e/8f/b66e8ffa547746f4085ecc197cd588b9.gif" alt="" />
+                   <img className='img' width='550px' src="https://i.pinimg.com/originals/b6/6e/8f/b66e8ffa547746f4085ecc197cd588b9.gif" alt="" />
                     </Grid>
                     <Grid item xs={12} sm={12} md={6} lg={6}>
                     <TextField

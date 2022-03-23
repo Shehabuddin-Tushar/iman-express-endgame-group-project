@@ -18,6 +18,8 @@ import useAuth from '../../Hooks/useAuth'
 import { Link, useNavigate } from "react-router-dom";
 import axios from 'axios'
 import styles from "./Navbar.module.css";
+import { BsSun,BsMoonStars } from 'react-icons/bs';
+
 
 
 
@@ -140,11 +142,11 @@ const Navbar = ({setDarkMode, darkMode}) => {
                 onClick={handleCloseNavMenu}
                 style={{ width: "200px" }}
               >
-
-                <Link to="/" style={{ textDecoration: "none", color: "black" }}>
-                  Home
-                </Link>
-
+                
+                  <Link to="/" style={{ textDecoration: "none", color: "black" }} data-testid="optionOne">
+                    Home
+                  </Link>
+                
               </MenuItem>
 
               <MenuItem
@@ -298,16 +300,17 @@ const Navbar = ({setDarkMode, darkMode}) => {
               </Link> : ""
             }
             {
-              riderinfo !== null ? <Link to="/allusers" style={{ textDecoration: "none" }}>
-                <Button
-                  style={{ textDecoration: "none" }}
-                  key="6"
-                  sx={{ my: 2, color: "black" }}
-                >
-                  All Users
-                </Button>
-              </Link> : ""
-            }
+              riderinfo!==null?<Link to="/allusers" style={{ textDecoration: "none" }}>
+              <Button
+                style={{ textDecoration: "none" }}
+                key="6"
+                sx={{ my: 2, color: "black" }}
+              >
+                All Users
+              </Button>
+            </Link>:""
+                }
+              <Button>{darkMode? <span style={{fontSize:'25px'}}> <BsMoonStars/> </span>: <span style={{fontSize:'25px'}}> <BsSun/> </span>}<input type="radio" name="darkMode" value="darkMode" onClick={() => setDarkMode(true)}/><input type="radio" name="darkMode" value="darkMode" onClick={() => setDarkMode(false)}/></Button>
             {/* <Button>
               <a style={{ textDecoration: "none" }} href="https://imanxpress.netlify.app/">
                 Chat with Rider
@@ -435,6 +438,11 @@ const Navbar = ({setDarkMode, darkMode}) => {
                     </MenuItem>
                   </>
               }
+
+
+
+
+
             </Menu>
           </Box>
         </Toolbar>

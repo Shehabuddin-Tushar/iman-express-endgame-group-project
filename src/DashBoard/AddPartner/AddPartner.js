@@ -66,7 +66,7 @@ const AddPartner = () => {
                             <ToastContainer />
                             <div className='formPartTwo'>
                                 <form onSubmit={handleSubmit(onSubmit)}>
-                                    <Input style={{textAlign:'center'}} sx={{width:'800px'}} accept="image/*" type="file" {...register("image", { required: true })} placeholder='Partner Image'  /> <br />
+                                    <Input className='inputAddPartner' style={{textAlign:'center'}} sx={{width:'800px'}} accept="image/*" type="file" {...register("image", { required: true })} placeholder='Partner Image'  /> <br />
                                     <Button sx={{mt:2}} variant="contained" type="submit" >
                                         Upload
                                     </Button>

@@ -1,3 +1,9 @@
 .input{
     text-align: center;
 }
+
+@media only screen and (max-width:600px) {
+    .inputAddPartner{
+        width: 400px;
+    }
+}
