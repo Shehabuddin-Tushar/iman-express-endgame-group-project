@@ -28,7 +28,7 @@ function Checkout() {
  
   const { register, handleSubmit } = useForm();
     const [checked, setChecked] = useState('')
-    console.log(checked)
+   
   // handleCheck
   const handleCheck = (e) => {
        setChecked(e.target.checked)
@@ -38,7 +38,7 @@ function Checkout() {
   
     data.ordersdata = localdata
     data.totalamountwithtaxandshipping = totalamountwithtax+200
-    console.log(data)
+    
 
     const order = {
       cus_name: data.fname+','+data.lname,

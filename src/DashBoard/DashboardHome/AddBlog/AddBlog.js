@@ -33,7 +33,7 @@ const AddBlog = () => {
 
         data.image = imageURL
 
-        console.log(data)
+      
 
 
 
@@ -45,7 +45,7 @@ const AddBlog = () => {
                     "Content-Type": "application/json"
                 }
             }).then(res => {
-                console.log(res)
+               
                 if (res.status == 200) {
                     toast.success("Blog inserted successfully");
                     return

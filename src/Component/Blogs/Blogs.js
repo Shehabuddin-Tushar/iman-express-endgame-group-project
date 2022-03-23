@@ -7,42 +7,7 @@ import { Link } from 'react-router-dom';
 
 const Blogs = () => {
     const [blogApi, setBlogApi] = useState([]);
-    // const blogApi = [
-    //     {
-    //         id: 1,
-    //         img: "https://i.ibb.co/TYGPCH2/Food-delivery-boy-driving-scooter-with-box-with-food-and-wearing-mask.jpg",
-    //         category: "Iman Rider",
-    //         description: "Iman Xpress Send your cart to food update",
-    //         date: "January 1, 2022"
-    //     },
-    //     {
-    //         id: 2,
-    //         img: "https://i.ibb.co/dt5Hmd5/Baked-chicken-wings-in-the-Asian-style-and-tomatoes-sauce-on-plate.jpg",
-    //         category: "Iman Food",
-    //         description: "Looking for all the burgers in Dhaka.",
-    //         date: "January 4, 2022"
-    //     },
-    //     {
-    //         id: 3,
-    //         img: "https://i.ibb.co/wznDZgT/home-Blog-Pic-Three.jpg",
-    //         category: "Iman Courier",
-    //         description: "Iman Xpress Send courier now more affordable!",
-    //         date: "January 9, 2022"
-    //     }
-    // ]
-    // hosted img link 
-    // https://ibb.co/4VbBwtc
-    // https://ibb.co/7Q10kw1
-    // https://ibb.co/9c0yMqg
-
-    // useEffect(() => {
-    //     axios.get("https://iman-xpress.herokuapp.com/api/blog/fetchblog",  {
-    //     headers: {
-    //         "Content-Type": "application/json"
-    //     }
-    //     }).then((res)=> setBlogApi(res.data)).catch((err)=>console.log(err))
-    //     }, [])
-
+   
     useEffect(() => {
         const url = `https://iman-xpress.herokuapp.com/api/blog/fetchblog`;
         axios.get(url)

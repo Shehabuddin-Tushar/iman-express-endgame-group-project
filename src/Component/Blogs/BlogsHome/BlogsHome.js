@@ -33,16 +33,7 @@ const BlogsHome = () => {
         }
     ]
 
-    // https://ibb.co/WVz0nBW
-    // https://ibb.co/2ncQ9SR
-    // https://ibb.co/xgh9R6g
-    // https://ibb.co/NCdvc5S
-    // https://ibb.co/dpddCML
-
-    // https://ibb.co/c82Vd9v
-    // https://ibb.co/jbZqsXN
-    // https://ibb.co/Qcg491x
-    // https://ibb.co/P6CpCGP
+    
     return (
         <>
             <title>IMan Xpress || Blog</title> 

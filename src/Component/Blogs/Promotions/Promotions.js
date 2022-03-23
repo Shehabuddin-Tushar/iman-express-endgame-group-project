@@ -6,22 +6,7 @@ import { Link } from 'react-router-dom';
 
 const Promotions = () => {
     const [blogApiThree, setBlogApiThree] = useState([])
-    // const blogApiThree = [
-    //     {
-    //         id: 1,
-    //         img: "https://i.ibb.co/ZXpjq5m/promotion-Pic-One.jpg",
-    //         category: "Bangladesh",
-    //         description: "You can enjoy Iman Xpress Points benefits from Nitol Electronics now!  ",
-    //         date: "Feb 01, 2021"
-    //     },
-    //     {
-    //         id: 2,
-    //         img: "https://i.ibb.co/2MqVfdM/promotion-Pic-Two.jpg",
-    //         category: "Newsroom",
-    //         description: "Time for a home renovation! ",
-    //         date: "Mar 4, 2022"
-    //     }
-    // ]
+    
 
     useEffect(() => {
         const url = `https://iman-xpress.herokuapp.com/api/blog/fetchblogbycategory/promotion`;

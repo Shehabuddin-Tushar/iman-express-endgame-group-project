@@ -9,7 +9,7 @@ const AllUser = () => {
         fetch(`https://iman-xpress.herokuapp.com/api/authgeneral/getallusers`)
             .then(res => res.json())
             .then(data => {
-                console.log(data.allusers)
+                
                 setUsers(data.allusers)
             })
     }, [])

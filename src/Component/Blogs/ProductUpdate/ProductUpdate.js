@@ -6,29 +6,7 @@ import { Link } from 'react-router-dom';
 
 const ProductUpdate = () => {
     const [blogApiTwo, setBlogApiTwo] = useState([]) 
-    // const blogApiTwo = [
-    //     {
-    //         id: 1,
-    //         img: "https://i.ibb.co/41S2W4Z/product-Update-Pic-One-Edit.jpg",
-    //         category: "Bangladesh",
-    //         description: "Safe Trips, Insured! ",
-    //         date: "Feb 01, 2021"
-    //     },
-    //     {
-    //         id: 2,
-    //         img: "https://i.ibb.co/Qpjhtwg/product-Update-Pic-Two.jpg",
-    //         category: "Iman Bike",
-    //         description: "Now You Can Send Voice Messages! ",
-    //         date: "Mar 4, 2022"
-    //     },
-    //     {
-    //         id: 3,
-    //         img: "https://i.ibb.co/8KPpCbG/product-Update-Pic-Three.jpg",
-    //         category: "Iman Food",
-    //         description: "Iman Food Presents Food’s On Me",
-    //         date: "January 9, 2022"
-    //     }
-    // ]
+   
 
     useEffect(() => {
         const url = `https://iman-xpress.herokuapp.com/api/blog/fetchblogbycategory/aboutProduct`;
