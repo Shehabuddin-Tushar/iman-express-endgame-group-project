@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import { useParams } from "react-router-dom";
 import "./BlogDetails.css";
+import Navbar from "../../../Shared/Navbar/Navbar";
+import Footer from "../../../Shared/Footer/Footer";
 
 const BlogDetails = () => {
   const { id } = useParams();
@@ -19,6 +21,8 @@ const BlogDetails = () => {
   }, [id])
 
   return (
+    <>
+      <Navbar/>
     <div>
       <Container className="blogDetailsContainer">
         <Grid container spacing={2}>
@@ -59,7 +63,9 @@ const BlogDetails = () => {
           </div>
         </Paper>
       </Container>
-    </div>
+      </div>
+      <Footer/>
+    </>
   );
 };
 
