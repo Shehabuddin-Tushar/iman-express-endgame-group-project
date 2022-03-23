@@ -36,59 +36,59 @@ const Blogs = () => {
     // https://ibb.co/9c0yMqg
 
     // useEffect(() => {
-    //     axios.get("http://localhost:8080/api/blog/fetchblog",  {
+    //     axios.get("https://iman-xpress.herokuapp.com/api/blog/fetchblog",  {
     //     headers: {
     //         "Content-Type": "application/json"
     //     }
     //     }).then((res)=> setBlogApi(res.data)).catch((err)=>console.log(err))
     //     }, [])
-    
+
     useEffect(() => {
-        const url = `http://localhost:8080/api/blog/fetchblog`;
+        const url = `https://iman-xpress.herokuapp.com/api/blog/fetchblog`;
         axios.get(url)
             .then((res) => setBlogApi(res.data))
             .catch(error => console.log(error))
     }, [])
 
     return (
-       
+
         <div className='blogContainer'>
-            <title>IMan Xpress || Blog</title> 
+            <title>IMan Xpress || Blog</title>
             <Container>
                 <div>
                     <div className='moreBlogs'>
                         <h1 data-testid="blogTitle">From Blogs</h1>
                         <Link to="/moreBlogs">
                             <button className='allBlogsBtn'>
-                            <p>Go To Blogs</p>
-                            <i><i className="fas fa-arrow-right"></i></i>
+                                <p>Go To Blogs</p>
+                                <i><i className="fas fa-arrow-right"></i></i>
                             </button>
                         </Link>
                     </div>
-                <Grid container spacing={2}>
-                    {blogApi.slice(0, 3).map(blog => <Grid item xs={12} md={4} sm={6} key={blog._id}>
-                        <Paper elevation={4}>
-                            <div className='blogBox'>
-                                <div>
-                                    <img src={blog.image} alt="Empty!" style={{width:"100%", height: "200px"}}/>
+                    <Grid container spacing={2}>
+                        {blogApi.slice(0, 3).map(blog => <Grid item xs={12} md={4} sm={6} key={blog._id}>
+                            <Paper elevation={4}>
+                                <div className='blogBox'>
+                                    <div>
+                                        <img src={blog.image} alt="Empty!" style={{ width: "100%", height: "200px" }} />
+                                    </div>
+                                    <div className='blogBoxContent'>
+                                        <Link to={`/blogDetails/${blog._id}`}>
+                                            <div className='blogTitle'>
+                                                <span>{blog.title}</span>
+                                                <li>{blog.time}</li>
+                                            </div>
+                                            <p>{blog.description.slice(0, 30)}</p>
+                                        </Link>
+                                    </div>
                                 </div>
-                                <div className='blogBoxContent'>
-                                    <Link to={`/blogDetails/${blog._id}`}>
-                                        <div className='blogTitle'>
-                                            <span>{blog.title}</span>
-                                            <li>{blog.time}</li>
-                                        </div>
-                                        <p>{blog.description.slice(0, 30)}</p>
-                                    </Link>
-                                </div>
-                            </div>
-                        </Paper>
-                    </Grid>)}
+                            </Paper>
+                        </Grid>)}
                     </Grid>
                 </div>
             </Container>
-            </div>
-            
+        </div>
+
     );
 };
 
