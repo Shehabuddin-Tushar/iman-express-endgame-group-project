@@ -7,3 +7,6 @@
 ## sms notification
 ## order barcode scanning
 ## video upload 
+## audio reading of blog
+## text selecting note 
+## sharing blog

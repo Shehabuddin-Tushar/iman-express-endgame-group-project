@@ -116,14 +116,14 @@ function Reviews() {
             {reviews?.map((review) => (
               <Box>
                 <Box sx={{ textAlign: "left", p: 2, mt: 3 }}>
-                  <Typography height="280px" variant="subtitle1">
+                  <Typography height="230px" variant="subtitle1">
                     "{review?.review}"
                   </Typography>
                   <Box
                     sx={{
                       display: "flex",
                       alignItems: "center",
-                      my: 3,
+                    //  mt:2
                     }}
                   >
                     {" "}

@@ -11,20 +11,27 @@ import {
 } from "firebase/auth";
 
 import initAuth from '../Pages/Login/firebase.init'
+
+
+
 import axios from "axios";
 import Swal from "sweetalert2";
 initAuth();
 const useFirebase = () => {
   const auth = getAuth();
   const provider = new GoogleAuthProvider();
-  const [user,setUser]=useState({})
-  
+  const [user, setUser] = useState({})
+  const [isloading, setIsloading] = useState(true);
+
+
+ 
   ///user state observer
   useEffect(() => {
+    
     onAuthStateChanged(auth, (user) => {
       if (user) {
         // User is signed in
-        // console.log(user);
+      //  console.log(user.email);
         setUser(user)
 
       } else {
@@ -49,6 +56,7 @@ const useFirebase = () => {
   };
   ///new User register
   const registerUser = (email, password, name) => {
+    setIsloading(true) 
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
 
@@ -65,11 +73,16 @@ const useFirebase = () => {
       })
       .catch((error) => {
         // ..
-      });
+      }).finally(() => {
+       
+        setIsloading(false);
+
+      });;
   };
 
   ///login user
   const userLogin = (email, password, redirect, navigate) => {
+    setIsloading(true)
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in
@@ -85,7 +98,7 @@ const useFirebase = () => {
        
         }
       })
-      .catch((error) => {});
+      .catch((error) => { }).finally(() => setIsloading(false));;
   };
   ///logOUt
   const logOut = () => {
@@ -139,7 +152,32 @@ const useFirebase = () => {
   }
 /**user save in database end */
 
+
+
+  useEffect(() => {
+    setIsloading(true)
+    const unsubscribed = onAuthStateChanged(auth, (user) => {
+      if (user) {
+
+        setUser(user)
+      } else {
+        setUser({})
+      }
+
+      setIsloading(false)
+    });
+    return unsubscribed;
+  }
+    , []);
+
+
+
+
+
+  
   return {
+    isloading,
+    setIsloading,
     googleLogin,
     registerUser,
     userLogin,

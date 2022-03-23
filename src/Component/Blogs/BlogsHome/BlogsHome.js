@@ -45,6 +45,7 @@ const BlogsHome = () => {
     // https://ibb.co/P6CpCGP
     return (
         <>
+            <title>IMan Xpress || Blog</title> 
             <Navbar/>
         <div>
             <Container className='blogsHomeContainer'>

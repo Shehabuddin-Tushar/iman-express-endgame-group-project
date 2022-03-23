@@ -15,18 +15,20 @@
   text-decoration: none;
 }
 .list_of_route a span {
-  margin-right: 20px;
+  margin-right: 10px;
 }
 .list_of_route a:focus {
   transform: translateY(-2px);
-  background-color: rgb(32, 32, 32);
+  background-color: rgb(255, 250, 250);
+  color: black;
 }
 #list_route {
   background-color: rgb(15, 14, 14) !important;
 
 }
 #list_route:focus {
-  background-color: rgb(52, 52, 52) !important;
+  background-color: rgb(255, 255, 255) !important;
+  color: black;
 }
 .toolbar_box {
   margin-left: 820px;

@@ -3,6 +3,7 @@ import { Box } from '@mui/system';
 import React from 'react';
 
 const BillingDetails = ({register}) => {
+
     return (
         <div>
              <Box sx={{ p: 5, textAlign: "center" }}>

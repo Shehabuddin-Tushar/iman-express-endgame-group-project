@@ -19,9 +19,14 @@ import './ContactUs.css';
 import Footer from '../../Shared/Footer/Footer';
 import './ContactUs.css';
 import { Button } from '@mui/material';
+import usefirebase from '../../Hooks/useFirebase'
 
 
 const ContactUs = () => {
+
+    const { user } = usefirebase();
+
+    console.log(user.email)
 //   email js 
     function sendEmail(e) {
 		e.preventDefault();
@@ -61,6 +66,7 @@ const ContactUs = () => {
 
     return (
         <div className='font'>
+            <title>IMan Xpress || Contact us</title> 
            <Navbar />
 
            <Container  sx={{mb:3}}>

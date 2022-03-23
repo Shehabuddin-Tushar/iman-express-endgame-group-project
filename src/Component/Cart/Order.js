@@ -2,7 +2,7 @@ import { Checkbox, FormControlLabel, Paper, Table, TableBody, TableCell, TableCo
 import { Box } from '@mui/system';
 import React, { useState } from 'react';
 
-const Order = ({handleCheck}) => {
+const Order = ({handleCheck,allproduct,totalamount,totalwithtax}) => {
    
     return (
         <div>
@@ -18,17 +18,24 @@ const Order = ({handleCheck}) => {
           </TableRow>
         </TableHead>
         <TableBody>
-          
-            <TableRow
+              {
+                allproduct?.map((data) => {
+                  return (
+                    <TableRow
+
+                      sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                    >
+                      <TableCell component="th" scope="row">
+                        {data.productname}  ({data.count}*{data.productprice})
+                      </TableCell>
+                      <TableCell align="right">{ data.productprice*data.count} Tk</TableCell>
+
+                    </TableRow>
+                  )
+                })
+          }
              
-              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-            >
-              <TableCell component="th" scope="row">
-               "Product Name"
-              </TableCell>
-              <TableCell align="right">"$564"</TableCell>
               
-            </TableRow>
             <TableRow
              
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
@@ -36,9 +43,20 @@ const Order = ({handleCheck}) => {
               <TableCell sx={{fontWeight:'bold',fontSize:'16px'}} component="th" scope="row">
                Subtotal
               </TableCell>
-              <TableCell align="right">"$564"</TableCell>
+                <TableCell align="right" style={{fontWeight:"bold"}}>{ totalamount} TK</TableCell>
               
-            </TableRow>
+              </TableRow>
+              
+              <TableRow
+
+                sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+              >
+                <TableCell sx={{ fontWeight: 'bold', fontSize: '16px' }} component="th" scope="row">
+                  Subtotal with tax(15%) 
+                </TableCell>
+                <TableCell align="right" style={{color:"red"}}>{totalwithtax} Tk</TableCell>
+
+              </TableRow>
             <TableRow
              
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
@@ -46,7 +64,7 @@ const Order = ({handleCheck}) => {
               <TableCell  sx={{fontWeight:'bold',fontSize:'16px'}} component="th" scope="row">
                Shipping
               </TableCell>
-              <TableCell align="right">"$56"</TableCell>
+              <TableCell align="right" style={{color:"red"}}>200 TK</TableCell>
               
             </TableRow>
             <TableRow
@@ -56,16 +74,13 @@ const Order = ({handleCheck}) => {
               <TableCell  sx={{fontWeight:'bold',fontSize:'20px'}} component="th" scope="row">
                Total
               </TableCell>
-              <TableCell  sx={{fontWeight:'bold',fontSize:'20px'}} align="right">"$556"</TableCell>
+                <TableCell sx={{ fontWeight: 'bold', fontSize: '20px' }} align="right">{ totalwithtax+200} TK</TableCell>
               
             </TableRow>
          
         </TableBody>
       </Table>
             </TableContainer>  
-            <Box>
-            SSL commerce
-            </Box>
             <FormControlLabel sx={{my:2,textAlign:'left'}}
             control={
                 <Checkbox onChange={handleCheck} />  

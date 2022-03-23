@@ -1,27 +1,32 @@
-import {
-   
-    Button,
-    Container,
-    Divider,
-    Grid,
-     Box,    
-    TextField,
-    Typography,
-} from "@mui/material";
-
-import axios from "axios";
-import React, { useState } from "react";
+import { Button, Container,Grid,Box} from "@mui/material";
+import React, { useState,useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
-import Swal from "sweetalert2";
-import Nav from "../../DashBoard/Dashboard/Dashboard";
 import Footer from "../../Shared/Footer/Footer";
 import Navbar from "../../Shared/Navbar/Navbar";
 import BillingDetails from "./BillingDetails";
 import Order from "./Order";
+import { useParams } from 'react-router-dom';
 
 function Checkout() {
-  const { register, handleSubmit, reset ,formState: { errors }  } = useForm();
+
+  const { id } = useParams();
+  const [localdata,setLocaldata]=useState([])
+  const [totalamount, setTotalamount] = useState(0);
+  const [totalamountwithtax, setTotalamountwithtax] = useState(0);
+  useEffect(() => {
+    let mylocalproductdata = JSON.parse(localStorage.getItem(`imanxpresscart-${id}`)) ? JSON.parse(localStorage.getItem(`imanxpresscart-${id}`)) : []
+  
+    setLocaldata(mylocalproductdata)
+
+    let amount = 0
+    for (let pro of mylocalproductdata) {
+      amount = (amount + pro.productprice * pro.count)
+    }
+    setTotalamount(amount)
+    setTotalamountwithtax(Math.round(amount + amount * 15 / 100))
+  },[])
+ 
+  const { register, handleSubmit } = useForm();
     const [checked, setChecked] = useState('')
     console.log(checked)
   // handleCheck
@@ -29,23 +34,42 @@ function Checkout() {
        setChecked(e.target.checked)
     }
     
-  const onSubmit =  async(data) => {
+  const onSubmit =  (data) => {
   
-      console.log(data)
+    data.ordersdata = localdata
+    data.totalamountwithtaxandshipping = totalamountwithtax+200
+    console.log(data)
+
+    const order = {
+      cus_name: data.fname+','+data.lname,
+      cus_email: data.email,
+      cus_city: data.city,
+      note:data.note,
+      cus_postcode: data.postalCode,
+      streetAddress: data.streetAddress,
+      merchant_id: data.ordersdata[0].merchantid,
+      product_details: JSON.stringify(data.ordersdata),
+      total_amount: totalamountwithtax+200,
+      cus_phone: data.phone,
+
   
-      
-    // axios.post('https://iman-xpress.herokuapp.com/api/auth/register', data).then(res => {
-    //     console.log(res.data.authToken)
-       
-          
-    //       console.log(data);
-    //       Swal.fire({
-    //         icon: 'success',
-    //         title: 'Merchant Registered Successfully',
-    //       });
-       
-    //   }).catch(err => console.log(err))
-    //    reset()
+
+}
+
+   fetch(`https://iman-xpress.herokuapp.com/api/payNow/init`,{
+   method: 'POST',
+   headers: {
+       "content-type": "application/json"
+   },
+   body: JSON.stringify(order)
+})
+.then(res=>res.json())
+.then(data=>{
+   window.location.replace(data);
+   localStorage.removeItem(`imanxpresscart-${id}`)
+})
+
+ 
     };
     return (
         <div>
@@ -58,12 +82,13 @@ function Checkout() {
         <Grid
                             item
                             xs={12} md={6} lg={6}
-        >   <BillingDetails register={register}></BillingDetails>          
+        >  
+         <BillingDetails register={register}></BillingDetails>          
                 
         </Grid>    <Grid item xs={12} md={6} lg={6}>
                             <Box sx={{ py: 5, textAlign: "center" }}>
                             
-                           <Order handleCheck={handleCheck}></Order>
+                           <Order handleCheck={handleCheck} allproduct={localdata} totalamount={totalamount} totalwithtax={totalamountwithtax}></Order>
                            <Box sx={{ textAlign: "left", my: 3 }}>
               <Button fullWidth variant="outlined" color="warning" type="submit">
                 Place Order

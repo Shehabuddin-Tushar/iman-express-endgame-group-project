@@ -78,7 +78,7 @@ const Login = () => {
               icon: 'success',
               title: 'Merchant Login Successfully',
             });
-            navigate("/")
+            navigate(redirect)
 
           }
         }
@@ -114,7 +114,7 @@ const Login = () => {
               icon: 'success',
               title: 'Rider Login Successfully',
             });
-            navigate("/")
+            navigate(redirect)
           }
         }
 
@@ -142,6 +142,7 @@ const Login = () => {
 
   return (
     <div className="login">
+      <title>IMan Xpress || Login</title> 
       <Container
         sx={{
           height: "100vh",

@@ -9,6 +9,7 @@ import { ToastContainer, toast } from 'react-toastify';
 
 import 'react-toastify/dist/ReactToastify.css';
 import style from "./MarchantProducts.module.css";
+import Swal from "sweetalert2";
 
 const MarchantProducts = () => {
 
@@ -33,7 +34,7 @@ const MarchantProducts = () => {
 
 
     const productData = {
-      productname: data.productname,
+      productname: data.productname.toLowerCase(),
       productdescription: data.productdescription,
       productprice: data.productprice,
       productimage: imageURL,
@@ -49,7 +50,11 @@ const MarchantProducts = () => {
       }).then(res => {
         console.log(res)
         if (res.status==200) {
-          toast.success("product inserted successfully");
+          // toast.success("product inserted successfully");
+          Swal.fire({
+            icon: 'success',
+            title: "Product inserted successfully",
+          });
           return
         }
 
