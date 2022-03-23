@@ -1,8 +1,32 @@
 import { Button } from '@mui/material'
-import React from 'react'
+import React,{useState,useEffect} from 'react'
+import Accountinformation from '../../Component/Modal/Accountinformation';
 import './Gallery.css'
 function Gallery() {
+    const [openModal, setOpenModal] = useState(false);
+    const handleOpen = () => setOpenModal(true);
+    const handleClose = () => setOpenModal(false);
+    const [information, setInformation] = useState("");
+
+    const merchantaccount = (merchant) => {
+        
+        setInformation(merchant)
+        handleOpen()
+    }
+
+    const generalaccount = (general) => {
+       
+        setInformation(general)
+        handleOpen()
+    }
+
+    const ridermerchantaccount = (rider) => {
+     
+        setInformation(rider)
+        handleOpen()
+    }
   return (
+      <>
       <div class="container">
           <header class="main-header clearfix">
              
@@ -18,7 +42,7 @@ function Gallery() {
                           <div class="back photo-desc">
                               <h3>User account</h3>
                               <p>User can open his account from this site and take the various facilities</p>
-                              <Button variant="outlined" style={{color:"#000",border:"2px solid white"}}>All information</Button>
+                              <Button onClick={() => generalaccount("general")} variant="outlined" style={{color:"#000",border:"2px solid white"}}>All information</Button>
                           </div>
                       <img class="left" src="https://i.insider.com/5dcc135ce94e86714253af21?width=1000&format=jpeg&auto=webp" alt=""/>
                       <img class="right" src="https://i.postimg.cc/Wz3xxggH/tushar.jpg" alt=""/>
@@ -33,7 +57,7 @@ function Gallery() {
                                       <div class="back photo-desc">
                                           <h3>Merchant Account</h3>
                                           <p>Merchant can open his account from this site and he can sell his product by this site</p>
-                                          <Button variant="outlined" style={{ color: "#000", border: "2px solid white" }}>All information</Button>
+                                          <Button onClick={()=>merchantaccount("merchant")} variant="outlined" style={{ color: "#000", border: "2px solid white" }}>All information</Button>
                                       </div>
                                           <img class="left" src="https://media-eng.dhakatribune.com/uploads/2020/08/mehedi-hasan00049-1-1598871273216.jpg" alt=""/>
                                           <img class="right" src="https://cdn.pixabay.com/photo/2016/03/02/20/13/grocery-1232944__480.jpg" alt=""/>
@@ -48,7 +72,7 @@ function Gallery() {
                                                   <div class="back photo-desc">
                                                       <h3>Rider Account</h3>
                                                       <p>Riders can open his account and he provide ride sharing and delivery services from this site</p>
-                                                      <Button variant="outlined" style={{ color: "#000", border: "2px solid white" }}>All information</Button>
+                                                      <Button onClick={() => ridermerchantaccount("rider")} variant="outlined" style={{ color: "#000", border: "2px solid white" }}>All information</Button>
                                                   </div>
                                                      <img class="left" src="https://i.postimg.cc/zGmk5V2X/firstimageimanslider.jpg" alt=""/>
                                                      <img class="right" src="https://www.netsolutions.com/insights/wp-content/uploads/2021/11/essential-features-of-building-an-on-demand-food-ordering-app.jpg" alt=""/>
@@ -58,6 +82,8 @@ function Gallery() {
 
                                           </div>
                                       </div>
+          <Accountinformation openModal={openModal} handleClose={handleClose} account={ information}/>
+      </>
   )
 }
 

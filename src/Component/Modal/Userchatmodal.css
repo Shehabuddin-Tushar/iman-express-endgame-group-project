@@ -301,3 +301,5 @@ ul {
 .settings-popup ul li a:hover {
   background: rgba(0, 0, 0, .05);
 }
+
+.ouraccouninformation li{ margin-left: -40px;padding:6px; border:1px solid blue;margin-bottom:5px}

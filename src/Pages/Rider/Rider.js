@@ -79,6 +79,7 @@ const RiderRegistration = () => {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
+          paddingTop:"60px"
         }}
       >
         <Box>
@@ -191,12 +192,19 @@ const RiderRegistration = () => {
                   
                  
                 </form>
-                <Box sx={{ mt: 1 }}>
-                  <Button variant="outlined" color="warning">
-                    <Link to="/login">
+                <Box sx={{ mt: 1,display:"flex" }}>
+                  <Button variant="outlined" color="warning" >
+                    <Link to="/login" style={{textDecoration:"none"}}>
                       Login
                     </Link>
                    
+                  </Button>
+
+                  <Button variant="outlined" color="warning" >
+                    <Link to="/" style={{ textDecoration: "none" }}>
+                      Back
+                    </Link>
+
                   </Button>
                 </Box>
                 <Typography color="gray" variant="subtitle">

@@ -349,7 +349,7 @@ const Navbar = ({setDarkMode, darkMode}) => {
             key="5"
             sx={{ my: 2, color: "black", display: "block" }}
           >
-            Logout
+            Signup/Logout
             <IconButton sx={{ p: 0 }}>
               <ArrowDropDownIcon />
             </IconButton>
@@ -409,12 +409,12 @@ const Navbar = ({setDarkMode, darkMode}) => {
                       style={{ width: "200px" }}
                     >
 
-                      <Link to="/register"><Typography textAlign="center">general account</Typography></Link>
+                      <Link to="/register" style={{textDecoration:"none"}}><Typography textAlign="center">General account</Typography></Link>
 
 
                     </MenuItem>
 
-                    <Link to="/merchantRegister"> <MenuItem
+                    <Link to="/merchantRegister" style={{textDecoration:"none"}}> <MenuItem
 
                       onClick={handleCloseUserMenu}
                       style={{ width: "200px" }}
@@ -431,7 +431,7 @@ const Navbar = ({setDarkMode, darkMode}) => {
                       onClick={handleCloseUserMenu}
                       style={{ width: "200px" }}
                     >
-                      <Link to="/riderRegister"><Typography textAlign="center">Rider account</Typography></Link>
+                          <Link to="/riderRegister" style={{ textDecoration: "none" }}><Typography textAlign="center">Rider account</Typography></Link>
                     </MenuItem>
                   </>
               }
