@@ -163,6 +163,15 @@
   .service_img_background {
     margin-top: 50px;
     margin-left: -75px;
+    background-size: 80% auto;
+  width: 472px;
+  height: 638px;
+  }
+  .img {
+    width: 250px;
+    top: 85px;
+    right: 85px;
+   
   }
   /* [topic base images responsive ness] */
 

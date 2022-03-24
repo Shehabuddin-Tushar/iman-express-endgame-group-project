@@ -2771,9 +2771,9 @@
   "version" "1.2.4"
 
 "@types/react-dom@*":
-  "integrity" "sha512-wEP+B8hzvy6ORDv1QBhcQia4j6ea4SFIBttHYpXKPFZRviBvknq0FRh3VrIxeXUmsPkwuXVZrVGG7KUVONmXCQ=="
-  "resolved" "https://registry.npmjs.org/@types/react-dom/-/react-dom-17.0.13.tgz"
-  "version" "17.0.13"
+  "integrity" "sha512-H03xwEP1oXmSfl3iobtmQ/2dHF5aBHr8aUMwyGZya6OW45G+xtdzmq6HkncefiBt5JU8DVyaWl/nWZbjZCnzAQ=="
+  "resolved" "https://registry.npmjs.org/@types/react-dom/-/react-dom-17.0.14.tgz"
+  "version" "17.0.14"
   dependencies:
     "@types/react" "*"
 
