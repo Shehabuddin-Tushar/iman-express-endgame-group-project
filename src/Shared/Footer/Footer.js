@@ -79,7 +79,7 @@ const Footer = () => {
                 <Typography variant="body.1"><Link to="/home" style={{textDecoration:"none", color: "white"}}>Reviews</Link></Typography>
               </li>
               <li>
-                <Typography variant="body.1"><Link to="contactUS" style={{textDecoration:"none", color: "white"}}>Contact Us</Link></Typography>
+                <Typography variant="body.1"><Link to="/contactUS" style={{textDecoration:"none", color: "white"}}>Contact Us</Link></Typography>
               </li>
               <li>
                 <Typography variant="body.1"><Link to="/blogs" style={{textDecoration:"none", color: "white"}}>Blogs</Link></Typography>
