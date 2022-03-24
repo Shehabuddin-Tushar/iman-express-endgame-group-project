@@ -52,6 +52,7 @@ function App() {
        <Router>
         <Routes>
           <Route path="/" element={<Home setDarkMode={setDarkMode} darkMode={darkMode}></Home>}></Route>
+          <Route path="/home" element={<Home setDarkMode={setDarkMode} darkMode={darkMode}></Home>}></Route>
           <Route path="/login" element={<Login></Login>}></Route>
           <Route path="/register" element={<Register></Register>}></Route>
           <Route path="/merchantRegister" element={<Account />}></Route>
