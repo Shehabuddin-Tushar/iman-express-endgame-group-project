@@ -15,7 +15,7 @@ import emailjs from '@emailjs/browser';
 import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
 import './ContactUs.css';
-import './ContactUs.css';
+
 import { Button } from '@mui/material';
 import usefirebase from '../../Hooks/useFirebase'
 
@@ -24,7 +24,7 @@ const ContactUs = () => {
 
     const { user } = usefirebase();
 
-    console.log(user.email)
+    
 //   email js 
     function sendEmail(e) {
 		e.preventDefault();

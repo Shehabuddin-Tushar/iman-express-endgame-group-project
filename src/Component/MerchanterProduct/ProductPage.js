@@ -466,139 +466,7 @@ function ProductPage() {
                   )
                 })
               }
-              {/* <ListItem
-                secondaryAction={
-                  <IconButton edge="end" aria-label="delete">
-                    <DeleteIcon />
-                  </IconButton>
-                }
-              >
-                <ListItemAvatar>
-                  <img
-                    src="https://images.food52.com/McqpjxUiMekhfX6Rsq7wuuSoz0g=/2016x1344/filters:format(webp)/d815e816-4664-472e-990b-d880be41499f--chicken-biryani-recipe.jpg"
-                    width="100px"
-                    height="80px"
-                    style={{
-                      borderRadius: "5px",
-                      border: "2px solid #1f97e7",
-                      marginRight: "5px",
-                    }}
-                  />
-                </ListItemAvatar>
-                <div style={{ marginTop: "-5px" }}>
-                  <ListItemText>product name</ListItemText>
-                  <ListItemText>1000 tk</ListItemText>
-                  <ListItemText>
-                    <div class="quantity buttons_added">
-                      <input type="button" value="-" class="minus" />
-                      <input
-                        type="number"
-                        step="1"
-                        min="1"
-                        max=""
-                        name="quantity"
-                        value="1"
-                        title="Qty"
-                        class="input-text qty text"
-                        size="4"
-                        pattern=""
-                        inputmode=""
-                      />
-                      <input type="button" value="+" class="plus" />
-                    </div>
-                  </ListItemText>
-                </div>
-              </ListItem>
-              ,
-              <ListItem
-                secondaryAction={
-                  <IconButton edge="end" aria-label="delete">
-                    <DeleteIcon />
-                  </IconButton>
-                }
-              >
-                <ListItemAvatar>
-                  <img
-                    src="https://images.food52.com/McqpjxUiMekhfX6Rsq7wuuSoz0g=/2016x1344/filters:format(webp)/d815e816-4664-472e-990b-d880be41499f--chicken-biryani-recipe.jpg"
-                    width="100px"
-                    height="80px"
-                    style={{
-                      borderRadius: "5px",
-                      border: "2px solid #1f97e7",
-                      marginRight: "5px",
-                    }}
-                  />
-                </ListItemAvatar>
-                <div style={{ marginTop: "-5px" }}>
-                  <ListItemText>product name</ListItemText>
-                  <ListItemText>1000 tk</ListItemText>
-                  <ListItemText>
-                    <div class="quantity buttons_added">
-                      <input type="button" value="-" class="minus" />
-                      <input
-                        type="number"
-                        step="1"
-                        min="1"
-                        max=""
-                        name="quantity"
-                        value="1"
-                        title="Qty"
-                        class="input-text qty text"
-                        size="4"
-                        pattern=""
-                        inputmode=""
-                      />
-                      <input type="button" value="+" class="plus" />
-                    </div>
-                  </ListItemText>
-                </div>
-              </ListItem>
-              ,
-              <ListItem
-                secondaryAction={
-                  <IconButton edge="end" aria-label="delete">
-                    <DeleteIcon />
-                  </IconButton>
-                }
-              >
-                <ListItemAvatar>
-                  <img
-                    src="https://images.food52.com/McqpjxUiMekhfX6Rsq7wuuSoz0g=/2016x1344/filters:format(webp)/d815e816-4664-472e-990b-d880be41499f--chicken-biryani-recipe.jpg"
-                    width="100px"
-                    height="80px"
-                    style={{
-                      borderRadius: "5px",
-                      border: "2px solid #1f97e7",
-                      marginRight: "5px",
-                    }}
-                  />
-                </ListItemAvatar>
-                <div style={{ marginTop: "-5px" }}>
-                  <ListItemText>product name</ListItemText>
-                  <ListItemText>1000 tk</ListItemText>
-                  <ListItemText>
-                    <div class="quantity buttons_added">
-                      <form>
-                        <input type="button" value="-" class="minus" />
-                        <input
-                          type="number"
-                          step="1"
-                          min="1"
-                          max=""
-                          name="quantity"
-                          value="1"
-                          title="Qty"
-                          class="input-text qty text"
-                          size="4"
-                          pattern=""
-                          inputmode=""
-                        />
-                        <input type="button" value="+" class="plus" />
-                      </form>
-                    </div>
-                  </ListItemText>
-                </div>
-              </ListItem> */}
+              
               <hr />
               <Typography style={{ marginLeft: "50px" }}>Total price: <span style={{ fontWeight: "bold" }}>{totalamount}</span>tk</Typography>
               <Typography style={{ marginLeft: "50px" }}>Tax:<span style={{ fontWeight: "bold" }}>15%</span></Typography>
@@ -608,7 +476,7 @@ function ProductPage() {
             </List>
             <div style={{ alignItems: "center", display: "flex", justifyContent: "center",padding:"10px" }}>
               <Button variant="outlined" style={{ width: "80%" }} >
-                <Link to={`/checkout/${id}`}>checkout</Link></Button>
+                <Link to={`/checkout/${id}`} style={{textDecoration:"none"}}>checkout</Link></Button>
             </div>
             
           </Demo>
