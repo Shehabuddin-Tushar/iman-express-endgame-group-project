@@ -59,7 +59,7 @@ const Services = () => {
         
         <Box onClick={() => setTribe("D")} className={style.delivery_box}>
           <img
-            src="https://pathao.com/bn/wp-content/themes/webpathao/assets/images/menu/parcel.png?v=26.4.20"
+            src="https://pathao.com/bn/wp-content/themes/webpathao/assets/images/menu/rides.png?v=26.4.20"
             alt=""
           />
           <Typography variant="h6">Medicine</Typography>
