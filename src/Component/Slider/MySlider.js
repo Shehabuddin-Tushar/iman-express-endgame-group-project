@@ -26,7 +26,7 @@ function SamplePrevArrow(props) {
     );
 }
 
-function MySlider() {
+function MySlider({darkMode}) {
 
     var settings = {
         dots: false,
@@ -47,7 +47,7 @@ function MySlider() {
                     <div>
                         <Grid container className={myslider.mydiv}>
                             <Grid className={myslider.overlay} item lg={6} md={6} sm={12} xs={12} style={{ marginBottom: "5px", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
-                                <Typography variant='h4' style={{ textAlign: "justify", marginLeft: "20px" }}>
+                                <Typography variant='h4' style={{ textAlign: "justify", marginLeft: "20px", color:'black' }}>
                                     The country's No.1 <br />digital platform</Typography>
                                 <br />
                                 <Button className={myslider.earnbtn} variant="outlined" color="success" style={{ width: "270px", height: "50px", fontSize: "20px" }}>
@@ -71,7 +71,7 @@ function MySlider() {
                     <div>
                         <Grid container className={myslider.mydiv1}>
                             <Grid className={myslider.overlay} item lg={6} md={6} sm={12} xs={12} style={{ marginBottom: "5px", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
-                                <Typography variant='h4' style={{ textAlign: "justify", marginLeft: "-30px" }}>
+                                <Typography variant='h4' style={{ textAlign: "justify", marginLeft: "-30px",color:'black'  }}>
                                     Get rid of <br />unemployment</Typography>
                                 <br />
                                 <Button className={myslider.earnbtn} variant="outlined" color="success" style={{ width: "270px", height: "50px", fontSize: "20px" }}>
@@ -93,7 +93,7 @@ function MySlider() {
                     <div>
                         <Grid container className={myslider.mydiv2}>
                             <Grid className={myslider.overlay} item lg={6} md={6} sm={12} xs={12} style={{ marginBottom: "5px", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
-                                <Typography variant='h4' style={{ textAlign: "justify", marginLeft: "-30px" }}>
+                                <Typography variant='h4' style={{ textAlign: "justify", marginLeft: "-30px",color:'black'  }}>
                                     Find the <br />things you need</Typography>
                                 <br />
                                 <Button className={myslider.earnbtn} variant="outlined" color="success" style={{ width: "270px", height: "50px", fontSize: "20px" }}>
