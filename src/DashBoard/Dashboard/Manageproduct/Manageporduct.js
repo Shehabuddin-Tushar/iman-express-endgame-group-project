@@ -79,21 +79,7 @@ function Manageporduct() {
         handleinfoOpen()
     }
 
-    // const updatedata = (id) => {
-
-    //     axios.get(`https://iman-xpress.herokuapp.com/api/merchant/fetchproduct/${id}`, {
-    //         headers: {
-    //             "auth-token": mytoken,
-    //             "Content-Type": "application/json"
-    //         }
-    //     })
-    //         .then((res) => setMerchantproductdata(res.data)).catch(err => console.log(err))
-    //     handleupdateOpen()
-    // }
-
-    // const updateproduct = (data) => {
-
-    // }
+   
 
     return (
         <Box style={{ padding: "20px", marginTop: "50px" }}>

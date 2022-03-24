@@ -15,7 +15,7 @@ const MyOrder = () => {
         fetch(`https://iman-xpress.herokuapp.com/api/payNow/ordersbyemail/${user.email}`)
         .then(res=>res.json())
         .then(data=>{
-            console.log(data)
+          
             setMyOrders(data)
         })
     },[])

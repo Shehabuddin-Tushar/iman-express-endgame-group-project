@@ -15,7 +15,7 @@ const Footer = () => {
             <Box>
               <img
                 className="img"
-                src="https://i.ibb.co/pZsbPZj/IMan-Xpress.png"
+                src="https://i.postimg.cc/Vvdv93dn/imanimage.png"
                 alt=""
               />
               <br />

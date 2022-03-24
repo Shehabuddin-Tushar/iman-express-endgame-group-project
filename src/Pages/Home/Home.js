@@ -8,6 +8,7 @@ import MySlider from '../../Component/Slider/MySlider';
 import Footer from '../../Shared/Footer/Footer';
 import Navbar from '../../Shared/Navbar/Navbar';
 import ContactUs from '../ContactUs/ContactUs';
+import Gallery from '../Gallery/Gallery';
 
 function Home({setDarkMode, darkMode}) {
   return <div>
@@ -20,6 +21,7 @@ function Home({setDarkMode, darkMode}) {
     <Reviews></Reviews>
     <OurPartnerSlider></OurPartnerSlider>
     <ContactUs></ContactUs>
+    <Gallery />
     <Footer></Footer>
         </div>;
 }

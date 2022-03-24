@@ -33,11 +33,11 @@ const AddBlog = () => {
 
         data.image = imageURL
 
-        console.log(data)
+      
 
 
 
-        const url = `http://localhost:8080/api/blog/addblog`;
+        const url = `https://iman-xpress.herokuapp.com/api/blog/addblog`;
 
         axios.post(url, data,
             {
@@ -45,7 +45,7 @@ const AddBlog = () => {
                     "Content-Type": "application/json"
                 }
             }).then(res => {
-                console.log(res)
+               
                 if (res.status == 200) {
                     toast.success("Blog inserted successfully");
                     return
@@ -56,8 +56,8 @@ const AddBlog = () => {
         reset();
 
     }
-    
-    
+
+
     return (
         <div className='addBlogContainer'>
             <Container>
@@ -66,50 +66,50 @@ const AddBlog = () => {
                 </div>
                 <div className="addBlogFrom">
                     <Paper elevation={12}>
-                    <Grid container spacing={2}>
-                        <Grid item xs={12} md={6} sm={6}>
-                            <ToastContainer />
-                            <div className='formPartTwo'>
-                                <h1>Write YOur Blog</h1>
-                                <form onSubmit={handleSubmit(onSubmit)}>
-                                    <div>
-                                        <input type="file" {...register("image", { required: true })} placeholder='Hosting img Link'/>
-                                    </div>
-                                    <div>
-                                        <input type="text" {...register("title", { required: true })} placeholder='Blog title'/>
-                                    </div>
-                                    <select className='selectOption' {...register("category", { required: true })}>
+                        <Grid container spacing={2}>
+                            <Grid item xs={12} md={6} sm={6}>
+                                <ToastContainer />
+                                <div className='formPartTwo'>
+                                    <h1>Write YOur Blog</h1>
+                                    <form onSubmit={handleSubmit(onSubmit)}>
+                                        <div>
+                                            <input type="file" {...register("image", { required: true })} placeholder='Hosting img Link' />
+                                        </div>
+                                        <div>
+                                            <input type="text" {...register("title", { required: true })} placeholder='Blog title' />
+                                        </div>
+                                        <select className='selectOption' {...register("category", { required: true })}>
                                             <option value="rider">Rider</option>
                                             <option value="marchent">Marchent</option>
                                             <option value="promotion">Promotion</option>
                                             <option value="aboutProduct">AboutProduct</option>
                                             <option value="newFeature">NewFeature</option>
-                                    </select>
-                                    <div>
-                                        <input type="text" {...register("time", { required: true })} placeholder='Blog date'/> 
-                                    </div>
-                                    <textarea type="text" {...register("description", { required: true })} placeholder='Write description' ></textarea>
-                                    <div>
-                                        <button type="submit" className="addBlogBtn">Share Blog</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </Grid>
-                        <Grid item xs={12} md={6} sm={6}>
-                            <div className='formPartOne'>
-                                <div>
-                                    <div>
-                                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRL_qy0z4GCjNErMYO_Ji7d17nRL-m3N2rFaeTcXUXxoW7lsDywbRq_QmPVAdTrw1izhok&usqp=CAU" alt='Empty' width="200px"/>
-                                        <div style={{textAlign: "center"}}>
-                                            <Link to="/updateBlog"><button className='addBlogBtn'>Update Your Blog</button></Link>
+                                        </select>
+                                        <div>
+                                            <input type="text" {...register("time", { required: true })} placeholder='Blog date' />
                                         </div>
-                                    </div> 
+                                        <textarea type="text" {...register("description", { required: true })} placeholder='Write description' ></textarea>
+                                        <div>
+                                            <button type="submit" className="addBlogBtn">Share Blog</button>
+                                        </div>
+                                    </form>
                                 </div>
-                            </div>
+                            </Grid>
+                            <Grid item xs={12} md={6} sm={6}>
+                                <div className='formPartOne'>
+                                    <div>
+                                        <div>
+                                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRL_qy0z4GCjNErMYO_Ji7d17nRL-m3N2rFaeTcXUXxoW7lsDywbRq_QmPVAdTrw1izhok&usqp=CAU" alt='Empty' width="200px" />
+                                            <div style={{ textAlign: "center" }}>
+                                                <Link to="/updateBlog"><button className='addBlogBtn'>Update Your Blog</button></Link>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </Grid>
+
+
                         </Grid>
-
-
-                    </Grid>
                     </Paper>
                 </div>
             </Container>

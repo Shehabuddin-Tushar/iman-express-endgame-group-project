@@ -1,0 +1,135 @@
+
+.container,
+.content {
+	margin: auto;
+}
+.container {
+	width: 100%;
+	max-width: 1360px;
+	padding: 0 2.25em 4em;
+	
+}
+.main-header {
+	text-align: center;
+	padding: 2.8em 0 3.8em;
+}
+.cube-container {
+	max-width: 200px;
+	text-align: center;
+	margin: 0 auto 4.5em;
+}
+/* ---- Page Elements ---- */
+
+.name {
+	font-size: 1.65em;
+	font-weight: 800;
+	margin: 0 0 1.5em;
+	line-height: 1;
+}
+.name span {
+	font-weight: 300;
+	margin-left: -7px;
+}
+.logo {
+	width: 45px;
+	margin-bottom: .4em;
+	cursor: pointer;
+}
+
+/* ---- Photo Overlay ---- */
+
+.photo-desc {
+	font-size: .85em;
+	color: #fff;
+	padding: 1.1em 1em 0;
+	background: #33b3e0;
+}
+/* ---- Float clearfix ---- */
+
+.clearfix::after {
+	content: " ";
+	display: table;
+	clear: both;
+}
+
+/* ================================= 
+  Media Queries
+==================================== */
+
+@media (min-width: 769px) {
+	.cube-container {
+		float: left;
+		margin-left: 16.6%;
+	}
+}
+@media (min-width: 1025px) {
+	.cube-container:first-child {
+		margin-left: 0;
+	}
+	.cube-container:last-child{
+		float: right;
+	}
+	.content {
+		max-width: 900px;
+		margin: auto;
+	}
+}
+
+/* ================================= 
+  Button Transitions
+==================================== */
+
+.button {
+	transition: background .3s;
+}
+.button:hover {
+	background: rgba(74,137,202, 1);
+}
+
+/* ================================= 
+  Photo 3D Transforms & Transitions
+==================================== */
+
+.cube-container {
+	box-shadow: 0 18px 40px 5px rgba(0,0,0,.4);
+  perspective: 800px;
+}
+
+.photo-cube {
+transition: transform 2s ease-in-out; 
+  width: 220px;
+  height: 200px;
+  transform-style: preserve-3d;
+}
+
+.photo-cube:hover {
+transform: rotateY(-270deg);
+}
+
+.front,
+.back,
+.left,
+.right {
+width: 100%;
+height: 100%;
+display: block;
+position: absolute;
+}
+
+.front {
+transform: translate3d(0,0,110px);
+}
+
+.back {
+transform: translateZ(-110px) rotateY(270deg);
+  transform-origin: center left;
+}
+
+.left {
+transform: rotateY(-270deg) translate3d(110px, 0, 0);
+  transform-origin: top right;
+}
+
+.right {
+transform: translateZ(-110px) rotateY(180deg);
+ }

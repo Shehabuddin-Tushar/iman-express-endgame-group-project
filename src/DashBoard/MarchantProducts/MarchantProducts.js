@@ -16,7 +16,7 @@ const MarchantProducts = () => {
   const { register, handleSubmit, watch, formState: { errors } ,reset} = useForm();
   ///////////////////////////////
   const onSubmit = async (data) => {
-    console.log(data)
+    
     let imageURL
     const imageData = new FormData();
     imageData.set("key", "06a916692ea087d185221539196ef3a5");
@@ -48,9 +48,9 @@ const MarchantProducts = () => {
           "Content-Type": "application/json"
         }
       }).then(res => {
-        console.log(res)
+      
         if (res.status==200) {
-          // toast.success("product inserted successfully");
+          
           Swal.fire({
             icon: 'success',
             title: "Product inserted successfully",

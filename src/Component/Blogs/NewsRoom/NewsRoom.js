@@ -6,29 +6,7 @@ import { Link } from 'react-router-dom';
 
 const NewsRoom = () => {
     const [blogApiThree, setBlogApiThree] = useState([])
-    // const blogApiThree = [
-    //     {
-    //         id: 1,
-    //         img: "https://pathao.com/wp-content/uploads/2021/10/Insurance-Safety-Pathao_-1536x715-1-348x224.png",
-    //         category: "Bangladesh",
-    //         description: "Pay Later feature is now on Iman Xpress Rides!  ",
-    //         date: "Feb 01, 2021"
-    //     },
-    //     {
-    //         id: 2,
-    //         img: "https://pathao.com/wp-content/uploads/2021/08/Blog-1-348x224.jpg",
-    //         category: "Newsroom",
-    //         description: "Manage transportation for your employees with Iman Xpress For Business  ",
-    //         date: "Mar 4, 2022"
-    //     },
-    //     {
-    //         id: 3,
-    //         img: "https://pathao.com/wp-content/uploads/2021/07/FreeTreat_Blog-4-348x224.png",
-    //         category: "Newsroom",
-    //         description: "Moving Safely is the New Normal By Hussain M Elius ",
-    //         date: "January 9, 2022"
-    //     }
-    // ]
+    
 
     useEffect(() => {
         const url = `https://iman-xpress.herokuapp.com/api/blog/fetchblogbycategory/newFeature`;

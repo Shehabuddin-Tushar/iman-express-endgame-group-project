@@ -2,11 +2,8 @@ import { Button, Card, CardMedia, Container, Typography } from "@mui/material";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import React from "react";
-// import { FaInstagramSquare} from 'react-icons/fa';
-import { BsLinkedin } from "react-icons/bs";
-// import {FaRegFilePowerpoint} from 'react-icons/fa';
+import { BsLinkedin,BsWhatsapp } from "react-icons/bs";
 import { FaGithub } from "react-icons/fa";
-import { ImGithub } from "react-icons/im";
 import { SiFacebook } from "react-icons/si";
 import pic1 from "../../img/about-us-delivery.jpg";
 import anik from "../../img/anik.jpg";
@@ -21,16 +18,16 @@ import "./AboutUs.css";
 const AboutUs = () => {
   return (
       <>
-          <title>IMan Xpress || About us</title> 
-          <Navbar></Navbar>
+          <title>IMan Xpress || About us</title>
+      <Navbar/>   
       <Container className="font">
-        <Grid sx={{ mt: 2 }} container spacing={2}>
+        <Grid sx={{ }} container spacing={2}>
           <Grid item xs={12} lg={6} md={6}>
-            <Card sx={{ boxShadow: 5 }}>
+            <Card >
               <CardMedia
                 component="img"
                 height="420"
-                image={pic1}
+                image="https://cdn.dribbble.com/users/2459530/screenshots/8029114/delivery_1-800x600.gif"
                 alt="about-us-delivery"
                 />
                 </Card>
@@ -67,7 +64,7 @@ const AboutUs = () => {
                 <CardMedia
                 component="img"
                 height="420"
-                image={pic2}
+                image="https://i.pinimg.com/originals/f6/34/01/f634017e8277d18a163603575ca753e3.gif"
                 alt="about-us-delivery"
                 />
                 </Card>
@@ -106,19 +103,19 @@ const AboutUs = () => {
                                     </a>
                                 </Button>
                                 <Button sx={{ fontSize: 'h6.fontSize' }}  >
-                                    <a target="_blank" href="https://www.twitter.com" rel="noreferrer">
-                                        <ImGithub />
+                                    <a target="_blank" href="https://api.whatsapp.com/send/?phone=8801781104445&text&app_absent=0" rel="noreferrer">
+                                        <BsWhatsapp />
                                     </a>
                                 </Button>
 
                                 <Button sx={{ fontSize: 'h6.fontSize' }}  >
-                                    <a target="_blank" href="https://www.instragram.com" rel="noreferrer">
+                                    <a target="_blank" href="https://www.linkedin.com/in/anik-barua-097564160/" rel="noreferrer">
                                         <BsLinkedin />
                                     </a>
                                 </Button>
 
                                 <Button sx={{ fontSize: 'h6.fontSize' }}  >
-                                    <a target="_blank" href="https://www.instragram.com" rel="noreferrer">
+                                    <a target="_blank" href="https://github.com/AnikBarua34" rel="noreferrer">
                                         <FaGithub />
                                     </a>
                                 </Button>
@@ -150,7 +147,7 @@ const AboutUs = () => {
                                 </Button>
                                 <Button sx={{ fontSize: 'h6.fontSize' }}  >
                                     <a target="_blank" href="https://www.twitter.com" rel="noreferrer">
-                                        <ImGithub />
+                                        <BsWhatsapp />
                                     </a>
                                 </Button>
 
@@ -193,7 +190,7 @@ const AboutUs = () => {
                                 </Button>
                                 <Button sx={{ fontSize: 'h6.fontSize' }}  >
                                     <a target="_blank" href="https://www.twitter.com" rel="noreferrer">
-                                        <ImGithub />
+                                        <BsWhatsapp />
                                     </a>
                                 </Button>
 
@@ -236,7 +233,7 @@ const AboutUs = () => {
                               </Button>
                               <Button sx={{ fontSize: 'h6.fontSize' }}  >
                                   <a target="_blank" href="https://www.twitter.com" rel="noreferrer">
-                                      <ImGithub />
+                                      <BsWhatsapp />
                                   </a>
                               </Button>
 

@@ -139,10 +139,8 @@ function App() {
        </Router>
        
       </Authprovider>
-         {/* pageId="104547992167816"
-        appId="3055318624707846" */}
-        {/* 101209389196237 292099619137695*/}
-      <MessengerCustomerChat className="messengerChat"
+        
+      <MessengerCustomerChat
         pageId="101209389196237"
         appId="292099619137695" 
       />

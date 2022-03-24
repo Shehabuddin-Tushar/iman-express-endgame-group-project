@@ -31,7 +31,7 @@ function Allusers() {
 
 
     const chatwithuser = (userid) => {
-        console.log(userid)
+     
 
         axios.get(`https://iman-xpress.herokuapp.com/api/authgeneral/getuserbyid/${userid}`)
             .then(res => setUserinfo(res.data.userdata)).catch(err => console.log(err))

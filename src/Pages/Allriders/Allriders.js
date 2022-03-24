@@ -28,17 +28,7 @@ function Allriders() {
         console.log(time)
         axios.get("https://iman-xpress.herokuapp.com/api/riderProfile/getallriders").then(res=>setAllriders(res.data.riders)).catch(err=>console.log(err))
 
-        // db.collection("messages").add({
-        //     message:"my name is tushar",
-        //     timestamp:firebase.firestore.FieldValue.serverTimestamp()
-        // })
-
-
-        // db.collection('messages')
-        // .orderBy('timestamp','asc')
-        // .onSnapshot(snapshot=>(
-        //     setMessage(snapshot.docs.map(doc=>({id:doc.id,message:doc.data()})))
-        // ))
+        
     },[])
  
 

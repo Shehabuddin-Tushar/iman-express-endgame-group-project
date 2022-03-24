@@ -18,8 +18,7 @@ import useAuth from '../../Hooks/useAuth'
 import { Link, useNavigate } from "react-router-dom";
 import axios from 'axios'
 import styles from "./Navbar.module.css";
-import { BsSun,BsMoonStars } from 'react-icons/bs';
-
+import { BsSun, BsMoonStars } from 'react-icons/bs';
 
 
 
@@ -142,11 +141,11 @@ const Navbar = ({setDarkMode, darkMode}) => {
                 onClick={handleCloseNavMenu}
                 style={{ width: "200px" }}
               >
-                
-                  <Link to="/" style={{ textDecoration: "none", color: "black" }} data-testid="optionOne">
-                    Home
-                  </Link>
-                
+
+                <Link to="/" style={{ textDecoration: "none", color: "black" }}>
+                  Home
+                </Link>
+
               </MenuItem>
 
               <MenuItem
@@ -173,8 +172,8 @@ const Navbar = ({setDarkMode, darkMode}) => {
                 </Link>
 
               </MenuItem>
-
-              <MenuItem
+              
+              {/* <MenuItem
                 key="1"
                 onClick={handleCloseNavMenu}
                 style={{ width: "200px" }}
@@ -182,7 +181,7 @@ const Navbar = ({setDarkMode, darkMode}) => {
                 <Link to="/contactus" style={{ textDecoration: "none", color: "black" }}>
                   Contact us
                 </Link>
-              </MenuItem>
+              </MenuItem> */}
 
               {
                 user?.email ? <MenuItem
@@ -219,7 +218,7 @@ const Navbar = ({setDarkMode, darkMode}) => {
                 </Link>
               </MenuItem>
 
-
+              <Button>{darkMode ? <span style={{ fontSize: '25px' }}> <BsMoonStars /> </span> : <span style={{ fontSize: '25px' }}> <BsSun /> </span>}<input  type="radio" name="darkMode" value="darkMode" onClick={() => setDarkMode(true)} /><input type="radio" name="darkMode" value="darkMode" onClick={() => setDarkMode(false)} /></Button>
             </Menu>
           </Box>
           <Typography
@@ -276,7 +275,7 @@ const Navbar = ({setDarkMode, darkMode}) => {
               >
                 Contact Us
               </Button>
-            </Link>
+            </Link> */}
 
             <Link to="/aboutUs" style={{ textDecoration: "none" }}>
               <Button
@@ -286,8 +285,8 @@ const Navbar = ({setDarkMode, darkMode}) => {
               >
                 About Us
               </Button>
-            </Link> */}
-
+            </Link>
+            
             {
               user?.email ? <Link to="/allriders" style={{ textDecoration: "none" }}>
                 <Button
@@ -300,17 +299,17 @@ const Navbar = ({setDarkMode, darkMode}) => {
               </Link> : ""
             }
             {
-              riderinfo!==null?<Link to="/allusers" style={{ textDecoration: "none" }}>
-              <Button
-                style={{ textDecoration: "none" }}
-                key="6"
-                sx={{ my: 2, color: "black" }}
-              >
-                All Users
-              </Button>
-            </Link>:""
-                }
-              <Button>{darkMode? <span style={{fontSize:'25px'}}> <BsMoonStars/> </span>: <span style={{fontSize:'25px'}}> <BsSun/> </span>}<input type="radio" name="darkMode" value="darkMode" onClick={() => setDarkMode(true)}/><input type="radio" name="darkMode" value="darkMode" onClick={() => setDarkMode(false)}/></Button>
+              riderinfo !== null ? <Link to="/allusers" style={{ textDecoration: "none" }}>
+                <Button
+                  style={{ textDecoration: "none" }}
+                  key="6"
+                  sx={{ my: 2, color: "black" }}
+                >
+                  All Users
+                </Button>
+              </Link> : ""
+            }
+            <Button>{darkMode ? <span style={{ fontSize: '25px' }}> <BsMoonStars /> </span> : <span style={{ fontSize: '25px' }}> <BsSun /> </span>}<input type="radio" name="darkMode" value="darkMode" onClick={() => setDarkMode(true)} /><input type="radio" name="darkMode" value="darkMode" onClick={() => setDarkMode(false)} /></Button>
             {/* <Button>
               <a style={{ textDecoration: "none" }} href="https://imanxpress.netlify.app/">
                 Chat with Rider
@@ -352,7 +351,7 @@ const Navbar = ({setDarkMode, darkMode}) => {
             key="5"
             sx={{ my: 2, color: "black", display: "block" }}
           >
-            Logout
+            Signup/Logout
             <IconButton sx={{ p: 0 }}>
               <ArrowDropDownIcon />
             </IconButton>
@@ -412,12 +411,12 @@ const Navbar = ({setDarkMode, darkMode}) => {
                       style={{ width: "200px" }}
                     >
 
-                      <Link to="/register"><Typography textAlign="center">general account</Typography></Link>
+                      <Link to="/register" style={{textDecoration:"none"}}><Typography textAlign="center">General account</Typography></Link>
 
 
                     </MenuItem>
 
-                    <Link to="/merchantRegister"> <MenuItem
+                    <Link to="/merchantRegister" style={{textDecoration:"none"}}> <MenuItem
 
                       onClick={handleCloseUserMenu}
                       style={{ width: "200px" }}
@@ -434,7 +433,7 @@ const Navbar = ({setDarkMode, darkMode}) => {
                       onClick={handleCloseUserMenu}
                       style={{ width: "200px" }}
                     >
-                      <Link to="/riderRegister"><Typography textAlign="center">Rider account</Typography></Link>
+                          <Link to="/riderRegister" style={{ textDecoration: "none" }}><Typography textAlign="center">Rider account</Typography></Link>
                     </MenuItem>
                   </>
               }
