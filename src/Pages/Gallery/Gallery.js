@@ -1,4 +1,4 @@
-import { Button } from '@mui/material'
+import { Button,Container } from '@mui/material'
 import React,{useState,useEffect} from 'react'
 import Accountinformation from '../../Component/Modal/Accountinformation';
 import './Gallery.css'
@@ -27,7 +27,7 @@ function Gallery() {
     }
   return (
       <>
-      <div class="container">
+      <Container>
           <header class="main-header clearfix">
              
                   <h1 class="name">Our 3D <span style={{marginLeft:"5px"}}> Account information</span></h1>
@@ -81,7 +81,7 @@ function Gallery() {
                                                   </div>
 
                                           </div>
-                                      </div>
+          </Container>
           <Accountinformation openModal={openModal} handleClose={handleClose} account={ information}/>
       </>
   )
