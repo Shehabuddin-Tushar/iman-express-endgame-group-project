@@ -6,7 +6,7 @@ import React from "react";
 import { BsLinkedin } from "react-icons/bs";
 // import {FaRegFilePowerpoint} from 'react-icons/fa';
 import { FaGithub } from "react-icons/fa";
-import { ImTwitter } from "react-icons/im";
+import { ImGithub } from "react-icons/im";
 import { SiFacebook } from "react-icons/si";
 import pic1 from "../../img/about-us-delivery.jpg";
 import anik from "../../img/anik.jpg";
@@ -101,13 +101,13 @@ const AboutUs = () => {
                   {/* SOcial Links  */}
                   <Box sx={{textAlign:'center'}}>
                                 <Button sx={{ fontSize: 'h6.fontSize' }}  >
-                                    <a target="_blank" href="https://www.facebook.com" rel="noreferrer">
+                                    <a target="_blank" href="https://www.facebook.com/turjoy2" rel="noreferrer">
                                         <SiFacebook />
                                     </a>
                                 </Button>
                                 <Button sx={{ fontSize: 'h6.fontSize' }}  >
                                     <a target="_blank" href="https://www.twitter.com" rel="noreferrer">
-                                        <ImTwitter />
+                                        <ImGithub />
                                     </a>
                                 </Button>
 
@@ -150,7 +150,7 @@ const AboutUs = () => {
                                 </Button>
                                 <Button sx={{ fontSize: 'h6.fontSize' }}  >
                                     <a target="_blank" href="https://www.twitter.com" rel="noreferrer">
-                                        <ImTwitter />
+                                        <ImGithub />
                                     </a>
                                 </Button>
 
@@ -193,7 +193,7 @@ const AboutUs = () => {
                                 </Button>
                                 <Button sx={{ fontSize: 'h6.fontSize' }}  >
                                     <a target="_blank" href="https://www.twitter.com" rel="noreferrer">
-                                        <ImTwitter />
+                                        <ImGithub />
                                     </a>
                                 </Button>
 
@@ -236,7 +236,7 @@ const AboutUs = () => {
                               </Button>
                               <Button sx={{ fontSize: 'h6.fontSize' }}  >
                                   <a target="_blank" href="https://www.twitter.com" rel="noreferrer">
-                                      <ImTwitter />
+                                      <ImGithub />
                                   </a>
                               </Button>
 
