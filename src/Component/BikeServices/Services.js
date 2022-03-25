@@ -51,15 +51,21 @@ const Services = () => {
         </Box>
         <Box onClick={() => setTribe("C")} className={style.car_box}>
           <img
-            src="https://pathao.com/bn/wp-content/themes/webpathao/assets/images/menu/cars.png?v=26.4.20"
+            style={{border:"1px solid #d1d1d1",borderRadius:"6px"}}
+            height="46px"
+            width="46px"
+            src="https://thumbs.dreamstime.com/b/young-lady-buying-products-food-supermarket-cartoon-vector-character-isolated-flat-illustration-221056578.jpg"
             alt=""
           />
-          <Typography variant="h6">Super shop</Typography>
+          <Typography variant="h6">Shop</Typography>
         </Box>
         
         <Box onClick={() => setTribe("D")} className={style.delivery_box}>
           <img
-            src="https://pathao.com/bn/wp-content/themes/webpathao/assets/images/menu/rides.png?v=26.4.20"
+            style={{ border: "1px solid #d1d1d1", borderRadius: "6px" }}
+            height="46px"
+            width="46px"
+            src="https://thumbs.dreamstime.com/b/cartoon-illustration-pharmacy-building-cartoon-vector-people-illustration-flat-pharmacy-building-healthcare-cartoon-208169451.jpg"
             alt=""
           />
           <Typography variant="h6">Medicine</Typography>

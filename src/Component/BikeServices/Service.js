@@ -28,8 +28,8 @@ const Service = ({ serviceData }) => {
           </Typography>
           <Box className={style.learn_more_btn}>
             <button>
-              Learn More{" "}
-              <img src="https://i.ibb.co/rc5QXgn/arrow-right.png" alt="" />
+              All facilities here
+           
             </button>
           </Box>
         </Grid>
