@@ -14,7 +14,8 @@ const Footer = () => {
           <Grid item xs={12} md={6} sm={6}>
             <Box>
               <img
-                className="img"
+                className="footerimg"
+                style={{marginLeft:"-30px"}}
                 src="https://i.postimg.cc/Vvdv93dn/imanimage.png"
                 alt=""
               />

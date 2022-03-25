@@ -15,8 +15,9 @@ function Home({setDarkMode, darkMode}) {
     <title>IMan Xpress || Home</title> 
     <Navbar setDarkMode={setDarkMode} darkMode={darkMode}/>
     <MySlider darkMode={darkMode} />
+   
+    <Products darkMode={darkMode} />
     <Services />
-    <Products darkMode={darkMode}  />
     <Blogs></Blogs>
     <Reviews></Reviews>
     <OurPartnerSlider></OurPartnerSlider>

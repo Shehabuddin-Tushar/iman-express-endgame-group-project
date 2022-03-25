@@ -52,7 +52,8 @@ const Products = ({darkMode}) => {
         <Container>
             <Box sx={{ my: 4, display: 'flex', alignItems: 'center', flexWrap: 'wrap', p: 1 }}>
                 <Box>
-                    <Typography variant='h4' sx={{ fontWeight: 'bold',color: `${darkMode?'white':'#323232'}`, mr: 3 }}>ALL FOR THE CATEGORIES</Typography>
+                    <Typography variant='h4' sx={{ fontWeight: 'bold', color: `${darkMode ? 'white' : '#323232'}`, mr: 3 }}>
+                        Shop of all categories</Typography>
                     <Typography color='text.secondary' sx={{ textAlign: 'left' }}>We are providing shopping in resturant,medicine and shopping </Typography>
                 </Box>
                 <Button onClick={() => allresturant("resturant")} className={category === 'resturant' ? 'selected' : ''} sx={{ color: 'text.secondary', fontWeight: 'bold', mr: 1 }} variant='text'>Resturants</Button>
