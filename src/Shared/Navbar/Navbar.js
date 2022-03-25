@@ -94,8 +94,24 @@ const Navbar = ({setDarkMode, darkMode}) => {
     }
   }
   return (
+    <>
+     
     <AppBar position="sticky" sx={{ boxShadow: 0 }} className={styles.navbar}>
-      <Container maxWidth="xl">
+        <Container maxWidth="xl">
+          <div className="mymobilelogo" style={{textAlign:"center",marginTop:"5px"}}>
+            <Typography
+              variant="h6"
+              noWrap
+              component="div"
+              sx={{
+                flexGrow: 1,
+                display: { md: "none", color: "black" },
+              }}
+            >
+
+              <img src="https://i.postimg.cc/Vvdv93dn/imanimage.png" alt="" width="150px" />
+            </Typography>
+          </div>
         <Toolbar disableGutters>
           <img
             src="https://i.postimg.cc/Vvdv93dn/imanimage.png"
@@ -218,25 +234,15 @@ const Navbar = ({setDarkMode, darkMode}) => {
                 </Link>
               </MenuItem>
 
+             
+              </Menu>
               {
                 darkMode ?
                   <Button onClick={() => setDarkMode(false)}> <BsSun style={{ fontSize: "25px" }} /> </Button>
                   : <Button onClick={() => setDarkMode(true)}><BsMoonStars style={{ fontSize: "25px" }} /></Button>
               }
-            </Menu>
           </Box>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{
-              flexGrow: 1,
-              display: { xs: "flex", md: "none", color: "black" },
-            }}
-          >
-
-            <img src="https://i.postimg.cc/Vvdv93dn/imanimage.png" alt="" width="150px" />
-          </Typography>
+          
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             <Button
               key="3"
@@ -457,7 +463,8 @@ const Navbar = ({setDarkMode, darkMode}) => {
           </Box>
         </Toolbar>
       </Container>
-    </AppBar>
+      </AppBar>
+      </>
   );
 };
 export default Navbar;
