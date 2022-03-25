@@ -54,7 +54,7 @@ const Services = () => {
             style={{border:"1px solid #d1d1d1",borderRadius:"6px"}}
             height="46px"
             width="46px"
-            src="https://thumbs.dreamstime.com/b/young-lady-buying-products-food-supermarket-cartoon-vector-character-isolated-flat-illustration-221056578.jpg"
+            src="https://i.postimg.cc/DZTLqFYk/supershop.jpg"
             alt=""
           />
           <Typography variant="h6">Shop</Typography>
@@ -65,7 +65,7 @@ const Services = () => {
             style={{ border: "1px solid #d1d1d1", borderRadius: "6px" }}
             height="46px"
             width="46px"
-            src="https://thumbs.dreamstime.com/b/cartoon-illustration-pharmacy-building-cartoon-vector-people-illustration-flat-pharmacy-building-healthcare-cartoon-208169451.jpg"
+            src="https://i.postimg.cc/x1LdLHr8/pharmesi.jpg"
             alt=""
           />
           <Typography variant="h6">Medicine</Typography>
