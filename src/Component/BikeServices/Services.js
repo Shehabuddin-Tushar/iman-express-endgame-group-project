@@ -67,10 +67,10 @@ const Services = () => {
       </Box>
       <Container fixed>
         <Grid spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
-          {remaining.map((serviceData) => (
+          {remaining.map((serviceData,index) => (
             <Service
               serviceData={serviceData}
-              key={serviceData.category}
+              key={index}
             ></Service>
           ))}
         </Grid>

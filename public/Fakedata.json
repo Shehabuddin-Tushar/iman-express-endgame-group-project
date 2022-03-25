@@ -1,5 +1,6 @@
 [
   {
+    "id":1,
     "category": "H",
     "firstTitle": "Avoid jams, save time",
     "secondTitle": "We are with you",
@@ -10,6 +11,7 @@
     "img": "https://pathao.com/bn/wp-content/uploads/sites/6/2018/12/Bike-Ride.png"
   },
   {
+    "id":2,
     "category": "C",
     "firstTitle": "Choose the option of your choice",
     "secondTitle": "Comfortable and affordable",
@@ -20,6 +22,7 @@
     "img": "https://pathao.com/bn/wp-content/uploads/sites/6/2018/12/Pathao-Car.png"
   },
   {
+    "id":3,
     "category": "F",
     "firstTitle": "Fastest food delivery",
     "secondTitle": "Choose from thousands of options",
@@ -30,6 +33,7 @@
     "img": "https://pathao.com/bn/wp-content/uploads/sites/6/2018/12/Patha-food.png"
   },
   {
+    "id":4,
     "category": "D",
     "firstTitle": "On Delivery Delivery",
     "secondTitle": "Trust us",
