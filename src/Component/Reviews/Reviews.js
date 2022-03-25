@@ -104,7 +104,7 @@ function Reviews() {
   return (
     <div>
       <Container sx={{ my: 6 }}>
-        <Typography sx={{ color: "tomato" }} variant="body1" data-testId="reviewTitle">
+        <Typography sx={{ color: "tomato" }} variant="body1">
           REVIEWS
         </Typography>
         <Typography variant="h4" fontWeight="bold">
@@ -113,8 +113,8 @@ function Reviews() {
 
         <Container>
           <Slider {...settings}>
-            {reviews?.map((review) => (
-              <Box>
+            {reviews?.map((review,index) => (
+              <Box key={index}>
                 <Box sx={{ textAlign: "left", p: 2, mt: 3 }}>
                   <Typography height="280px" variant="subtitle1">
                     "{review?.review}"
@@ -141,7 +141,8 @@ function Reviews() {
                       <Rating
                         sx={{ color: "tomato" }}
                         name="half-rating-read"
-                        defaultValue={review?.rating}
+                        value={parseInt(review?.rating)}
+                        
                         precision={0.5}
                         readOnly
                       />

@@ -74,7 +74,8 @@ const AboutUs = () => {
 
 
                 <Typography sx={{ textAlign: 'center',m:2,mt:3,fontWeight:'bold',borderBottom:'2px solid black'}} variant='h5'>
-                Iman_Xpress Developers
+                IMAN <span className="x">X</span>PRESS 
+                <span className="developer">DEVELOPERS</span>
                 </Typography>
               
 

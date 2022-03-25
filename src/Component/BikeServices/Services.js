@@ -51,7 +51,9 @@ const Services = () => {
         </Box>
         <Box onClick={() => setTribe("C")} className={style.car_box}>
           <img
-            src="https://pathao.com/bn/wp-content/themes/webpathao/assets/images/menu/cars.png?v=26.4.20"
+          style={{borderRadius:"5px"}}
+          width="40px"
+            src="https://thumbs.dreamstime.com/b/superstore-super-mall-isolated-vector-icons-can-be-modify-any-style-125798400.jpg"
             alt=""
           />
           <Typography variant="h6">Super shop</Typography>
@@ -59,7 +61,9 @@ const Services = () => {
         
         <Box onClick={() => setTribe("D")} className={style.delivery_box}>
           <img
-            src="https://pathao.com/bn/wp-content/themes/webpathao/assets/images/menu/rides.png?v=26.4.20"
+          style={{borderRadius:"5px"}}
+          width="45px"
+            src="https://media.istockphoto.com/vectors/medicine-icon-vector-illustration-medicine-vector-illustration-icon-vector-id1223737356"
             alt=""
           />
           <Typography variant="h6">Medicine</Typography>
@@ -67,10 +71,11 @@ const Services = () => {
       </Box>
       <Container fixed>
         <Grid spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
-          {remaining.map((serviceData) => (
+          {remaining.map((serviceData,index) => (
             <Service
+            key={index}
               serviceData={serviceData}
-              key={serviceData.category}
+              
             ></Service>
           ))}
         </Grid>

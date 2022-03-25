@@ -18,9 +18,9 @@ import useAuth from '../../Hooks/useAuth'
 import { Link, useNavigate } from "react-router-dom";
 import axios from 'axios'
 import styles from "./Navbar.module.css";
-import { BsSun, BsMoonStars } from 'react-icons/bs';
-
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'
+import Swal from 'sweetalert2';
 
 
 const Navbar = ({setDarkMode, darkMode}) => {
@@ -72,26 +72,36 @@ const Navbar = ({setDarkMode, darkMode}) => {
           setLoginstatus(0)
 
         }).catch(err => console.log(err))
-
       localStorage.removeItem("riderToken");
       localStorage.removeItem("riderInfo");
-
       navigate("/")
     }
-
   }
-
   const generallogout = () => {
-    let confirmmessage = window.confirm("are you sure you want to logout")
-    if (confirmmessage === true) {
-
-      logOut();
-
+      Swal.fire({
+        title: 'Are you sure?',
+        text: "You will be log Out from this page!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, Log me Out!'
+      })
+      .then((result) => {
+        if (result.isConfirmed == true) {
+        Swal.fire(
+            'Logged Out successfully!',
+          )
+          logOut();         
+        }
+        else{
+            Swal.fire('Wow, You are still logged in!'
+              )
+        }
+      })  
       navigate("/")
 
-
-
-    }
+      
   }
   return (
     <AppBar position="sticky" sx={{ boxShadow: 0 }} className={styles.navbar}>
@@ -219,10 +229,10 @@ const Navbar = ({setDarkMode, darkMode}) => {
               </MenuItem>
 
               {
-                darkMode ?
-                  <Button onClick={() => setDarkMode(false)}> <BsSun style={{ fontSize: "25px" }} /> </Button>
-                  : <Button onClick={() => setDarkMode(true)}><BsMoonStars style={{ fontSize: "25px" }} /></Button>
-              }
+              darkMode ?
+                <Button onClick={() => setDarkMode(false)}> <img width="30px" src="https://cdn-icons-png.flaticon.com/512/2698/2698240.png" alt="" /> </Button>
+                : <Button onClick={() => setDarkMode(true)}> <img width="25px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSE__9cG2hIsEGrj00DafUu41vOvBP0-GaNiAqKrfBxMMIesxKnSnanaah9olAEjOHtRRs&usqp=CAU"  alt="" /> </Button>
+            }
             </Menu>
           </Box>
           <Typography
@@ -316,8 +326,8 @@ const Navbar = ({setDarkMode, darkMode}) => {
 
             {
               darkMode ?
-                <Button onClick={() => setDarkMode(false)}> <BsSun style={{ fontSize: "25px" }} /> </Button>
-                : <Button onClick={() => setDarkMode(true)}><BsMoonStars style={{ fontSize: "25px" }} /></Button>
+                <Button onClick={() => setDarkMode(false)}> <img width="30px" src="https://cdn-icons-png.flaticon.com/512/2698/2698240.png" alt="" /> </Button>
+                : <Button onClick={() => setDarkMode(true)}> <img width="25px" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSE__9cG2hIsEGrj00DafUu41vOvBP0-GaNiAqKrfBxMMIesxKnSnanaah9olAEjOHtRRs&usqp=CAU"  alt="" /> </Button>
             }
             
             {/* <Button>

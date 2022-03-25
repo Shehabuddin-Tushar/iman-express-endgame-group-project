@@ -62,8 +62,8 @@ const Products = ({darkMode}) => {
             </Box>
             <Grid container spacing={{ xs: 2, md: 1 }} columns={{ xs: 4, sm: 8, md: 12 }}>
                 {
-                    alldata.map(data => <Product
-                        key={alldata._id}
+                    alldata.map((data,index) => <Product
+                        key={index}
                         service={data}
                         isLoad={isLoad}
                     />)
