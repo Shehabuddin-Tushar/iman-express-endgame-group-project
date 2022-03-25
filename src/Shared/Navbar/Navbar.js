@@ -218,7 +218,11 @@ const Navbar = ({setDarkMode, darkMode}) => {
                 </Link>
               </MenuItem>
 
-              <Button>{darkMode ? <span style={{ fontSize: '25px' }}> <BsMoonStars /> </span> : <span style={{ fontSize: '25px' }}> <BsSun /> </span>}<input  type="radio" name="darkMode" value="darkMode" onClick={() => setDarkMode(true)} /><input type="radio" name="darkMode" value="darkMode" onClick={() => setDarkMode(false)} /></Button>
+              {
+                darkMode ?
+                  <Button onClick={() => setDarkMode(false)}> <BsSun style={{ fontSize: "25px" }} /> </Button>
+                  : <Button onClick={() => setDarkMode(true)}><BsMoonStars style={{ fontSize: "25px" }} /></Button>
+              }
             </Menu>
           </Box>
           <Typography
@@ -309,7 +313,13 @@ const Navbar = ({setDarkMode, darkMode}) => {
                 </Button>
               </Link> : ""
             }
-            <Button>{darkMode ? <span style={{ fontSize: '25px' }}> <BsMoonStars /> </span> : <span style={{ fontSize: '25px' }}> <BsSun /> </span>}<input type="radio" name="darkMode" value="darkMode" onClick={() => setDarkMode(true)} /><input type="radio" name="darkMode" value="darkMode" onClick={() => setDarkMode(false)} /></Button>
+
+            {
+              darkMode ?
+                <Button onClick={() => setDarkMode(false)}> <BsSun style={{ fontSize: "25px" }} /> </Button>
+                : <Button onClick={() => setDarkMode(true)}><BsMoonStars style={{ fontSize: "25px" }} /></Button>
+            }
+            
             {/* <Button>
               <a style={{ textDecoration: "none" }} href="https://imanxpress.netlify.app/">
                 Chat with Rider
@@ -351,7 +361,8 @@ const Navbar = ({setDarkMode, darkMode}) => {
             key="5"
             sx={{ my: 2, color: "black", display: "block" }}
           >
-            Signup/Logout
+            {user?.email || merchant  || rider?"Logout":"Signup"}
+            
             <IconButton sx={{ p: 0 }}>
               <ArrowDropDownIcon />
             </IconButton>

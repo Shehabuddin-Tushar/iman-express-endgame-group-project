@@ -42,6 +42,7 @@ import MakeAdmin from "./DashBoard/DashboardHome/MakeAdmin/MakeAdmin";
 import AllUser from "./DashBoard/DashboardHome/AllUser/AllUser";
 import AllMarchent from "./DashBoard/DashboardHome/AllMarchent/AllMarchent";
 import AllAdmin from "./DashBoard/DashboardHome/AllAdmin/AllAdmin";
+import PrivateLogin from './Privateroute/PrivateLogin';
 
 function App() {
   const [darkMode, setDarkMode] = useState(false)
@@ -53,7 +54,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home setDarkMode={setDarkMode} darkMode={darkMode}></Home>}></Route>
           <Route path="/home" element={<Home setDarkMode={setDarkMode} darkMode={darkMode}></Home>}></Route>
-          <Route path="/login" element={<Login></Login>}></Route>
+            <Route path="/login" element={<PrivateLogin><Login></Login></PrivateLogin>}></Route>
           <Route path="/register" element={<Register></Register>}></Route>
           <Route path="/merchantRegister" element={<Account />}></Route>
           <Route path="/riderRegister" element={<RiderRegistration></RiderRegistration>}></Route>

@@ -32,6 +32,8 @@ const Login = () => {
   const { googleLogin, userLogin,user } = useFirebase();
   const { register, handleSubmit, reset } = useForm();
   const {setLoginstatus} = useAuth();
+  const merchant = localStorage.getItem("merchant");
+  const rider = localStorage.getItem("riderToken");
 
   ///redirect user  destination
   const location = useLocation();
@@ -172,148 +174,161 @@ const Login = () => {
             justifyContent: "center",
           }}
         >
-          <Grid item>
-            <Paper sx={{ p: 5 }} elevation={3}>
-              <form onSubmit={handleSubmit(onSubmit)}>
-                <Typography variant="h4" fontWeight="bold">
-                  Login
-                </Typography>
-                <Box
-                  sx={{
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                    flexDirection: "column",
-                  }}
-                >
-                  <TextField
-                    label="Email"
-                    required
-                    type="email"
-                    sx={{ mt: 2, width: "100%" }}
-                    variant="outlined"
-                    {...register("email")}
-                  />
-                  <TextField
-                    required
-                    label="Password"
-                    type="password"
-                    sx={{ my: 2, width: "100%" }}
-                    variant="outlined"
-                    {...register("password")}
-                  />
-                  <FormControl sx={{ textAlign: 'left' }}>
-                    {/* <FormLabel>Service(s) you want to provide</FormLabel> */}
-                    <RadioGroup
-                      name="user"
-                      value={value}
-                      onChange={handleChange}
-
-                    >
-                      <Box required
-                        sx={{
-                          display: "flex",
-                          justifyContent: "space-between",
-                        }}
-                      >
-                        <FormControlLabel
-                          value="merchant"
-                          {...register("merchant")}
-                          control={
-                            <Radio
-                              sx={{
-                                "&.Mui-checked": {
-                                  color: pink[600],
-                                },
-                              }}
-                            />
-                          }
-                          label="Merchant"
-                        />
-                        <FormControlLabel
-                          value="rider"
-                          {...register("rider")}
-                          control={
-                            <Radio
-                              sx={{
-                                "&.Mui-checked": {
-                                  color: pink[600],
-                                },
-                              }}
-                            />
-                          }
-                          label="Rider"
-                        />
-                        <FormControlLabel
-                          value="user"
-                          {...register("user")}
-                          control={
-                            <Radio
-                              sx={{
-                                "&.Mui-checked": {
-                                  color: pink[600],
-                                },
-                              }}
-                            />
-                          }
-                          label="User"
-                        />
-
-                      </Box>
-                    </RadioGroup>
-                  </FormControl>
-                </Box>
-                <Typography sx={{ textAlign: "left" }} color={red[700]}>
-                  Forget Password?
-                </Typography>
-                <Box
-                  sx={{
-                    display: { sm: "none", md: "flex" },
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                    width: "40vw",
-                    mt: 5,
-                  }}
-                >
-                  {" "}
-                  <Box sx={{ textAlign: "left" }}>
-                    <Button variant="outlined" color="warning" type="submit">
-                      Login
-                    </Button>
-                  </Box>
-                  <Typography sx={{ textAlign: "left", mt: 2 }}>
-                    Don’t have an account??{" "}
-                    <Link to="/register" style={{ color: "tomato" }}>
-                      Sign Up
-                    </Link>
-                  </Typography>
-                </Box>{" "}
-              </form>
-              <Divider sx={{ mt: 5 }} />
-              <Typography variant="h6" sx={{ my: 2 }}>
-                Alternative Login
-              </Typography>
-              <Button
-                sx={{ width: "100%" }}
-                variant="outlined"
-                color="warning"
-                onClick={handleGoogle}
-              >
-                Google Login
+          {user?.email || merchant || rider ? 
+            <Grid>
+              <Typography variant="h3">You are already loged in</Typography>
+              <br/>
+              <Button variant="outlined">
+                <Link style={{ textDecoration: "none", fontSize: "25px", textAlign: "center" }} to="/">Click here</Link>
               </Button>
+            
+            </Grid> :
+            <Grid item>
+              <Paper sx={{ p: 5 }} elevation={3}>
+                <form onSubmit={handleSubmit(onSubmit)}>
+                  <Typography variant="h4" fontWeight="bold">
+                    Login
+                  </Typography>
+                  <Box
+                    sx={{
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                      flexDirection: "column",
+                    }}
+                  >
+                    <TextField
+                      label="Email"
+                      required
+                      type="email"
+                      sx={{ mt: 2, width: "100%" }}
+                      variant="outlined"
+                      {...register("email")}
+                    />
+                    <TextField
+                      required
+                      label="Password"
+                      type="password"
+                      sx={{ my: 2, width: "100%" }}
+                      variant="outlined"
+                      {...register("password")}
+                    />
+                    <FormControl sx={{ textAlign: 'left' }}>
+                      {/* <FormLabel>Service(s) you want to provide</FormLabel> */}
+                      <RadioGroup
+                        name="user"
+                        value={value}
+                        onChange={handleChange}
 
-              {error && (
-                <Alert sx={{ my: 2 }} severity="error">
-                  Password not matched.
-                </Alert>
-              )}
-              {success && (
-                <Alert sx={{ my: 2 }} severity="success">
-                 Logged in successfully
-                </Alert>
-              )}
-            </Paper>
-          </Grid>
+                      >
+                        <Box required
+                          sx={{
+                            display: "flex",
+                            justifyContent: "space-between",
+                          }}
+                        >
+                          <FormControlLabel
+                            value="merchant"
+                            {...register("merchant")}
+                            control={
+                              <Radio
+                                sx={{
+                                  "&.Mui-checked": {
+                                    color: pink[600],
+                                  },
+                                }}
+                              />
+                            }
+                            label="Merchant"
+                          />
+                          <FormControlLabel
+                            value="rider"
+                            {...register("rider")}
+                            control={
+                              <Radio
+                                sx={{
+                                  "&.Mui-checked": {
+                                    color: pink[600],
+                                  },
+                                }}
+                              />
+                            }
+                            label="Rider"
+                          />
+                          <FormControlLabel
+                            value="user"
+                            {...register("user")}
+                            control={
+                              <Radio
+                                sx={{
+                                  "&.Mui-checked": {
+                                    color: pink[600],
+                                  },
+                                }}
+                              />
+                            }
+                            label="User"
+                          />
+
+                        </Box>
+                      </RadioGroup>
+                    </FormControl>
+                  </Box>
+                  <Typography sx={{ textAlign: "left" }} color={red[700]}>
+                    Forget Password?
+                  </Typography>
+                  <Box
+                    sx={{
+                      display: { sm: "none", md: "flex" },
+                      justifyContent: "space-between",
+                      alignItems: "center",
+                      width: "40vw",
+                      mt: 5,
+                    }}
+                  >
+                    {" "}
+                    <Box sx={{ textAlign: "left" }}>
+                      <Button variant="outlined" color="warning" type="submit">
+                        Login
+                      </Button>
+                    </Box>
+                    <Typography sx={{ textAlign: "left", mt: 2 }}>
+                      Don’t have an account??{" "}
+                      <Link to="/register" style={{ color: "tomato" }}>
+                        Sign Up
+                      </Link>
+                    </Typography>
+                  </Box>{" "}
+                </form>
+                <Divider sx={{ mt: 5 }} />
+                <Typography variant="h6" sx={{ my: 2 }}>
+                  Alternative Login
+                </Typography>
+                <Button
+                  sx={{ width: "100%" }}
+                  variant="outlined"
+                  color="warning"
+                  onClick={handleGoogle}
+                >
+                  Google Login
+                </Button>
+
+                {error && (
+                  <Alert sx={{ my: 2 }} severity="error">
+                    Password not matched.
+                  </Alert>
+                )}
+                {success && (
+                  <Alert sx={{ my: 2 }} severity="success">
+                    Logged in successfully
+                  </Alert>
+                )}
+              </Paper>
+            </Grid>
+        
+        }
+          
+         
         </Grid>
       </Container>
     </div>
