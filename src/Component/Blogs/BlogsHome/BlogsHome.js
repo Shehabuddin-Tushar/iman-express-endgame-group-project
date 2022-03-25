@@ -6,8 +6,10 @@ import NewsRoom from '../NewsRoom/NewsRoom';
 import ProductUpdate from '../ProductUpdate/ProductUpdate';
 import Promotions from '../Promotions/Promotions';
 import './BlogsHome.css';
+import useAuth from './../../../Hooks/useAuth';
 
 const BlogsHome = () => {
+    const {  darkMode } = useAuth();
 
     const blogApi = [
         {
@@ -38,7 +40,7 @@ const BlogsHome = () => {
         <>
             <title>IMan Xpress || Blog</title> 
             <Navbar/>
-        <div>
+        <div className={darkMode? "fontColor":""}>
             <Container className='blogsHomeContainer'>
                 <Grid container spacing={2}>
                     <Grid item xs={12} md={6} sm={6} >
@@ -76,7 +78,7 @@ const BlogsHome = () => {
                             </Paper>
                         </Grid>
                         <Grid item xs={12} md={6} sm={12}>
-                            {blogApi.map(blog => <Paper elevation={4}>
+                            {blogApi.map(blog => <Paper key={blog.id} elevation={4}>
                                 <div className='blogBoxTwo'>
                                     <div className='blogBoxContent'>
                                         <div className='blogTitle'>

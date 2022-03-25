@@ -23,7 +23,7 @@ const useFirebase = () => {
   const [user, setUser] = useState({})
   const [isloading, setIsloading] = useState(true);
   const [loginstatus, setLoginstatus] = useState(0);
-  
+  const [darkMode,setDarkMode] = useState(false);
 
  
   ///user state observer
@@ -186,7 +186,9 @@ const useFirebase = () => {
     registerUser,
     userLogin,
     logOut,
-    user
+    user,
+    setDarkMode,
+    darkMode
   };
 };
 

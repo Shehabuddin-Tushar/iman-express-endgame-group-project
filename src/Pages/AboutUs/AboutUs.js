@@ -14,14 +14,18 @@ import tushar from "../../img/tushar.jpg";
 import Footer from "../../Shared/Footer/Footer";
 import Navbar from "../../Shared/Navbar/Navbar";
 import "./AboutUs.css";
+import useAuth from './../../Hooks/useAuth';
 
 const AboutUs = () => {
+    const {  darkMode } = useAuth();
+    
   return (
-      <>
+      <div className={darkMode? "fontColor":""} style={{backgroundColor:darkMode?"black":"white"}}>
           <title>IMan Xpress || About us</title>
       <Navbar/>   
-      <Container className="font">
-        <Grid sx={{ }} container spacing={2}>
+
+      <Container  className="font">
+        <Grid  sx={{ }} container spacing={2}>
           <Grid item xs={12} lg={6} md={6}>
             <Card >
               <CardMedia
@@ -256,7 +260,7 @@ const AboutUs = () => {
             </Grid>
            </Container> 
             <Footer/>
-        </>
+        </div>
     );
 };
 

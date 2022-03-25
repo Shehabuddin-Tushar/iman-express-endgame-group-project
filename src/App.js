@@ -74,7 +74,7 @@ function App() {
           <Route path="/contactUs" element={<ContactUs></ContactUs>}></Route>
             <Route path="/checkout/:id" element={<PrivateRoute><Checkout></Checkout></PrivateRoute>}></Route>
          
-          <Route path="/aboutUs" element={<AboutUs></AboutUs>}></Route> 
+          <Route path="/aboutUs" element={<AboutUs setDarkMode={setDarkMode} darkMode={darkMode} ></AboutUs>}></Route> 
           <Route
             path="/product/:productDetail"
             element={<ProductPage />}

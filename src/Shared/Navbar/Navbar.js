@@ -1,8 +1,6 @@
-import AccountCircle from "@mui/icons-material/AccountCircle";
+
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import MenuIcon from "@mui/icons-material/Menu";
-import NotificationsIcon from "@mui/icons-material/Notifications";
-import { Badge } from "@mui/material";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
@@ -11,23 +9,21 @@ import IconButton from "@mui/material/IconButton";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import Toolbar from "@mui/material/Toolbar";
-import Tooltip from "@mui/material/Tooltip";
 import Typography from "@mui/material/Typography";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import useAuth from '../../Hooks/useAuth'
 import { Link, useNavigate } from "react-router-dom";
 import axios from 'axios'
 import styles from "./Navbar.module.css";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css'
 import Swal from 'sweetalert2';
 
+// {setDarkMode, darkMode}
 
-const Navbar = ({setDarkMode, darkMode}) => {
+const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
-  const { user, logOut, setLoginstatus } = useAuth();
+  const { user, logOut, setLoginstatus, setDarkMode, darkMode } = useAuth();
   const navigate = useNavigate();
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
