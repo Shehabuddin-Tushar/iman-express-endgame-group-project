@@ -10,7 +10,7 @@ function Updatemerchantproduct() {
     const mytoken = (localStorage.getItem("merchant"))
     const navigate = useNavigate()
     useEffect(() => {
-        axios.get(`https://iman-xpress.herokuapp.com/api/merchant/fetchproduct/${id}`, {
+        axios.get(`https://iman-xpress-backend-theta.vercel.app/api/merchant/fetchproduct/${id}`, {
             headers: {
                 "auth-token": mytoken,
                 "Content-Type": "application/json"
@@ -55,7 +55,7 @@ function Updatemerchantproduct() {
         }
 
         console.log(mydata)
-        axios.put(`https://iman-xpress.herokuapp.com/api/merchant/updateproduct/${id}`, mydata,
+        axios.put(`https://iman-xpress-backend-theta.vercel.app/api/merchant/updateproduct/${id}`, mydata,
             {
                 headers: {
                     "auth-token": mytoken,

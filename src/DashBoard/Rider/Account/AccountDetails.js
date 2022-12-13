@@ -46,7 +46,7 @@ export const AccountDetails = () => {
     console.log(data);
 
 
-    axios.post(`https://iman-xpress.herokuapp.com/api/riderProfile/updateRider/${riderInfo.email}`, data).then(res => {
+    axios.post(`https://iman-xpress-backend-theta.vercel.app/api/riderProfile/updateRider/${riderInfo.email}`, data).then(res => {
       console.log(res.data)
       if (res.data.modifiedCount) {
         console.log(data);

@@ -26,7 +26,7 @@ function Allriders() {
         const d = new Date();
         let time = d.getTime();
         console.log(time)
-        axios.get("https://iman-xpress.herokuapp.com/api/riderProfile/getallriders").then(res=>setAllriders(res.data.riders)).catch(err=>console.log(err))
+        axios.get("https://iman-xpress-backend-theta.vercel.app/api/riderProfile/getallriders").then(res=>setAllriders(res.data.riders)).catch(err=>console.log(err))
 
         
     },[])
@@ -36,7 +36,7 @@ console.log(loginstatus)
 
     const chatwithrider = (riderid) => {
         // https://iman-xpress.herokuapp.com/
-        axios.get(`https://iman-xpress.herokuapp.com/api/riderProfile/getriderbyid/${riderid}`)
+        axios.get(`https://iman-xpress-backend-theta.vercel.app/api/riderProfile/getriderbyid/${riderid}`)
             .then(res => setRiderinfo(res.data.rider)).catch(err => console.log(err))
         
         

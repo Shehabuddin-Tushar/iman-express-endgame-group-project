@@ -9,7 +9,7 @@ const Promotions = () => {
     
 
     useEffect(() => {
-        const url = `https://iman-xpress.herokuapp.com/api/blog/fetchblogbycategory/promotion`;
+        const url = `https://iman-xpress-backend-theta.vercel.app/api/blog/fetchblogbycategory/promotion`;
         axios.get(url)
             .then((res) => setBlogApiThree(res.data))
             .catch(error => console.log(error))

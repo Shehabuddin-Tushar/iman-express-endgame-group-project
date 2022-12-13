@@ -33,7 +33,7 @@ const AddPartner = () => {
 
 
 
-        const url = `https://iman-xpress.herokuapp.com/api/partner/addPartner`;
+        const url = `https://iman-xpress-backend-theta.vercel.app/api/partner/addPartner`;
 
         axios.post(url, data,
             {

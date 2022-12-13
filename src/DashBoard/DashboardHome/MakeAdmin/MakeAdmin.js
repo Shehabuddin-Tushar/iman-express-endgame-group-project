@@ -11,7 +11,7 @@ const MakeAdmin = () => {
     
     const handleMakeAdmin = e =>{
         const userEmail = {email}
-        fetch('https://iman-xpress.herokuapp.com/api/authgeneral/getallusers/admin',{
+        fetch('https://iman-xpress-backend-theta.vercel.app/api/authgeneral/getallusers/admin',{
             method:"PUT",
             headers:{
                 'content-type':'application/json'

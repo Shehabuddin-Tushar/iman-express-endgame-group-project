@@ -7,7 +7,7 @@ import "./ManageBlog.css";
 const ManageBlog = () => {
     const [blogApi, setBlogApi] = useState([])
     useEffect(() => {
-        axios.get(`https://iman-xpress.herokuapp.com/api/blog/fetchblog`, {
+        axios.get(`https://iman-xpress-backend-theta.vercel.app/api/blog/fetchblog`, {
             headers: {
                 "Content-Type": "application/json"
             }
@@ -21,7 +21,7 @@ const ManageBlog = () => {
         const confirmMsg = window.confirm("Would you like to delete this blog")
         if (confirmMsg) {
            
-            axios.delete(`https://iman-xpress.herokuapp.com/api/blog/deleteblog/${id}`, {
+            axios.delete(`https://iman-xpress-backend-theta.vercel.app/api/blog/deleteblog/${id}`, {
                 headers: {
                     "Content-Type": "application/json"
                 }

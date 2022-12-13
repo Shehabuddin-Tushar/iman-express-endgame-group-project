@@ -9,7 +9,7 @@ const NewsRoom = () => {
     
 
     useEffect(() => {
-        const url = `https://iman-xpress.herokuapp.com/api/blog/fetchblogbycategory/newFeature`;
+        const url = `https://iman-xpress-backend-theta.vercel.app/api/blog/fetchblogbycategory/newFeature`;
         axios.get(url)
             .then((res) => setBlogApiThree(res.data))
             .catch(error => console.log(error))

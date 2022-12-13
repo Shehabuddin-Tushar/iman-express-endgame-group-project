@@ -66,7 +66,7 @@ const Navbar = ({setDarkMode, darkMode}) => {
   const riderlogout = () => {
     let confirmmessage = window.confirm("are you sure you want to logout")
     if (confirmmessage === true) {
-      axios.put(`https://iman-xpress.herokuapp.com/api/authRider/updateloginstatuswhenlogout/${riderinfo.email}`)
+      axios.put(`https://iman-xpress-backend-theta.vercel.app/api/authRider/updateloginstatuswhenlogout/${riderinfo.email}`)
         .then(res => {
           console.log(res.change);
           setLoginstatus(0)

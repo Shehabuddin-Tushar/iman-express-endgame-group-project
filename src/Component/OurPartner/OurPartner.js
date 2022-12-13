@@ -10,7 +10,7 @@ const OurPartnerSlider=()=>{
   const [partners,setPartners] = useState([]);
   
   useEffect(()=>{
-    fetch('https://iman-xpress.herokuapp.com/api/partner/getPartner')
+    fetch('https://iman-xpress-backend-theta.vercel.app/api/partner/getPartner')
     .then(res=>res.json())
     .then(data=>setPartners(data))
   },[])

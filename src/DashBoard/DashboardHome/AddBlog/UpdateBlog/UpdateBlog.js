@@ -19,7 +19,7 @@ const UpdateBlog = () => {
 
     // fetch blog
     useEffect(() => {
-        axios.get(`https://iman-xpress.herokuapp.com/api/blog/fetchblog/${blogId}`).then(res => {
+        axios.get(`https://iman-xpress-backend-theta.vercel.app/api/blog/fetchblog/${blogId}`).then(res => {
             console.log(res.data);
             setBlog(res.data)
 
@@ -31,7 +31,7 @@ const UpdateBlog = () => {
         console.log(data)
 
         //update blog
-        axios.put(`https://iman-xpress.herokuapp.com/api/blog/updateblog/${blogId}`, data).then(res => {
+        axios.put(`https://iman-xpress-backend-theta.vercel.app/api/blog/updateblog/${blogId}`, data).then(res => {
             console.log(res.data.success)
             if (res.data.success) {
                 Swal.fire({

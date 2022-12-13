@@ -8,13 +8,14 @@ import Footer from "../../../Shared/Footer/Footer";
 
 const BlogDetails = () => {
   const { id } = useParams();
+  
   const [blogDetailsData, setBlogDetailsData] = useState({})
  
   useEffect(() => {
-    const url = `https://iman-xpress.herokuapp.com/api/blog/fetchblog/${id}`;
+    const url = `https://iman-xpress-backend-theta.vercel.app/api/blog/fetchblog/${id}`;
     axios.get(url)
       .then((res) => {
-       
+        
         setBlogDetailsData(res.data)
       })
       .catch(error => console.log(error))

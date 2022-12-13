@@ -6,7 +6,7 @@ import 'react-super-responsive-table/dist/SuperResponsiveTableStyle.css';
 const AllAdmin = () => {
     const [admins, setAdmins] = useState([]);
 
-    fetch('https://iman-xpress.herokuapp.com/api/authgeneral/getalluserswithadmin')
+    fetch('https://iman-xpress-backend-theta.vercel.app/api/authgeneral/getalluserswithadmin')
         .then(res => res.json())
         .then(data => {
             setAdmins(data.allusers)

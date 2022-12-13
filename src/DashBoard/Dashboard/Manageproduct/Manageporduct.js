@@ -34,7 +34,7 @@ function Manageporduct() {
     const handleupdateClose = () => setOpenupdateModal(false);
     useEffect(() => {
 
-        axios.get(`https://iman-xpress.herokuapp.com/api/merchant/fetchallproducts`, {
+        axios.get(`https://iman-xpress-backend-theta.vercel.app/api/merchant/fetchallproducts`, {
             headers: {
                 "auth-token": mytoken,
                 "Content-Type": "application/json"
@@ -46,7 +46,7 @@ function Manageporduct() {
         const confirmmessage = window.confirm("Are you sure you want to delete this product?")
 
         if (confirmmessage) {
-            axios.delete(`https://iman-xpress.herokuapp.com/api/merchant/deleteproduct/${id}`, {
+            axios.delete(`https://iman-xpress-backend-theta.vercel.app/api/merchant/deleteproduct/${id}`, {
                 headers: {
                     "auth-token": mytoken,
                     "Content-Type": "application/json"
@@ -69,7 +69,7 @@ function Manageporduct() {
 
     const viewdata = (id) => {
         console.log(id)
-        axios.get(`https://iman-xpress.herokuapp.com/api/merchant/fetchproduct/${id}`, {
+        axios.get(`https://iman-xpress-backend-theta.vercel.app/api/merchant/fetchproduct/${id}`, {
             headers: {
                 "auth-token": mytoken,
                 "Content-Type": "application/json"

@@ -6,7 +6,7 @@ import 'react-super-responsive-table/dist/SuperResponsiveTableStyle.css';
 const AllMarchent = () => {
     const [marchent, setMarchent] = useState([]);
 
-    fetch('https://iman-xpress.herokuapp.com/api/auth/getmerchantuser')
+    fetch('https://iman-xpress-backend-theta.vercel.app/api/auth/getmerchantuser')
         .then(res => res.json())
         .then(data => setMarchent(data))
 

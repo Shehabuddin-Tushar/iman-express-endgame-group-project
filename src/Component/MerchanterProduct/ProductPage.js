@@ -92,14 +92,14 @@ function ProductPage() {
   // console.log(mydata)
   useEffect(() => {
 
-    axios.get(`https://iman-xpress.herokuapp.com/api/auth/getmerchantuser/${id}`, {
+    axios.get(`https://iman-xpress-backend-theta.vercel.app/api/auth/getmerchantuser/${id}`, {
       headers: {
 
         "Content-Type": "application/json"
       }
     }).then((res) => setMerchantdata(res.data)).catch((err) => console.log(err))
 
-    axios.get(`https://iman-xpress.herokuapp.com/api/merchant/fetchallproductsbyid/${id}`, {
+    axios.get(`https://iman-xpress-backend-theta.vercel.app/api/merchant/fetchallproductsbyid/${id}`, {
       headers: {
 
         "Content-Type": "application/json"
@@ -129,7 +129,7 @@ function ProductPage() {
 
   const viewdata = (id) => {
 
-    axios.get(`https://iman-xpress.herokuapp.com/api/merchant/fetchproductbyid/${id}`)
+    axios.get(`https://iman-xpress-backend-theta.vercel.app/api/merchant/fetchproductbyid/${id}`)
       .then((res) => setMerchantproductdata(res.data)).catch(err => console.log(err))
     handleOpen()
   }
@@ -139,7 +139,7 @@ function ProductPage() {
   const onSubmit = data => {
     alert("You search " + "" + data.searchproduct)
 
-    axios.post(`https://iman-xpress.herokuapp.com/api/merchant/getproductbyname/${id}`, data, {
+    axios.post(`https://iman-xpress-backend-theta.vercel.app/api/merchant/getproductbyname/${id}`, data, {
       headers: {
 
         "Content-Type": "application/json"

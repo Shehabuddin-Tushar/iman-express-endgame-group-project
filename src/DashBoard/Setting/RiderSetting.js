@@ -19,7 +19,7 @@ const RiderSetting = () => {
     console.log('data', password.password);
     data.password = password.password
     if (password.password === password.confirmPassword) {
-      axios.post(`https://iman-xpress.herokuapp.com/api/riderProfile/updateRiderPass/${riderInfo.email}`, data).then(res => {
+      axios.post(`https://iman-xpress-backend-theta.vercel.app/api/riderProfile/updateRiderPass/${riderInfo.email}`, data).then(res => {
         console.log(res.data)
         if (res.data.modifiedCount) {
           console.log(data);

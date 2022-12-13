@@ -6,7 +6,7 @@ import 'react-super-responsive-table/dist/SuperResponsiveTableStyle.css';
 const AllUser = () => {
     const [users, setUsers] = useState([]);
     useEffect(() => {
-        fetch(`https://iman-xpress.herokuapp.com/api/authgeneral/getallusers`)
+        fetch(`https://iman-xpress-backend-theta.vercel.app/api/authgeneral/getallusers`)
             .then(res => res.json())
             .then(data => {
                 

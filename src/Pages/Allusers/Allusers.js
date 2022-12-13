@@ -22,7 +22,7 @@ function Allusers() {
 
     useEffect(() => {
 
-        axios.get("https://iman-xpress.herokuapp.com/api/authgeneral/getallusers").then(res => setAllusers(res.data.allusers)).catch(err => console.log(err))
+        axios.get("https://iman-xpress-backend-theta.vercel.app/api/authgeneral/getallusers").then(res => setAllusers(res.data.allusers)).catch(err => console.log(err))
 
     
     }, [loginstatus])
@@ -33,7 +33,7 @@ function Allusers() {
     const chatwithuser = (userid) => {
      
 
-        axios.get(`https://iman-xpress.herokuapp.com/api/authgeneral/getuserbyid/${userid}`)
+        axios.get(`https://iman-xpress-backend-theta.vercel.app/api/authgeneral/getuserbyid/${userid}`)
             .then(res => setUserinfo(res.data.userdata)).catch(err => console.log(err))
 
 

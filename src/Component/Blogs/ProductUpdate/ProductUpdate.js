@@ -9,7 +9,7 @@ const ProductUpdate = () => {
    
 
     useEffect(() => {
-        const url = `https://iman-xpress.herokuapp.com/api/blog/fetchblogbycategory/aboutProduct`;
+        const url = `https://iman-xpress-backend-theta.vercel.app/api/blog/fetchblogbycategory/aboutProduct`;
         axios.get(url)
             .then((res) => setBlogApiTwo(res.data))
             .catch(error => console.log(error))

@@ -53,7 +53,7 @@ export default function Userchatmodal({ openModal, handleClose, riderallinfo }) 
   
 
   useEffect(() => {
-    axios.get(`https://iman-xpress.herokuapp.com/api/authgeneral/getuserdata/${user?.email}`)
+    axios.get(`https://iman-xpress-backend-theta.vercel.app/api/authgeneral/getuserdata/${user?.email}`)
       .then(res => setUserdata(res.data)).catch(err => console.log(err))
     
     

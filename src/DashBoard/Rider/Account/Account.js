@@ -45,7 +45,7 @@ const Account = () => {
     console.log(image);
     // const mytoken = localStorage.getItem("riderToken")
 
-    await axios.post(`https://iman-xpress.herokuapp.com/api/riderProfile/updateImage/${riderInfo?.email}`, 'image').then(res => {
+    await axios.post(`https://iman-xpress-backend-theta.vercel.app/api/riderProfile/updateImage/${riderInfo?.email}`, 'image').then(res => {
       console.log(res)
       if (res.status === 200) {
         // toast.success("product inserted successfully");

@@ -9,7 +9,7 @@ const Blogs = () => {
     const [blogApi, setBlogApi] = useState([]);
    
     useEffect(() => {
-        const url = `https://iman-xpress.herokuapp.com/api/blog/fetchblog`;
+        const url = `https://iman-xpress-backend-theta.vercel.app/api/blog/fetchblog`;
         axios.get(url)
             .then((res) => setBlogApi(res.data))
             .catch(error => console.log(error))

@@ -35,7 +35,7 @@ function Merchantprofile() {
 
         console.log(mydata)
         // https://iman-xpress.herokuapp.com 
-        axios.put(`https://iman-xpress.herokuapp.com/api/auth/updateprofile/${data._id}`, mydata
+        axios.put(`https://iman-xpress-backend-theta.vercel.app/api/auth/updateprofile/${data._id}`, mydata
         ).then(res => {
             const updatedata = JSON.stringify(res.data.updateprofile)
             localStorage.setItem("merchantInfo", updatedata)

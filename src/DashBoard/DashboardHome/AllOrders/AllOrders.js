@@ -12,7 +12,7 @@ import { RiDeleteBin5Fill } from 'react-icons/ri';
 const AllOrders = () => {
     const [allOrders,setAllOrders] = useState([]);
     useEffect(()=>{
-        fetch(`https://iman-xpress.herokuapp.com/api/payNow/allorders`)
+      fetch(`https://iman-xpress-backend-theta.vercel.app/api/payNow/allorders`)
         .then(res=>res.json())
         .then(data=>{
             setAllOrders(data)
@@ -24,7 +24,7 @@ const AllOrders = () => {
       const confirmDelete=window.confirm('Are you sure ? to delete this order !')
       if(confirmDelete){
           // deleting product by id
-          axios.delete(`https://iman-xpress.herokuapp.com/api/payNow/deleteorders/${id}`)
+        axios.delete(`https://iman-xpress-backend-theta.vercel.app/api/payNow/deleteorders/${id}`)
           .then(res =>{
             alert(res.data.success)   
             const presentOrder=allOrders.filter(book=> book._id !==id)

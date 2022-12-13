@@ -8,7 +8,7 @@ const ManagePartner = () => {
     const [partnerApi, setPartnerApi] = useState([])
   
   useEffect(()=>{
-    fetch('https://iman-xpress.herokuapp.com/api/partner/getPartner')
+    fetch('https://iman-xpress-backend-theta.vercel.app/api/partner/getPartner')
     .then(res=>res.json())
     .then(data=>setPartners(data))
   },[partnerApi])
@@ -17,7 +17,7 @@ const ManagePartner = () => {
     const confirmMsg = window.confirm("Would you like to delete this partner")
     if(confirmMsg){
         console.log(id)
-        axios.delete(`https://iman-xpress.herokuapp.com/api/partner/deletePartner/${id}`,  {
+      axios.delete(`https://iman-xpress-backend-theta.vercel.app/api/partner/deletePartner/${id}`,  {
         headers: {
             "Content-Type": "application/json"
         }

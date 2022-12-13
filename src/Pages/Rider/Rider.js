@@ -50,7 +50,7 @@ const RiderRegistration = () => {
 
   const onSubmit = (data) => {
     console.log(data);
-    axios.post('https://iman-xpress.herokuapp.com/api/authRider/register', data).then(res => {
+    axios.post('https://iman-xpress-backend-theta.vercel.app/api/authRider/register', data).then(res => {
         console.log(res)
         if (res.data.authToken) {
           Swal.fire({

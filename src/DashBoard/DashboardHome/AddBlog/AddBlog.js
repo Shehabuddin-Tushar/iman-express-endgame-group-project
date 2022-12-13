@@ -37,7 +37,7 @@ const AddBlog = () => {
 
 
 
-        const url = `https://iman-xpress.herokuapp.com/api/blog/addblog`;
+        const url = `https://iman-xpress-backend-theta.vercel.app/api/blog/addblog`;
 
         axios.post(url, data,
             {

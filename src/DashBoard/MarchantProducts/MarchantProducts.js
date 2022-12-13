@@ -41,7 +41,7 @@ const MarchantProducts = () => {
     };
     const mytoken = localStorage.getItem("merchant")
     
-    axios.post(`https://iman-xpress.herokuapp.com/api/merchant/addproduct`, productData,
+    axios.post(`https://iman-xpress-backend-theta.vercel.app/api/merchant/addproduct`, productData,
       {
         headers: {
           "auth-token": mytoken,

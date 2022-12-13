@@ -12,7 +12,7 @@ const Products = ({darkMode}) => {
     const [isLoad, setIsLoad] = useState(true)
 
     useEffect(() => {
-        axios.get(`https://iman-xpress.herokuapp.com/api/auth/getmerchantuserbycategory/${category}`, {
+        axios.get(`https://iman-xpress-backend-theta.vercel.app/api/auth/getmerchantuserbycategory/${category}`, {
             headers: {
 
                 "Content-Type": "application/json"
@@ -22,7 +22,7 @@ const Products = ({darkMode}) => {
     }, [])
 
     const allresturant = (category) => {
-        axios.get(`https://iman-xpress.herokuapp.com/api/auth/getmerchantuserbycategory/${category}`, {
+        axios.get(`https://iman-xpress-backend-theta.vercel.app/api/auth/getmerchantuserbycategory/${category}`, {
             headers: {
 
                 "Content-Type": "application/json"
@@ -31,7 +31,7 @@ const Products = ({darkMode}) => {
     }
 
     const allmedicine = (category) => {
-        axios.get(`https://iman-xpress.herokuapp.com/api/auth/getmerchantuserbycategory/${category}`, {
+        axios.get(`https://iman-xpress-backend-theta.vercel.app/api/auth/getmerchantuserbycategory/${category}`, {
             headers: {
 
                 "Content-Type": "application/json"
@@ -40,7 +40,7 @@ const Products = ({darkMode}) => {
     }
 
     const allsupershop = (category) => {
-        axios.get(`https://iman-xpress.herokuapp.com/api/auth/getmerchantuserbycategory/${category}`, {
+        axios.get(`https://iman-xpress-backend-theta.vercel.app/api/auth/getmerchantuserbycategory/${category}`, {
             headers: {
 
                 "Content-Type": "application/json"

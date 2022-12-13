@@ -44,7 +44,7 @@ function Merchantorders() {
         const merchant = localStorage.getItem("merchant");
         const merchantinfo = JSON.parse(localStorage.getItem("merchantInfo"));
 
-        axios.get(`https://iman-xpress.herokuapp.com/api/payNow/getordersbymerchantid/${merchantinfo._id}`)
+        axios.get(`https://iman-xpress-backend-theta.vercel.app/api/payNow/getordersbymerchantid/${merchantinfo._id}`)
         .then(res=>{
             
             setOrders(res.data)
