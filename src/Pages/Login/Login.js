@@ -53,7 +53,7 @@ const Login = () => {
     try {
       if (data.merchant === 'merchant') {
 
-        axios.post('https://iman-xpress.herokuapp.com/api/auth/login', data).then(res => {
+        axios.post('https://iman-xpress-backend-theta.vercel.app/api/auth/login', data).then(res => {
           console.log("res", res)
           if (res.data.authToken) {
             const merchantToken = res.data.authToken
@@ -61,7 +61,7 @@ const Login = () => {
 
 
             // rider info fetch from database
-            axios.post('https://iman-xpress.herokuapp.com/api/auth/getmerchantuser', { hello: 'world' },
+            axios.post('https://iman-xpress-backend-theta.vercel.app/api/auth/getmerchantuser', { hello: 'world' },
               {
                 headers: {
                   "auth-token": merchantToken,
@@ -93,14 +93,14 @@ const Login = () => {
 
         // rider login 
         console.log(data.email);
-        axios.post('https://iman-xpress.herokuapp.com/api/authRider/login', data).then(res => {
+        axios.post('https://iman-xpress-backend-theta.vercel.app/api/authRider/login', data).then(res => {
           console.log("res", res.data);
           if (res.data.authToken) {
             const riderToken = res.data.authToken
             localStorage.setItem("riderToken", riderToken);
 
             // rider info fetch from database
-            axios.post('https://iman-xpress.herokuapp.com/api/authRider/getRider', { rider: 'Ok' }, {
+            axios.post('https://iman-xpress-backend-theta.vercel.app/api/authRider/getRider', { rider: 'Ok' }, {
               headers: {
                 "Authorization": riderToken,
                 "Content-Type": "application/json"
@@ -110,7 +110,7 @@ const Login = () => {
               if (res.status === 200) {
                 
                 
-                 axios.put(`https://iman-xpress.herokuapp.com/api/authRider/updateloginstatus/${data.email}`)
+                axios.put(`https://iman-xpress-backend-theta.vercel.app/api/authRider/updateloginstatus/${data.email}`)
                     .then(res => {
                       console.log(res.change);
                       setLoginstatus(1)

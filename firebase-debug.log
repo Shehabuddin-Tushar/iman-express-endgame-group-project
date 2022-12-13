@@ -1,0 +1,108 @@
+[debug] [2022-12-13T03:16:32.389Z] ----------------------------------------------------------------------
+[debug] [2022-12-13T03:16:32.391Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\USER\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2022-12-13T03:16:32.392Z] CLI Version:   10.4.0
+[debug] [2022-12-13T03:16:32.392Z] Platform:      win32
+[debug] [2022-12-13T03:16:32.392Z] Node Version:  v16.14.2
+[debug] [2022-12-13T03:16:32.399Z] Time:          Tue Dec 13 2022 09:16:32 GMT+0600 (Bangladesh Standard Time)
+[debug] [2022-12-13T03:16:32.400Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-12-13T03:16:32.404Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2022-12-13T03:16:32.496Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-12-13T03:16:32.496Z] > authorizing via signed-in user (freelancerrtushar@gmail.com)
+[debug] [2022-12-13T03:16:32.497Z] [iam] checking project iman-xpress-9b3a9 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-12-13T03:16:32.498Z] > refreshing access token with scopes: []
+[debug] [2022-12-13T03:16:32.498Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2022-12-13T03:16:32.799Z] <<< HTTP RESPONSE 400 {"pragma":"no-cache","date":"Tue, 13 Dec 2022 03:16:32 GMT","expires":"Mon, 01 Jan 1990 00:00:00 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-12-13T03:16:32.801Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/iman-xpress-9b3a9:testIamPermissions [none]
+[debug] [2022-12-13T03:16:32.802Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/iman-xpress-9b3a9:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-12-13T03:16:33.105Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2022-12-13T03:16:33.106Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2022-12-13T03:16:34.287Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/iman-xpress-9b3a9:testIamPermissions 401
+[debug] [2022-12-13T03:16:34.288Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/iman-xpress-9b3a9:testIamPermissions {"error":{"code":401,"message":"Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.","status":"UNAUTHENTICATED","details":[{"@type":"type.googleapis.com/google.rpc.ErrorInfo","reason":"ACCESS_TOKEN_TYPE_UNSUPPORTED","metadata":{"method":"google.cloudresourcemanager.v1.Projects.TestIamPermissions","service":"cloudresourcemanager.googleapis.com"}}]}}
+[debug] [2022-12-13T03:16:34.288Z] [iam] error while checking permissions, command may fail: FirebaseError: HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
+[debug] [2022-12-13T03:16:34.289Z] > refreshing access token with scopes: []
+[debug] [2022-12-13T03:16:34.289Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2022-12-13T03:16:34.532Z] <<< HTTP RESPONSE 400 {"expires":"Mon, 01 Jan 1990 00:00:00 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","pragma":"no-cache","date":"Tue, 13 Dec 2022 03:16:33 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-12-13T03:16:34.534Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/iman-xpress-9b3a9 [none]
+[debug] [2022-12-13T03:16:35.150Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/iman-xpress-9b3a9 401
+[debug] [2022-12-13T03:16:35.151Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/iman-xpress-9b3a9 {"error":{"code":401,"message":"Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.","status":"UNAUTHENTICATED"}}
+[debug] [2022-12-13T03:16:35.151Z] HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
+[debug] [2022-12-13T03:16:35.398Z] FirebaseError: HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
+    at module.exports (C:\Users\USER\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:47:12)
+    at RetryOperation._fn (C:\Users\USER\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:286:39)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[error] 
+[error] Error: Failed to get Firebase project iman-xpress-9b3a9. Please make sure the project exists and your account has permission to access it.
+[debug] [2022-12-13T03:21:36.112Z] ----------------------------------------------------------------------
+[debug] [2022-12-13T03:21:36.115Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\USER\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2022-12-13T03:21:36.116Z] CLI Version:   10.4.0
+[debug] [2022-12-13T03:21:36.116Z] Platform:      win32
+[debug] [2022-12-13T03:21:36.116Z] Node Version:  v16.14.2
+[debug] [2022-12-13T03:21:36.117Z] Time:          Tue Dec 13 2022 09:21:36 GMT+0600 (Bangladesh Standard Time)
+[debug] [2022-12-13T03:21:36.118Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-12-13T03:21:36.189Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-12-13T03:21:36.189Z] > authorizing via signed-in user (freelancerrtushar@gmail.com)
+[debug] [2022-12-13T03:21:36.189Z] [iam] checking project iman-xpress-9b3a9 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-12-13T03:21:36.191Z] > refreshing access token with scopes: []
+[debug] [2022-12-13T03:21:36.192Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2022-12-13T03:21:36.453Z] <<< HTTP RESPONSE 400 {"date":"Tue, 13 Dec 2022 03:21:35 GMT","pragma":"no-cache","expires":"Mon, 01 Jan 1990 00:00:00 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-12-13T03:21:36.457Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/iman-xpress-9b3a9:testIamPermissions [none]
+[debug] [2022-12-13T03:21:36.458Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/iman-xpress-9b3a9:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-12-13T03:21:37.976Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/iman-xpress-9b3a9:testIamPermissions 401
+[debug] [2022-12-13T03:21:37.976Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/iman-xpress-9b3a9:testIamPermissions {"error":{"code":401,"message":"Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.","status":"UNAUTHENTICATED","details":[{"@type":"type.googleapis.com/google.rpc.ErrorInfo","reason":"ACCESS_TOKEN_TYPE_UNSUPPORTED","metadata":{"method":"google.cloudresourcemanager.v1.Projects.TestIamPermissions","service":"cloudresourcemanager.googleapis.com"}}]}}
+[debug] [2022-12-13T03:21:37.976Z] [iam] error while checking permissions, command may fail: FirebaseError: HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
+[debug] [2022-12-13T03:21:37.977Z] > refreshing access token with scopes: []
+[debug] [2022-12-13T03:21:37.977Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2022-12-13T03:21:38.161Z] <<< HTTP RESPONSE 400 {"expires":"Mon, 01 Jan 1990 00:00:00 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","pragma":"no-cache","date":"Tue, 13 Dec 2022 03:21:37 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2022-12-13T03:21:38.162Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/iman-xpress-9b3a9 [none]
+[debug] [2022-12-13T03:21:38.784Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/iman-xpress-9b3a9 401
+[debug] [2022-12-13T03:21:38.784Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/iman-xpress-9b3a9 {"error":{"code":401,"message":"Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.","status":"UNAUTHENTICATED"}}
+[debug] [2022-12-13T03:21:38.784Z] HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
+[debug] [2022-12-13T03:21:39.037Z] FirebaseError: HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
+    at module.exports (C:\Users\USER\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:47:12)
+    at RetryOperation._fn (C:\Users\USER\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:286:39)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[error] 
+[error] Error: Failed to get Firebase project iman-xpress-9b3a9. Please make sure the project exists and your account has permission to access it.
+[debug] [2022-12-13T03:24:11.226Z] ----------------------------------------------------------------------
+[debug] [2022-12-13T03:24:11.229Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\USER\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2022-12-13T03:24:11.230Z] CLI Version:   11.18.0
+[debug] [2022-12-13T03:24:11.230Z] Platform:      win32
+[debug] [2022-12-13T03:24:11.231Z] Node Version:  v16.14.2
+[debug] [2022-12-13T03:24:11.232Z] Time:          Tue Dec 13 2022 09:24:11 GMT+0600 (Bangladesh Standard Time)
+[debug] [2022-12-13T03:24:11.232Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-12-13T03:24:11.318Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-12-13T03:24:11.319Z] > authorizing via signed-in user (freelancerrtushar@gmail.com)
+[debug] [2022-12-13T03:24:11.319Z] [iam] checking project iman-xpress-9b3a9 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-12-13T03:24:11.321Z] > refreshing access token with scopes: []
+[debug] [2022-12-13T03:24:11.323Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2022-12-13T03:24:11.323Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-12-13T03:24:11.581Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 400
+[debug] [2022-12-13T03:24:11.581Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-12-13T03:24:11.581Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/iman-xpress-9b3a9:testIamPermissions [none]
+[debug] [2022-12-13T03:24:11.582Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/iman-xpress-9b3a9:testIamPermissions x-goog-quota-user=projects/iman-xpress-9b3a9
+[debug] [2022-12-13T03:24:11.582Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/iman-xpress-9b3a9:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-12-13T03:24:12.963Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/iman-xpress-9b3a9:testIamPermissions 401
+[debug] [2022-12-13T03:24:12.963Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/iman-xpress-9b3a9:testIamPermissions {"error":{"code":401,"message":"Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.","status":"UNAUTHENTICATED","details":[{"@type":"type.googleapis.com/google.rpc.ErrorInfo","reason":"ACCESS_TOKEN_TYPE_UNSUPPORTED","metadata":{"method":"google.cloudresourcemanager.v1.Projects.TestIamPermissions","service":"cloudresourcemanager.googleapis.com"}}]}}
+[debug] [2022-12-13T03:24:12.964Z] [iam] error while checking permissions, command may fail: FirebaseError: HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
+[debug] [2022-12-13T03:24:12.965Z] > refreshing access token with scopes: []
+[debug] [2022-12-13T03:24:12.965Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2022-12-13T03:24:12.965Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-12-13T03:24:13.164Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 400
+[debug] [2022-12-13T03:24:13.164Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2022-12-13T03:24:13.166Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/iman-xpress-9b3a9 [none]
+[debug] [2022-12-13T03:24:13.416Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/iman-xpress-9b3a9 401
+[debug] [2022-12-13T03:24:13.417Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/iman-xpress-9b3a9 {"error":{"code":401,"message":"Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.","status":"UNAUTHENTICATED"}}
+[debug] [2022-12-13T03:24:13.417Z] HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
+[debug] [2022-12-13T03:24:13.671Z] FirebaseError: HTTP Error: 401, Request had invalid authentication credentials. Expected OAuth 2 access token, login cookie or other valid authentication credential. See https://developers.google.com/identity/sign-in/web/devconsole-project.
+    at responseToError (C:\Users\USER\AppData\Roaming\npm\node_modules\firebase-tools\lib\responseToError.js:49:12)
+    at RetryOperation._fn (C:\Users\USER\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:288:77)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+[error] 
+[error] Error: Failed to get Firebase project iman-xpress-9b3a9. Please make sure the project exists and your account has permission to access it.
